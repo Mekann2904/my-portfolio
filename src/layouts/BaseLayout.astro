@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+
+<html lang="ja" class="bg-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
+        <a href="/" class="text-white font-semibold text-lg">Mekann</a>
+        <ul class="flex gap-8 text-sm">
+          <li><a href="/" class="text-gray-500 hover:text-white transition">Home</a></li>
+          <li><a href="/#about" class="text-gray-500 hover:text-white transition">About</a></li>
+          <li><a href="/#projects" class="text-gray-500 hover:text-white transition">Projects</a></li>
+          <li><a href="/#contact" class="text-gray-500 hover:text-white transition">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 container mx-auto px-6 py-8">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300 border-t border-white/10 py-6">
+      <div class="container mx-auto text-center text-sm">
+        © {new Date().getFullYear()} Mekann. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

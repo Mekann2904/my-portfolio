@@ -4,11 +4,23 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node generate-graph.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.5"
+    "astro": "^5.7.5",
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^4.2.5",
+    "@astrojs/tailwind": "^6.0.2",
+    "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.503.0",
+    "postcss": "^8.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^3.4.17",
+    "xml2js": "^0.6.2"
   }
 }

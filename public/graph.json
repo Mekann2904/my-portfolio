@@ -1,0 +1,64 @@
+{
+  "nodes": [
+    {
+      "id": "/",
+      "label": "Home",
+      "ext": false
+    },
+    {
+      "id": "/external",
+      "label": "External",
+      "ext": true
+    }
+  ],
+  "links": [
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/"
+    },
+    {
+      "source": "/",
+      "target": "/external"
+    },
+    {
+      "source": "/",
+      "target": "/external"
+    },
+    {
+      "source": "/",
+      "target": "/external"
+    },
+    {
+      "source": "/",
+      "target": "/external"
+    }
+  ]
+}
