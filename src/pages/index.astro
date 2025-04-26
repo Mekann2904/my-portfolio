@@ -6,7 +6,7 @@ import {
   Users,
   RefreshCcw,
   Maximize2,
-  Minimize2
+  Minimize2,
 } from 'lucide-react';
 
 /** ---------- Featured Projects ------------------------------- **/
@@ -17,46 +17,63 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  { title: 'PKM 2025 by Mekann', description: '知的活動を加速するための次世代 PKM 理論と実践体系。Obsidianを基盤に、多層思考・知識可視化を探求。', progress: 60 },
-  { title: 'PKM 日本コミュニティ', description: '知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。', progress: 50 },
-  { title: 'mdtex Plugin', description: 'Markdown文中に LaTeXを滑らかに統合。Obsidian内で数式・構造化表現を強化する支援プラグイン。', progress: 90 },
-  { title: 'Divergences Theme', description: '美しい階調と知的静謐を両立させた、Obsidian専用カスタムダークテーマ。', progress: 95 },
-  { title: 'Google Calendar Tasks Sync', description: 'ObsidianタスクとGoogleカレンダーをリアルタイム同期し、日常知的生産性を最大化。', progress: 85 },
-  { title: 'Next Cornell Note Plugin', description: 'フェーズ切替UIで学習・思考フェーズを支援する、デジタル最適化版コーネルノートプラグイン。', progress: 95 },
-  { title: 'Footnote-Driven Cornell Plugin', description: '脚注をCue化し、想起・要約・レビューを統合する次世代型コーネルノート支援プラグイン。', progress: 90 },
-  { title: 'OmniWiki Plugin', description: 'ノート内の専門用語を即時抽出し、Grok連携で知識探索を滑らかに進める知的支援プラグイン。', progress: 90 }
+  { title: 'PKM 2025 by Mekann',           description: '知的活動を加速するための次世代 PKM 理論と実践体系。Obsidianを基盤に、多層思考・知識可視化を探求。', progress: 60 },
+  { title: 'PKM 日本コミュニティ',         description: '知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。',                                   progress: 50 },
+  { title: 'mdtex Plugin',                description: 'Markdown 文中に LaTeX を滑らかに統合。Obsidian 内で数式・構造化表現を強化する支援プラグイン。',            progress: 90 },
+  { title: 'Divergences Theme',           description: '美しい階調と知的静謐を両立させた Obsidian 専用カスタムダークテーマ。',                                     progress: 95 },
+  { title: 'Google Calendar Tasks Sync',  description: 'Obsidian タスクと Google カレンダーをリアルタイム同期し、日常知的生産性を最大化。',                          progress: 85 },
+  { title: 'Next Cornell Note Plugin',    description: 'フェーズ切替 UI で学習・思考フェーズを支援する、デジタル最適化版コーネルノートプラグイン。',                    progress: 95 },
+  { title: 'Footnote-Driven Cornell',     description: '脚注を Cue 化し、想起・要約・レビューを統合する次世代型コーネルノート支援プラグイン。',                         progress: 90 },
+  { title: 'OmniWiki Plugin',             description: 'ノート内の専門用語を即時抽出し、Grok 連携で知識探索を滑らかに進める知的支援プラグイン。',                        progress: 90 },
 ];
 ---
 
-<BaseLayout title="Home" description="Mekann | Intelligent Systems & AI-Driven Knowledge">
+<BaseLayout
+  title="Home"
+  description="Mekann | Intelligent Systems & AI-Driven Knowledge"
+>
   <!-- Navigation -->
-  <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
-      <span class="text-white font-semibold text-lg">Mekann</span>
+  <header
+    class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10 supports-[backdrop-filter]:backdrop-blur-md"
+  >
+    <nav class="mx-auto max-w-7xl flex items-center justify-between px-6 py-5">
+      <span class="text-lg font-semibold text-white">Mekann</span>
       <ul class="flex gap-8 text-sm">
-        <li><a href="/#about"    class="text-gray-500 hover:text-white transition">About</a></li>
-        <li><a href="/#projects" class="text-gray-500 hover:text-white transition">Projects</a></li>
-        <li><a href="/#contact"  class="text-gray-500 hover:text-white transition">Contact</a></li>
+        <li><a href="/#about"    class="nav-link">About</a></li>
+        <li><a href="/#projects" class="nav-link">Projects</a></li>
+        <li><a href="/#contact"  class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="pt-24">
-    <!-- Hero -->
-    <section class="flex items-center justify-center bg-black text-white min-h-screen px-6">
-      <div class="text-center space-y-6 max-w-3xl">
-        <h1 class="text-[8vw] leading-none font-extrabold tracking-tight">
+    <!-- Hero (critical path HTML + CSS のみ。JS/外部フォントは後追い) -->
+    <section
+      class="flex min-h-screen items-center justify-center bg-black px-6 text-white"
+    >
+      <div class="max-w-3xl space-y-6 text-center">
+        <h1 class="tracking-tight font-extrabold leading-none text-[clamp(2.5rem,8vw,5rem)]">
           Intelligent Systems ×<br />AI-Driven Knowledge
         </h1>
-        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-          AIを核に、知識の構造と思考のプロセスを再設計する。<br />
+        <p class="mt-6 text-lg leading-relaxed text-gray-400">
+          AI を核に、知識の構造と思考のプロセスを再設計する。<br />
           次世代の知能情報基盤を探究します。
         </p>
         <div class="mt-8 flex justify-center gap-4">
-          <a href="https://note.com/mekann" target="_blank" rel="noopener" class="btn-primary whitespace-nowrap">
-            note <ArrowRight className="inline w-4 h-4 ml-1" />
+          <a
+            href="https://note.com/mekann"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary whitespace-nowrap"
+          >
+            note <ArrowRight className="ml-1 inline h-4 w-4" />
           </a>
-          <a href="https://github.com/Mekann2904" target="_blank" rel="noopener" class="btn-secondary whitespace-nowrap">
+          <a
+            href="https://github.com/Mekann2904"
+            target="_blank"
+            rel="noopener"
+            class="btn-secondary whitespace-nowrap"
+          >
             GitHub
           </a>
         </div>
@@ -64,39 +81,44 @@ export const projects: Project[] = [
     </section>
 
     <!-- About + Graph -->
-    <section id="about" class="bg-black text-white py-20">
-      <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-2">
-        <!-- 左カラム -->
+    <section id="about" class="bg-black py-20 text-white">
+      <div class="container mx-auto grid gap-12 px-6 lg:grid-cols-2">
+        <!-- Left column -->
         <div class="space-y-6">
           <h2 class="text-3xl font-bold">Profile &amp; Vision</h2>
-          <p class="text-gray-400 max-w-xl leading-snug">
-            Visualizing knowledge in Obsidian. 知を可視化し、PKMの本質を探る。<br />
+          <p class="max-w-xl leading-snug text-gray-400">
+            Visualizing knowledge in Obsidian — 知を可視化し、PKM の本質を探る。<br />
             LLMs・多層レイヤー・思考発話駆動思考｜Python・TypeScript
           </p>
 
-          <div class="community-card max-w-md flex items-start gap-4">
-            <Users className="w-10 h-10 text-blue-400 flex-shrink-0" />
+          <div class="community-card">
+            <Users className="flex-shrink-0 h-10 w-10 text-blue-400" />
             <div>
               <h3 class="text-xl font-semibold">PKM 日本コミュニティ</h3>
-              <p class="mt-1 text-gray-400 leading-snug">
-                知的活動と自己変革を支援するPKM日本拠点。次世代型知識基盤を共に探求。
+              <p class="mt-1 leading-snug text-gray-400">
+                知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。
               </p>
-              <a href="https://x.com/i/communities/1906293158838935873" target="_blank" rel="noopener"
-                 class="mt-2 inline-block text-blue-400 hover:text-blue-300 transition">
+              <a
+                href="https://x.com/i/communities/1906293158838935873"
+                target="_blank"
+                rel="noopener"
+                class="mt-2 inline-block text-blue-400 transition hover:text-blue-300"
+              >
                 コミュニティを訪問 →
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 右カラム：グラフ -->
+        <!-- Right column / Graph -->
         <div class="relative aspect-[16/9]">
           <div id="network" class="skill-cloud"></div>
+
           <div class="absolute top-4 right-4 flex space-x-2">
-            <button id="reload-btn"  aria-label="Reload"           class="icon-btn"><RefreshCcw className="w-4 h-4" /></button>
+            <button id="reload-btn"  aria-label="Reload"           class="icon-btn"><RefreshCcw className="h-4 w-4" /></button>
             <button id="toggle-btn"  aria-label="Toggle fullscreen" class="icon-btn">
-              <Maximize2 id="icon-max" className="w-4 h-4" />
-              <Minimize2 id="icon-min" className="w-4 h-4 hidden" />
+              <Maximize2 id="icon-max" className="h-4 w-4" />
+              <Minimize2 id="icon-min" className="hidden h-4 w-4" />
             </button>
           </div>
         </div>
@@ -105,17 +127,30 @@ export const projects: Project[] = [
 
     <!-- Projects -->
     <section id="projects" class="bg-black py-20">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-white mb-12">Featured Projects</h2>
-        <div class="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
-          {projects.map(p => (
+      <div class="container mx-auto max-w-6xl px-6">
+        <h2 class="mb-12 text-center text-3xl font-bold text-white">
+          Featured Projects
+        </h2>
+
+        <!-- Astro generates STATIC markup; no key prop needed -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p) => (
             <div class="project-card">
-              <h3 class="text-lg font-semibold mb-2 text-white">{p.title}</h3>
-              <p class="text-gray-400 mb-4 leading-snug">{p.description}</p>
-              <div class="h-2 bg-white bg-opacity-10 rounded-full overflow-hidden mb-2">
-                <div class="h-full bg-white" style={`width:${p.progress}%`}></div>
+              <h3 class="mb-2 text-lg font-semibold text-white">
+                {p.title}
+              </h3>
+              <p class="mb-4 leading-snug text-gray-400">
+                {p.description}
+              </p>
+              <div class="mb-2 h-2 overflow-hidden rounded-full bg-white/10">
+                <div
+                  class="h-full bg-white"
+                  style={`width:${p.progress}%`}
+                />
               </div>
-              <span class="text-sm text-gray-500">Progress: {p.progress}%</span>
+              <span class="text-sm text-gray-500">
+                Progress: {p.progress}%
+              </span>
             </div>
           ))}
         </div>
@@ -123,147 +158,187 @@ export const projects: Project[] = [
     </section>
 
     <!-- Contact CTA -->
-    <section id="contact" class="bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Visualizing Knowledge, Amplifying Thought</h2>
-        <p class="text-gray-400 leading-relaxed mb-6 text-sm sm:text-base md:text-lg">
+    <section
+      id="contact"
+      class="bg-black px-4 py-12 text-white sm:px-6 sm:py-16 md:px-8 md:py-20"
+    >
+      <div class="mx-auto max-w-xl text-center">
+        <h2 class="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
+          Visualizing Knowledge, Amplifying Thought
+        </h2>
+        <p class="mb-6 text-sm leading-relaxed text-gray-400 sm:text-base md:text-lg">
           Visualizing knowledge in Obsidian.<br />
-          知を可視化し、PKMの本質を探る。<br /><br />
+          知を可視化し、PKM の本質を探る。<br /><br />
           LLMs、多層レイヤー、思考発話駆動思考。<br />
-          PythonとTypeScriptを軸に、知の進化を設計します。
+          Python と TypeScript を軸に、知の進化を設計します。
         </p>
-        <a href="https://x.com/Mekann2904" target="_blank" rel="noopener noreferrer"
-           class="btn-primary inline-flex items-center justify-center text-base sm:text-lg py-2 sm:py-3 px-6 sm:px-8">
-          Follow on&nbsp;<span class="text-2xl sm:text-3xl md:text-4xl">𝕏</span>
+        <a
+          href="https://x.com/Mekann2904"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary inline-flex items-center justify-center text-base sm:text-lg"
+        >
+          Follow&nbsp;on&nbsp;
+          <span class="text-2xl sm:text-3xl md:text-4xl">𝕏</span>
         </a>
       </div>
     </section>
   </main>
 
-  <!-- グラフスクリプト -->
-  <script type="module" is:inline>
-    import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
-
+  <!-- Graph script ❶ JS を遅延・条件実行 ❷ fetch 後もメモリリーク防止 -->
+  <script is:inline>
+    // ──────────────────────────────────────────
+    // ❶ 1st paint には不要な JS を遅延実行 (LCP 改善)
+    // ──────────────────────────────────────────
     const container   = document.getElementById('network');
     const reloadBtn   = document.getElementById('reload-btn');
     const toggleBtn   = document.getElementById('toggle-btn');
     const iconMax     = document.getElementById('icon-max');
     const iconMin     = document.getElementById('icon-min');
-
-    let svg, sim;   // グローバル保持（リロードで再生成）
+    let svg, sim;    // 再生成時に破棄するためスコープ上位に保持
     let isFull = false;
+    let graphLoaded = false;
 
-    /* 描画関数 -------------------------------------------------- */
-    async function buildGraph() {
-      const { nodes, links } = await fetch('/graph.json').then(r => r.json());
-      const W = container.clientWidth, H = container.clientHeight;
+    // IntersectionObserver が初めて可視領域を検知したらロード
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && !graphLoaded) {
+          graphLoaded = true;
+          initGraph();
+          io.disconnect(); // 1 回限り
+        }
+      },
+      { rootMargin: '300px' } // 少し手前でプリロード
+    );
+    io.observe(container);
 
-      svg = d3.select(container)
-              .append('svg')
-              .attr('width', W)
-              .attr('height', H)
-              .call(
-                d3.zoom()
-                  .scaleExtent([0.4, 5])
-                  .on('zoom', ({ transform }) => inner.attr('transform', transform))
-              );
+    // ───── メイン処理 ─────
+    async function initGraph() {
+      // d3 を動的 import (Tree-Shake 可。HTTP/2なら HTTP1 並列超えたらバンドル推奨)
+      const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm');
 
-      const inner = svg.append('g');
+      // 初回・リロード共通ルーチン
+      async function buildGraph() {
+        const { nodes, links } = await fetch('/graph.json').then((r) => r.json());
+        const W = container.clientWidth;
+        const H = container.clientHeight;
 
-      const link = inner.append('g')
-        .attr('stroke', '#444').attr('stroke-opacity', 0.4)
-        .selectAll('line')
-        .data(links)
-        .join('line')
-        .attr('stroke-width', 1);
+        svg = d3.select(container)
+          .append('svg')
+          .attr('width',  W)
+          .attr('height', H)
+          .call(
+            d3.zoom()
+              .scaleExtent([0.4, 5])
+              .on('zoom', ({ transform }) => inner.attr('transform', transform))
+          );
 
-      const node = inner.append('g')
-        .selectAll('g')
-        .data(nodes)
-        .join('g');
+        const inner = svg.append('g');
 
-      node.append('circle')
-        .attr('r', d => (d.ext ? 8 : 6))
-        .attr('fill', d => (d.ext ? '#ff9b00' : '#fff'))
-        .attr('stroke', '#fff')
-        .attr('stroke-width', d => (d.ext ? 2 : 1))
-        .on('click', (_, d) => { if (!d.ext) location.href = d.id; });
+        const link = inner.append('g')
+          .attr('stroke', '#444')
+          .attr('stroke-opacity', 0.4)
+          .selectAll('line')
+          .data(links)
+          .join('line')
+          .attr('stroke-width', 1);
 
-      node.append('text')
-        .text(d => d.label)
-        .attr('x', 10)
-        .attr('y', 4)
-        .attr('fill', '#fff')
-        .attr('font-size', '10px')
-        .style('pointer-events', 'none')
-        .style('text-shadow', '0 0 4px rgba(0,0,0,0.8)');
+        const node = inner.append('g')
+          .selectAll('g')
+          .data(nodes)
+          .join('g');
 
-      sim = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id).distance(120))
-        .force('charge', d3.forceManyBody().strength(-400))
-        .force('collide', d3.forceCollide().radius(d => (d.ext ? 8 : 6) + 14))
-        .force('center', d3.forceCenter(W / 2, H / 2))
-        .alpha(1).alphaDecay(0.04)
-        .on('tick', () => {
-          link
-            .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-          node.attr('transform', d => `translate(${d.x},${d.y})`);
-        });
+        node.append('circle')
+          .attr('r', (d) => (d.ext ? 8 : 6))
+          .attr('fill', (d) => (d.ext ? '#ff9b00' : '#fff'))
+          .attr('stroke', '#fff')
+          .attr('stroke-width', (d) => (d.ext ? 2 : 1))
+          .on('click', (_, d) => { if (!d.ext) location.href = d.id; });
 
-      node.call(
-        d3.drag()
-          .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-          .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
-          .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = d.fy = null; })
-      );
+        node.append('text')
+          .text((d) => d.label)
+          .attr('x', 10)
+          .attr('y', 4)
+          .attr('fill', '#fff')
+          .attr('font-size', '10px')
+          .style('pointer-events', 'none')
+          .style('text-shadow', '0 0 4px rgba(0,0,0,0.8)');
+
+        sim = d3.forceSimulation(nodes)
+          .force('link',    d3.forceLink(links).id((d) => d.id).distance(120))
+          .force('charge',  d3.forceManyBody().strength(-400))
+          .force('collide', d3.forceCollide().radius((d) => (d.ext ? 8 : 6) + 14))
+          .force('center',  d3.forceCenter(W / 2, H / 2))
+          .alpha(1)
+          .alphaDecay(0.04)
+          .on('tick', () => {
+            link
+              .attr('x1', (d) => d.source.x).attr('y1', (d) => d.source.y)
+              .attr('x2', (d) => d.target.x).attr('y2', (d) => d.target.y);
+            node.attr('transform', (d) => `translate(${d.x},${d.y})`);
+          });
+
+        node.call(
+          d3.drag()
+            .on('start', (e, d) => {
+              if (!e.active) sim.alphaTarget(0.3).restart();
+              d.fx = d.x; d.fy = d.y;
+            })
+            .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+            .on('end',   (e, d) => {
+              if (!e.active) sim.alphaTarget(0);
+              d.fx = d.fy = null;
+            })
+        );
+      }
+
+      function resizeGraph() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        svg?.attr('width', w).attr('height', h);
+        sim?.force('center', d3.forceCenter(w / 2, h / 2)).alpha(0.3).restart();
+      }
+
+      async function reloadGraph() {
+        // 旧 SVG・シミュレーションをクリーンアップ
+        sim?.stop();
+        container.replaceChildren();
+        await buildGraph();
+      }
+
+      function toggleFullscreen() {
+        isFull = !isFull;
+        iconMax.classList.toggle('hidden',  isFull);
+        iconMin.classList.toggle('hidden', !isFull);
+
+        container.classList.toggle('!fixed',   isFull);
+        container.classList.toggle('!inset-0', isFull);
+        container.classList.toggle('!z-50',    isFull);
+        document.body.classList.toggle('overflow-hidden', isFull);
+
+        resizeGraph();
+      }
+
+      // 初期ロード
+      await reloadGraph();
+
+      // イベント登録
+      reloadBtn .addEventListener('click', reloadGraph,      { passive: true });
+      toggleBtn .addEventListener('click', toggleFullscreen, { passive: true });
+      window    .addEventListener('resize', resizeGraph,     { passive: true });
     }
-
-    /* 画面サイズに合わせて再配置 */
-    function resizeGraph() {
-      const w = container.clientWidth, h = container.clientHeight;
-      svg.attr('width', w).attr('height', h);
-      sim.force('center', d3.forceCenter(w / 2, h / 2)).alpha(0.3).restart();
-    }
-
-    /* リロード処理 */
-    async function reloadGraph() {
-      container.innerHTML = '';
-      await buildGraph();
-    }
-
-    /* フルスクリーン切替 */
-    function toggleFullscreen() {
-      isFull = !isFull;
-      iconMax.classList.toggle('hidden', isFull);
-      iconMin.classList.toggle('hidden', !isFull);
-
-      container.classList.toggle('!fixed',   isFull);
-      container.classList.toggle('!inset-0', isFull);
-      container.classList.toggle('!z-50',    isFull);
-      document.body.classList.toggle('overflow-hidden', isFull);
-
-      resizeGraph();
-    }
-
-    /* 初期化 */
-    await reloadGraph();
-
-    /* イベント */
-    reloadBtn.addEventListener('click', () => reloadGraph());
-    toggleBtn.addEventListener('click', () => toggleFullscreen());
-    window.addEventListener('resize', () => resizeGraph(), { passive: true });
   </script>
 
-  <!-- Tailwind / Utility Styles -->
+  <!-- Tailwind / Utility styles (unstyled utilities remain inlined for FCP) -->
   <style>
-    html, body { background:#000; }
-    section[id] { scroll-margin-top:5rem; }
-    .btn-primary   { @apply bg-white text-black rounded-md px-6 py-3 font-medium hover:opacity-90 transition; }
-    .btn-secondary { @apply border border-white text-white rounded-md px-6 py-3 font-medium hover:bg-white hover:text-black transition; }
-    .project-card  { @apply bg-white bg-opacity-5 border border-white border-opacity-10 rounded-xl p-6 hover:bg-opacity-10 backdrop-blur-sm transition; }
-    .skill-cloud   { @apply w-full h-full bg-gray-900 border border-gray-700 rounded-lg overflow-visible; }
-    .community-card{ @apply bg-gray-800 border border-gray-700 rounded-2xl p-6 flex items-start gap-4; }
-    .icon-btn      { @apply w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full transition; }
+    html,body     { background:#000; }
+    section[id]   { scroll-margin-top:5rem; }
+    .nav-link     { @apply text-gray-500 transition hover:text-white; }
+    .btn-primary  { @apply rounded-md bg-white px-6 py-3 font-medium text-black transition hover:opacity-90; }
+    .btn-secondary{ @apply rounded-md border border-white px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black; }
+    .project-card { @apply rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:bg-white/10; }
+    .skill-cloud  { @apply h-full w-full rounded-lg border border-gray-700 bg-gray-900 overflow-visible; }
+    .community-card{ @apply flex items-start gap-4 rounded-2xl bg-gray-800 p-6 border border-gray-700; }
+    .icon-btn     { @apply flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white/30; }
   </style>
 </BaseLayout>
