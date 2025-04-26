@@ -5,7 +5,8 @@ import {
   ArrowRight,
   Users,
   RefreshCcw,
-  Maximize2
+  Maximize2,
+  Minimize2
 } from 'lucide-react';
 
 /** ---------- Featured Projects ------------------------------- **/
@@ -42,7 +43,7 @@ export const projects: Project[] = [
 
   <main class="pt-24">
     <!-- Hero -->
-    <section class="hero scroll-reveal flex items-center justify-center bg-black text-white min-h-screen px-6">
+    <section class="flex items-center justify-center bg-black text-white min-h-screen px-6">
       <div class="text-center space-y-6 max-w-3xl">
         <h1 class="text-[8vw] leading-none font-extrabold tracking-tight">
           Intelligent Systems ×<br />AI-Driven Knowledge
@@ -52,14 +53,10 @@ export const projects: Project[] = [
           次世代の知能情報基盤を探究します。
         </p>
         <div class="mt-8 flex justify-center gap-4">
-          <a href="https://note.com/mekann"
-             target="_blank" rel="noopener"
-             class="btn-primary whitespace-nowrap">
+          <a href="https://note.com/mekann" target="_blank" rel="noopener" class="btn-primary whitespace-nowrap">
             note <ArrowRight className="inline w-4 h-4 ml-1" />
           </a>
-          <a href="https://github.com/Mekann2904"
-             target="_blank" rel="noopener"
-             class="btn-secondary whitespace-nowrap">
+          <a href="https://github.com/Mekann2904" target="_blank" rel="noopener" class="btn-secondary whitespace-nowrap">
             GitHub
           </a>
         </div>
@@ -67,7 +64,7 @@ export const projects: Project[] = [
     </section>
 
     <!-- About + Graph -->
-    <section id="about" class="scroll-reveal bg-black text-white py-20">
+    <section id="about" class="bg-black text-white py-20">
       <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-2">
         <!-- 左カラム -->
         <div class="space-y-6">
@@ -84,23 +81,22 @@ export const projects: Project[] = [
               <p class="mt-1 text-gray-400 leading-snug">
                 知的活動と自己変革を支援するPKM日本拠点。次世代型知識基盤を共に探求。
               </p>
-              <a href="https://x.com/i/communities/1906293158838935873"
-                 target="_blank" rel="noopener"
+              <a href="https://x.com/i/communities/1906293158838935873" target="_blank" rel="noopener"
                  class="mt-2 inline-block text-blue-400 hover:text-blue-300 transition">
                 コミュニティを訪問 →
               </a>
             </div>
           </div>
         </div>
+
         <!-- 右カラム：グラフ -->
-        <div class="relative aspect-w-16 aspect-h-9">
+        <div class="relative aspect-[16/9]">
           <div id="network" class="skill-cloud"></div>
           <div class="absolute top-4 right-4 flex space-x-2">
-            <button id="reset-btn" aria-label="Reset graph" class="icon-btn">
-              <RefreshCcw className="w-4 h-4" />
-            </button>
-            <button id="expand-btn" aria-label="Fullscreen graph" class="icon-btn">
-              <Maximize2 className="w-4 h-4" />
+            <button id="reload-btn"  aria-label="Reload"           class="icon-btn"><RefreshCcw className="w-4 h-4" /></button>
+            <button id="toggle-btn"  aria-label="Toggle fullscreen" class="icon-btn">
+              <Maximize2 id="icon-max" className="w-4 h-4" />
+              <Minimize2 id="icon-min" className="w-4 h-4 hidden" />
             </button>
           </div>
         </div>
@@ -108,7 +104,7 @@ export const projects: Project[] = [
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="scroll-reveal bg-black py-20">
+    <section id="projects" class="bg-black py-20">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center text-white mb-12">Featured Projects</h2>
         <div class="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
@@ -127,99 +123,147 @@ export const projects: Project[] = [
     </section>
 
     <!-- Contact CTA -->
-    <section id="contact" class="scroll-reveal bg-black text-white py-20">
-      <div class="container mx-auto px-6 text-center max-w-2xl">
-        <h2 class="text-3xl font-bold mb-4">Visualizing Knowledge, Amplifying Thought</h2>
-        <p class="text-gray-400 leading-relaxed mb-6">
+    <section id="contact" class="bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Visualizing Knowledge, Amplifying Thought</h2>
+        <p class="text-gray-400 leading-relaxed mb-6 text-sm sm:text-base md:text-lg">
           Visualizing knowledge in Obsidian.<br />
           知を可視化し、PKMの本質を探る。<br /><br />
           LLMs、多層レイヤー、思考発話駆動思考。<br />
           PythonとTypeScriptを軸に、知の進化を設計します。
         </p>
-        <a href="mailto:mekann@example.com" class="btn-primary">Start the Dialogue</a>
+        <a href="https://x.com/Mekann2904" target="_blank" rel="noopener noreferrer"
+           class="btn-primary inline-flex items-center justify-center text-base sm:text-lg py-2 sm:py-3 px-6 sm:px-8">
+          Follow on&nbsp;<span class="text-2xl sm:text-3xl md:text-4xl">𝕏</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- Graph Loader (D3) w/ Zoom & Pan -->
+  <!-- グラフスクリプト -->
   <script type="module" is:inline>
     import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('/graph.json').then(r => r.json()).then(({ nodes, links }) => {
-        const container = document.getElementById('network');
-        let W = container.clientWidth, H = container.clientHeight;
-        container.innerHTML = '';
-        const svg = d3.select(container)
-          .append('svg')
-          .attr('width', W).attr('height', H)
-          .call(d3.zoom().scaleExtent([0.4,5]).on('zoom', ({ transform }) => inner.attr('transform', transform)));
+    const container   = document.getElementById('network');
+    const reloadBtn   = document.getElementById('reload-btn');
+    const toggleBtn   = document.getElementById('toggle-btn');
+    const iconMax     = document.getElementById('icon-max');
+    const iconMin     = document.getElementById('icon-min');
 
-        const inner = svg.append('g');
+    let svg, sim;   // グローバル保持（リロードで再生成）
+    let isFull = false;
 
-        const link = inner.append('g').attr('stroke','#444').attr('stroke-opacity',0.4)
-          .selectAll('line').data(links).join('line').attr('stroke-width',1);
+    /* 描画関数 -------------------------------------------------- */
+    async function buildGraph() {
+      const { nodes, links } = await fetch('/graph.json').then(r => r.json());
+      const W = container.clientWidth, H = container.clientHeight;
 
-        const node = inner.append('g').selectAll('g').data(nodes).join('g');
-        node.append('circle')
-          .attr('r', d => d.ext?8:6)
-          .attr('fill', d => d.ext? '#ff9b00':'#fff')
-          .attr('stroke','#fff').attr('stroke-width', d=> d.ext?2:1)
-          .on('click', (_,d)=>{ if(!d.ext) location.href=d.id; });
+      svg = d3.select(container)
+              .append('svg')
+              .attr('width', W)
+              .attr('height', H)
+              .call(
+                d3.zoom()
+                  .scaleExtent([0.4, 5])
+                  .on('zoom', ({ transform }) => inner.attr('transform', transform))
+              );
 
-        node.append('text')
-          .text(d=>d.label)
-          .attr('x',10).attr('y',4)
-          .attr('fill','#fff').attr('font-size','10px')
-          .style('pointer-events','none')
-          .style('text-shadow','0 0 4px rgba(0,0,0,0.8)');
+      const inner = svg.append('g');
 
-        const sim = d3.forceSimulation(nodes)
-          .force('link', d3.forceLink(links).id(d=>d.id).distance(120))
-          .force('charge', d3.forceManyBody().strength(-400))
-          .force('collide', d3.forceCollide().radius(d=> (d.ext?8:6)+14))
-          .force('center', d3.forceCenter(W/2,H/2))
-          .alpha(1).alphaDecay(0.04)
-          .on('tick', () => {
-            link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y)
-                .attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
-            node.attr('transform',d=>`translate(${d.x},${d.y})`);
-          });
+      const link = inner.append('g')
+        .attr('stroke', '#444').attr('stroke-opacity', 0.4)
+        .selectAll('line')
+        .data(links)
+        .join('line')
+        .attr('stroke-width', 1);
 
-        node.call(d3.drag()
-          .on('start',(e,d)=>{ if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
-          .on('drag',(e,d)=>{ d.fx=e.x; d.fy=e.y; })
-          .on('end',(e,d)=>{ if(!e.active) sim.alphaTarget(0); d.fx=d.fy=null; })
-        );
+      const node = inner.append('g')
+        .selectAll('g')
+        .data(nodes)
+        .join('g');
 
-        document.getElementById('reset-btn').onclick = () => sim.alpha(1).restart();
-        document.getElementById('expand-btn').onclick = () => {
-          container.classList.toggle('!fixed');
-          container.classList.toggle('!inset-0');
-          container.classList.toggle('!z-50');
-          document.body.classList.toggle('overflow-hidden');
-          const w=container.clientWidth, h=container.clientHeight;
-          svg.attr('width',w).attr('height',h);
-          sim.force('center', d3.forceCenter(w/2,h/2)).alpha(0.3).restart();
-        };
-        window.addEventListener('resize', () => {
-          const w=container.clientWidth, h=container.clientHeight;
-          svg.attr('width',w).attr('height',h);
-          sim.force('center', d3.forceCenter(w/2,h/2)).alpha(0.3).restart();
+      node.append('circle')
+        .attr('r', d => (d.ext ? 8 : 6))
+        .attr('fill', d => (d.ext ? '#ff9b00' : '#fff'))
+        .attr('stroke', '#fff')
+        .attr('stroke-width', d => (d.ext ? 2 : 1))
+        .on('click', (_, d) => { if (!d.ext) location.href = d.id; });
+
+      node.append('text')
+        .text(d => d.label)
+        .attr('x', 10)
+        .attr('y', 4)
+        .attr('fill', '#fff')
+        .attr('font-size', '10px')
+        .style('pointer-events', 'none')
+        .style('text-shadow', '0 0 4px rgba(0,0,0,0.8)');
+
+      sim = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(120))
+        .force('charge', d3.forceManyBody().strength(-400))
+        .force('collide', d3.forceCollide().radius(d => (d.ext ? 8 : 6) + 14))
+        .force('center', d3.forceCenter(W / 2, H / 2))
+        .alpha(1).alphaDecay(0.04)
+        .on('tick', () => {
+          link
+            .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+          node.attr('transform', d => `translate(${d.x},${d.y})`);
         });
-      });
-    });
+
+      node.call(
+        d3.drag()
+          .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+          .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+          .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = d.fy = null; })
+      );
+    }
+
+    /* 画面サイズに合わせて再配置 */
+    function resizeGraph() {
+      const w = container.clientWidth, h = container.clientHeight;
+      svg.attr('width', w).attr('height', h);
+      sim.force('center', d3.forceCenter(w / 2, h / 2)).alpha(0.3).restart();
+    }
+
+    /* リロード処理 */
+    async function reloadGraph() {
+      container.innerHTML = '';
+      await buildGraph();
+    }
+
+    /* フルスクリーン切替 */
+    function toggleFullscreen() {
+      isFull = !isFull;
+      iconMax.classList.toggle('hidden', isFull);
+      iconMin.classList.toggle('hidden', !isFull);
+
+      container.classList.toggle('!fixed',   isFull);
+      container.classList.toggle('!inset-0', isFull);
+      container.classList.toggle('!z-50',    isFull);
+      document.body.classList.toggle('overflow-hidden', isFull);
+
+      resizeGraph();
+    }
+
+    /* 初期化 */
+    await reloadGraph();
+
+    /* イベント */
+    reloadBtn.addEventListener('click', () => reloadGraph());
+    toggleBtn.addEventListener('click', () => toggleFullscreen());
+    window.addEventListener('resize', () => resizeGraph(), { passive: true });
   </script>
 
   <!-- Tailwind / Utility Styles -->
   <style>
     html, body { background:#000; }
     section[id] { scroll-margin-top:5rem; }
-    .btn-primary { @apply bg-white text-black rounded-md px-6 py-3 font-medium hover:opacity-90 transition; }
+    .btn-primary   { @apply bg-white text-black rounded-md px-6 py-3 font-medium hover:opacity-90 transition; }
     .btn-secondary { @apply border border-white text-white rounded-md px-6 py-3 font-medium hover:bg-white hover:text-black transition; }
-    .project-card { @apply bg-white bg-opacity-5 border border-white border-opacity-10 rounded-xl p-6 hover:bg-opacity-10 backdrop-blur-sm transition; }
-    .skill-cloud { @apply w-full h-full bg-gray-900 border border-gray-700 rounded-lg overflow-visible; }
-    .community-card { @apply bg-gray-800 border border-gray-700 rounded-2xl p-6 flex items-start gap-4; }
-    .icon-btn { @apply w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full transition; }
+    .project-card  { @apply bg-white bg-opacity-5 border border-white border-opacity-10 rounded-xl p-6 hover:bg-opacity-10 backdrop-blur-sm transition; }
+    .skill-cloud   { @apply w-full h-full bg-gray-900 border border-gray-700 rounded-lg overflow-visible; }
+    .community-card{ @apply bg-gray-800 border border-gray-700 rounded-2xl p-6 flex items-start gap-4; }
+    .icon-btn      { @apply w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full transition; }
   </style>
 </BaseLayout>
