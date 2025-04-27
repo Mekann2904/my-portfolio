@@ -47,7 +47,7 @@ export const projects: Project[] = [
     </nav>
   </header>
 
-  <main class="pt-24">
+  <main class="pt-4">
     <!-- Hero (critical path HTML + CSS のみ。JS/外部フォントは後追い) -->
     <section
       class="flex min-h-screen items-center justify-center bg-black px-6 text-white"
@@ -152,13 +152,13 @@ export const projects: Project[] = [
 
     <!-- Projects -->
     <section id="projects" class="bg-black py-20">
-      <div class="container mx-auto max-w-6xl px-6">
+      <div class="container mx-auto max-w-8xl px-6">
         <h2 class="mb-12 text-center text-3xl font-bold text-white">
           Featured Projects
         </h2>
 
         <!-- Astro generates STATIC markup; no key prop needed -->
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <div class="project-card">
               <h3 class="mb-2 text-lg font-semibold text-white">
@@ -187,14 +187,14 @@ export const projects: Project[] = [
       id="contact"
       class="bg-black px-4 py-12 text-white sm:px-6 sm:py-16 md:px-8 md:py-20"
     >
-      <div class="mx-auto max-w-xl text-center">
-        <h2 class="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
+      <div class="mx-auto max-w-8xl text-center">
+        <h2 class="mb-4 text-6xl font-bold sm:text-3xl md:text-4xl">
           Visualizing Knowledge, Amplifying Thought
         </h2>
         <p class="mb-6 text-sm leading-relaxed text-gray-400 sm:text-base md:text-lg">
           Visualizing knowledge in Obsidian.<br />
           知を可視化し、PKM の本質を探る。<br /><br />
-          LLMs、多層レイヤー、思考発話駆動思考。<br />
+          LLMs、多層レイヤー、発話駆動思考。<br />
           Python と TypeScript を軸に、知の進化を設計します。
         </p>
         <a
