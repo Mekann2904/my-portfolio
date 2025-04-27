@@ -17,37 +17,56 @@ async function main() {
   const htmlFiles = await walk(dist);
   const nodes = [];
   const links = [];
-  const extId = '/external';
+
+  // Home へのリンクを許可したいページのみを列挙
+  const allowHomeLinks = new Set([
+    '/portfolio',
+    '/my-journey',
+    '/blog',
+    // 必要があればここに追加
+  ]);
 
   for (const file of htmlFiles) {
     const rel = path.relative(dist, file);
     const pagePath = rel === 'index.html' ? '/' : '/' + path.dirname(rel);
-    nodes.push({ id: pagePath, label: pagePath === '/' ? 'Home' : pagePath.slice(1), ext: false });
+    nodes.push({
+      id: pagePath,
+      label: pagePath === '/' ? 'Home' : pagePath.slice(1),
+      ext: false
+    });
 
     const html = await fs.readFile(file, 'utf8');
     for (const m of html.matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)) {
       const href = m[1];
-      // 1) 外部の http もしくは mailto はすべて external ノードへ
+
+      // 1) 外部リンク (http(s) または mailto) は個別ノードとして扱う
       if (/^https?:\/\//.test(href) || href.startsWith('mailto:')) {
-        links.push({ source: pagePath, target: extId });
+        nodes.push({ id: href, label: href, ext: true });
+        links.push({ source: pagePath, target: href });
         continue;
       }
-      // 2) 拡張子でアセットを除外
+
+      // 2) アセット類はスキップ
       if (href.match(/\.(css|js|png|jpe?g|svg|ico)$/)) continue;
-      // 3) ルートから始まる内部リンクのみ
+
+      // 3) ルートから始まる内部リンクのみを処理
       if (href.startsWith('/')) {
         const tgt = href.replace(/\/$/, '') || '/';
+
+        // Home('/') へのリンクは、許可リストにあるページのみ追加
+        if (tgt === '/' && !allowHomeLinks.has(pagePath)) {
+          continue;
+        }
+
         links.push({ source: pagePath, target: tgt });
       }
     }
   }
 
-  // external ノード
-  nodes.push({ id: extId, label: 'External', ext: true });
-
-  // 重複排除
+  // ノードの重複排除
   const uniq = Array.from(new Map(nodes.map(n => [n.id, n])).values());
 
+  // public/graph.json に書き出し
   await fs.mkdir(path.resolve('./public'), { recursive: true });
   await fs.writeFile(
     path.resolve('./public/graph.json'),
@@ -57,7 +76,7 @@ async function main() {
   console.log(`✅ public/graph.json generated: ${uniq.length} nodes, ${links.length} links`);
 }
 
-main().catch(e=>{
+main().catch(e => {
   console.error(e);
   process.exit(1);
 });

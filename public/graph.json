@@ -1,9 +1,39 @@
 {
   "nodes": [
     {
+      "id": "/blog",
+      "label": "blog",
+      "ext": false
+    },
+    {
+      "id": "/blog/my-first-post",
+      "label": "blog/my-first-post",
+      "ext": false
+    },
+    {
       "id": "/",
       "label": "Home",
       "ext": false
+    },
+    {
+      "id": "https://note.com/mekann",
+      "label": "https://note.com/mekann",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904",
+      "label": "https://github.com/Mekann2904",
+      "ext": true
+    },
+    {
+      "id": "https://x.com/i/communities/1906293158838935873",
+      "label": "https://x.com/i/communities/1906293158838935873",
+      "ext": true
+    },
+    {
+      "id": "https://x.com/Mekann2904",
+      "label": "https://x.com/Mekann2904",
+      "ext": true
     },
     {
       "id": "/my-journey",
@@ -16,51 +46,67 @@
       "ext": false
     },
     {
-      "id": "/external",
-      "label": "External",
+      "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
+      "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
     }
   ],
   "links": [
     {
-      "source": "/",
+      "source": "/blog",
       "target": "/"
     },
     {
-      "source": "/",
+      "source": "/blog",
       "target": "/"
     },
     {
-      "source": "/",
+      "source": "/blog",
       "target": "/"
     },
     {
-      "source": "/",
+      "source": "/blog",
       "target": "/"
     },
     {
-      "source": "/",
+      "source": "/blog",
       "target": "/"
     },
     {
-      "source": "/",
-      "target": "/"
+      "source": "/blog",
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/blog"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/tags/Hugo"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/tags/パフォーマンス"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/tags/静的サイト"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/tags/ウェブアーキテクチャ"
     },
     {
       "source": "/",
-      "target": "/"
+      "target": "https://note.com/mekann"
     },
     {
       "source": "/",
-      "target": "/"
-    },
-    {
-      "source": "/",
-      "target": "/external"
-    },
-    {
-      "source": "/",
-      "target": "/external"
+      "target": "https://github.com/Mekann2904"
     },
     {
       "source": "/",
@@ -68,11 +114,11 @@
     },
     {
       "source": "/",
-      "target": "/external"
+      "target": "https://x.com/i/communities/1906293158838935873"
     },
     {
       "source": "/",
-      "target": "/external"
+      "target": "https://x.com/Mekann2904"
     },
     {
       "source": "/my-journey",
@@ -116,7 +162,7 @@
     },
     {
       "source": "/portfolio",
-      "target": "/external"
+      "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
     }
   ]
 }

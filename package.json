@@ -9,12 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.2.5",
     "astro": "^5.7.5",
     "d3": "^7.9.0"
   },
   "devDependencies": {
     "@astrojs/react": "^4.2.5",
     "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
     "lucide-react": "^0.503.0",
     "postcss": "^8.5.3",

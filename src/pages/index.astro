@@ -20,12 +20,12 @@ export interface Project {
 export const projects: Project[] = [
   { title: 'PKM 2025 by Mekann',           description: '知的活動を加速するための次世代 PKM 理論と実践体系。Obsidianを基盤に、多層思考・知識可視化を探求。', progress: 60 },
   { title: 'PKM 日本コミュニティ',         description: '知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。',                                   progress: 50 },
-  { title: 'mdtex Plugin',                description: 'Markdown 文中に LaTeX を滑らかに統合。Obsidian 内で数式・構造化表現を強化する支援プラグイン。',            progress: 90 },
-  { title: 'Divergences Theme',           description: '美しい階調と知的静謐を両立させた Obsidian 専用カスタムダークテーマ。',                                     progress: 95 },
-  { title: 'Google Calendar Tasks Sync',  description: 'Obsidian タスクと Google カレンダーをリアルタイム同期し、日常知的生産性を最大化。',                          progress: 85 },
-  { title: 'Next Cornell Note Plugin',    description: 'フェーズ切替 UI で学習・思考フェーズを支援する、デジタル最適化版コーネルノートプラグイン。',                    progress: 95 },
-  { title: 'Footnote-Driven Cornell',     description: '脚注を Cue 化し、想起・要約・レビューを統合する次世代型コーネルノート支援プラグイン。',                         progress: 90 },
-  { title: 'OmniWiki Plugin',             description: 'ノート内の専門用語を即時抽出し、Grok 連携で知識探索を滑らかに進める知的支援プラグイン。',                        progress: 90 },
+  { title: 'mdtex Plugin',                 description: 'Markdown 文中に LaTeX を滑らかに統合。Obsidian 内で数式・構造化表現を強化する支援プラグイン。',            progress: 90 },
+  { title: 'Divergences Theme',            description: '美しい階調と知的静謐を両立させた Obsidian 専用カスタムダークテーマ。',                                     progress: 95 },
+  { title: 'Google Calendar Tasks Sync',   description: 'Obsidian タスクと Google カレンダーをリアルタイム同期し、日常知的生産性を最大化。',                          progress: 85 },
+  { title: 'Next Cornell Note Plugin',     description: 'フェーズ切替 UI で学習・思考フェーズを支援する、デジタル最適化版コーネルノートプラグイン。',                    progress: 95 },
+  { title: 'Footnote-Driven Cornell',      description: '脚注を Cue 化し、想起・要約・レビューを統合する次世代型コーネルノート支援プラグイン。',                         progress: 90 },
+  { title: 'OmniWiki Plugin',              description: 'ノート内の専門用語を即時抽出し、Grok 連携で知識探索を滑らかに進める知的支援プラグイン。',                        progress: 90 },
 ];
 ---
 
@@ -43,6 +43,7 @@ export const projects: Project[] = [
         <li><a href="/#about"    class="nav-link">About</a></li>
         <li><a href="/#projects" class="nav-link">Projects</a></li>
         <li><a href="/#contact"  class="nav-link">Contact</a></li>
+        <li><a href="/blog"  class="nav-link">Blog</a></li>
       </ul>
     </nav>
   </header>
@@ -93,7 +94,7 @@ export const projects: Project[] = [
             Visualizing knowledge in Obsidian — PKMの本質を探究。<br />
             LLMs・多層レイヤー思考・思考発話駆動｜Python・TypeScript
           </p>
-    
+
           <div class="flex flex-col gap-10">
             <!-- より詳細なポートフォリオ（強調・拡大） -->
             <div class="community-card bg-gray-800 rounded-2xl p-6 flex items-start space-x-4">
@@ -132,7 +133,7 @@ export const projects: Project[] = [
             </div>
           </div>
         </div>
-    
+
         <!-- 右カラム（グラフ） -->
         <div class="w-full lg:w-3/5 aspect-[16/9] relative">
           <div id="network" class="skill-cloud rounded-2xl"></div>
@@ -148,7 +149,6 @@ export const projects: Project[] = [
         </div>
       </div>
     </section>
-    
 
     <!-- Projects -->
     <section id="projects" class="bg-black py-20">
@@ -157,7 +157,6 @@ export const projects: Project[] = [
           Featured Projects
         </h2>
 
-        <!-- Astro generates STATIC markup; no key prop needed -->
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <div class="project-card">
@@ -233,24 +232,36 @@ export const projects: Project[] = [
           io.disconnect(); // 1 回限り
         }
       },
-      { rootMargin: '300px' } // 少し手前でプリロード
+      { rootMargin: '300px' }
     );
     io.observe(container);
 
     // ───── メイン処理 ─────
     async function initGraph() {
-      // d3 を動的 import (Tree-Shake 可。HTTP/2なら HTTP1 並列超えたらバンドル推奨)
       const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm');
 
       // 初回・リロード共通ルーチン
       async function buildGraph() {
-        const { nodes, links } = await fetch('/graph.json').then((r) => r.json());
+        // graph.json の読み込み
+        let nodes = [], links = [];
+        try {
+          const graph = await fetch('/graph.json').then((r) => r.json());
+          nodes = graph.nodes || [];
+          links = graph.links || [];
+        } catch (e) {
+          console.warn('graph.json の読み込みに失敗しました:', e);
+        }
+
+        // 存在しないノードを参照するリンクを除外
+        const nodeIds = new Set(nodes.map((d) => d.id));
+        links = links.filter((l) => nodeIds.has(l.source) && nodeIds.has(l.target));
+
         const W = container.clientWidth;
         const H = container.clientHeight;
 
         svg = d3.select(container)
           .append('svg')
-          .attr('width',  W)
+          .attr('width', W)
           .attr('height', H)
           .call(
             d3.zoom()
@@ -290,10 +301,10 @@ export const projects: Project[] = [
           .style('text-shadow', '0 0 4px rgba(0,0,0,0.8)');
 
         sim = d3.forceSimulation(nodes)
-          .force('link',    d3.forceLink(links).id((d) => d.id).distance(120))
-          .force('charge',  d3.forceManyBody().strength(-400))
+          .force('link', d3.forceLink(links).id((d) => d.id).distance(120))
+          .force('charge', d3.forceManyBody().strength(-400))
           .force('collide', d3.forceCollide().radius((d) => (d.ext ? 8 : 6) + 14))
-          .force('center',  d3.forceCenter(W / 2, H / 2))
+          .force('center', d3.forceCenter(W / 2, H / 2))
           .alpha(1)
           .alphaDecay(0.04)
           .on('tick', () => {
@@ -309,8 +320,8 @@ export const projects: Project[] = [
               if (!e.active) sim.alphaTarget(0.3).restart();
               d.fx = d.x; d.fy = d.y;
             })
-            .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
-            .on('end',   (e, d) => {
+            .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+            .on('end', (e, d) => {
               if (!e.active) sim.alphaTarget(0);
               d.fx = d.fy = null;
             })
@@ -325,7 +336,6 @@ export const projects: Project[] = [
       }
 
       async function reloadGraph() {
-        // 旧 SVG・シミュレーションをクリーンアップ
         sim?.stop();
         container.replaceChildren();
         await buildGraph();
@@ -333,28 +343,24 @@ export const projects: Project[] = [
 
       function toggleFullscreen() {
         isFull = !isFull;
-        iconMax.classList.toggle('hidden',  isFull);
+        iconMax.classList.toggle('hidden', isFull);
         iconMin.classList.toggle('hidden', !isFull);
-
-        container.classList.toggle('!fixed',   isFull);
+        container.classList.toggle('!fixed', isFull);
         container.classList.toggle('!inset-0', isFull);
-        container.classList.toggle('!z-50',    isFull);
+        container.classList.toggle('!z-50', isFull);
         document.body.classList.toggle('overflow-hidden', isFull);
-
         resizeGraph();
       }
 
-      // 初期ロード
       await reloadGraph();
 
-      // イベント登録
-      reloadBtn .addEventListener('click', reloadGraph,      { passive: true });
-      toggleBtn .addEventListener('click', toggleFullscreen, { passive: true });
-      window    .addEventListener('resize', resizeGraph,     { passive: true });
+      reloadBtn.addEventListener('click', reloadGraph,      { passive: true });
+      toggleBtn.addEventListener('click', toggleFullscreen, { passive: true });
+      window.addEventListener('resize', resizeGraph,         { passive: true });
     }
   </script>
 
-  <!-- Tailwind / Utility styles (unstyled utilities remain inlined for FCP) -->
+  <!-- Tailwind / Utility styles -->
   <style>
     html,body     { background:#000; }
     section[id]   { scroll-margin-top:5rem; }

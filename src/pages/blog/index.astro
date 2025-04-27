@@ -1,0 +1,70 @@
+---
+import '../../styles/global.pcss';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// frontmatter の型
+type Frontmatter = {
+  title:       string;
+  date:        string;
+  description?: string;
+  [key: string]: any;
+};
+
+// import.meta.glob に型引数を渡す
+const modules = import.meta.glob<
+  { frontmatter: Frontmatter; default: any }
+>('./*.{md,mdx}', { eager: true });
+
+// slug と frontmatter の必要な部分だけを抽出して型付きの配列を作成
+const posts: Array<{
+  slug: string;
+  title: string;
+  date: string;
+  description?: string;
+}> = Object.entries(modules).map(([filePath, mod]) => {
+  // "./hoge.md" → "hoge"
+  const slug = filePath.replace(/^\.\/(.+)\.(md|mdx)$/, '$1');
+  const { title, date, description } = mod.frontmatter;
+  return { slug, title, date, description };
+})
+// date 降順でソート
+.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<BaseLayout title="ブログ一覧" description="すべてのブログ記事">
+  <main class="pt-24 container mx-auto px-6 py-8">
+    <h1 class="text-3xl font-bold text-white mb-8">ブログ一覧</h1>
+    <ul class="space-y-6">
+      {posts.map((post) => {
+        const { slug, title, date, description } = post;
+        const d = new Date(date);
+        const displayDate = !isNaN(d.getTime())
+          ? d.toLocaleDateString('ja-JP', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            })
+          : '';
+
+        return (
+          <li class="border-b border-gray-700 pb-4">
+            <a
+              href={`/blog/${slug}/`}
+              class="text-2xl font-semibold text-blue-300 hover:underline"
+            >
+              {title}
+            </a>
+            {displayDate && (
+              <div class="text-sm text-gray-400 mt-1">
+                <time datetime={date}>{displayDate}</time>
+              </div>
+            )}
+            {description && (
+              <p class="text-gray-300 mt-2">{description}</p>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </main>
+</BaseLayout>

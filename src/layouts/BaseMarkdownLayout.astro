@@ -1,0 +1,121 @@
+---
+// src/layouts/BaseMarkdownLayout.astro
+
+import '../styles/global.pcss';
+/// <reference types="astro/client" />
+
+// どちらのケースにも対応するため、まず rawProps を取る
+const rawProps = (Astro.props as any).frontmatter ?? Astro.props;
+
+// flat な props または frontmatter 内の props から必要なものを抜き出す
+const {
+  title,
+  description,
+  author,
+  tags,
+  date,      // Markdown frontmatter で指定した date
+  pubDate,   // 万が一 pubDate を使いたい場合用
+} = rawProps as {
+  title: string;
+  description?: string;
+  author?: string;
+  tags?: string[];
+  date?: string | Date;
+  pubDate?: string;
+};
+
+// date と pubDate のどちらかを優先的に使う
+let sourceDate: string | Date | undefined = date ?? pubDate;
+
+// Date オブジェクトか文字列かを判定してパース
+let parsedDate: Date | null = null;
+let isoDateAttr = '';
+
+if (typeof sourceDate === 'string') {
+  parsedDate  = new Date(sourceDate);
+  isoDateAttr = sourceDate;
+} else if (sourceDate instanceof Date) {
+  parsedDate  = sourceDate;
+  isoDateAttr = sourceDate.toISOString();
+}
+
+// 有効な日付かどうか
+const validDate = parsedDate !== null && !isNaN(parsedDate.getTime());
+
+// 表示用フォーマット
+const displayDate = validDate
+  ? parsedDate!.toLocaleDateString('ja-JP', {
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    })
+  : '';
+---
+
+
+<html lang="ja" class="bg-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
+        <a href="/" class="text-white font-semibold text-lg">Mekann</a>
+        <ul class="flex gap-8 text-sm">
+          <li><a href="/" class="text-gray-500 hover:text-white transition">Home</a></li>
+          <li><a href="/#about" class="text-gray-500 hover:text-white transition">About</a></li>
+          <li><a href="/#projects" class="text-gray-500 hover:text-white transition">Projects</a></li>
+          <li><a href="/#contact" class="text-gray-500 hover:text-white transition">Contact</a></li>
+          <li><a href="/blog" class="text-gray-500 hover:text-white transition">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 container mx-auto px-6 py-8">
+      <article class="prose prose-invert mx-auto max-w-3xl py-8">
+        <!-- 戻るリンク -->
+        <a href="/blog/" class="inline-flex items-center text-gray-400 hover:text-white mb-4">
+          ← Back to Blog
+        </a>
+
+        <!-- 日付と著者 -->
+        {validDate && (
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-400 mb-4">
+            <time datetime={isoDateAttr}>{displayDate}</time>
+            {author && <span class="mt-1 sm:mt-0">By {author}</span>}
+          </div>
+        )}
+
+        <!-- タイトル -->
+        <h1 class="mt-0 mb-6 text-4xl font-bold text-white">{title}</h1>
+
+        <!-- 説明文 -->
+        {description && <p class="text-gray-300 mb-8">{description}</p>}
+
+        <!-- 本文 -->
+        <slot />
+
+        <!-- タグ -->
+        {tags && tags.length > 0 && (
+          <div class="mt-12 border-t border-gray-700 pt-6 flex flex-wrap gap-2">
+            {tags.map((tag: string) => (
+              <a href={`/tags/${tag}`} class="text-sm text-blue-300 hover:underline">
+                #{tag}
+              </a>
+            ))}
+          </div>
+        )}
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300 border-t border-white/10 py-6">
+      <div class="container mx-auto text-center text-sm">
+        © {new Date().getFullYear()} Mekann. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
