@@ -6,6 +6,11 @@
       "ext": false
     },
     {
+      "id": "/my-journey",
+      "label": "my-journey",
+      "ext": false
+    },
+    {
       "id": "/portfolio",
       "label": "portfolio",
       "ext": false
@@ -68,6 +73,26 @@
     {
       "source": "/",
       "target": "/external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/"
     },
     {
       "source": "/portfolio",
