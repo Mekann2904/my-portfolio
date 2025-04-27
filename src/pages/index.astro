@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import {
   ArrowRight,
   Users,
+  FileText,
   RefreshCcw,
   Maximize2,
   Minimize2,
@@ -80,50 +81,74 @@ export const projects: Project[] = [
       </div>
     </section>
 
-    <!-- About + Graph -->
     <section id="about" class="bg-black py-20 text-white">
-      <div class="container mx-auto grid gap-12 px-6 lg:grid-cols-2">
-        <!-- Left column -->
-        <div class="space-y-6">
-          <h2 class="text-3xl font-bold">Profile &amp; Vision</h2>
-          <p class="max-w-xl leading-snug text-gray-400">
-            Visualizing knowledge in Obsidian — 知を可視化し、PKM の本質を探る。<br />
-            LLMs・多層レイヤー・思考発話駆動思考｜Python・TypeScript
+      <div class="container mx-auto flex flex-col lg:flex-row items-stretch px-6 gap-10">
+        <!-- 左カラム -->
+        <div class="w-full lg:w-2/5 space-y-6">
+          <h2 class="text-4xl font-bold">Profile &amp; Vision</h2>
+          <p class="max-w-xl leading-snug text-gray-400 text-lg">
+            情報系学部3年生（知能情報専攻）<br />
+            PKM（Personal Knowledge Management）とObsidianを軸に、大規模言語モデル（LLM）を組み合わせた知識可視化ツールの企画・開発と研究を推進。<br />
+            沖縄を拠点に、Python・TypeScriptを駆使して多層思考フレームワークと“思考発話”駆動型UXの実装に取り組む。<br />
+            Visualizing knowledge in Obsidian — PKMの本質を探究。<br />
+            LLMs・多層レイヤー思考・思考発話駆動｜Python・TypeScript
           </p>
+    
+          <div class="flex flex-col gap-10">
+            <!-- より詳細なポートフォリオ（強調・拡大） -->
+            <div class="community-card bg-gray-800 rounded-2xl p-6 flex items-start space-x-4">
+              <FileText className="h-12 w-12 text-blue-400 flex-shrink-0" />
+              <div>
+                <h3 class="text-2xl font-semibold">より詳細なポートフォリオ</h3>
+                <p class="mt-1 leading-snug text-gray-400">
+                  プロジェクト一覧、技術スタック、開発実績などをまとめた詳細ページです。
+                </p>
+                <a
+                  href="/portfolio"
+                  class="mt-3 inline-block text-blue-400 transition hover:text-blue-300"
+                >
+                  詳細を見る →
+                </a>
+              </div>
+            </div>
 
-          <div class="community-card">
-            <Users className="flex-shrink-0 h-10 w-10 text-blue-400" />
-            <div>
-              <h3 class="text-xl font-semibold">PKM 日本コミュニティ</h3>
-              <p class="mt-1 leading-snug text-gray-400">
-                知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。
-              </p>
-              <a
-                href="https://x.com/i/communities/1906293158838935873"
-                target="_blank"
-                rel="noopener"
-                class="mt-2 inline-block text-blue-400 transition hover:text-blue-300"
-              >
-                コミュニティを訪問 →
-              </a>
+            <!-- PKM日本コミュニティ -->
+            <div class="community-card bg-gray-800 rounded-2xl p-6 flex items-start space-x-4">
+              <Users className="h-12 w-12 text-blue-400 flex-shrink-0" />
+              <div>
+                <h3 class="text-2xl font-semibold">PKM 日本コミュニティ</h3>
+                <p class="mt-1 leading-snug text-gray-400">
+                  知的活動と自己変革を支援する PKM 日本拠点。次世代型知識基盤を共に探求。
+                </p>
+                <a
+                  href="https://x.com/i/communities/1906293158838935873"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-2 inline-block text-blue-400 transition hover:text-blue-300"
+                >
+                  コミュニティを訪問 →
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Right column / Graph -->
-        <div class="relative aspect-[16/9]">
-          <div id="network" class="skill-cloud"></div>
-
+    
+        <!-- 右カラム（グラフ） -->
+        <div class="w-full lg:w-3/5 aspect-[16/9] relative">
+          <div id="network" class="skill-cloud rounded-2xl"></div>
           <div class="absolute top-4 right-4 flex space-x-2">
-            <button id="reload-btn"  aria-label="Reload"           class="icon-btn"><RefreshCcw className="h-4 w-4" /></button>
-            <button id="toggle-btn"  aria-label="Toggle fullscreen" class="icon-btn">
-              <Maximize2 id="icon-max" className="h-4 w-4" />
-              <Minimize2 id="icon-min" className="hidden h-4 w-4" />
+            <button id="reload-btn" aria-label="Reload" class="icon-btn">
+              <RefreshCcw className="h-4 w-4 text-white" />
+            </button>
+            <button id="toggle-btn" aria-label="Toggle fullscreen" class="icon-btn">
+              <Maximize2 id="icon-max" className="h-4 w-4 text-white" />
+              <Minimize2 id="icon-min" className="hidden h-4 w-4 text-white" />
             </button>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Projects -->
     <section id="projects" class="bg-black py-20">

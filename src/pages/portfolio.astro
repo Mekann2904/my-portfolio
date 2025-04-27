@@ -1,0 +1,154 @@
+---
+/* --------------------------------------------------------------------------
+   src/pages/portfolio.astro
+   - カテゴリ分けした技術スタック & 主要プロジェクト (縦配置・カード間の隙間を拡大)
+---------------------------------------------------------------------------*/
+import BaseLayout   from '../layouts/BaseLayout.astro';
+import {
+  Github,
+  ExternalLink,
+  Code2,
+  Cpu,
+  Database,
+  PenTool,
+  Server,
+  Layers3,
+  Package2,
+  Cloud,
+  Globe,
+} from 'lucide-react';
+
+/* ───────── Tech Stack ───────── */
+const stackCategories = [
+  /* 言語・マークアップ */
+  {
+    category: 'Languages / Markup',
+    items: [
+      { name: 'TypeScript', icon: Code2 },
+      { name: 'Python',     icon: Code2 },
+      { name: 'HTML',       icon: Code2 },
+      { name: 'CSS',        icon: Code2 },
+    ],
+  },
+
+  /* フレームワーク・ライブラリ・SSG */
+  {
+    category: 'Frameworks / Libraries',
+    items: [
+      { name: 'Astro',        icon: Package2 },   // MPA/SSG ハイブリッド
+      { name: 'Hugo',         icon: Package2 },   // 静的サイトジェネレーター
+      { name: 'Flask',        icon: Package2 },   // Python 製マイクロフレームワーク
+      { name: 'Tailwind CSS', icon: PenTool  },   // UI ユーティリティ
+      { name: 'D3.js',        icon: Server   },   // 可視化ライブラリ
+    ],
+  },
+
+  /* プラットフォーム・サービス */
+  {
+    category: 'Platforms / Services',
+    items: [
+      { name: 'Cloudflare', icon: Cloud    }, // Edge / CDN / Pages
+      { name: 'GitHub',     icon: Github   }, // VCS & CI/CD
+    ],
+  },
+
+  /* アプリケーション・ランタイム・ブラウザ */
+  {
+    category: 'Applications / Runtime',
+    items: [
+      { name: 'Electron',     icon: Cpu    }, // デスクトップランタイム
+      { name: 'Obsidian',     icon: Layers3}, // PKM アプリ
+      { name: 'Vivaldi',      icon: Globe  }, // Chromium 系ブラウザ
+    ],
+  },
+];
+
+
+
+/* ───────── Featured Projects ───────── */
+const projects = [
+  {
+    title: 'PKM 2025 by Mekann',
+    desc : '【Obsidian実践ガイド】PKM 2025 by Mekann - 知識を育て、思考を加速する',
+    link : 'https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b',
+    tech : ['PKM', 'LLM', '記事'],
+  },
+];
+---
+
+<BaseLayout title="Portfolio" description="技術スタックと主要プロジェクトの詳細">
+  <section class="bg-black py-20 text-white">
+    {/* 縦配置が見やすいようにコンテナ幅を調整 */}
+    <div class="container mx-auto max-w-3xl px-4 space-y-12">
+
+      <!-- Hero -->
+      <div class="space-y-6 text-center">
+        <h1 class="text-4xl font-bold">Portfolio</h1>
+        <p class="text-gray-400 text-lg">
+          技術スタックと主要プロジェクトを通して、<br />
+          PKM×LLM の実践と知識可視化への挑戦を紹介します。
+        </p>
+      </div>
+
+      <!-- Tech Stack (categorized) -->
+      <div>
+        <h2 class="mb-6 text-2xl font-semibold">Tech Stack</h2>
+
+        {/* カード間の縦方向の隙間を space-y-12 に変更 */}
+        <div class="space-y-4">
+          {stackCategories.map(({ category, items }) => (
+            <div class="rounded-2xl border border-gray-700 bg-gray-800 p-6">
+              <h3 class="mb-4 text-lg font-semibold">{category}</h3>
+              <ul class="space-y-3">
+                {items.map(({ name, icon: Icon }) => (
+                  <li class="flex items-center gap-3">
+                    <Icon className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                    <span class="text-sm">{name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Featured Projects -->
+      <div>
+        <h2 class="mb-6 text-2xl font-semibold">Featured Projects</h2>
+        {/* カード間の縦方向の隙間を space-y-12 に変更 */}
+        <div class="space-y-4">
+          {projects.map((p) => (
+            <article class="flex flex-col rounded-2xl border border-gray-700 bg-gray-800 p-6 transition hover:bg-gray-700">
+              <header class="mb-3 flex items-center gap-2">
+                <h3 class="text-xl font-semibold">{p.title}</h3>
+              </header>
+
+              <p class="flex-1 text-gray-400 leading-snug">{p.desc}</p>
+
+              <footer class="mt-4 flex items-center justify-between">
+                <ul class="flex flex-wrap gap-2 text-xs text-gray-500">
+                  {p.tech.map((t) => (
+                    <li class="rounded bg-white/10 px-2 py-0.5">{t}</li>
+                  ))}
+                </ul>
+
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.title}の詳細を見る`}
+                  class="flex items-center gap-1 text-blue-400 transition hover:text-blue-300"
+                >
+                  {p.link.includes('github')
+                    ? <Github className="h-4 w-4" />
+                    : <ExternalLink className="h-4 w-4" />}
+                  View
+                </a>
+              </footer>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
