@@ -6,6 +6,11 @@
       "ext": false
     },
     {
+      "id": "/portfolio",
+      "label": "portfolio",
+      "ext": false
+    },
+    {
       "id": "/external",
       "label": "External",
       "ext": true
@@ -54,10 +59,38 @@
     },
     {
       "source": "/",
+      "target": "/portfolio"
+    },
+    {
+      "source": "/",
       "target": "/external"
     },
     {
       "source": "/",
+      "target": "/external"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
       "target": "/external"
     }
   ]
