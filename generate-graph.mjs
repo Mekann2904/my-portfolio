@@ -4,11 +4,13 @@ import path from 'node:path';
 
 async function walk(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
-  const files = await Promise.all(entries.map(entry => {
-    const res = path.resolve(dir, entry.name);
-    if (entry.isDirectory()) return walk(res);
-    return entry.name === 'index.html' ? res : [];
-  }));
+  const files = await Promise.all(
+    entries.map(entry => {
+      const res = path.resolve(dir, entry.name);
+      if (entry.isDirectory()) return walk(res);
+      return entry.name === 'index.html' ? res : [];
+    })
+  );
   return Array.prototype.concat(...files);
 }
 
@@ -18,43 +20,57 @@ async function main() {
   const nodes = [];
   const links = [];
 
-  // Home へのリンクを許可したいページのみを列挙
+  /* ---------------------------- 許可リスト ---------------------------- */
+  // Home ('/') へのリンクを許可するページ
   const allowHomeLinks = new Set([
     '/portfolio',
-    '/my-journey',
     '/blog',
-    // 必要があればここに追加
+    '/my-journey',
   ]);
+
+  // Blog ('/blog') へのリンクを許可するページ ★
+  const allowBlogLinks = new Set([
+    // 例: '/portfolio', '/about' など
+  ]);
+  /* ------------------------------------------------------------------- */
 
   for (const file of htmlFiles) {
     const rel = path.relative(dist, file);
     const pagePath = rel === 'index.html' ? '/' : '/' + path.dirname(rel);
+
+    // ノードを追加
     nodes.push({
       id: pagePath,
       label: pagePath === '/' ? 'Home' : pagePath.slice(1),
-      ext: false
+      ext: false,
     });
 
+    // 参照リンクを解析
     const html = await fs.readFile(file, 'utf8');
     for (const m of html.matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)) {
       const href = m[1];
 
-      // 1) 外部リンク (http(s) または mailto) は個別ノードとして扱う
+      /* ---------- 1) 外部リンクは個別ノードに ---------- */
       if (/^https?:\/\//.test(href) || href.startsWith('mailto:')) {
         nodes.push({ id: href, label: href, ext: true });
         links.push({ source: pagePath, target: href });
         continue;
       }
 
-      // 2) アセット類はスキップ
+      /* ---------- 2) アセット類はスキップ ---------- */
       if (href.match(/\.(css|js|png|jpe?g|svg|ico)$/)) continue;
 
-      // 3) ルートから始まる内部リンクのみを処理
+      /* ---------- 3) 内部リンクのみを処理 ---------- */
       if (href.startsWith('/')) {
-        const tgt = href.replace(/\/$/, '') || '/';
+        const tgt = href.replace(/\/$/, '') || '/'; // 末尾スラッシュ除去
 
-        // Home('/') へのリンクは、許可リストにあるページのみ追加
+        // Home ('/') へのリンクを制御
         if (tgt === '/' && !allowHomeLinks.has(pagePath)) {
+          continue;
+        }
+
+        // Blog ('/blog') へのリンクを制御 ★
+        if (tgt === '/blog' && !allowBlogLinks.has(pagePath)) {
           continue;
         }
 
@@ -63,20 +79,23 @@ async function main() {
     }
   }
 
-  // ノードの重複排除
-  const uniq = Array.from(new Map(nodes.map(n => [n.id, n])).values());
+  /* ---------- ノードの重複排除 ---------- */
+  const uniqNodes = Array.from(new Map(nodes.map(n => [n.id, n])).values());
 
-  // public/graph.json に書き出し
+  /* ---------- JSON 書き出し ---------- */
   await fs.mkdir(path.resolve('./public'), { recursive: true });
   await fs.writeFile(
     path.resolve('./public/graph.json'),
-    JSON.stringify({ nodes: uniq, links }, null, 2),
+    JSON.stringify({ nodes: uniqNodes, links }, null, 2),
     'utf8'
   );
-  console.log(`✅ public/graph.json generated: ${uniq.length} nodes, ${links.length} links`);
+
+  console.log(
+    `✅ public/graph.json generated: ${uniqNodes.length} nodes, ${links.length} links`
+  );
 }
 
-main().catch(e => {
-  console.error(e);
+main().catch(err => {
+  console.error(err);
   process.exit(1);
 });

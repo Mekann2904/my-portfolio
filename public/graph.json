@@ -16,6 +16,11 @@
       "ext": false
     },
     {
+      "id": "/blog/アニメーションを導入してみた話",
+      "label": "blog/アニメーションを導入してみた話",
+      "ext": false
+    },
+    {
       "id": "/",
       "label": "Home",
       "ext": false
@@ -58,10 +63,6 @@
   ],
   "links": [
     {
-      "source": "/anime",
-      "target": "/blog"
-    },
-    {
       "source": "/blog",
       "target": "/"
     },
@@ -71,31 +72,11 @@
     },
     {
       "source": "/blog",
-      "target": "/"
-    },
-    {
-      "source": "/blog",
-      "target": "/"
-    },
-    {
-      "source": "/blog",
-      "target": "/"
-    },
-    {
-      "source": "/blog",
-      "target": "/blog"
+      "target": "/blog/アニメーションを導入してみた話"
     },
     {
       "source": "/blog",
       "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/blog"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/blog"
     },
     {
       "source": "/blog/my-first-post",
@@ -118,12 +99,24 @@
       "target": "/tags/ウェブアーキテクチャ"
     },
     {
-      "source": "/",
-      "target": "/blog"
+      "source": "/blog/アニメーションを導入してみた話",
+      "target": "/anime"
     },
     {
-      "source": "/",
-      "target": "/blog"
+      "source": "/blog/アニメーションを導入してみた話",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/アニメーションを導入してみた話",
+      "target": "/tags/アニメーション"
+    },
+    {
+      "source": "/blog/アニメーションを導入してみた話",
+      "target": "/tags/CSS"
+    },
+    {
+      "source": "/blog/アニメーションを導入してみた話",
+      "target": "/tags/JavaScript"
     },
     {
       "source": "/",
@@ -154,44 +147,12 @@
       "target": "/"
     },
     {
-      "source": "/my-journey",
-      "target": "/"
-    },
-    {
-      "source": "/my-journey",
-      "target": "/"
-    },
-    {
-      "source": "/my-journey",
-      "target": "/"
-    },
-    {
-      "source": "/my-journey",
-      "target": "/blog"
-    },
-    {
       "source": "/portfolio",
       "target": "/"
     },
     {
       "source": "/portfolio",
       "target": "/"
-    },
-    {
-      "source": "/portfolio",
-      "target": "/"
-    },
-    {
-      "source": "/portfolio",
-      "target": "/"
-    },
-    {
-      "source": "/portfolio",
-      "target": "/"
-    },
-    {
-      "source": "/portfolio",
-      "target": "/blog"
     },
     {
       "source": "/portfolio",
