@@ -11,6 +11,11 @@
       "ext": false
     },
     {
+      "id": "/blog/looking-glass self",
+      "label": "blog/looking-glass self",
+      "ext": false
+    },
+    {
       "id": "/blog/my-first-post",
       "label": "blog/my-first-post",
       "ext": false
@@ -67,7 +72,35 @@
     },
     {
       "source": "/blog",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/blog",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/社会学"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/自己論"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/クーリー"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/現代思想"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/実存主義"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "/tags/情報社会"
     },
     {
       "source": "/blog/my-first-post",
