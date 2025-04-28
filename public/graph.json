@@ -16,11 +16,6 @@
       "ext": false
     },
     {
-      "id": "/blog/try-animation",
-      "label": "blog/try-animation",
-      "ext": false
-    },
-    {
       "id": "/",
       "label": "Home",
       "ext": false
@@ -59,11 +54,6 @@
       "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
-    },
-    {
-      "id": "/test",
-      "label": "test",
-      "ext": false
     }
   ],
   "links": [
@@ -74,10 +64,6 @@
     {
       "source": "/blog",
       "target": "/"
-    },
-    {
-      "source": "/blog",
-      "target": "/blog/try-animation"
     },
     {
       "source": "/blog",
@@ -102,26 +88,6 @@
     {
       "source": "/blog/my-first-post",
       "target": "/tags/ウェブアーキテクチャ"
-    },
-    {
-      "source": "/blog/try-animation",
-      "target": "/anime"
-    },
-    {
-      "source": "/blog/try-animation",
-      "target": "/tags/Astro"
-    },
-    {
-      "source": "/blog/try-animation",
-      "target": "/tags/アニメーション"
-    },
-    {
-      "source": "/blog/try-animation",
-      "target": "/tags/CSS"
-    },
-    {
-      "source": "/blog/try-animation",
-      "target": "/tags/JavaScript"
     },
     {
       "source": "/",
