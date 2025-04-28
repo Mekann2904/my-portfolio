@@ -1,6 +1,11 @@
 {
   "nodes": [
     {
+      "id": "/anime",
+      "label": "anime",
+      "ext": false
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
@@ -53,8 +58,8 @@
   ],
   "links": [
     {
-      "source": "/blog",
-      "target": "/"
+      "source": "/anime",
+      "target": "/blog"
     },
     {
       "source": "/blog",
@@ -71,10 +76,22 @@
     {
       "source": "/blog",
       "target": "/"
+    },
+    {
+      "source": "/blog",
+      "target": "/"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog"
     },
     {
       "source": "/blog",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "/blog"
     },
     {
       "source": "/blog/my-first-post",
@@ -99,6 +116,14 @@
     {
       "source": "/blog/my-first-post",
       "target": "/tags/ウェブアーキテクチャ"
+    },
+    {
+      "source": "/",
+      "target": "/blog"
+    },
+    {
+      "source": "/",
+      "target": "/blog"
     },
     {
       "source": "/",
@@ -141,8 +166,8 @@
       "target": "/"
     },
     {
-      "source": "/portfolio",
-      "target": "/"
+      "source": "/my-journey",
+      "target": "/blog"
     },
     {
       "source": "/portfolio",
@@ -159,6 +184,14 @@
     {
       "source": "/portfolio",
       "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/blog"
     },
     {
       "source": "/portfolio",
