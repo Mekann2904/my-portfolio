@@ -14,5 +14,10 @@ export default defineConfig({
       rehypePlugins: [],
     }),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark',
+    },
+  },
   // Vite プラグイン設定は不要です
 });
