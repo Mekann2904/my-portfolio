@@ -1,0 +1,74 @@
+---
+import '../../styles/global.pcss';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface BlogPost {
+  frontmatter: {
+    tags?: string[];
+    title: string;
+    date: string;
+  };
+  url: string;
+}
+
+export interface Props {
+  allPosts: BlogPost[];
+}
+
+// すべての .md/.mdx 記事をビルド時に読み込む
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    await import.meta.glob('../blog/*.{md,mdx}', { eager: true })
+  ) as BlogPost[];
+  
+  const tagSet = new Set<string>();
+  allPosts.forEach((post: BlogPost) => {
+    post.frontmatter.tags?.forEach((tag: string) => tagSet.add(tag));
+  });
+  
+  return Array.from(tagSet).map((tag) => ({
+    params: { tag },
+    props: { allPosts }
+  }));
+}
+
+const { allPosts } = Astro.props as Props;
+const currentTag = Astro.params.tag as string;
+const posts = allPosts
+  .filter((post: BlogPost) => post.frontmatter.tags?.includes(currentTag))
+  .sort(
+    (a: BlogPost, b: BlogPost) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+  );
+---
+
+<BaseLayout>
+  <main class="pt-24 container mx-auto px-6 py-8">
+    <h1 class="text-3xl font-bold text-white mb-6">タグ: {currentTag}</h1>
+
+    {posts.length > 0 ? (
+      <ul class="space-y-4">
+        {posts.map((post) => (
+          <li>
+            <a href={post.url} class="text-xl text-blue-300 hover:underline">
+              {post.frontmatter.title}
+            </a>
+            <time
+              datetime={post.frontmatter.date}
+              class="block text-sm text-gray-400"
+            >
+              {new Date(post.frontmatter.date).toLocaleDateString('ja-JP')}
+            </time>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-gray-400">「{currentTag}」に該当する記事はありません。</p>
+    )}
+
+    <p class="mt-6">
+      <a href="/blog/" class="text-gray-400 hover:text-white">← Back to Blog</a>
+    </p>
+  </main>
+</BaseLayout>

@@ -30,6 +30,7 @@ async function main() {
 
   // Blog ('/blog') へのリンクを許可するページ ★
   const allowBlogLinks = new Set([
+    '/tags',
     // 例: '/portfolio', '/about' など
   ]);
   /* ------------------------------------------------------------------- */

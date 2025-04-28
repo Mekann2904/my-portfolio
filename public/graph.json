@@ -59,6 +59,66 @@
       "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
+    },
+    {
+      "id": "/tags/Astro",
+      "label": "tags/Astro",
+      "ext": false
+    },
+    {
+      "id": "/tags/Hugo",
+      "label": "tags/Hugo",
+      "ext": false
+    },
+    {
+      "id": "/tags",
+      "label": "tags",
+      "ext": false
+    },
+    {
+      "id": "/tags/ウェブアーキテクチャ",
+      "label": "tags/ウェブアーキテクチャ",
+      "ext": false
+    },
+    {
+      "id": "/tags/クーリー",
+      "label": "tags/クーリー",
+      "ext": false
+    },
+    {
+      "id": "/tags/パフォーマンス",
+      "label": "tags/パフォーマンス",
+      "ext": false
+    },
+    {
+      "id": "/tags/実存主義",
+      "label": "tags/実存主義",
+      "ext": false
+    },
+    {
+      "id": "/tags/情報社会",
+      "label": "tags/情報社会",
+      "ext": false
+    },
+    {
+      "id": "/tags/現代思想",
+      "label": "tags/現代思想",
+      "ext": false
+    },
+    {
+      "id": "/tags/社会学",
+      "label": "tags/社会学",
+      "ext": false
+    },
+    {
+      "id": "/tags/自己論",
+      "label": "tags/自己論",
+      "ext": false
+    },
+    {
+      "id": "/tags/静的サイト",
+      "label": "tags/静的サイト",
+      "ext": false
     }
   ],
   "links": [
@@ -161,6 +221,102 @@
     {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/Hugo",
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags",
+      "target": "/blog"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Hugo"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/ウェブアーキテクチャ"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/クーリー"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/パフォーマンス"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/実存主義"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/情報社会"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/現代思想"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/社会学"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/自己論"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/静的サイト"
+    },
+    {
+      "source": "/tags",
+      "target": "/blog"
+    },
+    {
+      "source": "/tags/ウェブアーキテクチャ",
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/クーリー",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/パフォーマンス",
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/実存主義",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/情報社会",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/現代思想",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/社会学",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/自己論",
+      "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/静的サイト",
+      "target": "/blog/my-first-post"
     }
   ]
 }
