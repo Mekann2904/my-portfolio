@@ -11,6 +11,11 @@
       "ext": false
     },
     {
+      "id": "https://cdn.jsdelivr.net",
+      "label": "https://cdn.jsdelivr.net",
+      "ext": true
+    },
+    {
       "id": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
       "label": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
       "ext": true
@@ -229,7 +234,19 @@
   "links": [
     {
       "source": "/blog/Math Test",
+      "target": "https://cdn.jsdelivr.net"
+    },
+    {
+      "source": "/blog/Math Test",
       "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/Math Test",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/Math Test",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/Math Test",
@@ -245,11 +262,11 @@
     },
     {
       "source": "/blog",
-      "target": "/blog/looking-glass self"
+      "target": "/blog/Math Test"
     },
     {
       "source": "/blog",
-      "target": "/blog/my-first-post"
+      "target": "/blog/looking-glass self"
     },
     {
       "source": "/blog",
@@ -257,11 +274,23 @@
     },
     {
       "source": "/blog",
-      "target": "/blog/Math Test"
+      "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "https://cdn.jsdelivr.net"
     },
     {
       "source": "/blog/looking-glass self",
       "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/looking-glass self",
@@ -293,7 +322,19 @@
     },
     {
       "source": "/blog/machine-learning-01",
+      "target": "https://cdn.jsdelivr.net"
+    },
+    {
+      "source": "/blog/machine-learning-01",
       "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/machine-learning-01",
@@ -369,7 +410,19 @@
     },
     {
       "source": "/blog/my-first-post",
+      "target": "https://cdn.jsdelivr.net"
+    },
+    {
+      "source": "/blog/my-first-post",
       "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/my-first-post",
