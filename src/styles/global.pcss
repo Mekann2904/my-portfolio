@@ -1,3 +1,5 @@
+/* global.pcss */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,3 +52,57 @@
 .skill-item:hover {
   @apply scale-125 z-10;
 }
+
+/* --- 数式 (KaTeX) の横スクロール対応 --- */
+/* .prose スタイルが適用された記事コンテナ内の .katex-display をターゲット */
+article.prose .katex-display,
+/* .prose がない場合や他の場所でも適用されるようにフォールバック */
+.katex-display {
+  display: block !important; /* display: block を強制 */
+  overflow-x: auto !important; /* overflow-x: auto を強制 */
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.5em 0.2em; /* スクロールバーとの余白 */
+  white-space: nowrap;  /* 数式内の改行を防ぐ */
+  text-align: left;     /* 左揃え (スクロールを考慮) */
+  -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
+  scrollbar-width: thin; /* Firefox スクロールバー */
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2); /* スクロールバー色 */
+  margin-top: 1.5em;    /* proseの他の要素との間隔調整 (お好みで) */
+  margin-bottom: 1.5em; /* proseの他の要素との間隔調整 (お好みで) */
+}
+
+/* Webkit系ブラウザのスクロールバー */
+article.prose .katex-display::-webkit-scrollbar,
+.katex-display::-webkit-scrollbar {
+  height: 6px;
+}
+article.prose .katex-display::-webkit-scrollbar-track,
+.katex-display::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+article.prose .katex-display::-webkit-scrollbar-thumb,
+.katex-display::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+
+/* KaTeX内部の.katex要素へのスタイル */
+article.prose .katex-display > .katex,
+.katex-display > .katex {
+    display: inline-block; /* スクロールコンテナ内で正しく配置 */
+    width: max-content;   /* 数式の実際の幅に合わせる */
+    min-width: 100%;      /* コンテナ幅が狭い場合に最低限広げる */
+    padding-bottom: 2px;  /* スクロールバーと重ならないように少し底上げ */
+}
+
+/* --- (オプション) インライン数式のはみ出し対策 --- */
+/* 長いインライン数式 ($...$) が改行されずにレイアウトを崩す場合 */
+/* 数式の途中で改行されることを許容する場合にコメント解除 */
+/*
+article.prose span.katex {
+   word-break: break-all;
+   white-space: normal;
+}
+*/

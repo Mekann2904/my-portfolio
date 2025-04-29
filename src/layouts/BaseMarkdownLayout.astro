@@ -1,8 +1,8 @@
 ---
-import '../styles/global.pcss'; // 横スクロール対応などのグローバルCSSはこちらに記述想定
+import '../styles/global.pcss'; // ← グローバルCSSをインポート
 /// <reference types="astro/client" />
 
-// Markdown frontmatter or direct props
+// --- (Frontmatter処理: 変更なし) ---
 const rawProps = (Astro.props as any).frontmatter ?? Astro.props;
 const { title, description, author, tags, date, pubDate } = rawProps as {
   title: string;
@@ -12,28 +12,24 @@ const { title, description, author, tags, date, pubDate } = rawProps as {
   date?: string | Date;
   pubDate?: string;
 };
-
-// Determine published date
+// --- (日付処理: 変更なし) ---
 let sourceDate: string | Date | undefined = date ?? pubDate;
 let parsedDate: Date | null = null;
 let isoDate = '';
 if (typeof sourceDate === 'string') {
   try {
     parsedDate = new Date(sourceDate);
-    // 有効な日付かチェック
     if (isNaN(parsedDate.valueOf())) {
       parsedDate = null;
       console.warn(`Invalid date string provided: ${sourceDate}`);
     } else {
-      isoDate = parsedDate.toISOString(); // 有効な場合のみISO文字列を生成
+      isoDate = parsedDate.toISOString();
     }
   } catch (e) {
     console.error(`Error parsing date string: ${sourceDate}`, e);
     parsedDate = null;
   }
-
 } else if (sourceDate instanceof Date) {
-  // 有効な日付かチェック
   if (!isNaN(sourceDate.valueOf())) {
     parsedDate = sourceDate;
     isoDate = parsedDate.toISOString();
@@ -42,7 +38,7 @@ if (typeof sourceDate === 'string') {
     parsedDate = null;
   }
 }
-const validDate = parsedDate instanceof Date; // isNaNチェック済みなのでこれでOK
+const validDate = parsedDate instanceof Date;
 const displayDate = validDate
   ? parsedDate!.toLocaleDateString('ja-JP', {
       year: 'numeric',
@@ -94,6 +90,7 @@ const displayDate = validDate
     {/* --- Performance: Font Display for KaTeX Fonts --- */}
     <style is:inline>
       @font-face {font-family: 'KaTeX_AMS'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      /* ... 他の KaTeX フォント @font-face (省略) ... */
       @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
       @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
       @font-face {font-family: 'KaTeX_Fraktur'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
@@ -115,7 +112,8 @@ const displayDate = validDate
       @font-face {font-family: 'KaTeX_Typewriter'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
     </style>
 
-    {/* --- Other Styles (Mermaid/Code Block Placeholders, Errors, KaTeX Scroll) --- */}
+    {/* --- Other Styles (Mermaid/Code Block Placeholders, Errors) --- */}
+    {/* KaTeX 横スクロールスタイルは global.pcss に移動 */}
     <style>
       /* Mermaid SVG コンテナ: レンダリング前のプレースホルダーとエラー表示 */
       pre.mermaid[data-mermaid-processed="pending"] {
@@ -147,43 +145,13 @@ const displayDate = validDate
         overflow-x: auto;
       }
 
-      /* --- 数式 (KaTeX) の横スクロール対応 --- */
-      .katex-display {
-        display: block;       /* ブロック要素として扱う */
-        overflow-x: auto;     /* 横方向にコンテンツがはみ出た場合にスクロールバーを表示 */
-        overflow-y: hidden;   /* 縦方向のスクロールは通常不要 */
-        max-width: 100%;      /* 親要素の幅を超えないように */
-        padding: 0.5em 0.2em; /* スクロールバーとの間に少し余白 */
-        white-space: nowrap;  /* 数式内での自動改行を防ぐ */
-        text-align: left;     /* スクロールを考慮し、左揃えにする (中央揃えが良い場合は center) */
-        -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
-        scrollbar-width: thin; /* Firefoxでのスクロールバーを細くする */
-        scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2); /* スクロールバーの色 (つまみ トラック) */
-      }
-      /* Webkit系ブラウザ (Chrome, Safari, Edgeなど) のスクロールバー */
-      .katex-display::-webkit-scrollbar {
-        height: 6px; /* スクロールバーの高さ */
-      }
-      .katex-display::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2); /* スクロールバーのトラック背景 */
-        border-radius: 3px;
-      }
-      .katex-display::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.4); /* スクロールバーのつまみ部分 */
-        border-radius: 3px;
-      }
-      /* KaTeX内部要素の調整 (通常は上記 .katex-display だけで十分) */
-      .katex-display > .katex {
-          display: inline-block; /* 横スクロールコンテナ内で正しく配置されるように */
-          /* text-align: center; */ /* 中央揃えが必要な場合にコメント解除 */
-      }
-
       /* コードブロックのコピーボタン用に pre に relative を付与 */
       .prose pre:not(.mermaid) { position: relative; }
     </style>
   </head>
 
   <body class="bg-black text-white">
+    {/* --- (Header, Main, Article, Footer: 変更なし) --- */}
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg">
       <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
         <a href="/" class="text-white font-semibold text-lg hover:text-blue-300 transition-colors">Mekann</a>
@@ -238,7 +206,6 @@ const displayDate = validDate
               <a
                 href={`/tags/${tag}`}
                 class="bg-gray-800 text-blue-300 hover:bg-gray-700 hover:text-blue-200 px-3 py-1 rounded-full text-sm no-underline transition-colors"
-                // ここにあった無効な属性（コメント）を完全に削除しました
               >
                 #{tag}
               </a>
@@ -254,20 +221,18 @@ const displayDate = validDate
       </div>
     </footer>
 
-    {/* クライアントサイドスクリプト */}
+    {/* --- (クライアントサイドスクリプト: 変更なし) --- */}
     <script type="module">
       let mermaidInstance = null;
       let intersectionObserver = null;
       const mermaidElementsToProcess = new Set();
 
-      // Mermaid ライブラリのロードと初期化
       async function ensureMermaid() {
         if (mermaidInstance) return mermaidInstance;
         if (!window.mermaidLoadingPromise) {
             window.mermaidLoadingPromise = (async () => {
                 console.log('Loading Mermaid...');
                 try {
-                    // パスはCDN or セルフホストに合わせてください
                     const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.js');
                     const mermaidAPI = module.default;
                     mermaidAPI.initialize({ startOnLoad: false, theme: 'dark' });
@@ -284,7 +249,6 @@ const displayDate = validDate
         return mermaidInstance;
       }
 
-      // 個々の Mermaid ダイアグラムをレンダリング
       async function renderSingleMermaidDiagram(preElement) {
         if (!preElement || preElement.dataset.mermaidProcessed !== 'pending') return;
         preElement.dataset.mermaidProcessed = 'processing';
@@ -348,7 +312,6 @@ const displayDate = validDate
         }
       }
 
-      // Intersection Observer のセットアップと実行
       function setupMermaidObserver() {
         if (intersectionObserver) {
           intersectionObserver.disconnect();
@@ -390,7 +353,6 @@ const displayDate = validDate
         });
       }
 
-      // コードブロックにコピーボタンを追加
       function addCopyButtons() {
         document.querySelectorAll('article.prose pre:not(.mermaid):not([data-copy-button-added])').forEach((pre) => {
           const codeEl = pre.querySelector('code');
@@ -429,14 +391,12 @@ const displayDate = validDate
         });
       }
 
-      // 機能の初期化/再初期化
       function initializePageFeatures() {
          console.log('Initializing page features (Mermaid Observer, Copy Buttons)...');
          setupMermaidObserver();
          addCopyButtons();
       }
 
-      // --- イベントリスナー ---
       document.addEventListener('astro:page-load', initializePageFeatures);
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializePageFeatures);
