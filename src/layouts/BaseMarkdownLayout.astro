@@ -1,9 +1,8 @@
 ---
-// src/layouts/BaseMarkdownLayout.astro
-
 import '../styles/global.pcss';
 /// <reference types="astro/client" />
 
+// Markdown frontmatter or direct props
 const rawProps = (Astro.props as any).frontmatter ?? Astro.props;
 const { title, description, author, tags, date, pubDate } = rawProps as {
   title: string;
@@ -14,6 +13,7 @@ const { title, description, author, tags, date, pubDate } = rawProps as {
   pubDate?: string;
 };
 
+// Determine published date
 let sourceDate: string | Date | undefined = date ?? pubDate;
 let parsedDate: Date | null = null;
 let isoDate = '';
@@ -26,16 +26,60 @@ if (typeof sourceDate === 'string') {
 }
 const validDate = parsedDate instanceof Date && !isNaN(parsedDate.valueOf());
 const displayDate = validDate
-  ? parsedDate!.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
+  ? parsedDate!.toLocaleDateString('ja-JP', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })
   : '';
 ---
+
 <html lang="ja" class="bg-black">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <base href="/" />
     {description && <meta name="description" content={description} />}
+
+    {/* --- KaTeX --- */}
+    {/* CSS はサーバーサイドレンダリングでも必要 */}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    />
+    {/* JavaScript はサーバーサイドレンダリング (rehype-katex) を使うため不要
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+    */}
+    {/* --- KaTeX ここまで --- */}
+
+    {/* --- Mermaid --- */}
+    {/* CSS はクライアントサイドレンダリングに必要 */}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+    />
+    {/* --- Mermaid ここまで --- */}
+
+    <style>
+      .mermaid { overflow-x: auto; }
+      .prose svg.flowchart { /* Mermaid が SVG を生成する場合のスタイル */
+        display: block;
+        margin: 1.5em auto;
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      .mermaid-container { /* Mermaid SVG を含むコンテナのスタイル (任意) */
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        margin: 1.5em 0;
+      }
+      /* KaTeXフォントパス指定は通常不要 */
+    </style>
   </head>
+
   <body class="bg-black text-white">
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800">
       <nav class="container mx-auto flex items-center justify-between py-4 px-6">
@@ -48,10 +92,17 @@ const displayDate = validDate
     </header>
 
     <main class="pt-20 container mx-auto px-6 py-8">
-      <article class="prose prose-invert mx-auto max-w-3xl py-8 relative
-        prose-pre:bg-[rgb(40_40_40)] prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-auto prose-pre:my-6
-        prose-code:bg-transparent prose-code:text-inherit">
-        
+      <article
+        class="prose prose-invert mx-auto max-w-3xl py-8 relative
+               prose-pre:bg-[rgb(40_40_40)]
+               prose-pre:text-gray-100
+               prose-pre:p-4
+               prose-pre:rounded-lg
+               prose-pre:overflow-auto
+               prose-pre:my-6
+               prose-code:bg-transparent
+               prose-code:text-inherit"
+      >
         <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-4">
           ← Back to Blog
         </a>
@@ -64,15 +115,22 @@ const displayDate = validDate
         )}
 
         <h1 class="text-4xl font-bold text-white mb-6">{title}</h1>
-
         {description && <p class="text-gray-300 mb-8">{description}</p>}
 
+        {/* Markdown/MDX コンテンツがここに挿入される */}
+        {/* KaTeX はビルド時に HTML に変換済み */}
+        {/* Mermaid はクライアントスクリプトで SVG に変換される */}
         <slot />
 
-        {tags && tags.length > 0 && (
+        {tags && (
           <div class="mt-12 border-t border-gray-700 pt-6 flex flex-wrap gap-2">
-            {tags.map(tag => (
-              <a href={`/tags/${tag}`} class="text-blue-300 hover:underline text-sm">#{tag}</a>
+            {tags.map((tag) => (
+              <a
+                href={`/tags/${tag}`}
+                class="text-blue-300 hover:underline text-sm"
+              >
+                #{tag}
+              </a>
             ))}
           </div>
         )}
@@ -85,23 +143,130 @@ const displayDate = validDate
       </div>
     </footer>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('article.prose pre').forEach(pre => {
-          const code = pre.querySelector('code');
-          if (!code) return;
+    {/* クライアントサイドスクリプト */}
+    <script type="module">
+      let mermaidInstance = null;
+
+      // Mermaid ライブラリのロードと初期化
+      async function ensureMermaid() {
+        if (!window.mermaid && !mermaidInstance) { // まだロードされていなければ
+          try {
+            // Dynamic import で Mermaid をロード
+            const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+            mermaidInstance = module.default; // default export を取得
+            // 初期化 (自動実行は無効、テーマは dark)
+            mermaidInstance.initialize({ startOnLoad: false, theme: 'dark' });
+            console.log('Mermaid loaded and initialized.');
+          } catch (error) {
+            console.error('Failed to load Mermaid:', error);
+          }
+        } else if (window.mermaid && !mermaidInstance) {
+          // すでにグローバルにロードされている場合 (稀なケース)
+          mermaidInstance = window.mermaid;
+          console.log('Mermaid already loaded (global).');
+        }
+      }
+
+      // Mermaid ダイアグラムのレンダリング
+      async function renderMermaidDiagrams() {
+        await ensureMermaid(); // Mermaid がロードされるのを待つ
+        if (!mermaidInstance) {
+          console.error('Mermaid instance is not available for rendering.');
+          return;
+        }
+        // remark-mermaidjs が生成する想定のセレクタ
+        const elements = document.querySelectorAll('pre.mermaid > code');
+        if (elements.length === 0) {
+          // Mermaid ダイアグラムが見つからない場合は何もしない
+          // console.log('No Mermaid diagrams found to render.');
+          return;
+        }
+
+        console.log(`Found ${elements.length} Mermaid diagrams. Rendering...`);
+
+        // 各 Mermaid コードブロックを処理
+        for (const el of elements) {
+          const code = el.textContent || ''; // code タグの中身を取得
+          const id = 'mermaid-' + Math.random().toString(36).substring(2, 9); // 一意なIDを生成
+          const container = el.parentNode; // pre タグを取得
+
+          if (!container || !code) continue; // コンテナやコードがなければ次へ
+
+          try {
+            // Mermaid で SVG をレンダリング
+            const { svg } = await mermaidInstance.render(id, code);
+            // 元の pre 要素を、生成された SVG を含む div で置き換える
+            const div = document.createElement('div');
+            div.innerHTML = svg;
+            div.classList.add('mermaid-container'); // スタイリング用クラスを追加
+            container.parentNode.replaceChild(div, container);
+            // console.log(`Mermaid diagram ${id} rendered successfully.`);
+          } catch (error) {
+            // レンダリングエラー時の処理
+            console.error(`Error rendering Mermaid diagram ${id}:`, error);
+            // エラーメッセージを表示する div で置き換える
+            const errorDiv = document.createElement('div');
+            errorDiv.style.color = 'red';
+            errorDiv.textContent = `Mermaid Error: ${error.message}\n\n${code}`; // エラーと元のコードを表示
+            container.parentNode.replaceChild(errorDiv, container);
+          }
+        }
+      }
+
+      // コードブロックにコピーボタンを追加
+      function addCopyButtons() {
+        // Mermaid 用の pre を除く、記事内のすべての pre 要素を選択
+        document.querySelectorAll('article.prose pre:not(.mermaid)').forEach((pre) => {
+          // すでにボタンが存在する場合はスキップ
+          if (pre.querySelector('button.copy-button')) {
+            return;
+          }
+
+          const codeEl = pre.querySelector('code'); // code 要素を取得
+          if (!codeEl) return; // code 要素がなければスキップ
+
+          // ボタン要素を作成
           const btn = document.createElement('button');
           btn.textContent = 'Copy';
-          btn.className = 'absolute top-2 right-2 bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded hover:bg-gray-600';
-          btn.addEventListener('click', () => {
-            navigator.clipboard.writeText(code.textContent || '');
-            btn.textContent = 'Copied';
-            setTimeout(() => (btn.textContent = 'Copy'), 1500);
+          // Tailwind CSS クラスでスタイリング + ホバー表示
+          btn.className =
+            'copy-button absolute top-2 right-2 bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100';
+
+          // クリックイベントリスナーを追加
+          btn.addEventListener('click', async () => {
+            try {
+              // code 要素のテキストをクリップボードにコピー
+              await navigator.clipboard.writeText(codeEl.textContent || '');
+              btn.textContent = 'Copied!'; // 成功メッセージ
+              // 1.5秒後にテキストを元に戻す
+              setTimeout(() => (btn.textContent = 'Copy'), 1500);
+            } catch (err) {
+              console.error('Failed to copy text: ', err);
+              btn.textContent = 'Error'; // エラーメッセージ
+              setTimeout(() => (btn.textContent = 'Copy'), 1500);
+            }
           });
-          (pre as HTMLElement).style.position = 'relative';
+
+          // pre 要素に Tailwind の group クラスを追加 (group-hover のため)
+          pre.classList.add('group');
+          // ボタンの absolute 配置のために relative を設定
+          pre.style.position = 'relative';
+          // ボタンを pre 要素に追加
           pre.appendChild(btn);
         });
+      }
+
+      // --- KaTeX レンダリング関数は削除 ---
+      // function renderKaTeX() { ... }
+
+      // DOM 読み込み完了時に実行
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded event fired.');
+        renderMermaidDiagrams(); // Mermaid のレンダリングを開始
+        addCopyButtons();      // コピーボタンを追加
+        // renderKaTeX(); // ← KaTeX レンダリングの呼び出しを削除
       });
+
     </script>
   </body>
 </html>

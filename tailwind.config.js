@@ -3,6 +3,12 @@ export default {
   content: [
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
+  safelist: [
+    'prose',
+    'prose-invert',
+    'mermaid',
+    'flowchart'
+  ],
   theme: {
     extend: {
       typography: (theme) => ({

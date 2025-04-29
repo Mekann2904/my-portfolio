@@ -6,6 +6,21 @@
       "ext": false
     },
     {
+      "id": "/blog/Math Test",
+      "label": "blog/Math Test",
+      "ext": false
+    },
+    {
+      "id": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
+      "label": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
+      "ext": true
+    },
+    {
+      "id": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
+      "label": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
+      "ext": true
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
@@ -14,6 +29,41 @@
       "id": "/blog/looking-glass self",
       "label": "blog/looking-glass self",
       "ext": false
+    },
+    {
+      "id": "/blog/machine-learning-01",
+      "label": "blog/machine-learning-01",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/rasbt/python-machine-learning-book",
+      "label": "https://github.com/rasbt/python-machine-learning-book",
+      "ext": true
+    },
+    {
+      "id": "https://scikit-learn.org/",
+      "label": "https://scikit-learn.org/",
+      "ext": true
+    },
+    {
+      "id": "https://www.coursera.org/learn/machine-learning",
+      "label": "https://www.coursera.org/learn/machine-learning",
+      "ext": true
+    },
+    {
+      "id": "http://rasbt.github.io/mlxtend/",
+      "label": "http://rasbt.github.io/mlxtend/",
+      "ext": true
+    },
+    {
+      "id": "https://www.tensorflow.org/",
+      "label": "https://www.tensorflow.org/",
+      "ext": true
+    },
+    {
+      "id": "https://pytorch.org/",
+      "label": "https://pytorch.org/",
+      "ext": true
     },
     {
       "id": "/blog/my-first-post",
@@ -61,6 +111,16 @@
       "ext": true
     },
     {
+      "id": "/tags/ADALINE",
+      "label": "tags/ADALINE",
+      "ext": false
+    },
+    {
+      "id": "/tags/AIの歴史",
+      "label": "tags/AIの歴史",
+      "ext": false
+    },
+    {
       "id": "/tags/Astro",
       "label": "tags/Astro",
       "ext": false
@@ -68,6 +128,16 @@
     {
       "id": "/tags/Hugo",
       "label": "tags/Hugo",
+      "ext": false
+    },
+    {
+      "id": "/tags/NumPy",
+      "label": "tags/NumPy",
+      "ext": false
+    },
+    {
+      "id": "/tags/Python",
+      "label": "tags/Python",
       "ext": false
     },
     {
@@ -86,8 +156,28 @@
       "ext": false
     },
     {
+      "id": "/tags/データサイエンス",
+      "label": "tags/データサイエンス",
+      "ext": false
+    },
+    {
+      "id": "/tags/ニューラルネットワーク基礎",
+      "label": "tags/ニューラルネットワーク基礎",
+      "ext": false
+    },
+    {
       "id": "/tags/パフォーマンス",
       "label": "tags/パフォーマンス",
+      "ext": false
+    },
+    {
+      "id": "/tags/パーセプトロン",
+      "label": "tags/パーセプトロン",
+      "ext": false
+    },
+    {
+      "id": "/tags/勾配降下法",
+      "label": "tags/勾配降下法",
       "ext": false
     },
     {
@@ -101,6 +191,16 @@
       "ext": false
     },
     {
+      "id": "/tags/機械学習アルゴリズム",
+      "label": "tags/機械学習アルゴリズム",
+      "ext": false
+    },
+    {
+      "id": "/tags/機械学習入門",
+      "label": "tags/機械学習入門",
+      "ext": false
+    },
+    {
       "id": "/tags/現代思想",
       "label": "tags/現代思想",
       "ext": false
@@ -108,6 +208,11 @@
     {
       "id": "/tags/社会学",
       "label": "tags/社会学",
+      "ext": false
+    },
+    {
+      "id": "/tags/線形分類",
+      "label": "tags/線形分類",
       "ext": false
     },
     {
@@ -123,6 +228,14 @@
   ],
   "links": [
     {
+      "source": "/blog/Math Test",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/Math Test",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+    },
+    {
       "source": "/blog",
       "target": "/"
     },
@@ -137,6 +250,22 @@
     {
       "source": "/blog",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/Math Test"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/looking-glass self",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/looking-glass self",
@@ -161,6 +290,90 @@
     {
       "source": "/blog/looking-glass self",
       "target": "/tags/情報社会"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://github.com/rasbt/python-machine-learning-book"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://scikit-learn.org/"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://www.coursera.org/learn/machine-learning"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "http://rasbt.github.io/mlxtend/"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://www.tensorflow.org/"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "https://pytorch.org/"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/機械学習入門"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/パーセプトロン"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/ADALINE"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/線形分類"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/勾配降下法"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/ニューラルネットワーク基礎"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/AIの歴史"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/Python"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/NumPy"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/データサイエンス"
+    },
+    {
+      "source": "/blog/machine-learning-01",
+      "target": "/tags/機械学習アルゴリズム"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    },
+    {
+      "source": "/blog/my-first-post",
+      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
     },
     {
       "source": "/blog/my-first-post",
@@ -223,6 +436,14 @@
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
     },
     {
+      "source": "/tags/ADALINE",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/AIの歴史",
+      "target": "/blog/machine-learning-01"
+    },
+    {
       "source": "/tags/Astro",
       "target": "/blog/my-first-post"
     },
@@ -231,8 +452,24 @@
       "target": "/blog/my-first-post"
     },
     {
+      "source": "/tags/NumPy",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/Python",
+      "target": "/blog/machine-learning-01"
+    },
+    {
       "source": "/tags",
       "target": "/blog"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/ADALINE"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/AIの歴史"
     },
     {
       "source": "/tags",
@@ -244,6 +481,14 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/NumPy"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Python"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/ウェブアーキテクチャ"
     },
     {
@@ -252,7 +497,23 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/データサイエンス"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/ニューラルネットワーク基礎"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/パフォーマンス"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/パーセプトロン"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/勾配降下法"
     },
     {
       "source": "/tags",
@@ -264,11 +525,23 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/機械学習アルゴリズム"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/機械学習入門"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/現代思想"
     },
     {
       "source": "/tags",
       "target": "/tags/社会学"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/線形分類"
     },
     {
       "source": "/tags",
@@ -291,8 +564,24 @@
       "target": "/blog/looking-glass self"
     },
     {
+      "source": "/tags/データサイエンス",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/ニューラルネットワーク基礎",
+      "target": "/blog/machine-learning-01"
+    },
+    {
       "source": "/tags/パフォーマンス",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/パーセプトロン",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/勾配降下法",
+      "target": "/blog/machine-learning-01"
     },
     {
       "source": "/tags/実存主義",
@@ -303,12 +592,24 @@
       "target": "/blog/looking-glass self"
     },
     {
+      "source": "/tags/機械学習アルゴリズム",
+      "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/機械学習入門",
+      "target": "/blog/machine-learning-01"
+    },
+    {
       "source": "/tags/現代思想",
       "target": "/blog/looking-glass self"
     },
     {
       "source": "/tags/社会学",
       "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/線形分類",
+      "target": "/blog/machine-learning-01"
     },
     {
       "source": "/tags/自己論",
