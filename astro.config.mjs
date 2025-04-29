@@ -20,7 +20,7 @@ export default defineConfig({
     // remark プラグイン (Markdown AST -> Markdown AST)
     remarkPlugins: [
       remarkMath,    // 数式構文 ($$, $) を認識
-      remarkMermaid, // Mermaid コードブロックを認識
+      // remarkMermaid を削除し、代わりにクライアントサイドで直接mermaidを初期化
     ],
     // rehype プラグイン (HTML AST -> HTML AST)
     rehypePlugins: [

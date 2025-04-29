@@ -33,5 +33,15 @@ const { title, description } = Astro.props;
         © {new Date().getFullYear()} Mekann. All rights reserved.
       </div>
     </footer>
+
+    <!-- Mermaid Initialization -->
+    <script is:inline>
+      import mermaid from 'mermaid';
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        securityLevel: 'loose'
+      });
+    </script>
   </body>
 </html>
