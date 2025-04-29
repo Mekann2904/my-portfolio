@@ -61,11 +61,9 @@ const displayDate = validDate
     {description && <meta name="description" content={description} />}
 
     {/* --- Performance: Preconnect to CDNs --- */}
-    {/* 外部ドメインへの接続を早期に開始 (セルフホストする場合はコメントアウト/削除) */}
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
     {/* --- KaTeX CSS (遅延読み込み) --- */}
-    {/* パスはCDN or セルフホストに合わせてください */}
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
@@ -80,7 +78,6 @@ const displayDate = validDate
     </noscript>
 
     {/* --- Mermaid CSS (遅延読み込み) --- */}
-    {/* パスはCDN or セルフホストに合わせてください */}
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
@@ -95,11 +92,9 @@ const displayDate = validDate
     </noscript>
 
     {/* --- Performance: Font Display for KaTeX Fonts --- */}
-    {/* パスはCDN or セルフホストに合わせてください */}
     <style is:inline>
       @font-face {font-family: 'KaTeX_AMS'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
-      /* ... 他の KaTeX フォントの @font-face (省略) ... */
-       @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
       @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
       @font-face {font-family: 'KaTeX_Fraktur'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
       @font-face {font-family: 'KaTeX_Fraktur'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
@@ -120,7 +115,7 @@ const displayDate = validDate
       @font-face {font-family: 'KaTeX_Typewriter'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
     </style>
 
-    {/* --- Other Styles (Mermaid/Code Block Placeholders, Errors) --- */}
+    {/* --- Other Styles (Mermaid/Code Block Placeholders, Errors, KaTeX Scroll) --- */}
     <style>
       /* Mermaid SVG コンテナ: レンダリング前のプレースホルダーとエラー表示 */
       pre.mermaid[data-mermaid-processed="pending"] {
@@ -151,15 +146,47 @@ const displayDate = validDate
         white-space: pre-wrap; word-break: break-all; font-family: monospace;
         overflow-x: auto;
       }
+
+      /* --- 数式 (KaTeX) の横スクロール対応 --- */
+      .katex-display {
+        display: block;       /* ブロック要素として扱う */
+        overflow-x: auto;     /* 横方向にコンテンツがはみ出た場合にスクロールバーを表示 */
+        overflow-y: hidden;   /* 縦方向のスクロールは通常不要 */
+        max-width: 100%;      /* 親要素の幅を超えないように */
+        padding: 0.5em 0.2em; /* スクロールバーとの間に少し余白 */
+        white-space: nowrap;  /* 数式内での自動改行を防ぐ */
+        text-align: left;     /* スクロールを考慮し、左揃えにする (中央揃えが良い場合は center) */
+        -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
+        scrollbar-width: thin; /* Firefoxでのスクロールバーを細くする */
+        scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2); /* スクロールバーの色 (つまみ トラック) */
+      }
+      /* Webkit系ブラウザ (Chrome, Safari, Edgeなど) のスクロールバー */
+      .katex-display::-webkit-scrollbar {
+        height: 6px; /* スクロールバーの高さ */
+      }
+      .katex-display::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2); /* スクロールバーのトラック背景 */
+        border-radius: 3px;
+      }
+      .katex-display::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4); /* スクロールバーのつまみ部分 */
+        border-radius: 3px;
+      }
+      /* KaTeX内部要素の調整 (通常は上記 .katex-display だけで十分) */
+      .katex-display > .katex {
+          display: inline-block; /* 横スクロールコンテナ内で正しく配置されるように */
+          /* text-align: center; */ /* 中央揃えが必要な場合にコメント解除 */
+      }
+
       /* コードブロックのコピーボタン用に pre に relative を付与 */
       .prose pre:not(.mermaid) { position: relative; }
     </style>
   </head>
 
-  <body class="bg-black text-white"> {/* PC向け基本フォントサイズ調整は prose-lg で対応 */}
-    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg"> {/* 影を追加 */}
-      <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8"> {/* PCでパディング調整 */}
-        <a href="/" class="text-white font-semibold text-lg hover:text-blue-300 transition-colors">Mekann</a> {/* ホバー色変更 */}
+  <body class="bg-black text-white">
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg">
+      <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
+        <a href="/" class="text-white font-semibold text-lg hover:text-blue-300 transition-colors">Mekann</a>
         <ul class="flex gap-6 text-sm">
           <li><a href="/" class="text-gray-400 hover:text-white no-underline">Home</a></li>
           <li><a href="/blog" class="text-gray-400 hover:text-white no-underline">Blog</a></li>
@@ -167,9 +194,9 @@ const displayDate = validDate
       </nav>
     </header>
 
-    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12"> {/* PCでパディング調整 */}
+    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12">
       <article
-        class="prose prose-invert mx-auto max-w-3xl lg:max-w-4xl lg:prose-lg py-8 relative {/* PCで幅とサイズ調整 */}
+        class="prose prose-invert mx-auto max-w-3xl lg:max-w-4xl lg:prose-lg py-8 relative
                prose-pre:bg-[rgb(40_40_40)]
                prose-pre:text-gray-100
                prose-pre:p-4
@@ -180,7 +207,7 @@ const displayDate = validDate
                prose-code:text-inherit"
       >
         {/* 戻るリンク */}
-        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline"> {/* マージン調整 */}
+        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -189,16 +216,16 @@ const displayDate = validDate
 
         {/* 日付と著者 */}
         {validDate && (
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8"> {/* マージン調整 */}
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8">
             <time datetime={isoDate}>{displayDate}</time>
             {author && <span class="mt-1 sm:mt-0 sm:ml-4">By {author}</span>}
           </div>
         )}
 
         {/* タイトル */}
-        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-8 lg:mb-10">{title}</h1> {/* PCでサイズとマージン調整 */}
+        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-8 lg:mb-10">{title}</h1>
         {/* ディスクリプション */}
-        {description && <p class="text-gray-300 mb-10 lg:mb-12">{description}</p>} {/* マージン調整 */}
+        {description && <p class="text-gray-300 mb-10 lg:mb-12">{description}</p>}
 
         {/* --- Markdown/MDX コンテンツ --- */}
         <slot />
@@ -206,11 +233,12 @@ const displayDate = validDate
 
         {/* タグ */}
         {tags && tags.length > 0 && (
-          <div class="mt-16 border-t border-gray-700 pt-8 flex flex-wrap gap-3"> {/* マージンとギャップ調整、タグスタイル変更 */}
+          <div class="mt-16 border-t border-gray-700 pt-8 flex flex-wrap gap-3">
             {tags.map((tag) => (
               <a
                 href={`/tags/${tag}`}
-                class="bg-gray-800 text-blue-300 hover:bg-gray-700 hover:text-blue-200 px-3 py-1 rounded-full text-sm no-underline transition-colors" // スタイル変更
+                class="bg-gray-800 text-blue-300 hover:bg-gray-700 hover:text-blue-200 px-3 py-1 rounded-full text-sm no-underline transition-colors"
+                // ここにあった無効な属性（コメント）を完全に削除しました
               >
                 #{tag}
               </a>
@@ -220,8 +248,8 @@ const displayDate = validDate
       </article>
     </main>
 
-    <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8"> {/* PCでパディング調整 */}
-      <div class="container mx-auto text-center text-sm px-6 lg:px-8"> {/* PCでパディング調整 */}
+    <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8">
+      <div class="container mx-auto text-center text-sm px-6 lg:px-8">
         © {new Date().getFullYear()} Mekann
       </div>
     </footer>
@@ -240,7 +268,7 @@ const displayDate = validDate
                 console.log('Loading Mermaid...');
                 try {
                     // パスはCDN or セルフホストに合わせてください
-                    const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+                    const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.js');
                     const mermaidAPI = module.default;
                     mermaidAPI.initialize({ startOnLoad: false, theme: 'dark' });
                     console.log('Mermaid loaded and initialized.');
@@ -343,10 +371,10 @@ const displayDate = validDate
         intersectionObserver = new IntersectionObserver(async (entries, observer) => {
           for (const entry of entries) {
             if (entry.isIntersecting) {
-              const targetPre = entry.target as HTMLElement; // 型アサーション追加
+              /** @type {HTMLElement} */
+              const targetPre = entry.target;
               observer.unobserve(targetPre);
               mermaidElementsToProcess.delete(targetPre);
-              // renderSingleMermaidDiagram に HTMLElement を渡す
               renderSingleMermaidDiagram(targetPre).catch(err => {
                   console.error("Error during async mermaid rendering trigger:", err, targetPre);
                   if (targetPre?.dataset && !targetPre.dataset.mermaidProcessed) {
@@ -370,9 +398,8 @@ const displayDate = validDate
 
           const btn = document.createElement('button');
           btn.textContent = 'Copy';
-          // コピーボタンのスタイル調整：少し大きく、背景色を明確に
           btn.className =
-            'copy-button absolute top-2.5 right-2.5 bg-gray-700 text-gray-200 text-xs px-3 py-1.5 rounded-md hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-all duration-200 focus:opacity-100 z-10'; // 微調整
+            'copy-button absolute top-2.5 right-2.5 bg-gray-700 text-gray-200 text-xs px-3 py-1.5 rounded-md hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-all duration-200 focus:opacity-100 z-10';
 
           btn.addEventListener('click', async () => {
             const textToCopy = codeEl.textContent || '';
@@ -393,13 +420,12 @@ const displayDate = validDate
             }
           });
 
-          pre.classList.add('group'); // group-hover用クラス
-          // pre に relative が設定されているか確認 (CSSで設定済みの想定だが念のため)
+          pre.classList.add('group');
           if (window.getComputedStyle(pre).position === 'static') {
              pre.style.position = 'relative';
           }
           pre.appendChild(btn);
-          pre.dataset.copyButtonAdded = 'true'; // ボタン追加済みマーク
+          pre.dataset.copyButtonAdded = 'true';
         });
       }
 
