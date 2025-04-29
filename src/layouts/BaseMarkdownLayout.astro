@@ -18,13 +18,31 @@ let sourceDate: string | Date | undefined = date ?? pubDate;
 let parsedDate: Date | null = null;
 let isoDate = '';
 if (typeof sourceDate === 'string') {
-  parsedDate = new Date(sourceDate);
-  isoDate = sourceDate;
+  try {
+    parsedDate = new Date(sourceDate);
+    // 有効な日付かチェック
+    if (isNaN(parsedDate.valueOf())) {
+      parsedDate = null;
+      console.warn(`Invalid date string provided: ${sourceDate}`);
+    } else {
+      isoDate = parsedDate.toISOString(); // 有効な場合のみISO文字列を生成
+    }
+  } catch (e) {
+    console.error(`Error parsing date string: ${sourceDate}`, e);
+    parsedDate = null;
+  }
+
 } else if (sourceDate instanceof Date) {
-  parsedDate = sourceDate;
-  isoDate = parsedDate.toISOString();
+  // 有効な日付かチェック
+  if (!isNaN(sourceDate.valueOf())) {
+    parsedDate = sourceDate;
+    isoDate = parsedDate.toISOString();
+  } else {
+    console.warn(`Invalid Date object provided.`);
+    parsedDate = null;
+  }
 }
-const validDate = parsedDate instanceof Date && !isNaN(parsedDate.valueOf());
+const validDate = parsedDate instanceof Date; // isNaNチェック済みなのでこれでOK
 const displayDate = validDate
   ? parsedDate!.toLocaleDateString('ja-JP', {
       year: 'numeric',
@@ -42,51 +60,133 @@ const displayDate = validDate
     <base href="/" />
     {description && <meta name="description" content={description} />}
 
-    {/* --- KaTeX --- */}
-    {/* CSS はサーバーサイドレンダリングでも必要 */}
+    {/* --- Performance: Preconnect to CDNs --- */}
+    {/* 外部ドメインへの接続を早期に開始 */}
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    {/* --- KaTeX CSS (遅延読み込み) --- */}
+    {/* preload で早期にダウンロード開始、onloadで適用 */}
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    {/* JavaScript はサーバーサイドレンダリング (rehype-katex) を使うため不要
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-    */}
-    {/* --- KaTeX ここまで --- */}
+    {/* JavaScriptが無効な場合や preload 非対応ブラウザ向けのフォールバック */}
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      />
+    </noscript>
 
-    {/* --- Mermaid --- */}
-    {/* CSS はクライアントサイドレンダリングに必要 */}
+    {/* --- Mermaid CSS (遅延読み込み) --- */}
+    {/* preload で早期にダウンロード開始、onloadで適用 */}
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    {/* --- Mermaid ここまで --- */}
+    {/* フォールバック */}
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+      />
+    </noscript>
 
+    {/* --- Performance: Font Display for KaTeX Fonts --- */}
+    {/*
+      KaTeX CDN CSS内の @font-face を上書きして font-display: swap を追加。
+      これによりフォント読み込み中にテキストが代替フォントで表示される。
+      注意: KaTeXのバージョンやCDNのCSS内容が変わると動作しない可能性があります。
+            より安定させるには、CSSとフォントをセルフホストすることを検討してください。
+    */}
+    <style is:inline>
+      /* KaTeXの主要なフォントファミリーに対して font-display: swap を設定 */
+      @font-face {font-family: 'KaTeX_AMS'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Caligraphic'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Fraktur'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Fraktur'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Fraktur-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Main'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Main'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-BoldItalic.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-BoldItalic.woff) format('woff'); font-weight: bold; font-style: italic; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Main'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Italic.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Italic.woff) format('woff'); font-weight: normal; font-style: italic; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Main'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Math'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Math-BoldItalic.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Math-BoldItalic.woff) format('woff'); font-weight: bold; font-style: italic; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Math'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Math-Italic.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Math-Italic.woff) format('woff'); font-weight: normal; font-style: italic; font-display: swap;}
+      @font-face {font-family: 'KaTeX_SansSerif'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Bold.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Bold.woff) format('woff'); font-weight: bold; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_SansSerif'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Italic.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Italic.woff) format('woff'); font-weight: normal; font-style: italic; font-display: swap;}
+      @font-face {font-family: 'KaTeX_SansSerif'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_SansSerif-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Script'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Script-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Script-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Size1'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size1-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size1-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Size2'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size2-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size2-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Size3'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size3-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size3-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Size4'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size4-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Size4-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+      @font-face {font-family: 'KaTeX_Typewriter'; src: url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Typewriter-Regular.woff) format('woff'); font-weight: normal; font-style: normal; font-display: swap;}
+    </style>
+
+    {/* --- Other Styles --- */}
     <style>
-      .mermaid { overflow-x: auto; }
-      .prose svg.flowchart { /* Mermaid が SVG を生成する場合のスタイル */
-        display: block;
-        margin: 1.5em auto;
-        max-width: 100%;
-        overflow-x: auto;
+      /* Mermaid SVG コンテナ: レンダリング前のプレースホルダーとエラー表示 */
+      pre.mermaid[data-mermaid-processed="pending"] {
+        /* 画面に入るまでレンダリングされないので、プレースホルダーの高さを設定 */
+        min-height: 150px; /* 必要に応じて調整 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.5);
+        font-style: italic;
+        text-align: center;
+        padding: 1em;
+        margin: 1.5em 0; /* proseスタイルに合わせる */
+        overflow: hidden; /* 内容がはみ出さないように */
       }
-      .mermaid-container { /* Mermaid SVG を含むコンテナのスタイル (任意) */
+      pre.mermaid[data-mermaid-processed="pending"]::before {
+        content: 'Loading diagram...';
+      }
+
+      .mermaid-container { /* Mermaid SVG を含むラッパー */
         display: flex;
         justify-content: center;
-        overflow-x: auto;
-        margin: 1.5em 0;
+        overflow-x: auto; /* 横スクロール可能に */
+        margin: 1.5em 0; /* proseスタイルに合わせる */
+        max-width: 100%;
       }
-      /* KaTeXフォントパス指定は通常不要 */
+      .mermaid-container svg { /* 生成されたSVG自体のスタイル */
+         max-width: none; /* コンテナ側で幅を制御するため */
+         display: block; /* 中央揃えやマージンを効かせるため */
+      }
+
+      .mermaid-error-container { /* エラー表示用コンテナ */
+        background-color: #400; /* 暗い赤 */
+        color: #fcc; /* 明るい赤系の文字色 */
+        border: 1px solid #c00;
+        padding: 1em;
+        margin: 1.5em 0; /* proseスタイルに合わせる */
+        border-radius: 8px;
+        white-space: pre-wrap; /* エラーメッセージの改行を保持 */
+        word-break: break-all; /* 長いエラーメッセージを折り返す */
+        font-family: monospace;
+        overflow-x: auto;
+      }
+      /* 他のスタイル（変更なし） */
+      .prose pre code { position: relative; /* コピーボタン用 */}
     </style>
   </head>
 
   <body class="bg-black text-white">
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800">
+      {/* Header content */}
       <nav class="container mx-auto flex items-center justify-between py-4 px-6">
         <a href="/" class="text-white font-semibold text-lg">Mekann</a>
         <ul class="flex gap-6 text-sm">
-          <li><a href="/" class="text-gray-400 hover:text-white">Home</a></li>
-          <li><a href="/blog" class="text-gray-400 hover:text-white">Blog</a></li>
+          <li><a href="/" class="text-gray-400 hover:text-white no-underline">Home</a></li>
+          <li><a href="/blog" class="text-gray-400 hover:text-white no-underline">Blog</a></li>
         </ul>
       </nav>
     </header>
@@ -103,31 +203,29 @@ const displayDate = validDate
                prose-code:bg-transparent
                prose-code:text-inherit"
       >
-        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-4">
+        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-4 no-underline">
           ← Back to Blog
         </a>
 
         {validDate && (
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-4">
             <time datetime={isoDate}>{displayDate}</time>
-            {author && <span>By {author}</span>}
+            {author && <span class="mt-1 sm:mt-0 sm:ml-4">By {author}</span>}
           </div>
         )}
 
         <h1 class="text-4xl font-bold text-white mb-6">{title}</h1>
         {description && <p class="text-gray-300 mb-8">{description}</p>}
 
-        {/* Markdown/MDX コンテンツがここに挿入される */}
-        {/* KaTeX はビルド時に HTML に変換済み */}
-        {/* Mermaid はクライアントスクリプトで SVG に変換される */}
+        {/* Markdown/MDX コンテンツ */}
         <slot />
 
-        {tags && (
+        {tags && tags.length > 0 && (
           <div class="mt-12 border-t border-gray-700 pt-6 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <a
                 href={`/tags/${tag}`}
-                class="text-blue-300 hover:underline text-sm"
+                class="text-blue-300 hover:underline text-sm no-underline"
               >
                 #{tag}
               </a>
@@ -138,6 +236,7 @@ const displayDate = validDate
     </main>
 
     <footer class="bg-black text-gray-400 border-t border-gray-800 py-6">
+       {/* Footer content */}
       <div class="container mx-auto text-center text-sm">
         © {new Date().getFullYear()} Mekann
       </div>
@@ -146,83 +245,190 @@ const displayDate = validDate
     {/* クライアントサイドスクリプト */}
     <script type="module">
       let mermaidInstance = null;
+      let intersectionObserver = null; // Mermaid用Intersection Observer
+      const mermaidElementsToProcess = new Set(); // 処理対象のMermaid要素
 
       // Mermaid ライブラリのロードと初期化
       async function ensureMermaid() {
-        if (!window.mermaid && !mermaidInstance) { // まだロードされていなければ
-          try {
-            // Dynamic import で Mermaid をロード
-            const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
-            mermaidInstance = module.default; // default export を取得
-            // 初期化 (自動実行は無効、テーマは dark)
-            mermaidInstance.initialize({ startOnLoad: false, theme: 'dark' });
-            console.log('Mermaid loaded and initialized.');
-          } catch (error) {
-            console.error('Failed to load Mermaid:', error);
+        // window.mermaid はグローバル汚染の可能性があるため、明示的なインスタンス管理を推奨
+        if (mermaidInstance) return mermaidInstance;
+
+        // まだロード中でなければ、ロード処理を開始
+        if (!window.mermaidLoadingPromise) {
+            window.mermaidLoadingPromise = (async () => {
+                console.log('Loading Mermaid...');
+                try {
+                    // Dynamic import で Mermaid をロード
+                    // パフォーマンス改善のため、より軽量なコアAPIのみをインポートすることも検討可能
+                    // import mermaidAPI from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.core.esm.mjs';
+                    const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+                    const mermaidAPI = module.default; // default export を取得
+                    // 初期化 (自動実行は無効、テーマは dark)
+                    mermaidAPI.initialize({ startOnLoad: false, theme: 'dark' });
+                    console.log('Mermaid loaded and initialized.');
+                    return mermaidAPI;
+                } catch (error) {
+                    console.error('Failed to load or initialize Mermaid:', error);
+                    // ロード失敗時もPromiseを解決し、nullを返すなどでエラー処理可能にする
+                    window.mermaidLoadingPromise = null; // ロード失敗したら再試行可能にする？ or nullを保持
+                    return null;
+                }
+            })();
+        }
+        // ロード処理(Promise)が完了するのを待つ
+        mermaidInstance = await window.mermaidLoadingPromise;
+        return mermaidInstance;
+      }
+
+      // 個々の Mermaid ダイアグラムをレンダリングする関数
+      async function renderSingleMermaidDiagram(preElement) {
+        // 要素が存在しない、または既に処理済み/処理中の場合はスキップ
+        if (!preElement || preElement.dataset.mermaidProcessed !== 'pending') {
+            return;
+        }
+
+        // 状態を「処理中」に更新
+        preElement.dataset.mermaidProcessed = 'processing';
+        // console.log(`Processing Mermaid element:`, preElement);
+
+        const codeElement = preElement.querySelector('code');
+        const code = codeElement?.textContent?.trim() || '';
+
+        if (!code) {
+          console.warn('Mermaid code block is empty.', preElement);
+          preElement.dataset.mermaidProcessed = 'error'; // エラー状態としてマーク
+          preElement.textContent = 'Error: Empty code block.'; // ユーザーへのフィードバック
+          preElement.classList.add('mermaid-error-container'); // エラースタイル適用
+          preElement.classList.remove('mermaid'); // 元のクラス削除
+          return;
+        }
+
+        const mermaidAPI = await ensureMermaid();
+        if (!mermaidAPI) {
+          console.error('Mermaid instance is not available. Cannot render diagram.');
+          preElement.dataset.mermaidProcessed = 'error';
+          const errorMessage = 'Error: Mermaid library failed to load.';
+          // エラー表示を改善
+          if (preElement.classList.contains('mermaid')) {
+             preElement.textContent = errorMessage;
+             preElement.classList.add('mermaid-error-container');
+             preElement.classList.remove('mermaid');
+          } else {
+             // すでに別のコンテナに置き換わっている場合(稀)
+             const errorDiv = document.createElement('div');
+             errorDiv.classList.add('mermaid-error-container');
+             errorDiv.textContent = errorMessage;
+             preElement.parentNode?.replaceChild(errorDiv, preElement);
           }
-        } else if (window.mermaid && !mermaidInstance) {
-          // すでにグローバルにロードされている場合 (稀なケース)
-          mermaidInstance = window.mermaid;
-          console.log('Mermaid already loaded (global).');
+          return;
+        }
+
+        const id = 'mermaid-' + Math.random().toString(36).substring(2, 9);
+
+        try {
+          // Mermaid で SVG をレンダリング
+          // render()は非同期で、SVG文字列とbindFunctions関数を返す
+          const { svg } = await mermaidAPI.render(id, code);
+
+          // 元の pre 要素を、生成された SVG を含む div で置き換える
+          const div = document.createElement('div');
+          div.innerHTML = svg; // innerHTMLでSVGを挿入
+          div.classList.add('mermaid-container'); // スタイリング用クラスを追加
+          div.dataset.mermaidProcessed = 'done'; // 処理完了マーク
+
+          // pre要素の親要素内で、pre要素を新しいdivで置き換える
+          if (preElement.parentNode) {
+             preElement.parentNode.replaceChild(div, preElement);
+             // console.log(`Mermaid diagram ${id} rendered successfully.`);
+          } else {
+              console.warn("Parent node not found for preElement during replacement:", preElement);
+              // 親が見つからない場合は処理中断、エラー状態にする
+              preElement.dataset.mermaidProcessed = 'error';
+          }
+
+        } catch (error) {
+          // レンダリングエラー時の処理
+          console.error(`Error rendering Mermaid diagram ${id}:`, error, '\nSource Code:\n', code);
+          // エラーメッセージを表示する div
+          const errorDiv = document.createElement('div');
+          errorDiv.classList.add('mermaid-error-container'); // エラー用スタイルクラス
+          errorDiv.textContent = `Mermaid Render Error:\n${error?.message || String(error)}\n\nSource Code:\n${code}`;
+          errorDiv.dataset.mermaidProcessed = 'error';
+
+          // pre要素をエラーdivで置き換える
+          if (preElement.parentNode) {
+             preElement.parentNode.replaceChild(errorDiv, preElement);
+          } else {
+             console.warn("Parent node not found for preElement during error replacement:", preElement);
+          }
+        } finally {
+             // 処理が完了またはエラーになった要素をリストから削除
+             mermaidElementsToProcess.delete(preElement);
         }
       }
 
-      // Mermaid ダイアグラムのレンダリング
-      async function renderMermaidDiagrams() {
-        await ensureMermaid(); // Mermaid がロードされるのを待つ
-        if (!mermaidInstance) {
-          console.error('Mermaid instance is not available for rendering.');
+      // Intersection Observer のセットアップと実行
+      function setupMermaidObserver() {
+        // 既存のObserverがあれば切断し、リストをクリア
+        if (intersectionObserver) {
+          intersectionObserver.disconnect();
+          // console.log("Disconnected previous Intersection Observer.");
+        }
+        mermaidElementsToProcess.clear(); // 古い参照をクリア
+
+        // まだ処理されていないMermaid要素を取得
+        const mermaidPres = document.querySelectorAll('pre.mermaid:not([data-mermaid-processed])');
+
+        if (mermaidPres.length === 0) {
+          // console.log('No unprocessed Mermaid diagrams found for observer.');
           return;
         }
-        // remark-mermaidjs が生成する想定のセレクタ
-        const elements = document.querySelectorAll('pre.mermaid > code');
-        if (elements.length === 0) {
-          // Mermaid ダイアグラムが見つからない場合は何もしない
-          // console.log('No Mermaid diagrams found to render.');
-          return;
-        }
+        // console.log(`Setting up Intersection Observer for ${mermaidPres.length} Mermaid diagrams.`);
 
-        console.log(`Found ${elements.length} Mermaid diagrams. Rendering...`);
+        // 処理対象としてマークし、リストに追加
+        mermaidPres.forEach(pre => {
+            pre.dataset.mermaidProcessed = 'pending'; // 処理前マーク & スタイル適用トリガー
+            mermaidElementsToProcess.add(pre);
+        });
 
-        // 各 Mermaid コードブロックを処理
-        for (const el of elements) {
-          const code = el.textContent || ''; // code タグの中身を取得
-          const id = 'mermaid-' + Math.random().toString(36).substring(2, 9); // 一意なIDを生成
-          const container = el.parentNode; // pre タグを取得
+        const observerOptions = {
+          root: null, // ビューポートをルートとする
+          rootMargin: '200px 0px 200px 0px', // ビューポートの上下200px手前で交差判定開始
+          threshold: 0.01 // 少しでも見えたら発火
+        };
 
-          if (!container || !code) continue; // コンテナやコードがなければ次へ
-
-          try {
-            // Mermaid で SVG をレンダリング
-            const { svg } = await mermaidInstance.render(id, code);
-            // 元の pre 要素を、生成された SVG を含む div で置き換える
-            const div = document.createElement('div');
-            div.innerHTML = svg;
-            div.classList.add('mermaid-container'); // スタイリング用クラスを追加
-            container.parentNode.replaceChild(div, container);
-            // console.log(`Mermaid diagram ${id} rendered successfully.`);
-          } catch (error) {
-            // レンダリングエラー時の処理
-            console.error(`Error rendering Mermaid diagram ${id}:`, error);
-            // エラーメッセージを表示する div で置き換える
-            const errorDiv = document.createElement('div');
-            errorDiv.style.color = 'red';
-            errorDiv.textContent = `Mermaid Error: ${error.message}\n\n${code}`; // エラーと元のコードを表示
-            container.parentNode.replaceChild(errorDiv, container);
+        intersectionObserver = new IntersectionObserver(async (entries, observer) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              const targetPre = entry.target;
+              // console.log('Mermaid diagram entered viewport:', targetPre);
+              // 一度交差したら監視を解除
+              observer.unobserve(targetPre);
+              // リストからも削除(重複処理防止のため setupMermaidObserver でもクリアしているが念のため)
+              mermaidElementsToProcess.delete(targetPre);
+              // 非同期でレンダリングを実行 (await しないことで他の処理をブロックしない)
+              renderSingleMermaidDiagram(targetPre).catch(err => {
+                  console.error("Error during async mermaid rendering trigger:", err, targetPre);
+                  // レンダリング関数内でエラー状態がセットされるはずだが、念のためここでも
+                  if (targetPre && targetPre.dataset && !targetPre.dataset.mermaidProcessed) {
+                     targetPre.dataset.mermaidProcessed = 'error';
+                  }
+              });
+            }
           }
-        }
+        }, observerOptions);
+
+        // 各 pre.mermaid 要素を監視対象に追加
+        mermaidElementsToProcess.forEach(pre => {
+          intersectionObserver.observe(pre);
+        });
       }
 
       // コードブロックにコピーボタンを追加
       function addCopyButtons() {
-        // Mermaid 用の pre を除く、記事内のすべての pre 要素を選択
-        document.querySelectorAll('article.prose pre:not(.mermaid)').forEach((pre) => {
-          // すでにボタンが存在する場合はスキップ
-          if (pre.querySelector('button.copy-button')) {
-            return;
-          }
-
-          const codeEl = pre.querySelector('code'); // code 要素を取得
+        // 記事内のMermaid用ではない pre 要素で、まだボタンがないものを選択
+        document.querySelectorAll('article.prose pre:not(.mermaid):not([data-copy-button-added])').forEach((pre) => {
+          const codeEl = pre.querySelector('code');
           if (!codeEl) return; // code 要素がなければスキップ
 
           // ボタン要素を作成
@@ -230,42 +436,64 @@ const displayDate = validDate
           btn.textContent = 'Copy';
           // Tailwind CSS クラスでスタイリング + ホバー表示
           btn.className =
-            'copy-button absolute top-2 right-2 bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100';
+            'copy-button absolute top-2 right-2 bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100 z-10'; // z-index追加
 
           // クリックイベントリスナーを追加
           btn.addEventListener('click', async () => {
+            const textToCopy = codeEl.textContent || '';
+            if (!navigator.clipboard) {
+                console.warn("Clipboard API not available.");
+                btn.textContent = 'Error'; // or 'Not Supported'
+                setTimeout(() => (btn.textContent = 'Copy'), 1500);
+                return;
+            }
             try {
               // code 要素のテキストをクリップボードにコピー
-              await navigator.clipboard.writeText(codeEl.textContent || '');
+              await navigator.clipboard.writeText(textToCopy);
               btn.textContent = 'Copied!'; // 成功メッセージ
-              // 1.5秒後にテキストを元に戻す
-              setTimeout(() => (btn.textContent = 'Copy'), 1500);
             } catch (err) {
               console.error('Failed to copy text: ', err);
               btn.textContent = 'Error'; // エラーメッセージ
-              setTimeout(() => (btn.textContent = 'Copy'), 1500);
+            } finally {
+               // 1.5秒後にテキストを元に戻す
+               setTimeout(() => (btn.textContent = 'Copy'), 1500);
             }
           });
 
           // pre 要素に Tailwind の group クラスを追加 (group-hover のため)
           pre.classList.add('group');
-          // ボタンの absolute 配置のために relative を設定
-          pre.style.position = 'relative';
+          // ボタンの absolute 配置のために relative を設定 (既についていることが多いが一応確認)
+          if (window.getComputedStyle(pre).position === 'static') {
+             pre.style.position = 'relative';
+          }
           // ボタンを pre 要素に追加
           pre.appendChild(btn);
+          // ボタン追加済みマーク
+          pre.dataset.copyButtonAdded = 'true';
         });
       }
 
-      // --- KaTeX レンダリング関数は削除 ---
-      // function renderKaTeX() { ... }
+      // 機能の初期化/再初期化を行う関数
+      function initializePageFeatures() {
+         console.log('Initializing page features (Mermaid Observer, Copy Buttons)...');
+         // ページ遷移の可能性があるため、Mermaid Observerを再セットアップ
+         setupMermaidObserver();
+         // コピーボタンを追加 (未追加のものにのみ)
+         addCopyButtons();
+      }
 
-      // DOM 読み込み完了時に実行
-      document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOMContentLoaded event fired.');
-        renderMermaidDiagrams(); // Mermaid のレンダリングを開始
-        addCopyButtons();      // コピーボタンを追加
-        // renderKaTeX(); // ← KaTeX レンダリングの呼び出しを削除
-      });
+      // --- イベントリスナー ---
+      // AstroのView Transitionsを使用している場合、ページ遷移後に実行される
+      document.addEventListener('astro:page-load', initializePageFeatures);
+
+      // SPAナビゲーション以外での初回ロード時 (DOMContentLoaded)
+      // または、スクリプトがDOMContentLoaded後に読み込まれた場合（即時実行）
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializePageFeatures);
+      } else {
+        // すでにDOMContentLoaded後なら即時実行
+        initializePageFeatures();
+      }
 
     </script>
   </body>
