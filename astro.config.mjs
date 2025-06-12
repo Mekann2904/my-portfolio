@@ -49,7 +49,13 @@ export default defineConfig({
   vite: {
     build: {
       cssMinify: 'esbuild',
-      minify: true, // デフォルトで有効な場合が多いが明示的に設定
+      minify: true,
+    },
+    optimizeDeps: {
+      include: ['three']
+    },
+    ssr: {
+      noExternal: ['three']
     }
   }
 });

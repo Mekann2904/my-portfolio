@@ -16,11 +16,6 @@
       "ext": true
     },
     {
-      "id": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
-      "label": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
-      "ext": true
-    },
-    {
       "id": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
       "label": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
       "ext": true
@@ -229,6 +224,11 @@
       "id": "/tags/静的サイト",
       "label": "tags/静的サイト",
       "ext": false
+    },
+    {
+      "id": "/test/three",
+      "label": "test/three",
+      "ext": false
     }
   ],
   "links": [
@@ -238,11 +238,7 @@
     },
     {
       "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-    },
-    {
-      "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      "target": "https://cdn.jsdelivr.net"
     },
     {
       "source": "/blog/Math Test",
@@ -282,11 +278,7 @@
     },
     {
       "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      "target": "https://cdn.jsdelivr.net"
     },
     {
       "source": "/blog/looking-glass self",
@@ -326,11 +318,7 @@
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      "target": "https://cdn.jsdelivr.net"
     },
     {
       "source": "/blog/machine-learning-01",
@@ -414,11 +402,7 @@
     },
     {
       "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      "target": "https://cdn.jsdelivr.net"
     },
     {
       "source": "/blog/my-first-post",

@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^25.0.0",
     "animejs": "^3.2.2",
     "astro": "^5.7.5",
     "d3": "^7.9.0",
