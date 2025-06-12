@@ -105,37 +105,74 @@ const displayDate = validDate
 
     {/* --- Other Styles (Mermaidプレースホルダーなど) --- */}
     <style>
-      {/* ★ Mermaidビルド時レンダリングに切り替える場合は、以下のMermaid関連スタイルも不要になる可能性が高い */}
+      /* ★ Mermaidビルド時レンダリングに切り替える場合は、以下のMermaid関連スタイルも不要になる可能性が高い */
       pre.mermaid[data-mermaid-processed="pending"] {
-        min-height: 150px; display: flex; align-items: center; justify-content: center;
-        background-color: rgba(255, 255, 255, 0.03); border-radius: 8px;
-        border: 1px dashed rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.5);
-        font-style: italic; text-align: center; padding: 1em; margin: 1.5em 0;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.5);
+        font-style: italic;
+        text-align: center;
+        padding: 1em;
+        margin: 1.5em 0;
         overflow: hidden;
       }
-      pre.mermaid[data-mermaid-processed="pending"]::before { content: 'Loading diagram...'; }
 
-      .mermaid-container { /* Mermaid SVGをクライアントで挿入する場合のラッパー */
-        display: flex; justify-content: center; overflow-x: auto;
-        margin: 1.5em 0; max-width: 100%;
+      pre.mermaid[data-mermaid-processed="pending"]::before {
+        content: 'Loading diagram...';
+      }
+
+      .mermaid-container {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        margin: 1.5em 0;
+        max-width: 100%;
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2);
         -webkit-overflow-scrolling: touch;
       }
-      .mermaid-container::-webkit-scrollbar { height: 8px; }
-      .mermaid-container::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
-      .mermaid-container::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.4); border-radius: 4px; }
-      .mermaid-container svg { max-width: none; display: block; } /* クライアント挿入SVG用 */
 
-      .mermaid-error-container { /* クライアントエラー表示用 */
-        background-color: #400; color: #fcc; border: 1px solid #c00;
-        padding: 1em; margin: 1.5em 0; border-radius: 8px;
-        white-space: pre-wrap; word-break: break-all; font-family: monospace;
+      .mermaid-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .mermaid-container::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .mermaid-container::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 4px;
+      }
+
+      .mermaid-container svg {
+        max-width: none;
+        display: block;
+      }
+
+      .mermaid-error-container {
+        background-color: #400;
+        color: #fcc;
+        border: 1px solid #c00;
+        padding: 1em;
+        margin: 1.5em 0;
+        border-radius: 8px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-family: monospace;
         overflow-x: auto;
       }
 
       /* コードブロックのコピーボタン用に pre に relative を付与 */
-      .prose pre:not(.mermaid) { position: relative; }
+      .prose pre:not(.mermaid) {
+        position: relative;
+      }
 
       /*
         ★ KaTeX数式の横スクロールについて:
