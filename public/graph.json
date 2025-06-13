@@ -229,6 +229,11 @@
       "id": "/test/three",
       "label": "test/three",
       "ext": false
+    },
+    {
+      "id": "/test/three-1",
+      "label": "test/three-1",
+      "ext": false
     }
   ],
   "links": [

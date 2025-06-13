@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThreeBox from '../../components/ThreeBox-1';
+
+---
+
+<BaseLayout title="Three.js Light Examples">
+  <main>
+    <ThreeBox client:load />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+</style>
