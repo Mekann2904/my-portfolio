@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThreeBox from '../../components/ThreeBox-3';
+
+---
+
+<BaseLayout title="Three.js 3D Model Demo">
+  <main class="three-main">
+    <div class="canvas-container">
+      <ThreeBox client:load />
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+  }
+  :global(body) {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+  }
+  .three-main {
+    width: 100vw;
+    height: calc(100vh - 60px); /* ヘッダー分を引く */
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    box-sizing: border-box;
+  }
+  :global(.canvas-container) {
+    width: 90vw;
+    height: 80vh;
+    max-width: 1200px;
+    max-height: 800px;
+    position: relative;
+    overflow: hidden;
+    background: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+    margin: 0 auto;
+  }
+  :global(canvas) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    background: #181818 !important;
+    display: block;
+    border-radius: 16px;
+    margin: auto;
+  }
+</style>
