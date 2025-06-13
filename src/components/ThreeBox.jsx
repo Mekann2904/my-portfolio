@@ -257,7 +257,7 @@ export default function ThreeBox() {
         scene.fog = new THREE.FogExp2(0x0a1020, 0.001);
         
         const camera = new THREE.PerspectiveCamera(90, currentMount.clientWidth / currentMount.clientHeight, 0.1, 12000);
-        camera.position.set(0, 0, 800);
+        camera.position.set(0, 0, 5000);
 
         const renderer = new THREE.WebGLRenderer({ 
             antialias: true,
@@ -284,7 +284,7 @@ export default function ThreeBox() {
         // --- ここから先のオブジェクト生成ロジックは変更ありません ---
 
         // ネットワーククラスターの生成
-        const CLUSTER_COUNT = 512; 
+        const CLUSTER_COUNT = 2048; 
         const clusterGroups = [];
         const nodeGeom = new THREE.SphereGeometry(1.0, 32, 32);
         const nodeMat = new THREE.MeshStandardMaterial({ 
@@ -371,9 +371,9 @@ export default function ThreeBox() {
 
         for (let i = 0; i < CLUSTER_COUNT; i++) {
             const { nodes, linkPoints } = generateOptimizedNetwork(
-                20 + Math.floor(Math.random() * 8),
-                28 + Math.floor(Math.random() * 12),
-                12 + Math.random() * 4
+                20 + Math.floor(Math.random() * 20),
+                28 + Math.floor(Math.random() * 28),
+                8 + Math.random() * 8
             );
             
             const inst = new THREE.InstancedMesh(nodeGeom, nodeMat.clone(), nodes.length);
@@ -478,7 +478,7 @@ export default function ThreeBox() {
         scene.add(new THREE.AmbientLight(0x1a0033, 0.3));
 
         // 光の粒子システム
-        const PARTICLE_COUNT = 20000;
+        const PARTICLE_COUNT = 1000000;
         const particleGeometry = new THREE.BufferGeometry();
         const particlePositions = new Float32Array(PARTICLE_COUNT * 3);
         const particleVelocities = new Float32Array(PARTICLE_COUNT * 3);
@@ -734,7 +734,7 @@ export default function ThreeBox() {
 
                 // === ここから格子再配置 ===
                 const gridCount = Math.ceil(Math.cbrt(clusterGroups.length));
-                const spacing = 300; // 格子間隔
+                const spacing = 420; // 格子間隔
                 let idx = 0;
                 for (let x = 0; x < gridCount; x++) {
                   for (let y = 0; y < gridCount; y++) {
@@ -764,7 +764,7 @@ export default function ThreeBox() {
         };
 
         const updateFinalePhase = (elapsedTime, finaleTime) => {
-            state.cameraOrbit.theta += 0.0005 * (1 + Math.sin(finaleTime * 0.2) * 0.1);
+            state.cameraOrbit.theta += 0.0007 * (1 + Math.sin(finaleTime * 0.2) * 0.1);
             state.cameraOrbit.phi = Math.PI / 4 + Math.sin(finaleTime * 0.3) * 0.1;
             
             const targetPos = new THREE.Vector3(
@@ -773,7 +773,7 @@ export default function ThreeBox() {
                 Math.sin(state.cameraOrbit.theta) * Math.sin(state.cameraOrbit.phi) * state.cameraOrbit.radius
             ).add(finaleObj.position);
 
-            camera.position.lerp(targetPos, 0.02);
+            camera.position.lerp(targetPos, 0.05);
             camera.lookAt(finaleObj.position);
 
             lights.forEach((light) => {
