@@ -284,7 +284,7 @@ export default function ThreeBox() {
         // --- ここから先のオブジェクト生成ロジックは変更ありません ---
 
         // ネットワーククラスターの生成
-        const CLUSTER_COUNT = 400; 
+        const CLUSTER_COUNT = 512; 
         const clusterGroups = [];
         const nodeGeom = new THREE.SphereGeometry(1.0, 32, 32);
         const nodeMat = new THREE.MeshStandardMaterial({ 
@@ -313,7 +313,7 @@ export default function ThreeBox() {
                 clusterPosition.y = Math.sin(nearPathAngle) * nearPathDeviation;
             }
             else if (distributionType < 0.7) {
-                clusterPosition.z = -200 - Math.random() * 2000;
+                clusterPosition.z = -200 - Math.random() * 5000;
                 const midPathDeviation = 800 + Math.random() * 1200;
                 const midPathAngle = Math.random() * Math.PI * 2;
                 clusterPosition.x = Math.cos(midPathAngle) * midPathDeviation;
@@ -493,7 +493,7 @@ export default function ThreeBox() {
                 position.y = Math.sin(angle) * deviation;
             }
             else if (distributionType < 0.7) {
-                position.z = -200 - Math.random() * 2000;
+                position.z = -200 - Math.random() * 5000;
                 const deviation = 800 + Math.random() * 1200;
                 const angle = Math.random() * Math.PI * 2;
                 position.x = Math.cos(angle) * deviation;
@@ -570,7 +570,7 @@ export default function ThreeBox() {
         }
 
         // 重力場
-        const GRAVITY_POINTS = 5;
+        const GRAVITY_POINTS = 0;
         const gravityPoints = [];
         
         for (let i = 0; i < GRAVITY_POINTS; i++) {
@@ -730,6 +730,27 @@ export default function ThreeBox() {
                 const ambientLight = new THREE.AmbientLight(0x6633ff, 0.4);
                 scene.add(ambientLight);
 
+                // === ここから格子再配置 ===
+                const gridCount = Math.ceil(Math.cbrt(clusterGroups.length));
+                const spacing = 300; // 格子間隔
+                let idx = 0;
+                for (let x = 0; x < gridCount; x++) {
+                  for (let y = 0; y < gridCount; y++) {
+                    for (let z = 0; z < gridCount; z++) {
+                      if (idx >= clusterGroups.length) break;
+                      const group = clusterGroups[idx];
+                      // 目標座標を保存
+                      group.userData.gridTarget = new THREE.Vector3(
+                        finaleObj.position.x + (x - gridCount / 2) * spacing,
+                        finaleObj.position.y + (y - gridCount / 2) * spacing,
+                        finaleObj.position.z + (z - gridCount / 2) * spacing
+                      );
+                      idx++;
+                    }
+                  }
+                }
+                // === ここまで格子再配置 ===
+
                 return true;
             }
             return false;
@@ -801,6 +822,10 @@ export default function ThreeBox() {
                             group.children[1].material.opacity = opacity * 0.25;
                         }
                     }
+                }
+
+                if (state.phase === 'FINALE' && group.userData.gridTarget) {
+                    group.position.lerp(group.userData.gridTarget, 0.005); // 小さい値ほどゆっくり
                 }
             });
 
