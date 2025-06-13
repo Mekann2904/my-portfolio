@@ -480,6 +480,18 @@
     },
     {
       "source": "/",
+      "target": "/test/three"
+    },
+    {
+      "source": "/",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/",
       "target": "https://note.com/mekann"
     },
     {
