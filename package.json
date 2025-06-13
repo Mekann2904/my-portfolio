@@ -14,6 +14,7 @@
     "astro": "^5.7.5",
     "d3": "^7.9.0",
     "mermaid": "^11.6.0",
+    "rehype-mermaid": "^3.0.0",
     "three": "^0.176.0"
   },
   "devDependencies": {
@@ -32,7 +33,6 @@
     "react-dom": "^19.1.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "remark-mermaidjs": "^7.0.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "xml2js": "^0.6.2"

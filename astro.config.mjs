@@ -8,7 +8,7 @@ import mdx from '@astrojs/mdx';
 // Markdown/MDX 関連プラグイン
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import remarkMermaid from 'remark-mermaidjs';
+import rehypeMermaid from 'rehype-mermaid';
 
 export default defineConfig({
   integrations: [
@@ -19,19 +19,15 @@ export default defineConfig({
   markdown: {
     // remark プラグイン (Markdown AST -> Markdown AST)
     remarkPlugins: [
-      remarkMath,    // 数式構文 ($$, $) を認識
-      [remarkMermaid, {
-        theme: 'dark',
-        securityLevel: 'loose',
-        startOnLoad: true
-      }]
+      remarkMath    // 数式構文 ($$, $) を認識
     ],
     // rehype プラグイン (HTML AST -> HTML AST)
     rehypePlugins: [
       [rehypeKatex, {
         throwOnError: false,
         errorColor: '#cc0000',
-      }]
+      }],
+      rehypeMermaid
     ],
     // コードハイライト設定
     shikiConfig: {
