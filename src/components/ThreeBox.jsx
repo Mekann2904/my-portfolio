@@ -418,6 +418,8 @@ export default function ThreeBox() {
                     (Math.random() - 0.5) * 0.0001 * speedFactor
                 )
             };
+            // シナプス発光用の乱数シード
+            group.userData.synapseSeed = Math.random() * 1000;
             
             clusterGroups.push(group);
             scene.add(group);
@@ -740,11 +742,16 @@ export default function ThreeBox() {
                       if (idx >= clusterGroups.length) break;
                       const group = clusterGroups[idx];
                       // 目標座標を保存
+                      const dx = x - gridCount / 2;
+                      const dy = y - gridCount / 2;
+                      const dz = z - gridCount / 2;
                       group.userData.gridTarget = new THREE.Vector3(
-                        finaleObj.position.x + (x - gridCount / 2) * spacing,
-                        finaleObj.position.y + (y - gridCount / 2) * spacing,
-                        finaleObj.position.z + (z - gridCount / 2) * spacing
+                        finaleObj.position.x + dx * spacing,
+                        finaleObj.position.y + dy * spacing,
+                        finaleObj.position.z + dz * spacing
                       );
+                      group.userData.gridIndex = { x, y, z };
+                      group.userData.gridDistance = Math.sqrt(dx*dx + dy*dy + dz*dz);
                       idx++;
                     }
                   }
@@ -825,7 +832,25 @@ export default function ThreeBox() {
                 }
 
                 if (state.phase === 'FINALE' && group.userData.gridTarget) {
-                    group.position.lerp(group.userData.gridTarget, 0.005); // 小さい値ほどゆっくり
+                    group.position.lerp(group.userData.gridTarget, 0.005);
+                    // === 複数の波による複雑な共鳴 ===
+                    const t = performance.now() * 0.001;
+                    const d = group.userData.gridDistance;
+                    // 複数の波を重ねる
+                    const wave1 = Math.sin(t * 2 - d * 0.5);
+                    const wave2 = Math.sin(t * 1.3 + d * 0.8 + group.userData.gridIndex.x * 0.7);
+                    const wave3 = Math.sin(t * 2.7 - d * 1.1 + group.userData.gridIndex.y * 0.5);
+                    const wave4 = Math.sin(t * 1.8 + d * 0.6 + group.userData.gridIndex.z * 0.9);
+                    // 合成（正の値のみ）
+                    const pulse = Math.max(0, (wave1 + wave2 + wave3 + wave4) / 4);
+                    if (group.children[0]?.material) {
+                        group.children[0].material.emissiveIntensity = 2.0 + 5.0 * pulse;
+                        // 色も共鳴の強さで変化（例：紫→青→白）
+                        // HSL: hue=0.7(紫)〜0.6(青)、lightness=0.5〜1.0
+                        const hue = 0.7 - 0.1 * pulse;
+                        const lightness = 0.5 + 0.5 * pulse;
+                        group.children[0].material.emissive.setHSL(hue, 1, lightness);
+                    }
                 }
             });
 
