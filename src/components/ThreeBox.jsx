@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
@@ -224,6 +224,7 @@ function generateOptimizedNetwork(nodeCount, linkCount, radius) {
 
 export default function ThreeBox() {
     const mountRef = useRef(null);
+    const [showFinaleText, setShowFinaleText] = useState(false);
     const state = useRef({
         phase: 'NAVIGATING',
         // 【変更】自動進行用の速度変数を削除し、スクロール用の速度変数を追加
@@ -240,6 +241,28 @@ export default function ThreeBox() {
     useEffect(() => {
         if (!mountRef.current) return;
         const currentMount = mountRef.current;
+
+        // 【追加】タッチ操作でスクロール進行
+        let lastTouchY = null;
+        const onTouchStart = (e) => {
+            if (e.touches.length === 1) {
+                lastTouchY = e.touches[0].clientY;
+            }
+        };
+        const onTouchMove = (e) => {
+            if (e.touches.length === 1 && lastTouchY !== null) {
+                const currentY = e.touches[0].clientY;
+                const deltaY = currentY - lastTouchY;
+                state.scrollVelocity -= deltaY * 0.25; // 感度は調整可
+                lastTouchY = currentY;
+            }
+        };
+        const onTouchEnd = () => {
+            lastTouchY = null;
+        };
+        currentMount.addEventListener("touchstart", onTouchStart, { passive: true });
+        currentMount.addEventListener("touchmove", onTouchMove, { passive: true });
+        currentMount.addEventListener("touchend", onTouchEnd, { passive: true });
 
         // 【追加】スクロールイベントを処理する関数
         const onWheel = (event) => {
@@ -284,7 +307,7 @@ export default function ThreeBox() {
         // --- ここから先のオブジェクト生成ロジックは変更ありません ---
 
         // ネットワーククラスターの生成
-        const CLUSTER_COUNT = 2048; 
+        const CLUSTER_COUNT = 1728; //12*12*12
         const clusterGroups = [];
         const nodeGeom = new THREE.SphereGeometry(1.0, 32, 32);
         const nodeMat = new THREE.MeshStandardMaterial({ 
@@ -705,6 +728,9 @@ export default function ThreeBox() {
                 // 【変更】フィナーレに入ったらスクロールを止める
                 state.scrollVelocity = 0;
 
+                // ★ここでテキスト表示フラグをON
+                setShowFinaleText(true);
+
                 new Tween(finaleMat.uniforms.uOpacity)
                     .to({ value: 1.0 }, FINALE_TRANSITION_DURATION)
                     .easing(Easing.Quintic.InOut)
@@ -734,7 +760,7 @@ export default function ThreeBox() {
 
                 // === ここから格子再配置 ===
                 const gridCount = Math.ceil(Math.cbrt(clusterGroups.length));
-                const spacing = 420; // 格子間隔
+                const spacing = 300; // 格子間隔
                 let idx = 0;
                 for (let x = 0; x < gridCount; x++) {
                   for (let y = 0; y < gridCount; y++) {
@@ -817,20 +843,6 @@ export default function ThreeBox() {
                 group.rotation.y += movement.rotationSpeed.y;
                 group.rotation.z += movement.rotationSpeed.z;
 
-                if (state.phase === 'FINALE') {
-                    const distance = group.position.distanceTo(finaleObj.position);
-                    const fadeThreshold = 1000;
-                    if (distance < fadeThreshold) {
-                        const opacity = Math.max(0, distance / fadeThreshold);
-                        if (group.children[0]?.material) {
-                            group.children[0].material.opacity = opacity * 0.5;
-                        }
-                        if (group.children[1]?.material) {
-                            group.children[1].material.opacity = opacity * 0.25;
-                        }
-                    }
-                }
-
                 if (state.phase === 'FINALE' && group.userData.gridTarget) {
                     group.position.lerp(group.userData.gridTarget, 0.005);
                     // === 複数の波による複雑な共鳴 ===
@@ -848,7 +860,7 @@ export default function ThreeBox() {
                         // 色も共鳴の強さで変化（例：紫→青→白）
                         // HSL: hue=0.7(紫)〜0.6(青)、lightness=0.5〜1.0
                         const hue = 0.7 - 0.1 * pulse;
-                        const lightness = 0.5 + 0.5 * pulse;
+                        const lightness = 0.5 + 0.7 * pulse;
                         group.children[0].material.emissive.setHSL(hue, 1, lightness);
                     }
                 }
@@ -901,6 +913,10 @@ export default function ThreeBox() {
             cancelAnimationFrame(frameId);
             // 【追加】イベントリスナーを削除
             currentMount.removeEventListener("wheel", onWheel);
+            // 【追加】タッチイベントリスナー削除
+            currentMount.removeEventListener("touchstart", onTouchStart);
+            currentMount.removeEventListener("touchmove", onTouchMove);
+            currentMount.removeEventListener("touchend", onTouchEnd);
 
             // --- 以降、元のクリーンアップ処理（変更なし） ---
             state.dynamicLights.forEach(light => {
@@ -1002,6 +1018,104 @@ export default function ThreeBox() {
                 margin: 0,
                 padding: 0
             }}
-        />
+        >
+            {showFinaleText && (
+                <>
+                    {/* ガラスフィルタ */}
+                    <div style={{
+                        position: "fixed",
+                        inset: 0,
+                        zIndex: 20,
+                        background: "rgba(0,0,0,0.45)",
+                        backdropFilter: "blur(0px)",
+                        WebkitBackdropFilter: "blur(0px)"
+                    }} />
+                    {/* Heroテキスト */}
+                    <div style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        zIndex: 30,
+                        pointerEvents: "auto"
+                    }}>
+                        <div style={{
+                            maxWidth: 900,
+                            width: "100%",
+                            padding: "0 1.5rem",
+                            textAlign: "center"
+                        }}>
+                            <h1 style={{
+                                fontWeight: 900,
+                                fontSize: "clamp(2.5rem,8vw,5.5rem)",
+                                letterSpacing: "-0.03em",
+                                lineHeight: 1.08,
+                                marginBottom: "2.2rem",
+                                color: "#fff"
+                            }}>
+                                Intelligent Systems ×<br />AI-Driven Knowledge
+                            </h1>
+                            <p style={{
+                                color: "#bfc3cb",
+                                fontSize: "1.35rem",
+                                marginBottom: "2.8rem",
+                                lineHeight: 1.7,
+                                fontWeight: 400
+                            }}>
+                                AI を核に、知識の構造と思考のプロセスを再設計する。<br />
+                                次世代の知能情報基盤を探究します。
+                            </p>
+                            <div style={{ display: "flex", justifyContent: "center", gap: "1.2rem" }}>
+                                <a
+                                    href="https://note.com/mekann"
+                                    target="_blank"
+                                    rel="noopener"
+                                    style={{
+                                        background: "#fff",
+                                        color: "#18181b",
+                                        padding: "0.85rem 2.5rem",
+                                        borderRadius: "0.75rem",
+                                        fontWeight: 700,
+                                        fontSize: "1.15rem",
+                                        textDecoration: "none",
+                                        boxShadow: "0 2px 12px #0002",
+                                        border: "1.5px solid #e5e7eb",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "0.5em"
+                                    }}
+                                >
+                                    note
+                                    <span style={{ fontSize: "1.2em", marginLeft: "0.2em" }}>→</span>
+                                </a>
+                                <a
+                                    href="https://github.com/Mekann2904"
+                                    target="_blank"
+                                    rel="noopener"
+                                    style={{
+                                        background: "transparent",
+                                        color: "#fff",
+                                        padding: "0.85rem 2.5rem",
+                                        borderRadius: "0.75rem",
+                                        fontWeight: 700,
+                                        fontSize: "1.15rem",
+                                        textDecoration: "none",
+                                        border: "1.5px solid #fff",
+                                        boxShadow: "0 2px 12px #0002"
+                                    }}
+                                >
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )}
+        </div>
     );
 }
