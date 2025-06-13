@@ -299,7 +299,7 @@ export default function ThreeBox() {
         // ポストプロセス設定 (変更なし)
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
-        const bloomStrength = isMobile ? 1.2 : 3.0;
+        const bloomStrength = isMobile ? 2.5 : 3.0;
         const bloomPass = new UnrealBloomPass(
             new THREE.Vector2(currentMount.clientWidth, currentMount.clientHeight),
             bloomStrength,
@@ -311,7 +311,7 @@ export default function ThreeBox() {
         // --- ここから先のオブジェクト生成ロジックは変更ありません ---
 
         // ネットワーククラスターの生成
-        const CLUSTER_COUNT = isMobile ? 256 : 1024;
+        const CLUSTER_COUNT = isMobile ? 512 : 1024;
         const clusterGroups = [];
         const nodeGeom = new THREE.SphereGeometry(1.0, 32, 32);
         const nodeMat = new THREE.MeshStandardMaterial({ 
@@ -505,7 +505,7 @@ export default function ThreeBox() {
         scene.add(new THREE.AmbientLight(0x1a0033, 0.3));
 
         // 光の粒子システム
-        const PARTICLE_COUNT = isMobile ? 50000 : 1000000;
+        const PARTICLE_COUNT = isMobile ? 1000000 : 1000000;
         const particleGeometry = new THREE.BufferGeometry();
         const particlePositions = new Float32Array(PARTICLE_COUNT * 3);
         const particleVelocities = new Float32Array(PARTICLE_COUNT * 3);
