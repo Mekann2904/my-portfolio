@@ -234,10 +234,27 @@
       "id": "/test/three-1",
       "label": "test/three-1",
       "ext": false
+    },
+    {
+      "id": "/test/three-2",
+      "label": "test/three-2",
+      "ext": false
     }
   ],
   "links": [
     {
+      "source": "/anime",
+      "target": "/test/three"
+    },
+    {
+      "source": "/anime",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/anime",
+      "target": "/test/three-2"
+    },
+    {
       "source": "/blog/Math Test",
       "target": "https://cdn.jsdelivr.net"
     },
@@ -260,6 +277,18 @@
     {
       "source": "/blog",
       "target": "/"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-2"
     },
     {
       "source": "/blog",
@@ -439,6 +468,18 @@
     },
     {
       "source": "/",
+      "target": "/test/three"
+    },
+    {
+      "source": "/",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/",
       "target": "https://note.com/mekann"
     },
     {
@@ -466,12 +507,36 @@
       "target": "/"
     },
     {
+      "source": "/my-journey",
+      "target": "/test/three"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/my-journey",
+      "target": "/test/three-2"
+    },
+    {
       "source": "/portfolio",
       "target": "/"
     },
     {
       "source": "/portfolio",
       "target": "/"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/test/three"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/test/three-2"
     },
     {
       "source": "/portfolio",
@@ -479,7 +544,31 @@
     },
     {
       "source": "/tags/ADALINE",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/ADALINE",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/ADALINE",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/ADALINE",
       "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/AIの歴史",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/AIの歴史",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/AIの歴史",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/AIの歴史",
@@ -487,7 +576,31 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/Hugo",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Hugo",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Hugo",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/Hugo",
@@ -495,7 +608,31 @@
     },
     {
       "source": "/tags/NumPy",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/NumPy",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/NumPy",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/NumPy",
       "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/Python",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Python",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Python",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/Python",
@@ -504,6 +641,18 @@
     {
       "source": "/tags",
       "target": "/blog"
+    },
+    {
+      "source": "/tags",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags",
@@ -599,7 +748,31 @@
     },
     {
       "source": "/tags/ウェブアーキテクチャ",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/ウェブアーキテクチャ",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/ウェブアーキテクチャ",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/ウェブアーキテクチャ",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/クーリー",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/クーリー",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/クーリー",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/クーリー",
@@ -607,7 +780,31 @@
     },
     {
       "source": "/tags/データサイエンス",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/データサイエンス",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/データサイエンス",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/データサイエンス",
       "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/ニューラルネットワーク基礎",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/ニューラルネットワーク基礎",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/ニューラルネットワーク基礎",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/ニューラルネットワーク基礎",
@@ -615,7 +812,31 @@
     },
     {
       "source": "/tags/パフォーマンス",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/パフォーマンス",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/パフォーマンス",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/パフォーマンス",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tags/パーセプトロン",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/パーセプトロン",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/パーセプトロン",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/パーセプトロン",
@@ -623,7 +844,31 @@
     },
     {
       "source": "/tags/勾配降下法",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/勾配降下法",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/勾配降下法",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/勾配降下法",
       "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/実存主義",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/実存主義",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/実存主義",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/実存主義",
@@ -631,7 +876,31 @@
     },
     {
       "source": "/tags/情報社会",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/情報社会",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/情報社会",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/情報社会",
       "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/機械学習アルゴリズム",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/機械学習アルゴリズム",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/機械学習アルゴリズム",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/機械学習アルゴリズム",
@@ -639,7 +908,31 @@
     },
     {
       "source": "/tags/機械学習入門",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/機械学習入門",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/機械学習入門",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/機械学習入門",
       "target": "/blog/machine-learning-01"
+    },
+    {
+      "source": "/tags/現代思想",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/現代思想",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/現代思想",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/現代思想",
@@ -647,7 +940,31 @@
     },
     {
       "source": "/tags/社会学",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/社会学",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/社会学",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/社会学",
       "target": "/blog/looking-glass self"
+    },
+    {
+      "source": "/tags/線形分類",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/線形分類",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/線形分類",
+      "target": "/test/three-2"
     },
     {
       "source": "/tags/線形分類",
@@ -655,11 +972,71 @@
     },
     {
       "source": "/tags/自己論",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/自己論",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/自己論",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/自己論",
       "target": "/blog/looking-glass self"
     },
     {
       "source": "/tags/静的サイト",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/静的サイト",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/静的サイト",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/静的サイト",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/test/three",
+      "target": "/test/three"
+    },
+    {
+      "source": "/test/three",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/test/three",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/test/three-1",
+      "target": "/test/three"
+    },
+    {
+      "source": "/test/three-1",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/test/three-1",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/test/three-2",
+      "target": "/test/three"
+    },
+    {
+      "source": "/test/three-2",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/test/three-2",
+      "target": "/test/three-2"
     }
   ]
 }
