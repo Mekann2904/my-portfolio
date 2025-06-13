@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const MODEL_PATH = '/src/components/model/CoffeeMachine/';
+const MODEL_PATH = '/model/CoffeeMachine/';
 const OBJ_FILE = 'CoffeeMaker.obj';
 const TEXTURES = {
   map: MODEL_PATH + 'Mat_Base_Color.png',
