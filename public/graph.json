@@ -705,10 +705,6 @@
     },
     {
       "source": "/tags",
-      "target": "/blog"
-    },
-    {
-      "source": "/tags",
       "target": "/test/three"
     },
     {
@@ -722,6 +718,10 @@
     {
       "source": "/tags",
       "target": "/test/three-3"
+    },
+    {
+      "source": "/tags",
+      "target": "/blog"
     },
     {
       "source": "/tags",

@@ -41,7 +41,7 @@ export const projects: Project[] = [
     <nav class="mx-auto max-w-7xl flex items-center justify-between px-6 py-5">
       <span class="text-lg font-semibold text-white">Mekann</span>
       <ul class="flex gap-8 text-sm">
-        <li><a href="/blog"  class="nav-link">Blog</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
         <li class="relative group">
           <button class="nav-link flex items-center gap-1">
             Art
@@ -49,13 +49,14 @@ export const projects: Project[] = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <ul class="absolute left-0 mt-2 w-48 bg-black border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <ul class="absolute right-0 mt-2 min-w-[12rem] max-w-[90vw] bg-black border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-x-auto">
             <li><a href="/test/three" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Knowledge Network 3D</a></li>
             <li><a href="/test/three-1" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Light Examples</a></li>
             <li><a href="/test/three-2" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Water Animation</a></li>
             <li><a href="/test/three-3" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js 3D Model Demo</a></li>
           </ul>
         </li>
+        <li><a href="/blog"  class="nav-link">Blog</a></li>
       </ul>
     </nav>
   </header>
@@ -67,18 +68,12 @@ export const projects: Project[] = [
   <main id="site-content" class="pt-4" style="position: relative; z-index: 10; background: transparent; opacity: 0; pointer-events: none; transition: opacity 0.7s;">
     <!-- Hero (critical path HTML + CSS のみ。JS/外部フォントは後追い) -->
     <section
-      class="flex min-h-screen items-center justify-center px-6 text-white"
+      class="flex min-h-screen items-center justify-center px-2 sm:px-6 text-white"
       style="background: transparent;"
     >
       <div
-        class="hero-glassbox"
+        class="hero-glassbox w-full max-w-[98vw] sm:max-w-3xl min-w-0 aspect-[16/9] min-h-[340px] mx-auto"
         style="
-          width: 100%;
-          max-width: 900px;
-          min-width: 320px;
-          aspect-ratio: 16/9;
-          min-height: 340px;
-          margin: 0 auto;
           background: rgba(30, 30, 40, 0.75);
           border-radius: 2rem;
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
@@ -89,19 +84,19 @@ export const projects: Project[] = [
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 3rem 2rem;
-          gap: 1.5rem;
+          padding: 2rem 0.7rem;
+          gap: 1.2rem;
           text-align: center;
         "
       >
-        <h1 class="tracking-tight font-extrabold leading-tight text-[clamp(2.2rem,6vw,4.2rem)] text-white drop-shadow-lg mb-2">
+        <h1 class="tracking-tight font-extrabold leading-tight text-[clamp(1.5rem,7vw,2.5rem)] sm:text-[clamp(2.2rem,6vw,4.2rem)] text-white drop-shadow-lg mb-2">
           Intelligent Systems ×<br />AI-Driven Knowledge
         </h1>
-        <p class="text-lg leading-relaxed text-gray-100 drop-shadow mb-4 max-w-2xl">
+        <p class="text-base sm:text-lg leading-relaxed text-gray-100 drop-shadow mb-4 max-w-2xl">
           AI を核に、知識の構造と思考のプロセスを再設計する。<br />
           次世代の知能情報基盤を探究します。
         </p>
-        <div class="flex justify-center gap-4">
+        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none mx-auto">
           <a
             href="https://note.com/mekann"
             target="_blank"
