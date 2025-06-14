@@ -478,11 +478,14 @@ export const projects: Project[] = [
       window.removeEventListener('wheel', lockScroll, { passive: false });
       window.removeEventListener('touchmove', lockScroll, { passive: false });
 
-      // 下の要素（Aboutセクション）までスムーズスクロール
+      // 下の要素（Aboutセクション）までスムーズスクロール（ヘッダー分オフセット）
       const target = document.getElementById('about');
       if (target) {
         setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth' });
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }, 50);
       }
     }
@@ -510,8 +513,8 @@ export const projects: Project[] = [
     .btn-primary  { @apply rounded-md bg-white px-6 py-3 font-medium text-black transition hover:opacity-90; }
     .btn-secondary{ @apply rounded-md border border-white px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black; }
     .project-card { @apply rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:bg-white/10; }
-    .skill-cloud  { @apply h-full w-full rounded-lg border border-gray-700 bg-gray-900 overflow-visible; }
-    .community-card{ @apply flex items-start gap-4 rounded-2xl bg-gray-800 p-6 border border-gray-700; }
+    .skill-cloud  { @apply h-full w-full rounded-lg border border-gray-700 overflow-visible; background: rgb(17 24 39 / 50%); }
+    .community-card{ @apply flex items-start gap-4 rounded-2xl p-6 border border-gray-700; background: rgb(31 41 55 / 50%); }
     .icon-btn     { @apply flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white/30; }
     @keyframes bounce {
       0%, 100% { transform: translateY(0);}
