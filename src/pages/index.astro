@@ -9,6 +9,7 @@ import {
   Maximize2,
   Minimize2,
 } from 'lucide-react';
+import ThreeBox from '../components/ThreeBox.jsx';
 
 /** ---------- Featured Projects ------------------------------- **/
 export interface Project {
@@ -59,20 +60,48 @@ export const projects: Project[] = [
     </nav>
   </header>
 
-  <main class="pt-4">
+  <div id="threebox-overlay" style="position: fixed; inset: 0; z-index: 100; width: 100vw; height: 100vh; pointer-events: auto;">
+    <ThreeBox client:only="react" />
+  </div>
+
+  <main id="site-content" class="pt-4" style="position: relative; z-index: 10; background: transparent; opacity: 0; pointer-events: none; transition: opacity 0.7s;">
     <!-- Hero (critical path HTML + CSS のみ。JS/外部フォントは後追い) -->
     <section
-      class="flex min-h-screen items-center justify-center bg-black px-6 text-white"
+      class="flex min-h-screen items-center justify-center px-6 text-white"
+      style="background: transparent;"
     >
-      <div class="max-w-3xl space-y-6 text-center">
-        <h1 class="tracking-tight font-extrabold leading-none text-[clamp(2.5rem,8vw,5rem)]">
+      <div
+        class="hero-glassbox"
+        style="
+          width: 100%;
+          max-width: 900px;
+          min-width: 320px;
+          aspect-ratio: 16/9;
+          min-height: 340px;
+          margin: 0 auto;
+          background: rgba(30, 30, 40, 0.75);
+          border-radius: 2rem;
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+          backdrop-filter: blur(16px) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+          border: 1.5px solid rgba(80,80,100,0.18);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 3rem 2rem;
+          gap: 1.5rem;
+          text-align: center;
+        "
+      >
+        <h1 class="tracking-tight font-extrabold leading-tight text-[clamp(2.2rem,6vw,4.2rem)] text-white drop-shadow-lg mb-2">
           Intelligent Systems ×<br />AI-Driven Knowledge
         </h1>
-        <p class="mt-6 text-lg leading-relaxed text-gray-400">
+        <p class="text-lg leading-relaxed text-gray-100 drop-shadow mb-4 max-w-2xl">
           AI を核に、知識の構造と思考のプロセスを再設計する。<br />
           次世代の知能情報基盤を探究します。
         </p>
-        <div class="mt-8 flex justify-center gap-4">
+        <div class="flex justify-center gap-4">
           <a
             href="https://note.com/mekann"
             target="_blank"
@@ -92,6 +121,38 @@ export const projects: Project[] = [
         </div>
       </div>
     </section>
+
+    <!-- Heroセクション直後などに追加 -->
+    <div id="unlock-overlay"
+      style="
+        position: fixed;
+        left: 0; right: 0; bottom: 5vh;
+        width: 100vw; height: auto;
+        display: none;
+        justify-content: center; align-items: flex-end;
+        background: none;
+        pointer-events: auto;
+        z-index: 200;
+      ">
+      <span
+        id="scroll-unlock-arrow"
+        style="
+          font-size: 3.5rem;
+          color: #fff;
+          cursor: pointer;
+          user-select: none;
+          animation: bounce 1.2s infinite;
+          text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+          padding: 0.5rem 1.5rem;
+          border-radius: 2rem;
+          background: rgba(30,30,40,0.18);
+          transition: background 0.2s;
+        "
+        onclick="unlockScroll()"
+        onmouseover="this.style.background='rgba(60,60,80,0.32)'"
+        onmouseout="this.style.background='rgba(30,30,40,0.18)'"
+      >↓</span>
+    </div>
 
     <section id="about" class="bg-black py-20 text-white">
       <div class="container mx-auto flex flex-col lg:flex-row items-stretch px-6 gap-10">
@@ -369,11 +430,88 @@ export const projects: Project[] = [
       toggleBtn.addEventListener('click', toggleFullscreen, { passive: true });
       window.addEventListener('resize', resizeGraph,         { passive: true });
     }
+
+    // サイト初期表示時は必ずトップへ
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      document.body.style.overflow = '';
+    }, 1000);
+
+    // スクロール禁止用ハンドラ
+    function lockScroll(e) {
+      window.scrollTo(0, 0);
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    let scrollLocked = false;
+
+    window.addEventListener('threebox:finale', () => {
+      // ThreeBoxを背後に
+      const overlay = document.getElementById('threebox-overlay');
+      if (overlay) overlay.style.zIndex = '0';
+      // サイト内容を表示
+      const content = document.getElementById('site-content');
+      if (content) {
+        content.style.opacity = '1';
+        content.style.pointerEvents = 'auto';
+      }
+      // スクロールロック開始
+      scrollLocked = true;
+      window.scrollTo(0, 0);
+      window.addEventListener('scroll', lockScroll, { passive: false });
+      window.addEventListener('wheel', lockScroll, { passive: false });
+      window.addEventListener('touchmove', lockScroll, { passive: false });
+
+      // オーバーレイを表示
+      const unlock = document.getElementById('unlock-overlay');
+      if (unlock) unlock.style.display = 'flex';
+    });
+
+    // 続けるボタンでロック解除
+    function unlockScroll() {
+      scrollLocked = false;
+      document.body.style.overflow = '';
+      const overlay = document.getElementById('unlock-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.zIndex = '-1';
+        // または overlay.remove(); // 完全にDOMから削除したい場合はこちらを有効化
+      }
+      window.removeEventListener('scroll', lockScroll, { passive: false });
+      window.removeEventListener('wheel', lockScroll, { passive: false });
+      window.removeEventListener('touchmove', lockScroll, { passive: false });
+
+      // 下の要素（Aboutセクション）までスムーズスクロール
+      const target = document.getElementById('about');
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    }
   </script>
 
   <!-- Tailwind / Utility styles -->
   <style>
-    html,body     { background:#000; }
+    html, body {
+      height: 100%;
+      min-height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+    }
     section[id]   { scroll-margin-top:5rem; }
     .nav-link     { @apply text-gray-500 transition hover:text-white; }
     .btn-primary  { @apply rounded-md bg-white px-6 py-3 font-medium text-black transition hover:opacity-90; }
@@ -382,5 +520,9 @@ export const projects: Project[] = [
     .skill-cloud  { @apply h-full w-full rounded-lg border border-gray-700 bg-gray-900 overflow-visible; }
     .community-card{ @apply flex items-start gap-4 rounded-2xl bg-gray-800 p-6 border border-gray-700; }
     .icon-btn     { @apply flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white/30; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(18px);}
+    }
   </style>
 </BaseLayout>

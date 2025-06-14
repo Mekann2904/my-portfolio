@@ -224,6 +224,7 @@ function generateOptimizedNetwork(nodeCount, linkCount, radius) {
 
 export default function ThreeBox() {
     const mountRef = useRef(null);
+    const [footerHeight, setFooterHeight] = useState(0);
     const [showFinaleText, setShowFinaleText] = useState(false);
     const state = useRef({
         phase: 'NAVIGATING',
@@ -237,6 +238,23 @@ export default function ThreeBox() {
         networkRotation: { x: 0, y: 0, z: 0 },
         finaleTriggered: false
     }).current;
+
+    useEffect(() => {
+        // フッターの高さを取得してstateにセット
+        function updateFooterHeight() {
+            const footer = document.querySelector('footer');
+            if (footer) {
+                setFooterHeight(footer.offsetHeight);
+            } else {
+                setFooterHeight(0);
+            }
+        }
+        updateFooterHeight();
+        window.addEventListener('resize', updateFooterHeight);
+        return () => {
+            window.removeEventListener('resize', updateFooterHeight);
+        };
+    }, []);
 
     useEffect(() => {
         if (!mountRef.current) return;
@@ -254,6 +272,7 @@ export default function ThreeBox() {
         };
         const onTouchMove = (e) => {
             if (e.touches.length === 1 && lastTouchY !== null) {
+                e.preventDefault();
                 const currentY = e.touches[0].clientY;
                 const deltaY = currentY - lastTouchY;
                 state.scrollVelocity += deltaY * 0.5; // ← ここをプラスに
@@ -264,18 +283,16 @@ export default function ThreeBox() {
             lastTouchY = null;
         };
         currentMount.addEventListener("touchstart", onTouchStart, { passive: true });
-        currentMount.addEventListener("touchmove", onTouchMove, { passive: true });
+        currentMount.addEventListener("touchmove", onTouchMove, { passive: false });
         currentMount.addEventListener("touchend", onTouchEnd, { passive: true });
 
         // 【追加】スクロールイベントを処理する関数
         const onWheel = (event) => {
-            // スクロール量に応じて速度を変化させる
-            // event.deltaY の値は環境によるが、通常は上下スクロールで100程度の値が入る
-            // 速度の係数（ここでは0.5）を調整することで、スクロールの感度を変更できる
+            event.preventDefault();
             state.scrollVelocity -= event.deltaY * 0.1;
         };
         // 【追加】イベントリスナーを登録
-        currentMount.addEventListener("wheel", onWheel, { passive: true });
+        currentMount.addEventListener("wheel", onWheel, { passive: false });
 
 
         // シーンのセットアップ (変更なし)
@@ -735,6 +752,12 @@ export default function ThreeBox() {
                 // ★ここでテキスト表示フラグをON
                 setShowFinaleText(true);
 
+                // === 追加: フィナーレ突入時にカスタムイベントを発火 ===
+                if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('threebox:finale'));
+                }
+                // === 追加ここまで ===
+
                 new Tween(finaleMat.uniforms.uOpacity)
                     .to({ value: 1.0 }, FINALE_TRANSITION_DURATION)
                     .easing(Easing.Quintic.InOut)
@@ -1010,116 +1033,20 @@ export default function ThreeBox() {
             ref={mountRef}
             style={{
                 width: "100vw",
-                height: "100vh",
-                // 【変更】ナビゲーション中はカーソルを表示して操作可能であることを示す
+                height: `calc(100vh - ${footerHeight}px)`,
                 cursor: state.phase === 'FINALE' ? "auto" : "grab",
                 background: "#000",
-                overflow: "hidden", // ページ自体のスクロールは防止
+                overflow: "hidden",
                 touchAction: "none",
                 position: "fixed",
                 top: 0,
                 left: 0,
                 margin: 0,
-                padding: 0
+                padding: 0,
+                zIndex: 0,
+                pointerEvents: "auto",
             }}
         >
-            {showFinaleText && (
-                <>
-                    {/* ガラスフィルタ */}
-                    <div style={{
-                        position: "fixed",
-                        inset: 0,
-                        zIndex: 20,
-                        background: "rgba(0,0,0,0.45)",
-                        backdropFilter: "blur(0px)",
-                        WebkitBackdropFilter: "blur(0px)"
-                    }} />
-                    {/* Heroテキスト */}
-                    <div style={{
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        width: "100vw",
-                        height: "100vh",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        zIndex: 30,
-                        pointerEvents: "auto"
-                    }}>
-                        <div style={{
-                            maxWidth: 900,
-                            width: "100%",
-                            padding: "0 1.5rem",
-                            textAlign: "center"
-                        }}>
-                            <h1 style={{
-                                fontWeight: 900,
-                                fontSize: "clamp(2.5rem,8vw,5.5rem)",
-                                letterSpacing: "-0.03em",
-                                lineHeight: 1.08,
-                                marginBottom: "2.2rem",
-                                color: "#fff"
-                            }}>
-                                Intelligent Systems ×<br />AI-Driven Knowledge
-                            </h1>
-                            <p style={{
-                                color: "#bfc3cb",
-                                fontSize: "1.35rem",
-                                marginBottom: "2.8rem",
-                                lineHeight: 1.7,
-                                fontWeight: 400
-                            }}>
-                                AI を核に、知識の構造と思考のプロセスを再設計する。<br />
-                                次世代の知能情報基盤を探究します。
-                            </p>
-                            <div style={{ display: "flex", justifyContent: "center", gap: "1.2rem" }}>
-                                <a
-                                    href="https://note.com/mekann"
-                                    target="_blank"
-                                    rel="noopener"
-                                    style={{
-                                        background: "#fff",
-                                        color: "#18181b",
-                                        padding: "0.85rem 2.5rem",
-                                        borderRadius: "0.75rem",
-                                        fontWeight: 700,
-                                        fontSize: "1.15rem",
-                                        textDecoration: "none",
-                                        boxShadow: "0 2px 12px #0002",
-                                        border: "1.5px solid #e5e7eb",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: "0.5em"
-                                    }}
-                                >
-                                    note
-                                    <span style={{ fontSize: "1.2em", marginLeft: "0.2em" }}>→</span>
-                                </a>
-                                <a
-                                    href="https://github.com/Mekann2904"
-                                    target="_blank"
-                                    rel="noopener"
-                                    style={{
-                                        background: "transparent",
-                                        color: "#fff",
-                                        padding: "0.85rem 2.5rem",
-                                        borderRadius: "0.75rem",
-                                        fontWeight: 700,
-                                        fontSize: "1.15rem",
-                                        textDecoration: "none",
-                                        border: "1.5px solid #fff",
-                                        boxShadow: "0 2px 12px #0002"
-                                    }}
-                                >
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            )}
         </div>
     );
 }
