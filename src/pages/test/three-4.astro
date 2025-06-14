@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThreeBox4 from '../../components/ThreeBox-4.jsx';
+---
+<style>
+  html, body {
+    overflow: hidden !important;
+  }
+</style>
+<BaseLayout title="Three.js Projector SpotLight Demo">
+  <ThreeBox4 client:only="react" />
+</BaseLayout>
