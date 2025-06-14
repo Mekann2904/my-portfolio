@@ -80,15 +80,15 @@ const fogFragmentShader = `
     }
 `;
 
-// アニメーションの定数 (変更なし)
-const FINALE_START_Z = -2000;
-const FINALE_OBJECT_Z = -2500;
+// アニメーションの定数
+const FINALE_START_Z = -2200;
+const FINALE_OBJECT_Z = -2700;
 const MAX_DYNAMIC_LIGHTS = 50;
 const LIGHT_SPAWN_INTERVAL = 100;
 const CAMERA_ORBIT_RADIUS = 600;
 const FINALE_TRANSITION_DURATION = 4000;
 
-// シェーダー定義 (変更なし)
+// シェーダー定義
 const vertexShader = /* glsl */ `
   varying vec2 vUv;
   varying vec3 vPosition;
@@ -328,7 +328,7 @@ export default function ThreeBox() {
         // --- ここから先のオブジェクト生成ロジックは変更ありません ---
 
         // ネットワーククラスターの生成
-        const CLUSTER_COUNT = isMobile ? 512 : 1024;
+        const CLUSTER_COUNT = isMobile ? 512 : 729;
         const clusterGroups = [];
         const nodeGeom = new THREE.SphereGeometry(1.0, 32, 32);
         const nodeMat = new THREE.MeshStandardMaterial({ 
@@ -522,7 +522,7 @@ export default function ThreeBox() {
         scene.add(new THREE.AmbientLight(0x1a0033, 0.3));
 
         // 光の粒子システム
-        const PARTICLE_COUNT = isMobile ? 1000000 : 1000000;
+        const PARTICLE_COUNT = isMobile ? 1000000 : 800000;
         const particleGeometry = new THREE.BufferGeometry();
         const particlePositions = new Float32Array(PARTICLE_COUNT * 3);
         const particleVelocities = new Float32Array(PARTICLE_COUNT * 3);
