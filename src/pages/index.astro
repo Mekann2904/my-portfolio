@@ -72,13 +72,11 @@ export const projects: Project[] = [
       style="background: transparent;"
     >
       <div
-        class="hero-glassbox w-full max-w-[98vw] sm:max-w-3xl min-w-0 aspect-[16/9] min-h-[340px] mx-auto"
+        class="hero-glassbox w-full max-w-[98vw] sm:max-w-3xl min-w-0 aspect-[16/9] min-h-[340px] mx-auto backdrop-blur-md"
         style="
           background: rgba(17, 0, 38, 0.5);
           border-radius: 2rem;
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
-          backdrop-filter: blur(0.5px) saturate(180%);
-          -webkit-backdrop-filter: blur(0.5px) saturate(180%);
           border: 1.5px solid rgba(80,80,100,0.18);
           display: flex;
           flex-direction: column;
@@ -149,7 +147,7 @@ export const projects: Project[] = [
       >↓</span>
     </div>
 
-    <section id="about" class="bg-black py-20 text-white">
+    <section id="about" class="bg-black/75 supports-[backdrop-filter]:backdrop-blur-md border border-white/10 py-20 text-white">
       <div class="container mx-auto flex flex-col lg:flex-row items-stretch px-6 gap-10">
         <!-- 左カラム -->
         <div class="w-full lg:w-2/5 space-y-6">
@@ -218,7 +216,7 @@ export const projects: Project[] = [
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="bg-black py-20">
+    <section id="projects" class="bg-black/75 supports-[backdrop-filter]:backdrop-blur-md border border-white/10 py-20">
       <div class="container mx-auto max-w-8xl px-6">
         <h2 class="mb-12 text-center text-3xl font-bold text-white">
           Featured Projects
@@ -251,7 +249,7 @@ export const projects: Project[] = [
     <!-- Contact CTA -->
     <section
       id="contact"
-      class="bg-black px-4 py-12 text-white sm:px-6 sm:py-16 md:px-8 md:py-20"
+      class="bg-black/75 supports-[backdrop-filter]:backdrop-blur-md border border-white/10 px-4 py-12 text-white sm:px-6 sm:py-16 md:px-8 md:py-20"
     >
       <div class="mx-auto max-w-6xl text-center">
         <h2 class="mb-4 text-6xl font-bold sm:text-3xl md:text-4xl">
