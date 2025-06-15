@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HarmonyComponent from '../../components/Harmony.jsx';
+---
+<BaseLayout title="Sample" description="Sample">
+  <div style={{ width: '100%', height: 'calc(100vh - 48px)', minHeight: 0 }}>
+    <HarmonyComponent client:only="react" />
+  </div>
+</BaseLayout>
