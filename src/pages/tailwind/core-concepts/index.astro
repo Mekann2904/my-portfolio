@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Core concepts - Tailwind CSS" description="Learn the core concepts of Tailwind CSS">
+  <main class="pt-20 lg:pt-24">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
+      <article class="prose prose-invert prose-lg max-w-none">
+        <h1 class="text-4xl font-bold mb-4">コアコンセプト</h1>
+
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">ユーティリティクラスでスタイリング</h2>
+          <p class="text-gray-300 mb-8 text-xl">限られたプリミティブユーティリティを組み合わせて複雑なコンポーネントを構築します。</p>
+
+          <p class="text-gray-300 mb-6 text-lg">
+            Tailwind では、多目的なユーティリティクラス <em class="text-gray-400 not-italic">utility classes</em> をマークアップに直接並べてスタイルを適用します。
+          </p>
+
+          <!-- Code Example -->
+          <div class="not-prose mb-12">
+
+
+            <!-- Live Example -->
+            <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+              <div class="size-12 shrink-0 bg-indigo-500 rounded-full flex items-center justify-center">
+                <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-xl font-medium text-black dark:text-white">ChitChat</div>
+                <p class="text-gray-500 dark:text-gray-400">You have a new message!</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-300 mb-4">例えば上の UI では次のユーティリティを使用しています:</p>
+          <ul class="space-y-3 text-gray-300 mb-8 list-none pl-0">
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>レイアウト全体を制御する <a href="https://tailwindcss.com/docs/display#flex" class="text-sky-400 hover:text-sky-300">display</a> と <a href="https://tailwindcss.com/docs/padding" class="text-sky-400 hover:text-sky-300">padding</a> のユーティリティ（<code class="text-purple-400">flex</code>、<code class="text-purple-400">shrink-0</code>、<code class="text-purple-400">p-6</code>）</span>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>カードの幅を制限し水平中央に配置する <a href="https://tailwindcss.com/docs/max-width" class="text-sky-400 hover:text-sky-300">max-width</a> と <a href="https://tailwindcss.com/docs/margin" class="text-sky-400 hover:text-sky-300">margin</a> のユーティリティ（<code class="text-purple-400">max-w-sm</code>、<code class="text-purple-400">mx-auto</code>）</span>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>カードの外観を整える <a href="https://tailwindcss.com/docs/background-color" class="text-sky-400 hover:text-sky-300">background-color</a>、<a href="https://tailwindcss.com/docs/border-radius" class="text-sky-400 hover:text-sky-300">border-radius</a>、<a href="https://tailwindcss.com/docs/box-shadow" class="text-sky-400 hover:text-sky-300">box-shadow</a> のユーティリティ（<code class="text-purple-400">bg-white</code>、<code class="text-purple-400">rounded-xl</code>、<code class="text-purple-400">shadow-lg</code>）</span>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>ロゴ画像の幅と高さを設定する <a href="https://tailwindcss.com/docs/width" class="text-sky-400 hover:text-sky-300">width</a> と <a href="https://tailwindcss.com/docs/height" class="text-sky-400 hover:text-sky-300">height</a> のユーティリティ（<code class="text-purple-400">size-12</code>）</span>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>ロゴとテキストの間隔を調整する <a href="https://tailwindcss.com/docs/gap" class="text-sky-400 hover:text-sky-300">gap</a> のユーティリティ（<code class="text-purple-400">gap-x-4</code>）</span>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-purple-400 flex-shrink-0 mt-1">•</span>
+              <span>テキストを装飾する <a href="https://tailwindcss.com/docs/font-size" class="text-sky-400 hover:text-sky-300">font-size</a>、<a href="https://tailwindcss.com/docs/text-color" class="text-sky-400 hover:text-sky-300">color</a>、<a href="https://tailwindcss.com/docs/font-weight" class="text-sky-400 hover:text-sky-300">font-weight</a> のユーティリティ（<code class="text-purple-400">text-xl</code>、<code class="text-purple-400">text-black</code>、<code class="text-purple-400">font-medium</code> など）</span>
+            </li>
+          </ul>
+
+          <p class="text-gray-300 mb-4">この方法は従来のベストプラクティスと相反するように見えますが、一度試せば大きなメリットに気づくはずです:</p>
+          <ul class="space-y-4 text-gray-300 mb-8">
+            <li>
+              <strong class="text-white">作業が速い</strong> — クラス名を考えたりセレクタを検討したり、HTML と CSS を行き来する必要がないため、デザインを素早く組み立てられます。
+            </li>
+            <li>
+              <strong class="text-white">安全に変更できる</strong> — ユーティリティクラスの追加・削除はその要素だけに影響するので、ほかのページを壊す心配がありません。
+            </li>
+            <li>
+              <strong class="text-white">古いプロジェクトの保守が簡単</strong> — 要素を見つけてクラスを変えるだけで済み、忘れてしまったカスタム CSS を思い出す必要がありません。
+            </li>
+            <li>
+              <strong class="text-white">コードの再利用性が高い</strong> — 構造とスタイルが同じ場所にあるため、UI の塊を別プロジェクトへ簡単にコピーできます。
+            </li>
+            <li>
+              <strong class="text-white">CSS が肥大化しない</strong> — ユーティリティを再利用するため、機能追加をしても CSS が線形に増え続けることはありません。
+            </li>
+          </ul>
+
+          <p class="text-gray-300 mb-8">これらの利点は小規模プロジェクトでも有効ですが、長期運用の大規模プロジェクトではさらに大きな効果を発揮します。</p>
+        </section>
+
+        <!-- Why not just use inline styles? Section -->
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">インラインスタイルではいけないの？</h2>
+          <p class="text-gray-300 mb-4">
+            「これってインラインスタイルと同じでは？」という声をよく聞きます。確かに要素に直接スタイルを当てる点では似ています。
+          </p>
+
+          <p class="text-gray-300 mb-4">ですが、ユーティリティクラスにはインラインスタイルにはない重要なメリットが数多くあります:</p>
+          <ul class="space-y-4 text-gray-300 mb-8">
+            <li>
+              <strong class="text-white">制約を活かしたデザイン</strong> — インラインスタイルではすべてがマジックナンバーですが、ユーティリティでは <a href="https://tailwindcss.com/docs/theme" class="text-sky-400 hover:text-sky-300">デザインシステム</a> から値を選ぶため UI の一貫性が保たれます。
+            </li>
+            <li>
+              <strong class="text-white">ホバーやフォーカスなどの状態</strong> — インラインスタイルでは扱えませんが、Tailwind の <a href="https://tailwindcss.com/docs/hover-focus-and-other-states" class="text-sky-400 hover:text-sky-300">状態バリアント</a> で簡単にスタイルできます。
+            </li>
+            <li>
+              <strong class="text-white">メディアクエリ対応</strong> — インラインスタイルではメディアクエリが使えませんが、Tailwind の <a href="https://tailwindcss.com/docs/responsive-design" class="text-sky-400 hover:text-sky-300">レスポンシブバリアント</a> で簡単に対応できます。
+            </li>
+          </ul>
+
+          <p class="text-gray-300 mb-4">このコンポーネントはフルレスポンシブで、ホバー・アクティブスタイルも含まれていますが、ユーティリティクラスだけで構築されています:</p>
+
+          <!-- Responsive Example -->
+          <div class="not-prose mb-12">
+
+
+            <!-- Live Example -->
+            <div class="flex flex-col gap-2 p-8 sm:flex-row sm:items-center sm:gap-6 sm:py-4 bg-white dark:bg-slate-800 rounded-xl">
+              <div class="mx-auto block h-24 w-24 rounded-full bg-gray-300 sm:mx-0 sm:shrink-0 overflow-hidden">
+                <img src="../../../../public/images/user.jpg" alt="Mekann" class="h-full w-full object-cover" />
+              </div>
+              <div class="space-y-2 text-center sm:text-left">
+                <div class="space-y-0.5">
+                  <p class="text-lg font-semibold text-black dark:text-white">Mekann</p>
+                  <p class="font-medium text-gray-500">Engineer</p>
+                </div>
+                <button class="rounded-md border border-purple-200 px-4 py-2 text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700">
+                  Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hover States Section -->
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">ユーティリティクラス思考</h2>
+          
+          <h3 class="text-xl font-bold mb-4">ホバーとフォーカス状態のスタイリング</h3>
+          <p class="text-gray-300 mb-4">
+            ホバーやフォーカス時のスタイルを当てるには、<code class="text-purple-400">hover:bg-sky-700</code> のようにユーティリティの前に状態プレフィックスを付けます。
+          </p>
+
+          <!-- Hover Example -->
+          <div class="mb-8">
+            <p class="text-gray-300 mb-4">ボタンにカーソルを載せると背景色が変化します</p>
+            <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
+              Save changes
+            </button>
+
+
+          </div>
+
+          <p class="text-gray-300 mb-4"><code class="text-purple-400">hover:bg-sky-700</code> で生成される CSS は次のようになります:</p>
+
+
+
+          <p class="text-gray-300 mb-4">従来の CSS では一つのクラスで複数状態をカバーしますが、Tailwind では状態ごとにクラスを分けます:</p>
+
+
+
+          <p class="text-gray-300 mb-4">
+            <code class="text-purple-400">hover:</code> と <code class="text-purple-400">disabled:</code> のように、複数の条件を組み合わせてユーティリティを適用することも可能です。
+          </p>
+
+
+        </section>
+
+        <!-- Media Queries Section -->
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">メディアクエリとブレイクポイント</h2>
+          <p class="text-gray-300 mb-4">
+            ホバーやフォーカスと同様、ユーティリティの前にブレイクポイントのプレフィックスを付けることで各画面幅でスタイルを切り替えられます:
+          </p>
+
+          <div class="mb-8">
+            <p class="text-gray-300 mb-4">ウィンドウサイズを変えてレイアウトの変化を確認してください</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+              <div class="bg-purple-500 h-12 rounded-lg"></div>
+            </div>
+
+
+          </div>
+
+          <p class="text-gray-300 mb-4">
+            上記の例では、<code class="text-purple-400">sm:</code> プレフィックスにより <code class="text-purple-400">grid-cols-3</code> が 40rem（既定値）の画面幅以上でのみ適用されます。
+          </p>
+
+
+
+
+
+          <p class="text-gray-300 mb-4">
+            ホバーやフォーカスと同様、一つのユーティリティクラスがライトとダーク両方のスタイルを持つことはありません。ライト用とダーク用でクラスを分けて適用します。
+          </p>
+
+        </section>
+
+        <!-- Dark Mode Section -->
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">ダークモード</h2>
+          <p class="text-gray-300 mb-4">
+            ダークモード用のスタイルは、適用したいユーティリティの前に <code class="text-purple-400">dark:</code> を付けるだけです:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Light Mode Example -->
+            <div class="bg-white rounded-lg px-6 py-8 ring-1 ring-gray-900/5 shadow-xl">
+              <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </span>
+              </div>
+              <h3 class="text-gray-900 mt-5 text-base font-medium tracking-tight">Writes upside-down</h3>
+              <p class="text-gray-500 mt-2 text-sm">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+              </p>
+            </div>
+
+            <!-- Dark Mode Example -->
+            <div class="bg-gray-800 rounded-lg px-6 py-8 ring-1 ring-white/10 shadow-xl">
+              <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </span>
+              </div>
+              <h3 class="text-white mt-5 text-base font-medium tracking-tight">Writes upside-down</h3>
+              <p class="text-gray-400 mt-2 text-sm">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+              </p>
+            </div>
+          </div>
+
+          <p class="text-gray-300 mb-4">
+            ホバーやメディアクエリと同様、一つのユーティリティクラスがライトとダーク両方のスタイルを持つことはありません。ライト用とダーク用でクラスを分けて適用します。
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+</BaseLayout>

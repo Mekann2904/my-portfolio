@@ -27,6 +27,7 @@ function makeInstancePrismMaterial(camera) {
     vertexShader: /* glsl */`
       varying vec3 vNormal;
       varying vec3 vWorldPos;
+      uniform float u_time;
 
       void main(){
         // world matrix per‑instance
@@ -35,6 +36,10 @@ function makeInstancePrismMaterial(camera) {
         // world position & normal
         vWorldPos = (modelInst * vec4(position,1.0)).xyz;
         vNormal   = normalize(mat3(modelInst) * normal);
+
+        // --- 波の変位を追加 ---
+        float wave = sin(vWorldPos.x * 2.0 + vWorldPos.y * 2.0 + u_time * 2.0) * 1.0;
+        vWorldPos += vNormal * wave;
 
         // model‑view position
         vec4 mvPosition = viewMatrix * vec4(vWorldPos, 1.0);
@@ -164,7 +169,7 @@ function AnimatedGridToSphere({ grid, spacing, boxSize, mouse }) {
   Scene wrapper
 ───────────────────────────────────────────────────────────*/
 export default function HarmonyScene() {
-  const grid = 20;
+  const grid = 50;
   const spacing = 2.4;
   const boxSize = [1, 1, 1];
   const mouse = useRef({ x: 0, y: 0 });

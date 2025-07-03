@@ -226,6 +226,91 @@
       "ext": false
     },
     {
+      "id": "/tailwind/core-concepts",
+      "label": "tailwind/core-concepts",
+      "ext": false
+    },
+    {
+      "id": "https://tailwindcss.com/docs/display",
+      "label": "https://tailwindcss.com/docs/display",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/padding",
+      "label": "https://tailwindcss.com/docs/padding",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/max-width",
+      "label": "https://tailwindcss.com/docs/max-width",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/margin",
+      "label": "https://tailwindcss.com/docs/margin",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/background-color",
+      "label": "https://tailwindcss.com/docs/background-color",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/border-radius",
+      "label": "https://tailwindcss.com/docs/border-radius",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/box-shadow",
+      "label": "https://tailwindcss.com/docs/box-shadow",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/width",
+      "label": "https://tailwindcss.com/docs/width",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/height",
+      "label": "https://tailwindcss.com/docs/height",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/gap",
+      "label": "https://tailwindcss.com/docs/gap",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/font-size",
+      "label": "https://tailwindcss.com/docs/font-size",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/text-color",
+      "label": "https://tailwindcss.com/docs/text-color",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/font-weight",
+      "label": "https://tailwindcss.com/docs/font-weight",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/theme",
+      "label": "https://tailwindcss.com/docs/theme",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/hover-focus-and-other-states",
+      "label": "https://tailwindcss.com/docs/hover-focus-and-other-states",
+      "ext": true
+    },
+    {
+      "id": "https://tailwindcss.com/docs/responsive-design",
+      "label": "https://tailwindcss.com/docs/responsive-design",
+      "ext": true
+    },
+    {
       "id": "/test/harmony",
       "label": "test/harmony",
       "ext": false
@@ -1265,6 +1350,90 @@
     {
       "source": "/tags/静的サイト",
       "target": "/blog/my-first-post"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/display"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/padding"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/max-width"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/margin"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/background-color"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/box-shadow"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/width"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/height"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/gap"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/font-size"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/text-color"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/font-weight"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/theme"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/hover-focus-and-other-states"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://tailwindcss.com/docs/responsive-design"
     },
     {
       "source": "/test/harmony",
