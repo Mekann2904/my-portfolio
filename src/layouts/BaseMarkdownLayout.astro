@@ -31,7 +31,7 @@ const siteName = 'Mekann';
 // OGP画像のURLを生成
 // 記事のfrontmatterでogImageが指定されていればそれを使用し、
 // なければデフォルトの画像パスを使う
-const imagePath = ogImage || '/default-og-image.png';
+const imagePath = ogImage || '/public/default-og-image.png';
 // 相対パスを絶対URLに変換
 const absoluteImageUrl = new URL(imagePath, Astro.url.origin).href;
 
