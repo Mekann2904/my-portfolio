@@ -56,153 +56,25 @@ const displayDate = validDate
     <base href="/" />
     {description && <meta name="description" content={description} />}
 
-    {/* --- Performance: Resource Hints --- */}
-    {/* ★ Mermaidをクライアントで読み込む場合に必要 */}
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
-    {/* --- ★ KaTeX CSS (ビルド時レンダリングのため削除) --- */}
-    {/*
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-      />
-    </noscript>
-    */}
-
-    {/* --- Mermaid CSS (遅延読み込み) --- */}
-    {/* ★ Mermaidビルド時レンダリングに切り替える場合は削除可能 */}
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-      />
     </noscript>
 
-    {/* --- ★ KaTeXフォント関連 (ビルド時レンダリングのため削除) --- */}
-    {/* preload や @font-face は不要 */}
-    {/*
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    ...
-    <style is:inline>
-      @font-face { ... }
-      ...
-    </style>
-    */}
-
-    {/* --- Other Styles (Mermaidプレースホルダーなど) --- */}
-    <style>
-      /* ★ Mermaidビルド時レンダリングに切り替える場合は、以下のMermaid関連スタイルも不要になる可能性が高い */
-      pre.mermaid[data-mermaid-processed="pending"] {
-        min-height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(255, 255, 255, 0.03);
-        border-radius: 8px;
-        border: 1px dashed rgba(255, 255, 255, 0.2);
-        color: rgba(255, 255, 255, 0.5);
-        font-style: italic;
-        text-align: center;
-        padding: 1em;
-        margin: 1.5em 0;
-        overflow: hidden;
-      }
-
-      pre.mermaid[data-mermaid-processed="pending"]::before {
-        content: 'Loading diagram...';
-      }
-
-      .mermaid-container {
-        display: flex;
-        justify-content: center;
-        overflow-x: auto;
-        margin: 1.5em 0;
-        max-width: 100%;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2);
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .mermaid-container::-webkit-scrollbar {
-        height: 8px;
-      }
-
-      .mermaid-container::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-      }
-
-      .mermaid-container::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 4px;
-      }
-
-      .mermaid-container svg {
-        max-width: none;
-        display: block;
-      }
-
-      .mermaid-error-container {
-        background-color: #400;
-        color: #fcc;
-        border: 1px solid #c00;
-        padding: 1em;
-        margin: 1.5em 0;
-        border-radius: 8px;
-        white-space: pre-wrap;
-        word-break: break-all;
-        font-family: monospace;
-        overflow-x: auto;
-      }
-
-      /* コードブロックのコピーボタン用に pre に relative を付与 */
-      .prose pre:not(.mermaid) {
-        position: relative;
-      }
-
-      /*
-        ★ KaTeX数式の横スクロールについて:
-        rehype-katex は通常、必要に応じてラッパー要素を生成し、
-        スクロール可能にしてくれることが多いです。
-        もしビルド後に長い数式がはみ出る場合は、global.pcss に
-        以前追加した `.katex-display` やそのラッパー要素に対する
-        `overflow-x: auto;` スタイルを再度適用してください。
-        例:
-        .katex-display { overflow-x: auto; ... }
-        または、rehype-katexが生成するHTML構造を確認して適切なセレクタに適用。
-      */
-    </style>
   </head>
 
-  <body class="bg-black text-white">
+  <body class="bg-black text-white text-base">  {/* text-baseを追加 */}
     {/* --- (Header, Main, Article, Footer: 変更なし) --- */}
-    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg">
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base"> {/* text-base追加 */}
       <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-        <a href="/" class="text-white font-semibold text-lg hover:text-blue-300 transition-colors">Mekann</a>
-        <ul class="flex gap-6 text-sm">
+        <a href="/" class="text-white font-semibold text-base hover:text-blue-300 transition-colors">Mekann</a> {/* text-base追加 */}
+        <ul class="flex gap-6 text-sm"> {/* ここはナビなのでtext-smのまま */}
           <li><a href="/" class="text-gray-400 hover:text-white no-underline">Home</a></li>
           <li><a href="/blog" class="text-gray-400 hover:text-white no-underline">Blog</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12">
+    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12 text-base"> {/* text-base追加 */}
       <article
-        class="prose prose-invert mx-auto max-w-3xl lg:max-w-4xl lg:prose-lg py-8 relative
+        class="prose prose-base prose-invert mx-auto max-w-2xl py-8 relative
                prose-pre:bg-[rgb(40_40_40)]
                prose-pre:text-gray-100
                prose-pre:p-4
@@ -213,7 +85,7 @@ const displayDate = validDate
                prose-code:text-inherit"
       >
         {/* 戻るリンク */}
-        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline">
+        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -229,13 +101,9 @@ const displayDate = validDate
         )}
 
         {/* タイトル */}
-        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-8 lg:mb-10">{title}</h1>
+        <h1 class="text-2xl font-bold text-white mb-8 lg:mb-10">{title}</h1> {/* text-4xl→text-2xl */}
         {/* ディスクリプション */}
-        {description && <p class="text-gray-300 mb-10 lg:mb-12">{description}</p>}
-
-        {/* --- Markdown/MDX コンテンツ --- */}
-        {/* KaTeX数式はビルド時にHTMLレンダリング済み */}
-        {/* Mermaid図はクライアントサイドスクリプトでレンダリングされる想定 */}
+        {description && <p class="text-gray-300 mb-10 lg:mb-12 text-base">{description}</p>}
         <slot />
         {/* --- コンテンツ終了 --- */}
 
@@ -255,134 +123,13 @@ const displayDate = validDate
       </article>
     </main>
 
-    <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8">
+    <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8 text-base">
       <div class="container mx-auto text-center text-sm px-6 lg:px-8">
         © {new Date().getFullYear()} Mekann
       </div>
     </footer>
 
-    {/* --- クライアントサイドスクリプト --- */}
-    {/* ★ Mermaidをビルド時レンダリングに切り替える場合は、このscriptタグ全体、 */}
-    {/*    または少なくともMermaid関連部分を削除できます。 */}
-    <script type="module">
-      // --- Mermaid 関連 ---
-      // ★ 注意: クライアントサイドでのMermaid処理はTBTに影響します。
-      //    パフォーマンス最適化のため、astro.config.mjsでMermaidの
-      //    ビルド時レンダリングを有効にすることを強く推奨します。
-      let mermaidInstance = null;
-      let intersectionObserver = null;
-      const mermaidElementsToProcess = new Set();
 
-      // ★ Mermaidビルド時レンダリングが有効なら以下の関数は不要
-      async function ensureMermaid() {
-        if (mermaidInstance) return mermaidInstance;
-        if (!window.mermaidLoadingPromise) {
-            window.mermaidLoadingPromise = (async () => {
-                console.log('Loading Mermaid...');
-                try {
-                    const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.js');
-                    const mermaidAPI = module.default;
-                    mermaidAPI.initialize({ startOnLoad: false, theme: 'dark' });
-                    console.log('Mermaid loaded and initialized.');
-                    return mermaidAPI;
-                } catch (error) {
-                    console.error('Failed to load or initialize Mermaid:', error);
-                    window.mermaidLoadingPromise = null;
-                    return null;
-                }
-            })();
-        }
-        mermaidInstance = await window.mermaidLoadingPromise;
-        return mermaidInstance;
-      }
-
-      // ★ Mermaidビルド時レンダリングが有効なら以下の関数は不要
-      async function renderSingleMermaidDiagram(preElement) {
-        if (!preElement || preElement.dataset.mermaidProcessed !== 'pending') return;
-        preElement.dataset.mermaidProcessed = 'processing';
-        const codeElement = preElement.querySelector('code');
-        const code = codeElement?.textContent?.trim() || '';
-        if (!code) { /* ... */ return; }
-        const mermaidAPI = await ensureMermaid();
-        if (!mermaidAPI) { /* ... */ return; }
-        const id = 'mermaid-' + Math.random().toString(36).substring(2, 9);
-        try {
-          const { svg } = await mermaidAPI.render(id, code); // この処理が重い可能性
-          const div = document.createElement('div');
-          div.innerHTML = svg;
-          div.classList.add('mermaid-container');
-          div.dataset.mermaidProcessed = 'done';
-          if (preElement.parentNode) { preElement.parentNode.replaceChild(div, preElement); }
-          else { /* ... */ }
-        } catch (error) { /* ... */ }
-        finally { mermaidElementsToProcess.delete(preElement); }
-      }
-
-      // ★ Mermaidビルド時レンダリングが有効なら以下の関数は不要
-      function setupMermaidObserver() {
-        if (intersectionObserver) { intersectionObserver.disconnect(); }
-        mermaidElementsToProcess.clear();
-        // 'pre.mermaid' セレクタは remark-mermaidjs などを使う場合、変わる可能性あり
-        const mermaidPres = document.querySelectorAll('pre.mermaid:not([data-mermaid-processed])');
-        if (mermaidPres.length === 0) return;
-        mermaidPres.forEach(pre => {
-            pre.dataset.mermaidProcessed = 'pending';
-            mermaidElementsToProcess.add(pre);
-        });
-        const observerOptions = { root: null, rootMargin: '200px 0px 200px 0px', threshold: 0.01 };
-        intersectionObserver = new IntersectionObserver(async (entries, observer) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              /** @type {HTMLElement} */
-              const targetPre = entry.target;
-              observer.unobserve(targetPre);
-              mermaidElementsToProcess.delete(targetPre);
-              renderSingleMermaidDiagram(targetPre).catch(err => { /* ... */ });
-            }
-          }
-        }, observerOptions);
-        mermaidElementsToProcess.forEach(pre => { intersectionObserver.observe(pre); });
-      }
-      // --- Mermaid 関連終了 ---
-
-      // --- コードブロックコピーボタン (変更なし) ---
-      function addCopyButtons() {
-        document.querySelectorAll('article.prose pre:not(.mermaid):not([data-copy-button-added])').forEach((pre) => {
-          const codeEl = pre.querySelector('code');
-          if (!codeEl) return;
-          const btn = document.createElement('button');
-          btn.textContent = 'Copy';
-          btn.className = 'copy-button absolute top-2.5 right-2.5 bg-gray-700 text-gray-200 text-xs px-3 py-1.5 rounded-md hover:bg-gray-600 opacity-0 group-hover:opacity-100 transition-all duration-200 focus:opacity-100 z-10';
-          btn.addEventListener('click', async () => {
-            const textToCopy = codeEl.textContent || '';
-            if (!navigator.clipboard) { /* ... */ return; }
-            try { await navigator.clipboard.writeText(textToCopy); btn.textContent = 'Copied!'; }
-            catch (err) { /* ... */ }
-            finally { setTimeout(() => (btn.textContent = 'Copy'), 1500); }
-          });
-          pre.classList.add('group');
-          if (window.getComputedStyle(pre).position === 'static') { pre.style.position = 'relative'; }
-          pre.appendChild(btn);
-          pre.dataset.copyButtonAdded = 'true';
-        });
-      }
-      // --- コピーボタン終了 ---
-
-      // 機能の初期化/再初期化
-      function initializePageFeatures() {
-         console.log('Initializing page features...');
-         // ★ Mermaidビルド時レンダリング有効なら setupMermaidObserver() 呼び出し削除
-         setupMermaidObserver();
-         addCopyButtons(); // コピーボタンは常に必要
-      }
-
-      // --- イベントリスナー (変更なし) ---
-      document.addEventListener('astro:page-load', initializePageFeatures);
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializePageFeatures);
-      } else {
-        initializePageFeatures();
-      }
 
     </script>
   </body>

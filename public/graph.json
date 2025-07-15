@@ -6,28 +6,8 @@
       "ext": false
     },
     {
-      "id": "/blog/Math Test",
-      "label": "blog/Math Test",
-      "ext": false
-    },
-    {
-      "id": "https://cdn.jsdelivr.net",
-      "label": "https://cdn.jsdelivr.net",
-      "ext": true
-    },
-    {
-      "id": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
-      "label": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css",
-      "ext": true
-    },
-    {
       "id": "/blog",
       "label": "blog",
-      "ext": false
-    },
-    {
-      "id": "/blog/looking-glass self",
-      "label": "blog/looking-glass self",
       "ext": false
     },
     {
@@ -36,39 +16,29 @@
       "ext": false
     },
     {
-      "id": "https://github.com/rasbt/python-machine-learning-book",
-      "label": "https://github.com/rasbt/python-machine-learning-book",
+      "id": "https://textlint.github.io/",
+      "label": "https://textlint.github.io/",
       "ext": true
     },
     {
-      "id": "https://scikit-learn.org/",
-      "label": "https://scikit-learn.org/",
+      "id": "https://t.co/qlr8s5kJzU",
+      "label": "https://t.co/qlr8s5kJzU",
       "ext": true
     },
     {
-      "id": "https://www.coursera.org/learn/machine-learning",
-      "label": "https://www.coursera.org/learn/machine-learning",
+      "id": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
+      "label": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
       "ext": true
     },
     {
-      "id": "http://rasbt.github.io/mlxtend/",
-      "label": "http://rasbt.github.io/mlxtend/",
+      "id": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "label": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
       "ext": true
     },
     {
-      "id": "https://www.tensorflow.org/",
-      "label": "https://www.tensorflow.org/",
+      "id": "https://github.com/your-repo/obsidian-textlint-highlighter-plugin%60",
+      "label": "https://github.com/your-repo/obsidian-textlint-highlighter-plugin%60",
       "ext": true
-    },
-    {
-      "id": "https://pytorch.org/",
-      "label": "https://pytorch.org/",
-      "ext": true
-    },
-    {
-      "id": "/blog/my-first-post",
-      "label": "blog/my-first-post",
-      "ext": false
     },
     {
       "id": "/",
@@ -111,33 +81,8 @@
       "ext": true
     },
     {
-      "id": "/tags/ADALINE",
-      "label": "tags/ADALINE",
-      "ext": false
-    },
-    {
-      "id": "/tags/AIの歴史",
-      "label": "tags/AIの歴史",
-      "ext": false
-    },
-    {
-      "id": "/tags/Astro",
-      "label": "tags/Astro",
-      "ext": false
-    },
-    {
-      "id": "/tags/Hugo",
-      "label": "tags/Hugo",
-      "ext": false
-    },
-    {
-      "id": "/tags/NumPy",
-      "label": "tags/NumPy",
-      "ext": false
-    },
-    {
-      "id": "/tags/Python",
-      "label": "tags/Python",
+      "id": "/tags/Obsidian",
+      "label": "tags/Obsidian",
       "ext": false
     },
     {
@@ -146,83 +91,18 @@
       "ext": false
     },
     {
-      "id": "/tags/ウェブアーキテクチャ",
-      "label": "tags/ウェブアーキテクチャ",
+      "id": "/tags/textlint",
+      "label": "tags/textlint",
       "ext": false
     },
     {
-      "id": "/tags/クーリー",
-      "label": "tags/クーリー",
+      "id": "/tags/プラグイン",
+      "label": "tags/プラグイン",
       "ext": false
     },
     {
-      "id": "/tags/データサイエンス",
-      "label": "tags/データサイエンス",
-      "ext": false
-    },
-    {
-      "id": "/tags/ニューラルネットワーク基礎",
-      "label": "tags/ニューラルネットワーク基礎",
-      "ext": false
-    },
-    {
-      "id": "/tags/パフォーマンス",
-      "label": "tags/パフォーマンス",
-      "ext": false
-    },
-    {
-      "id": "/tags/パーセプトロン",
-      "label": "tags/パーセプトロン",
-      "ext": false
-    },
-    {
-      "id": "/tags/勾配降下法",
-      "label": "tags/勾配降下法",
-      "ext": false
-    },
-    {
-      "id": "/tags/実存主義",
-      "label": "tags/実存主義",
-      "ext": false
-    },
-    {
-      "id": "/tags/情報社会",
-      "label": "tags/情報社会",
-      "ext": false
-    },
-    {
-      "id": "/tags/機械学習アルゴリズム",
-      "label": "tags/機械学習アルゴリズム",
-      "ext": false
-    },
-    {
-      "id": "/tags/機械学習入門",
-      "label": "tags/機械学習入門",
-      "ext": false
-    },
-    {
-      "id": "/tags/現代思想",
-      "label": "tags/現代思想",
-      "ext": false
-    },
-    {
-      "id": "/tags/社会学",
-      "label": "tags/社会学",
-      "ext": false
-    },
-    {
-      "id": "/tags/線形分類",
-      "label": "tags/線形分類",
-      "ext": false
-    },
-    {
-      "id": "/tags/自己論",
-      "label": "tags/自己論",
-      "ext": false
-    },
-    {
-      "id": "/tags/静的サイト",
-      "label": "tags/静的サイト",
+      "id": "/tags/日本語校正",
+      "label": "tags/日本語校正",
       "ext": false
     },
     {
@@ -368,22 +248,6 @@
       "target": "/test/three-4"
     },
     {
-      "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
-      "source": "/blog/Math Test",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
       "source": "/blog",
       "target": "/"
     },
@@ -413,179 +277,47 @@
     },
     {
       "source": "/blog",
-      "target": "/blog/Math Test"
-    },
-    {
-      "source": "/blog",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/blog",
       "target": "/blog/machine-learning-01"
     },
     {
-      "source": "/blog",
-      "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/社会学"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/自己論"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/クーリー"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/現代思想"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/実存主義"
-    },
-    {
-      "source": "/blog/looking-glass self",
-      "target": "/tags/情報社会"
+      "source": "/blog/machine-learning-01",
+      "target": "https://textlint.github.io/"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net"
+      "target": "https://t.co/qlr8s5kJzU"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net"
+      "target": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
+      "target": "https://github.com/your-repo/obsidian-textlint-highlighter-plugin%60"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://github.com/rasbt/python-machine-learning-book"
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://scikit-learn.org/"
+      "target": "/tags/Obsidian"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://www.coursera.org/learn/machine-learning"
+      "target": "/tags/textlint"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "http://rasbt.github.io/mlxtend/"
+      "target": "/tags/プラグイン"
     },
     {
       "source": "/blog/machine-learning-01",
-      "target": "https://www.tensorflow.org/"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "https://pytorch.org/"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/機械学習入門"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/パーセプトロン"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/ADALINE"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/線形分類"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/勾配降下法"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/ニューラルネットワーク基礎"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/AIの歴史"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/Python"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/NumPy"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/データサイエンス"
-    },
-    {
-      "source": "/blog/machine-learning-01",
-      "target": "/tags/機械学習アルゴリズム"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.css"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/tags/Astro"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/tags/Hugo"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/tags/パフォーマンス"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/tags/静的サイト"
-    },
-    {
-      "source": "/blog/my-first-post",
-      "target": "/tags/ウェブアーキテクチャ"
+      "target": "/tags/日本語校正"
     },
     {
       "source": "/",
@@ -708,147 +440,27 @@
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
     },
     {
-      "source": "/tags/ADALINE",
+      "source": "/tags/Obsidian",
       "target": "/test/three"
     },
     {
-      "source": "/tags/ADALINE",
+      "source": "/tags/Obsidian",
       "target": "/test/three-1"
     },
     {
-      "source": "/tags/ADALINE",
+      "source": "/tags/Obsidian",
       "target": "/test/three-2"
     },
     {
-      "source": "/tags/ADALINE",
+      "source": "/tags/Obsidian",
       "target": "/test/three-3"
     },
     {
-      "source": "/tags/ADALINE",
+      "source": "/tags/Obsidian",
       "target": "/test/three-4"
     },
     {
-      "source": "/tags/ADALINE",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/AIの歴史",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/Hugo",
-      "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/NumPy",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/Python",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/Python",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/Python",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/Python",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/Python",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/Python",
+      "source": "/tags/Obsidian",
       "target": "/blog/machine-learning-01"
     },
     {
@@ -877,479 +489,95 @@
     },
     {
       "source": "/tags",
-      "target": "/tags/ADALINE"
+      "target": "/tags/Obsidian"
     },
     {
       "source": "/tags",
-      "target": "/tags/AIの歴史"
+      "target": "/tags/textlint"
     },
     {
       "source": "/tags",
-      "target": "/tags/Astro"
+      "target": "/tags/プラグイン"
     },
     {
       "source": "/tags",
-      "target": "/tags/Hugo"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/NumPy"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/Python"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/ウェブアーキテクチャ"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/クーリー"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/データサイエンス"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/ニューラルネットワーク基礎"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/パフォーマンス"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/パーセプトロン"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/勾配降下法"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/実存主義"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/情報社会"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/機械学習アルゴリズム"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/機械学習入門"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/現代思想"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/社会学"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/線形分類"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/自己論"
-    },
-    {
-      "source": "/tags",
-      "target": "/tags/静的サイト"
+      "target": "/tags/日本語校正"
     },
     {
       "source": "/tags",
       "target": "/blog"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
+      "source": "/tags/textlint",
       "target": "/test/three"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
+      "source": "/tags/textlint",
       "target": "/test/three-1"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
+      "source": "/tags/textlint",
       "target": "/test/three-2"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
+      "source": "/tags/textlint",
       "target": "/test/three-3"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
+      "source": "/tags/textlint",
       "target": "/test/three-4"
     },
     {
-      "source": "/tags/ウェブアーキテクチャ",
-      "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/クーリー",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/データサイエンス",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/データサイエンス",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/データサイエンス",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/データサイエンス",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/データサイエンス",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/データサイエンス",
+      "source": "/tags/textlint",
       "target": "/blog/machine-learning-01"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/test/three"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/test/three-1"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/test/three-2"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/test/three-3"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/test/three-4"
     },
     {
-      "source": "/tags/ニューラルネットワーク基礎",
+      "source": "/tags/プラグイン",
       "target": "/blog/machine-learning-01"
     },
     {
-      "source": "/tags/パフォーマンス",
+      "source": "/tags/日本語校正",
       "target": "/test/three"
     },
     {
-      "source": "/tags/パフォーマンス",
+      "source": "/tags/日本語校正",
       "target": "/test/three-1"
     },
     {
-      "source": "/tags/パフォーマンス",
+      "source": "/tags/日本語校正",
       "target": "/test/three-2"
     },
     {
-      "source": "/tags/パフォーマンス",
+      "source": "/tags/日本語校正",
       "target": "/test/three-3"
     },
     {
-      "source": "/tags/パフォーマンス",
+      "source": "/tags/日本語校正",
       "target": "/test/three-4"
     },
     {
-      "source": "/tags/パフォーマンス",
-      "target": "/blog/my-first-post"
-    },
-    {
-      "source": "/tags/パーセプトロン",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/パーセプトロン",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/パーセプトロン",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/パーセプトロン",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/パーセプトロン",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/パーセプトロン",
+      "source": "/tags/日本語校正",
       "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/勾配降下法",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/実存主義",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/情報社会",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/機械学習アルゴリズム",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/機械学習入門",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/現代思想",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/社会学",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/線形分類",
-      "target": "/blog/machine-learning-01"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/自己論",
-      "target": "/blog/looking-glass self"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/test/three"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/test/three-1"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/test/three-2"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/test/three-3"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/test/three-4"
-    },
-    {
-      "source": "/tags/静的サイト",
-      "target": "/blog/my-first-post"
     },
     {
       "source": "/tailwind/core-concepts",

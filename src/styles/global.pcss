@@ -58,18 +58,19 @@
 article.prose .katex-display,
 /* .prose がない場合や他の場所でも適用されるようにフォールバック */
 .katex-display {
-  display: block !important; /* display: block を強制 */
-  overflow-x: auto !important; /* overflow-x: auto を強制 */
+  display: block !important;
+  overflow-x: visible !important;
   overflow-y: hidden;
   max-width: 100%;
-  padding: 0.5em 0.2em; /* スクロールバーとの余白 */
-  white-space: nowrap;  /* 数式内の改行を防ぐ */
-  text-align: left;     /* 左揃え (スクロールを考慮) */
-  -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
-  scrollbar-width: thin; /* Firefox スクロールバー */
-  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2); /* スクロールバー色 */
-  margin-top: 1.5em;    /* proseの他の要素との間隔調整 (お好みで) */
-  margin-bottom: 1.5em; /* proseの他の要素との間隔調整 (お好みで) */
+  padding: 0.5em 0.2em;
+  white-space: normal !important;
+  word-break: break-word !important;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.2);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 /* Webkit系ブラウザのスクロールバー */
@@ -106,3 +107,60 @@ article.prose span.katex {
    white-space: normal;
 }
 */
+
+.katex-display > .katex {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  text-align: center !important;
+}
+
+.katex-display,
+.katex-display > .katex,
+.katex-display * {
+  max-width: 100% !important;
+  overflow-x: visible !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  text-align: center !important;
+}
+
+.prose img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose svg,
+.prose p > svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* src/styles/global.pcss の末尾に追加 */
+
+/* --- Mermaid図の背景スタイル --- */
+.mermaid-diagram-container {
+  /* 背景色、パディング、角丸を設定 */
+  background-color: #18181b;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  
+  /* コンテナ内で図を中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 図が非常に大きい場合に備えて横スクロールを有効化 */
+  overflow-x: auto;
+}
+
+/* レイアウトファイル、またはグローバルCSSに追加 */
+h1 {
+  white-space: pre-line;
+}
