@@ -1,0 +1,127 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title:  "macOSでsmartmontoolsを使ってディスク情報を確認する"
+date: "2025-07-15"
+description: "macOSでsmartmontoolsを使ってディスク情報を確認する方法を解説する。"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["macOS", "smartmontools", "ディスク情報", "温度情報"]
+---
+
+
+この記事では、macOS環境で`smartmontools`というツールをHomebrewを使ってインストールし、接続されているディスクの情報を確認する手順を解説する。特に、外部ディスクの温度情報を取得する例を見ていく。
+
+
+### 1. smartmontoolsのインストール
+
+
+`smartmontools`は、S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology) データを通じて、ハードディスクやSSDの健康状態を監視するためのユーティリティだ。macOSでは、Homebrewパッケージマネージャーを使って簡単にインストールできる。
+
+
+まず、以下のコマンドを実行して`smartmontools`をインストールする。
+
+```bash
+brew install smartmontools
+```
+
+
+**実行結果の解説:**
+
+```
+==> Auto-updating Homebrew...
+...
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+...
+==> Downloading https://ghcr.io/v2/homebrew/core/smartmontools/manifests/7.5
+...
+==> Pouring smartmontools--7.5.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/smartmontools/7.5: 37 files, 2.3MB
+==> Running `brew cleanup smartmontools`...
+```
+
+
+上記の出力から、Homebrewが自動更新された後、`smartmontools`のバージョン7.5が正常にインストールされたことがわかる。インストールされたファイルは`/opt/homebrew/Cellar/smartmontools/7.5`に配置され、インストール後に自動的にクリーンアップが実行されている。
+
+
+### 2. 接続されているディスクの識別
+
+
+`smartmontools`を使ってディスク情報を取得する前に、どのディスクを対象にするか識別しなければならない。`diskutil list`コマンドを使うと、システムに接続されているすべてのディスクとそのパーティション情報を一覧表示できる。
+
+```bash
+diskutil list
+```
+
+
+**実行結果の解説:**
+
+```
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *251.0 GB   disk0
+   1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk3         245.1 GB   disk0s2
+   3:        Apple_APFS_Recovery Container disk2         5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   ...
+
+/dev/disk4 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *2.0 TB     disk4
+   1:                        EFI NO NAME                 209.7 MB   disk4s1
+   2:                 Apple_APFS Container disk5         2.0 TB     disk4s2
+
+/dev/disk5 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +2.0 TB     disk5
+                                 Physical Store disk4s2
+   1:                APFS Volume MSI M482 - Data         37.7 GB    disk5s1
+   2:                APFS Volume MSI M482                10.7 GB    disk5s2
+   ...
+```
+
+
+この出力から、以下のディスクが確認できる。
+
+*   `/dev/disk0`: 251.0 GBの内部物理ディスク。macOSのシステムがインストールされている。
+*   `/dev/disk4`: 2.0 TBの外部物理ディスク。このディスクはAPFSコンテナ`disk5`を含んでいる。
+*   `/dev/disk5`: `/dev/disk4s2`から合成されたAPFSコンテナで、「MSI M482 - Data」や「MSI M482」といったボリュームが含まれている。
+
+今回は、この外部ディスク`/dev/disk5`の情報を取得することにする。
+
+
+### 3. smartctlで温度情報を取得
+
+
+`smartmontools`に含まれる`smartctl`コマンドを使って、特定のディスクのS.M.A.R.T.情報を取得できる。ディスクの温度情報を確認するには、`-a`オプションで全てのS.M.A.R.T.情報を表示し、`grep -i temperature`で温度に関する行をフィルタリングするのが便利だ。
+
+`smartctl`はディスクに直接アクセスするため、`sudo`コマンドで管理者権限が必要になる。
+
+```bash
+sudo smartctl -a /dev/disk5 | grep -i temperature
+```
+
+
+**実行結果の解説:**
+
+```
+Password:
+Temperature:                        37 Celsius
+Warning  Comp. Temperature Time:    0
+Critical Comp. Temperature Time:    0
+Temperature Sensor 1:               37 Celsius
+```
+
+
+上記の出力から、外部ディスク`/dev/disk5`の現在の温度は**37℃**であることがわかる。また、温度センサー1の値も同じく37℃を示している。
+
+
+### まとめ
+
+
+この手順により、Homebrewを使って`smartmontools`をmacOSにインストールし、`diskutil list`でディスクを識別した後、`smartctl`コマンドで外部ディスクの温度情報を正常に取得できた。
+
+
+
