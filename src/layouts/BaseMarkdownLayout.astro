@@ -1,18 +1,42 @@
 ---
-import '../styles/global.pcss'; // ← グローバルCSSをインポート
+import '../styles/global.pcss';
 /// <reference types="astro/client" />
 
-// --- (Frontmatter処理: 変更なし) ---
+// --- Frontmatter処理 ---
 const rawProps = (Astro.props as any).frontmatter ?? Astro.props;
-const { title, description, author, tags, date, pubDate } = rawProps as {
+const {
+  title,
+  description,
+  author,
+  tags,
+  date,
+  pubDate,
+  // OGP用の画像パスをfrontmatterから受け取る
+  ogImage,
+} = rawProps as {
   title: string;
   description?: string;
   author?: string;
   tags?: string[];
   date?: string | Date;
   pubDate?: string;
+  ogImage?: string; // 例: '/images/blog/my-post-image.png'
 };
-// --- (日付処理: 変更なし) ---
+
+// --- OGP/URL関連の変数を定義 ---
+// サイトのURL。Astro.urlから自動で取得
+const canonicalURL = Astro.url;
+// サイト名（og:site_name用）
+const siteName = 'Mekann';
+// OGP画像のURLを生成
+// 記事のfrontmatterでogImageが指定されていればそれを使用し、
+// なければデフォルトの画像パスを使う
+const imagePath = ogImage || '/default-og-image.png';
+// 相対パスを絶対URLに変換
+const absoluteImageUrl = new URL(imagePath, Astro.url.origin).href;
+
+
+// --- 日付処理 (変更なし) ---
 let sourceDate: string | Date | undefined = date ?? pubDate;
 let parsedDate: Date | null = null;
 let isoDate = '';
@@ -56,23 +80,34 @@ const displayDate = validDate
     <base href="/" />
     {description && <meta name="description" content={description} />}
 
-    </noscript>
+    {/* --- OGP / Twitter Card Meta Tags --- */}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={absoluteImageUrl} />
+    {/* ------------------------------------ */}
 
   </head>
 
-  <body class="bg-black text-white text-base">  {/* text-baseを追加 */}
-    {/* --- (Header, Main, Article, Footer: 変更なし) --- */}
-    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base"> {/* text-base追加 */}
+  <body class="bg-black text-white text-base">
+    {/* --- Header, Main, Article, Footer (変更なし) --- */}
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base">
       <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-        <a href="/" class="text-white font-semibold text-base hover:text-blue-300 transition-colors">Mekann</a> {/* text-base追加 */}
-        <ul class="flex gap-6 text-sm"> {/* ここはナビなのでtext-smのまま */}
+        <a href="/" class="text-white font-semibold text-base hover:text-blue-300 transition-colors">{siteName}</a>
+        <ul class="flex gap-6 text-sm">
           <li><a href="/" class="text-gray-400 hover:text-white no-underline">Home</a></li>
           <li><a href="/blog" class="text-gray-400 hover:text-white no-underline">Blog</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12 text-base"> {/* text-base追加 */}
+    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12 text-base">
       <article
         class="prose prose-base prose-invert mx-auto max-w-2xl py-8 relative
                prose-pre:bg-[rgb(40_40_40)]
@@ -84,7 +119,6 @@ const displayDate = validDate
                prose-code:bg-transparent
                prose-code:text-inherit"
       >
-        {/* 戻るリンク */}
         <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -92,7 +126,6 @@ const displayDate = validDate
           Back to Blog
         </a>
 
-        {/* 日付と著者 */}
         {validDate && (
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8">
             <time datetime={isoDate}>{displayDate}</time>
@@ -100,12 +133,9 @@ const displayDate = validDate
           </div>
         )}
 
-        {/* タイトル */}
-        <h1 class="text-2xl font-bold text-white mb-8 lg:mb-10">{title}</h1> {/* text-4xl→text-2xl */}
+        <h1 class="text-2xl font-bold text-white mb-8 lg:mb-10">{title}</h1>
         <slot />
-        {/* --- コンテンツ終了 --- */}
 
-        {/* タグ */}
         {tags && tags.length > 0 && (
           <div class="mt-16 border-t border-gray-700 pt-8 flex flex-wrap gap-3">
             {tags.map((tag) => (
@@ -123,12 +153,8 @@ const displayDate = validDate
 
     <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8 text-base">
       <div class="container mx-auto text-center text-sm px-6 lg:px-8">
-        © {new Date().getFullYear()} Mekann
+        © {new Date().getFullYear()} {siteName}
       </div>
     </footer>
-
-
-
-    </script>
   </body>
 </html>
