@@ -1,8 +1,11 @@
 ---
 import '../styles/global.pcss';
 /// <reference types="astro/client" />
+import type { MarkdownHeading } from 'astro';
 
-// --- Frontmatter処理 ---
+// --- Props処理 ---
+// Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
+const { headings } = Astro.props as { headings: MarkdownHeading[] };
 const rawProps = (Astro.props as any).frontmatter ?? Astro.props;
 const {
   title,
@@ -11,7 +14,6 @@ const {
   tags,
   date,
   pubDate,
-  // OGP用の画像パスをfrontmatterから受け取る
   ogImage,
 } = rawProps as {
   title: string;
@@ -20,21 +22,14 @@ const {
   tags?: string[];
   date?: string | Date;
   pubDate?: string;
-  ogImage?: string; // 例: '/images/blog/my-post-image.png'
+  ogImage?: string;
 };
 
-// --- OGP/URL関連の変数を定義 ---
-// サイトのURL。Astro.urlから自動で取得
+// --- OGP/URL関連 (変更なし) ---
 const canonicalURL = Astro.url;
-// サイト名（og:site_name用）
 const siteName = 'Mekann';
-// OGP画像のURLを生成
-// 記事のfrontmatterでogImageが指定されていればそれを使用し、
-// なければデフォルトの画像パスを使う
 const imagePath = ogImage || '/default-og-image.png';
-// 相対パスを絶対URLに変換
 const absoluteImageUrl = new URL(imagePath, Astro.url.origin).href;
-
 
 // --- 日付処理 (変更なし) ---
 let sourceDate: string | Date | undefined = date ?? pubDate;
@@ -45,12 +40,10 @@ if (typeof sourceDate === 'string') {
     parsedDate = new Date(sourceDate);
     if (isNaN(parsedDate.valueOf())) {
       parsedDate = null;
-      console.warn(`Invalid date string provided: ${sourceDate}`);
     } else {
       isoDate = parsedDate.toISOString();
     }
   } catch (e) {
-    console.error(`Error parsing date string: ${sourceDate}`, e);
     parsedDate = null;
   }
 } else if (sourceDate instanceof Date) {
@@ -58,7 +51,6 @@ if (typeof sourceDate === 'string') {
     parsedDate = sourceDate;
     isoDate = parsedDate.toISOString();
   } else {
-    console.warn(`Invalid Date object provided.`);
     parsedDate = null;
   }
 }
@@ -74,13 +66,12 @@ const displayDate = validDate
 
 <html lang="ja" class="bg-black">
   <head>
+    {/* Head内は変更なし */}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <base href="/" />
     {description && <meta name="description" content={description} />}
-
-    {/* --- OGP / Twitter Card Meta Tags --- */}
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL.href} />
@@ -91,12 +82,10 @@ const displayDate = validDate
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={absoluteImageUrl} />
-    {/* ------------------------------------ */}
-
   </head>
 
   <body class="bg-black text-white text-base">
-    {/* --- Header, Main, Article, Footer (変更なし) --- */}
+    {/* --- Header (変更なし) --- */}
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base">
       <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
         <a href="/" class="text-white font-semibold text-base hover:text-blue-300 transition-colors">{siteName}</a>
@@ -107,50 +96,82 @@ const displayDate = validDate
       </nav>
     </header>
 
-    <main class="pt-20 container mx-auto px-6 lg:px-8 py-8 lg:py-12 text-base">
-      <article
-        class="prose prose-base prose-invert mx-auto max-w-2xl py-8 relative
-               prose-pre:bg-[rgb(40_40_40)]
-               prose-pre:text-gray-100
-               prose-pre:p-4
-               prose-pre:rounded-lg
-               prose-pre:overflow-auto
-               prose-pre:my-6
-               prose-code:bg-transparent
-               prose-code:text-inherit"
-      >
-        <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Blog
-        </a>
-
-        {validDate && (
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8">
-            <time datetime={isoDate}>{displayDate}</time>
-            {author && <span class="mt-1 sm:mt-0 sm:ml-4">By {author}</span>}
-          </div>
-        )}
-
-        <h1 class="text-2xl font-bold text-white mb-8 lg:mb-10">{title}</h1>
-        <slot />
-
-        {tags && tags.length > 0 && (
-          <div class="mt-16 border-t border-gray-700 pt-8 flex flex-wrap gap-3">
-            {tags.map((tag) => (
-              <a
-                href={`/tags/${tag}`}
-                class="bg-gray-800 text-blue-300 hover:bg-gray-700 hover:text-blue-200 px-3 py-1 rounded-full text-sm no-underline transition-colors"
-              >
-                #{tag}
+    {/* --- Main Content (3カラムレイアウトに変更) --- */}
+    <main class="container mx-auto px-6 lg:px-8 pt-28 pb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
+        
+        {headings && headings.length > 1 && (
+          <aside class="hidden lg:block lg:col-span-3">
+            <div class="sticky top-28">
+              <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Blog
               </a>
-            ))}
-          </div>
+              <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
+              <nav>
+                <ul class="space-y-2">
+                  {headings.filter(h => h.depth > 1 && h.depth < 4).map((heading) => (
+                    <li>
+                      <a 
+                        href={`${Astro.url.pathname}#${heading.slug}`}
+                        class="text-gray-400 hover:text-white transition-colors text-sm block"
+                        style={`padding-left: ${(heading.depth - 2) * 1}rem;`}
+                      >
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          </aside>
         )}
-      </article>
+
+        <div class="lg:col-span-6">
+          <article
+            class="prose prose-base prose-invert mx-auto max-w-4xl
+                   prose-pre:bg-[rgb(40_40_40)] prose-pre:text-gray-100 prose-pre:p-4 
+                   prose-pre:rounded-lg prose-pre:overflow-auto prose-pre:my-6
+                   prose-code:bg-transparent prose-code:text-inherit"
+          >
+            {validDate && (
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8">
+                <time datetime={isoDate}>{displayDate}</time>
+                {author && <span class="mt-1 sm:mt-0 sm:ml-4">By {author}</span>}
+              </div>
+            )}
+
+            <h1 class="text-2xl font-bold text-white mb-8 lg:mb-10">{title}</h1>
+            
+            {/* 本文のコンテンツがここに表示される */}
+            <slot />
+          </article>
+        </div>
+        
+        {tags && tags.length > 0 && (
+          <aside class="lg:col-span-3 mt-16 lg:mt-0">
+            <div class="sticky top-28">
+              <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Tags</h2>
+              <div class="flex flex-wrap gap-3">
+                {tags.map((tag) => (
+                  <a
+                    href={`/tags/${tag}`}
+                    class="bg-gray-800 text-blue-300 hover:bg-gray-700 hover:text-blue-200 px-3 py-1 rounded-full text-sm no-underline transition-colors"
+                  >
+                    #{tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </aside>
+        )}
+
+      </div>
     </main>
 
+    {/* --- Footer (変更なし) --- */}
     <footer class="bg-black text-gray-400 border-t border-gray-800 py-6 lg:py-8 text-base">
       <div class="container mx-auto text-center text-sm px-6 lg:px-8">
         © {new Date().getFullYear()} {siteName}

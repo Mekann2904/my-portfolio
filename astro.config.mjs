@@ -8,6 +8,7 @@ import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkMermaid from 'remark-mermaidjs';
+import rehypeSlug from 'rehype-slug';
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
@@ -35,11 +36,13 @@ export default defineConfig({
       ],
       rehypePlugins: [
         [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
+        rehypeSlug,
       ],
     }),
   ],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
+    rehypePlugins: [rehypeSlug],
   },
   vite: {
     build: {
