@@ -9,6 +9,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkMermaid from 'remark-mermaidjs';
 import rehypeSlug from 'rehype-slug';
+import remarkExtractUrls from './remark-extract-urls.js';
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
@@ -33,6 +34,7 @@ export default defineConfig({
             fontFamily: 'sans-serif',
           }
         }],
+        remarkExtractUrls,
       ],
       rehypePlugins: [
         [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],

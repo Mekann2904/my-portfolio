@@ -2,6 +2,7 @@
 import '../styles/global.pcss';
 /// <reference types="astro/client" />
 import type { MarkdownHeading } from 'astro';
+import ExtractLinks from '../components/ExtractLinks.jsx';
 
 // --- Props処理 ---
 // Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
@@ -15,6 +16,7 @@ const {
   date,
   pubDate,
   ogImage,
+  links, // 追加
 } = rawProps as {
   title: string;
   description?: string;
@@ -23,7 +25,15 @@ const {
   date?: string | Date;
   pubDate?: string;
   ogImage?: string;
+  links?: { title: string; url: string }[]; // 追加
 };
+
+// linksがなければtagsから自動生成
+const autoLinks = tags?.map(tag => [
+  { title: `Zenn #${tag}`, url: `https://zenn.dev/topics/${tag}` },
+  { title: `Qiita #${tag}`, url: `https://qiita.com/tags/${tag}` }
+]).flat() ?? [];
+const linksToShow = links && links.length > 0 ? links : autoLinks;
 
 // --- OGP/URL関連 (変更なし) ---
 const canonicalURL = Astro.url;
@@ -79,6 +89,8 @@ const displayDate = validDate
     <meta property="og:image" content={absoluteImageUrl} />
     <meta property="og:type" content="article" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Mekann2904" />
+    <meta name="twitter:creator" content="@Mekann2904" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={absoluteImageUrl} />
@@ -156,7 +168,7 @@ const displayDate = validDate
           <aside class="lg:col-span-3 mt-16 lg:mt-0">
             <div class="sticky top-28">
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Tags</h2>
-              <div class="flex flex-wrap gap-3">
+              <div class="flex flex-wrap gap-3 mb-8">
                 {tags.map((tag) => (
                   <a
                     href={`/tags/${tag}`}
@@ -166,6 +178,7 @@ const displayDate = validDate
                   </a>
                 ))}
               </div>
+              <ExtractLinks client:load />
             </div>
           </aside>
         )}
