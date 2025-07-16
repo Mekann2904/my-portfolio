@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-const { title, description } = Astro.props;
+const { title, description, backgroundImage } = Astro.props;
 ---
 
 <html lang="ja" class="bg-black">
@@ -10,7 +10,16 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
-  <body class="bg-black text-white">
+  <body class="bg-black text-white relative flex flex-col min-h-screen"
+    style={backgroundImage ? undefined : undefined}
+  >
+    {backgroundImage && (
+      <div
+        class="absolute inset-0 pointer-events-none z-0"
+        style={`background: url('${backgroundImage}') no-repeat center center / cover; opacity: 0.2;`}
+        aria-hidden="true"
+      ></div>
+    )}
     <!-- Navigation -->
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10">
       <nav class="max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
@@ -38,7 +47,7 @@ const { title, description } = Astro.props;
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
 
