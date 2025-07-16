@@ -73,6 +73,8 @@ const displayDate = validDate
       day: '2-digit',
     })
   : '';
+
+// 余白調整用の変数は不要になるため削除
 ---
 
 <html lang="ja" class="bg-black">
@@ -99,22 +101,37 @@ const displayDate = validDate
 
   <body class="bg-black text-white text-base bg-faint-image">
     {/* --- Header (変更なし) --- */}
-    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base">
-      <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-        <a href="/" class="text-white font-semibold text-base hover:text-blue-300 transition-colors">{siteName}</a>
-        <ul class="flex gap-6 text-sm">
-          <li><a href="/" class="text-gray-400 hover:text-white no-underline">Home</a></li>
-          <li><a href="/blog" class="text-gray-400 hover:text-white no-underline">Blog</a></li>
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10 w-full">
+      <nav class="flex items-center justify-between px-8 py-5">
+        <a href="/" class="text-white font-semibold text-lg">Mekann</a>
+        <ul class="flex gap-8 text-sm">
+          <li><a href="/" class="text-gray-500 hover:text-white transition">Home</a></li>
+          <li class="relative group">
+            <button class="text-gray-500 hover:text-white transition flex items-center gap-1">
+              Art
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <ul class="absolute right-0 mt-2 min-w-[12rem] max-w-[90vw] bg-black border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-x-auto">
+              <li><a href="/test/three" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Knowledge Network 3D</a></li>
+              <li><a href="/test/three-1" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Light Examples</a></li>
+              <li><a href="/test/three-2" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Water Animation</a></li>
+              <li><a href="/test/three-3" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js 3D Model Demo</a></li>
+              <li><a href="/test/three-4" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Projector Demo</a></li>
+            </ul>
+          </li>
+          <li><a href="/blog" class="text-gray-500 hover:text-white transition">Blog</a></li>
         </ul>
       </nav>
     </header>
 
     {/* --- Main Content (3カラムレイアウトに変更) --- */}
-    <main class="container mx-auto px-6 lg:px-8 pt-28 pb-12">
+    <main class="w-full px-0 pt-28 pb-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
         
         {headings && headings.length > 1 && (
-          <aside class="hidden lg:block lg:col-span-3">
+          <aside class="hidden lg:block lg:col-span-3 pl-8 xl:pl-16">
             <div class="sticky top-28">
               <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,7 +169,7 @@ const displayDate = validDate
         </div>
         
         {tags && tags.length > 0 && (
-          <aside class="lg:col-span-3 mt-16 lg:mt-0">
+          <aside class="lg:col-span-3 mt-16 lg:mt-0 pr-8 xl:pr-16">
             <div class="sticky top-28">
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Tags</h2>
               <div class="flex flex-wrap gap-3 mb-8">
