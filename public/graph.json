@@ -6,6 +6,11 @@
       "ext": false
     },
     {
+      "id": "/blog/download-box",
+      "label": "blog/download-box",
+      "ext": false
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
@@ -86,13 +91,28 @@
       "ext": true
     },
     {
+      "id": "/tags/MDX",
+      "label": "tags/MDX",
+      "ext": false
+    },
+    {
       "id": "/tags/Obsidian",
       "label": "tags/Obsidian",
       "ext": false
     },
     {
+      "id": "/tags/Tailwind CSS",
+      "label": "tags/Tailwind CSS",
+      "ext": false
+    },
+    {
       "id": "/tags/Zettelkasten",
       "label": "tags/Zettelkasten",
+      "ext": false
+    },
+    {
+      "id": "/tags/components",
+      "label": "tags/components",
       "ext": false
     },
     {
@@ -288,6 +308,38 @@
       "target": "/test/three-4"
     },
     {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS"
+    },
+    {
       "source": "/blog",
       "target": "/"
     },
@@ -314,6 +366,10 @@
     {
       "source": "/blog",
       "target": "/test/three-4"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/download-box"
     },
     {
       "source": "/blog",
@@ -620,6 +676,30 @@
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
     },
     {
+      "source": "/tags/MDX",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/blog/download-box"
+    },
+    {
       "source": "/tags/Obsidian",
       "target": "/test/three"
     },
@@ -648,6 +728,30 @@
       "target": "/blog/obsidian-textlint"
     },
     {
+      "source": "/tags/Tailwind CSS",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/blog/download-box"
+    },
+    {
       "source": "/tags/Zettelkasten",
       "target": "/test/three"
     },
@@ -670,6 +774,30 @@
     {
       "source": "/tags/Zettelkasten",
       "target": "/blog/why-not-tree"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/blog/download-box"
     },
     {
       "source": "/tags",
@@ -697,11 +825,23 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/MDX"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/Obsidian"
     },
     {
       "source": "/tags",
+      "target": "/tags/Tailwind CSS"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/Zettelkasten"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/components"
     },
     {
       "source": "/tags",
