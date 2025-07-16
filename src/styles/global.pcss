@@ -173,3 +173,21 @@ h2, h3, h4, h5, h6 {
 .prose {
   max-width: 72rem !important;
 }
+
+.prose pre {
+  background-color: #1e293b !important;
+}
+
+.bg-faint-image {
+  position: relative;
+  z-index: 0;
+}
+.bg-faint-image::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('/images/output_gray.png') no-repeat center center / cover;
+  opacity: 0.18;
+  pointer-events: none;
+}

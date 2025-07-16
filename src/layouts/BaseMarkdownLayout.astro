@@ -84,7 +84,7 @@ const displayDate = validDate
     <meta name="twitter:image" content={absoluteImageUrl} />
   </head>
 
-  <body class="bg-black text-white text-base">
+  <body class="bg-black text-white text-base bg-faint-image">
     {/* --- Header (変更なし) --- */}
     <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-gray-800 shadow-lg text-base">
       <nav class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
@@ -131,8 +131,10 @@ const displayDate = validDate
 
         <div class="lg:col-span-6">
           <article
-            class="prose prose-base prose-invert mx-auto max-w-4xl
-                   prose-pre:bg-[rgb(40_40_40)] prose-pre:text-gray-100 prose-pre:p-4 
+            class="prose prose-sm prose-invert mx-auto max-w-4xl
+                   leading-snug font-jp-sans
+                   bg-black/0
+                   prose-pre:bg-slate-800 prose-pre:text-gray-100 prose-pre:p-4 
                    prose-pre:rounded-lg prose-pre:overflow-auto prose-pre:my-6
                    prose-code:bg-transparent prose-code:text-inherit"
           >
