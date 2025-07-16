@@ -3,6 +3,7 @@ import '../styles/global.pcss';
 /// <reference types="astro/client" />
 import type { MarkdownHeading } from 'astro';
 import ExtractLinks from '../components/ExtractLinks.jsx';
+import DynamicToc from '../components/DynamicToc.jsx';
 
 // --- Props処理 ---
 // Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
@@ -122,21 +123,7 @@ const displayDate = validDate
                 Back to Blog
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
-              <nav>
-                <ul class="space-y-2">
-                  {headings.filter(h => h.depth > 1 && h.depth < 4).map((heading) => (
-                    <li>
-                      <a 
-                        href={`${Astro.url.pathname}#${heading.slug}`}
-                        class="text-gray-400 hover:text-white transition-colors text-sm block"
-                        style={`padding-left: ${(heading.depth - 2) * 1}rem;`}
-                      >
-                        {heading.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:load />
             </div>
           </aside>
         )}
