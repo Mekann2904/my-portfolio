@@ -1,7 +1,8 @@
 ---
-import '../styles/global.css';
+import { getImage } from 'astro:assets';
 import outputGray from '../assets/output_gray.png';
-const { title, description, backgroundImage } = Astro.props;
+const { title, description } = Astro.props;
+const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 80 });
 ---
 
 <html lang="ja" class="bg-black">
@@ -12,7 +13,7 @@ const { title, description, backgroundImage } = Astro.props;
     <meta name="description" content={description} />
   </head>
   <body class="bg-black text-white relative flex flex-col min-h-screen bg-faint-image"
-    style={`--faint-bg: url('${outputGray.src}');`}
+    style={`--faint-bg: url('${optimizedBg.src}');`}
   >
     {/* backgroundImage propsによる背景は廃止 */}
     <!-- Navigation -->

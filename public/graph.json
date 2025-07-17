@@ -6,6 +6,16 @@
       "ext": false
     },
     {
+      "id": "/blog/astro-image-optimization",
+      "label": "blog/astro-image-optimization",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/assets/",
+      "label": "https://docs.astro.build/ja/guides/assets/",
+      "ext": true
+    },
+    {
       "id": "/blog/command-palette-explanation",
       "label": "blog/command-palette-explanation",
       "ext": false
@@ -101,11 +111,6 @@
       "ext": true
     },
     {
-      "id": "https://docs.astro.build/ja/guides/assets/",
-      "label": "https://docs.astro.build/ja/guides/assets/",
-      "ext": true
-    },
-    {
       "id": "https://docs.astro.build/en/guides/images/",
       "label": "https://docs.astro.build/en/guides/images/",
       "ext": true
@@ -191,6 +196,11 @@
       "ext": false
     },
     {
+      "id": "/tags/Webパフォーマンス",
+      "label": "tags/Webパフォーマンス",
+      "ext": false
+    },
+    {
       "id": "/tags/YouTube",
       "label": "tags/YouTube",
       "ext": false
@@ -268,6 +278,11 @@
     {
       "id": "/tags/温度情報",
       "label": "tags/温度情報",
+      "ext": false
+    },
+    {
+      "id": "/tags/画像最適化",
+      "label": "tags/画像最適化",
       "ext": false
     },
     {
@@ -418,6 +433,82 @@
       "target": "/test/three-4"
     },
     {
+      "source": "/blog/astro-image-optimization",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://docs.astro.build/ja/guides/assets/"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/画像最適化"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/MDX"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/Webパフォーマンス"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
       "source": "/blog/command-palette-explanation",
       "target": "/test/three"
     },
@@ -492,6 +583,10 @@
     {
       "source": "/blog/command-palette-explanation",
       "target": "/tags/Hooks"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
     },
     {
       "source": "/blog/divergences",
@@ -599,6 +694,10 @@
     },
     {
       "source": "/blog/download-box",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/download-box",
       "target": "/test/three"
     },
     {
@@ -687,6 +786,10 @@
     },
     {
       "source": "/blog",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/blog",
       "target": "/blog/command-palette-explanation"
     },
     {
@@ -716,6 +819,10 @@
     {
       "source": "/blog",
       "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
     },
     {
       "source": "/blog/mac-smartmontools",
@@ -768,6 +875,10 @@
     {
       "source": "/blog/mac-smartmontools",
       "target": "/tags/温度情報"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -887,6 +998,10 @@
     },
     {
       "source": "/blog/vault-organizer",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/vault-organizer",
       "target": "/test/three"
     },
     {
@@ -963,6 +1078,10 @@
     },
     {
       "source": "/blog/why-not-tree",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/why-not-tree",
       "target": "/test/three"
     },
     {
@@ -1024,6 +1143,10 @@
     {
       "source": "/blog/why-not-tree",
       "target": "/tags/Zettelkasten"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
     },
     {
       "source": "/blog/youtube-embed",
@@ -1235,6 +1358,10 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/youtube-embed"
     },
     {
@@ -1331,6 +1458,10 @@
     },
     {
       "source": "/tags/MDX",
+      "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/tags/MDX",
       "target": "/blog/download-box"
     },
     {
@@ -1416,6 +1547,30 @@
     {
       "source": "/tags/Tailwind CSS",
       "target": "/blog/download-box"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/blog/astro-image-optimization"
     },
     {
       "source": "/tags/YouTube",
@@ -1547,6 +1702,10 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/Webパフォーマンス"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/YouTube"
     },
     {
@@ -1604,6 +1763,10 @@
     {
       "source": "/tags",
       "target": "/tags/温度情報"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/画像最適化"
     },
     {
       "source": "/tags",
@@ -1904,6 +2067,30 @@
     {
       "source": "/tags/温度情報",
       "target": "/blog/mac-smartmontools"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/blog/astro-image-optimization"
     },
     {
       "source": "/tags/自作テーマ",

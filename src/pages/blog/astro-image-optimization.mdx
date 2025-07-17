@@ -1,0 +1,62 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Astroの背景画像の最適化"
+date: "2025-07-17"
+description: "Astro v5での背景画像の最適化"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "画像最適化", "MDX", "Webパフォーマンス"]
+---
+
+# Astro背景画像最適化
+
+## 1. 背景画像のWebP最適化対応
+
+Astroで背景画像をWebP形式で最適化して使うには、`astro:assets`の`getImage`を利用する。`src/assets/output_gray.png`のようなローカル画像をimportし、frontmatterで以下のように記述する。
+
+```js
+import { getImage } from 'astro:assets';
+import outputGray from '../assets/output_gray.png';
+const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 80 });
+```
+
+`optimizedBg.src`には最適化されたWebP画像のURLが格納される。これを`<body>`のstyle属性でカスタムプロパティ`--faint-bg`にセットし、CSSで背景画像として利用する。
+
+## 2. CSSによる背景画像表示の仕組み
+
+`global.pcss`では`.bg-faint-image::before`で背景画像を表示する設計になっている。`background: var(--faint-bg)`でカスタムプロパティを参照し、`opacity: 0.2`で薄く表示する。bodyタグには`class="bg-faint-image"`と`style="--faint-bg: url('/_astro/output_gray.XXXX.webp');"`を指定する必要がある。
+
+```css
+.bg-faint-image::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--faint-bg) no-repeat center center / cover;
+  opacity: 0.2;
+  pointer-events: none;
+}
+```
+
+## 3. 画像最適化のビルド・出力の流れ
+
+Astroの画像最適化は本番ビルド（`npm run build`）時のみ有効だ。開発サーバー（`npm run dev`）では最適化画像は生成されない。ビルド後、`dist/_astro/output_gray.XXXX.webp`のようなファイルが生成されていることを確認する。`npm run preview`で本番プレビューを行い、画像が正しく配信されているかをチェックする。
+
+## 4. 背景画像が表示されない場合のトラブルシュート
+
+- `global.pcss`の`.bg-faint-image`定義が本番ビルドにバンドルされているか確認する。
+- DevToolsで`<body>::before`が生成されているか、`background`スタイルが正しいか確認する。
+- 画像URLが有効か直接アクセスして確認する。
+- `opacity: 0.2`なので背景が非常に薄く見える。必要に応じて一時的に`opacity: 1`にして確認する。
+- 画像が表示されない場合、`sharp`がインストールされているか、Astroのバージョンが3以上か、キャッシュが残っていないかも疑う。
+
+## 5. その他の注意点
+
+- `sharp`パッケージがインストールされていないと画像最適化は動作しない。
+- Astroのバージョンが3以上であることを確認する。
+- 画像最適化やCSSのimport漏れ、キャッシュのクリアも重要なポイントだ。
+
+---
+
+## 参考リンク
+
+- [Astro公式: 画像最適化ガイド](https://docs.astro.build/ja/guides/assets/)
