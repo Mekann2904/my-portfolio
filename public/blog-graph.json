@@ -1,0 +1,1836 @@
+{
+  "nodes": [
+    {
+      "id": "/blog",
+      "label": "Blog",
+      "ext": false
+    },
+    {
+      "id": "/blog/astro-image-optimization",
+      "label": "astro-image-optimization",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/assets/",
+      "label": "https://docs.astro.build/ja/guides/assets/",
+      "ext": true
+    },
+    {
+      "id": "/blog/compress-astro",
+      "label": "compress-astro",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/playform/compress",
+      "label": "https://github.com/playform/compress",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "ext": true
+    },
+    {
+      "id": "/blog/divergences",
+      "label": "divergences",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "label": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "label": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "ext": true
+    },
+    {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
+    },
+    {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
+    },
+    {
+      "id": "/blog/image-embedding-guide",
+      "label": "image-embedding-guide",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "ext": true
+    },
+    {
+      "id": "/blog/command-palette-explanation",
+      "label": "command-palette-explanation",
+      "ext": false
+    },
+    {
+      "id": "/blog/inline-css-astro",
+      "label": "inline-css-astro",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/GoogleChromeLabs/critters",
+      "label": "https://github.com/GoogleChromeLabs/critters",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/playform/inline",
+      "label": "https://github.com/playform/inline",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/ja/",
+      "label": "https://docs.astro.build/ja/",
+      "ext": true
+    },
+    {
+      "id": "/blog/mac-smartmontools",
+      "label": "mac-smartmontools",
+      "ext": false
+    },
+    {
+      "id": "/blog/obsidian-textlint",
+      "label": "obsidian-textlint",
+      "ext": false
+    },
+    {
+      "id": "https://textlint.github.io/",
+      "label": "https://textlint.github.io/",
+      "ext": true
+    },
+    {
+      "id": "https://t.co/qlr8s5kJzU",
+      "label": "https://t.co/qlr8s5kJzU",
+      "ext": true
+    },
+    {
+      "id": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
+      "label": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "label": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "ext": true
+    },
+    {
+      "id": "/blog/prefetch-enabled",
+      "label": "prefetch-enabled",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/prefetch/",
+      "label": "https://docs.astro.build/ja/guides/prefetch/",
+      "ext": true
+    },
+    {
+      "id": "/blog/vault-organizer",
+      "label": "vault-organizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "ext": true
+    },
+    {
+      "id": "/blog/why-not-tree",
+      "label": "why-not-tree",
+      "ext": false
+    },
+    {
+      "id": "/blog/youtube-embed",
+      "label": "youtube-embed",
+      "ext": false
+    },
+    {
+      "id": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "label": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "ext": true
+    },
+    {
+      "id": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "label": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/en/guides/images/#remote-images",
+      "label": "https://docs.astro.build/en/guides/images/#remote-images",
+      "ext": true
+    }
+  ],
+  "links": [
+    {
+      "source": "/blog",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/astro-image-optimization",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/command-palette-explanation",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/compress-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/image-embedding-guide",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/prefetch-enabled",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/youtube-embed",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/download-box",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/mac-smartmontools",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/why-not-tree",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/obsidian-textlint",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/vault-organizer",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#2-cssによる背景画像表示の仕組み",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#3-画像最適化のビルド出力の流れ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#4-背景画像が表示されない場合のトラブルシュート",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#5-その他の注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/blog/image-embedding-guide",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/画像最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#playformcompressの主な機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#1-パッケージの追加",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#2-設定内容の確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#注意点と補足事項",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://github.com/playform/compress",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/ファイル圧縮",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#1-緒言",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#2-既存テーマの改変と課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#21-カスタマイズの動機と初期段階",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#22-技術的課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#23-自作テーマ開発への移行",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#3-新規テーマdivergencesの開発",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#31-開発理念と目標",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#32-開発手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#4-divergencesの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#41-step-1-テーマのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#42-step-2-関連プラグインの導入",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#43-step-3-カスタム背景の設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#5-考察",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#6-結論",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/自作テーマ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/CSS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Divergences",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#2-画像のimport",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#3-画像の埋め込み",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#4-注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#参考",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/blog/prefetch-enabled",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/画像最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#はじめに",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#実装の詳細",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/React",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/全文検索",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/Hooks",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#なぜcssをインライン化するのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#playforminlineの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#crittersとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#注意点トラブル事例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#ベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#外部css運用への回帰と安定性について",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#解決策ベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#判断基準",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/blog/compress-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/playform/inline",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://docs.astro.build/ja/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/CSS最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#2-接続されているディスクの識別",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#3-smartctlで温度情報を取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/macOS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/smartmontools",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/ディスク情報",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/温度情報",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#はじめに",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#1-textlint-highlighter-pluginとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#textlintとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#2-主な機能詳解",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#21-リアルタイムハイライト機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#22-柔軟なルールカスタマイズ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#prhymlによる表記ゆれチェック",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#textlintルールの導入",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#23-ルールプリセット管理画面",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#24-パフォーマンスへの配慮",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#3-インストールと設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#インストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#初期設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#4-まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog/obsidian-textlint/#ライセンス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://textlint.github.io/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://t.co/qlr8s5kJzU",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/tags/textlint",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/tags/プラグイン",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/tags/日本語校正",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチの設定方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#サイト全体での設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチ戦略prefetch-strategies",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#個別リンクでの設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#期待できる効果",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#注意点とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://docs.astro.build/ja/guides/prefetch/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/プリフェッチ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#obsidianプラグインvault-organizerリリースしました",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#はじめに",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#vault-organizerの概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#主な機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#手動によるファイル移動",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#undo機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#インストール方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#使用例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/プラグイン",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/vault-organizer",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/ツリー構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/リゾーム",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Zettelkasten",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#通常の使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#サムネイル画像をローカル最適化したい場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#仕組み",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/en/guides/images/#remote-images",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/YouTube",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/埋め込み",
+      "type": "tag"
+    }
+  ]
+}

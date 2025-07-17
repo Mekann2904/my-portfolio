@@ -6,11 +6,6 @@
       "ext": false
     },
     {
-      "id": "https://fonts.gstatic.com",
-      "label": "https://fonts.gstatic.com",
-      "ext": true
-    },
-    {
       "id": "https://note.com/mekann",
       "label": "https://note.com/mekann",
       "ext": true
@@ -31,13 +26,18 @@
       "ext": true
     },
     {
+      "id": "/anime",
+      "label": "anime",
+      "ext": false
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
     },
     {
-      "id": "/anime",
-      "label": "anime",
+      "id": "/my-journey",
+      "label": "my-journey",
       "ext": false
     },
     {
@@ -49,11 +49,6 @@
       "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
-    },
-    {
-      "id": "/my-journey",
-      "label": "my-journey",
-      "ext": false
     },
     {
       "id": "/tags",
@@ -71,6 +66,11 @@
       "ext": true
     },
     {
+      "id": "/blog/command-palette-explanation",
+      "label": "blog/command-palette-explanation",
+      "ext": false
+    },
+    {
       "id": "/blog/compress-astro",
       "label": "blog/compress-astro",
       "ext": false
@@ -84,11 +84,6 @@
       "id": "https://docs.astro.build/ja/guides/integrations-guide/",
       "label": "https://docs.astro.build/ja/guides/integrations-guide/",
       "ext": true
-    },
-    {
-      "id": "/blog/command-palette-explanation",
-      "label": "blog/command-palette-explanation",
-      "ext": false
     },
     {
       "id": "/blog/divergences",
@@ -166,16 +161,6 @@
       "ext": true
     },
     {
-      "id": "/blog/prefetch-enabled",
-      "label": "blog/prefetch-enabled",
-      "ext": false
-    },
-    {
-      "id": "https://docs.astro.build/ja/guides/prefetch/",
-      "label": "https://docs.astro.build/ja/guides/prefetch/",
-      "ext": true
-    },
-    {
       "id": "/blog/obsidian-textlint",
       "label": "blog/obsidian-textlint",
       "ext": false
@@ -216,6 +201,16 @@
       "ext": true
     },
     {
+      "id": "/blog/prefetch-enabled",
+      "label": "blog/prefetch-enabled",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/prefetch/",
+      "label": "https://docs.astro.build/ja/guides/prefetch/",
+      "ext": true
+    },
+    {
       "id": "/blog/youtube-embed",
       "label": "blog/youtube-embed",
       "ext": false
@@ -236,16 +231,6 @@
       "ext": true
     },
     {
-      "id": "/tags/Astro",
-      "label": "tags/Astro",
-      "ext": false
-    },
-    {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
-      "ext": false
-    },
-    {
       "id": "/tags/CSS",
       "label": "tags/CSS",
       "ext": false
@@ -256,8 +241,13 @@
       "ext": false
     },
     {
-      "id": "/tags/Obsidian",
-      "label": "tags/Obsidian",
+      "id": "/tags/Astro",
+      "label": "tags/Astro",
+      "ext": false
+    },
+    {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
       "ext": false
     },
     {
@@ -276,6 +266,11 @@
       "ext": false
     },
     {
+      "id": "/tags/Obsidian",
+      "label": "tags/Obsidian",
+      "ext": false
+    },
+    {
       "id": "/tags/React",
       "label": "tags/React",
       "ext": false
@@ -291,11 +286,6 @@
       "ext": false
     },
     {
-      "id": "/tags/components",
-      "label": "tags/components",
-      "ext": false
-    },
-    {
       "id": "/tags/YouTube",
       "label": "tags/YouTube",
       "ext": false
@@ -306,8 +296,8 @@
       "ext": false
     },
     {
-      "id": "/tags/smartmontools",
-      "label": "tags/smartmontools",
+      "id": "/tags/components",
+      "label": "tags/components",
       "ext": false
     },
     {
@@ -316,18 +306,23 @@
       "ext": false
     },
     {
+      "id": "/tags/smartmontools",
+      "label": "tags/smartmontools",
+      "ext": false
+    },
+    {
       "id": "/tags/textlint",
       "label": "tags/textlint",
       "ext": false
     },
     {
-      "id": "/tags/ツリー構造",
-      "label": "tags/ツリー構造",
+      "id": "/tags/vault-organizer",
+      "label": "tags/vault-organizer",
       "ext": false
     },
     {
-      "id": "/tags/vault-organizer",
-      "label": "tags/vault-organizer",
+      "id": "/tags/ツリー構造",
+      "label": "tags/ツリー構造",
       "ext": false
     },
     {
@@ -341,18 +336,13 @@
       "ext": false
     },
     {
-      "id": "/tags/プラグイン",
-      "label": "tags/プラグイン",
-      "ext": false
-    },
-    {
-      "id": "/tags/リゾーム",
-      "label": "tags/リゾーム",
-      "ext": false
-    },
-    {
       "id": "/tags/フォント最適化",
       "label": "tags/フォント最適化",
+      "ext": false
+    },
+    {
+      "id": "/tags/プラグイン",
+      "label": "tags/プラグイン",
       "ext": false
     },
     {
@@ -363,6 +353,11 @@
     {
       "id": "/tags/全文検索",
       "label": "tags/全文検索",
+      "ext": false
+    },
+    {
+      "id": "/tags/リゾーム",
+      "label": "tags/リゾーム",
       "ext": false
     },
     {
@@ -378,6 +373,11 @@
     {
       "id": "/tags/埋め込み",
       "label": "tags/埋め込み",
+      "ext": false
+    },
+    {
+      "id": "/tags/自作テーマ",
+      "label": "tags/自作テーマ",
       "ext": false
     },
     {
@@ -486,18 +486,8 @@
       "ext": false
     },
     {
-      "id": "/tags/自作テーマ",
-      "label": "tags/自作テーマ",
-      "ext": false
-    },
-    {
       "id": "/test/three-2",
       "label": "test/three-2",
-      "ext": false
-    },
-    {
-      "id": "/test/threebase",
-      "label": "test/threebase",
       "ext": false
     },
     {
@@ -509,14 +499,14 @@
       "id": "/test/three-4",
       "label": "test/three-4",
       "ext": false
+    },
+    {
+      "id": "/test/threebase",
+      "label": "test/threebase",
+      "ext": false
     }
   ],
   "links": [
-    {
-      "source": "/",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
     {
       "source": "/",
       "target": "https://note.com/mekann",
@@ -535,11 +525,6 @@
     {
       "source": "/",
       "target": "https://x.com/Mekann2904",
-      "type": "external"
-    },
-    {
-      "source": "/blog",
-      "target": "https://fonts.gstatic.com",
       "type": "external"
     },
     {
@@ -613,28 +598,8 @@
       "type": "normal"
     },
     {
-      "source": "/anime",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/portfolio",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
-      "type": "external"
-    },
-    {
-      "source": "/my-journey",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags",
-      "target": "https://fonts.gstatic.com",
       "type": "external"
     },
     {
@@ -794,11 +759,6 @@
     },
     {
       "source": "/blog/astro-image-optimization",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
       "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
       "type": "normal"
     },
@@ -856,86 +816,6 @@
       "source": "/blog/astro-image-optimization",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#playformcompressの主な機能",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#1-パッケージの追加",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#2-設定内容の確認",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#注意点と補足事項",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://github.com/playform/compress",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/ファイル圧縮",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -1008,9 +888,74 @@
       "type": "tag"
     },
     {
-      "source": "/blog/divergences",
-      "target": "https://fonts.gstatic.com",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#playformcompressの主な機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#1-パッケージの追加",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#2-設定内容の確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#注意点と補足事項",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://github.com/playform/compress",
       "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/ファイル圧縮",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
     },
     {
       "source": "/blog/divergences",
@@ -1119,11 +1064,6 @@
     },
     {
       "source": "/blog/download-box",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/download-box",
       "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
       "type": "normal"
     },
@@ -1171,11 +1111,6 @@
       "source": "/blog/download-box",
       "target": "/tags/Tailwind CSS",
       "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/blog/google-fonts-optimizer",
@@ -1254,11 +1189,6 @@
     },
     {
       "source": "/blog/image-embedding-guide",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
       "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
       "type": "normal"
     },
@@ -1319,11 +1249,6 @@
     },
     {
       "source": "/blog/mac-smartmontools",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
       "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
       "type": "normal"
     },
@@ -1361,11 +1286,6 @@
       "source": "/blog/mac-smartmontools",
       "target": "/tags/温度情報",
       "type": "tag"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1451,81 +1371,6 @@
       "source": "/blog/inline-css-astro",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチとは",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチの設定方法",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#サイト全体での設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチ戦略prefetch-strategies",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#個別リンクでの設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#期待できる効果",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#注意点とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/blog/inline-css-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "https://docs.astro.build/ja/guides/prefetch/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/プリフェッチ",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -1649,11 +1494,6 @@
     },
     {
       "source": "/blog/why-not-tree",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
       "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
       "type": "normal"
     },
@@ -1706,11 +1546,6 @@
       "source": "/blog/why-not-tree",
       "target": "/tags/Zettelkasten",
       "type": "tag"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1783,9 +1618,69 @@
       "type": "tag"
     },
     {
-      "source": "/blog/youtube-embed",
-      "target": "https://fonts.gstatic.com",
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチの設定方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#サイト全体での設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチ戦略prefetch-strategies",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#個別リンクでの設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#期待できる効果",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#注意点とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://docs.astro.build/ja/guides/prefetch/",
       "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/プリフェッチ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
     },
     {
       "source": "/blog/youtube-embed",
@@ -1848,9 +1743,14 @@
       "type": "tag"
     },
     {
-      "source": "/tags/Astro",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/CSS",
+      "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Divergences",
+      "target": "/blog/divergences",
+      "type": "normal"
     },
     {
       "source": "/tags/Astro",
@@ -1889,38 +1789,33 @@
     },
     {
       "source": "/tags/CSS最適化",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/CSS最適化",
       "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
-      "source": "/tags/CSS",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/CSS",
-      "target": "/blog/divergences",
+      "source": "/tags/Google Fonts",
+      "target": "/blog/google-fonts-optimizer",
       "type": "normal"
     },
     {
-      "source": "/tags/Divergences",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/Divergences",
-      "target": "/blog/divergences",
+      "source": "/tags/Hooks",
+      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
-      "source": "/tags/Obsidian",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/MDX",
+      "target": "/blog/astro-image-optimization",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/blog/image-embedding-guide",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/blog/download-box",
+      "type": "normal"
     },
     {
       "source": "/tags/Obsidian",
@@ -1943,69 +1838,14 @@
       "type": "normal"
     },
     {
-      "source": "/tags/Google Fonts",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/Google Fonts",
-      "target": "/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Hooks",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/Hooks",
-      "target": "/blog/command-palette-explanation",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/MDX",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/MDX",
-      "target": "/blog/astro-image-optimization",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/MDX",
-      "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/MDX",
-      "target": "/blog/download-box",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
       "source": "/tags/React",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
       "source": "/tags/Tailwind CSS",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/Tailwind CSS",
       "target": "/blog/download-box",
       "type": "normal"
-    },
-    {
-      "source": "/tags/Webパフォーマンス",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/tags/Webパフォーマンス",
@@ -2038,9 +1878,14 @@
       "type": "normal"
     },
     {
-      "source": "/tags/components",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/YouTube",
+      "target": "/blog/youtube-embed",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Zettelkasten",
+      "target": "/blog/why-not-tree",
+      "type": "normal"
     },
     {
       "source": "/tags/components",
@@ -2048,49 +1893,14 @@
       "type": "normal"
     },
     {
-      "source": "/tags/YouTube",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/YouTube",
-      "target": "/blog/youtube-embed",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Zettelkasten",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/Zettelkasten",
-      "target": "/blog/why-not-tree",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/smartmontools",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/smartmontools",
-      "target": "/blog/mac-smartmontools",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/macOS",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
       "source": "/tags/macOS",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
     },
     {
-      "source": "/tags/textlint",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/smartmontools",
+      "target": "/blog/mac-smartmontools",
+      "type": "normal"
     },
     {
       "source": "/tags/textlint",
@@ -2098,9 +1908,9 @@
       "type": "normal"
     },
     {
-      "source": "/tags/ツリー構造",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/vault-organizer",
+      "target": "/blog/vault-organizer",
+      "type": "normal"
     },
     {
       "source": "/tags/ツリー構造",
@@ -2108,29 +1918,9 @@
       "type": "normal"
     },
     {
-      "source": "/tags/vault-organizer",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/vault-organizer",
-      "target": "/blog/vault-organizer",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/ディスク情報",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
       "source": "/tags/ディスク情報",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
-    },
-    {
-      "source": "/tags/ファイル圧縮",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/tags/ファイル圧縮",
@@ -2138,9 +1928,9 @@
       "type": "normal"
     },
     {
-      "source": "/tags/プラグイン",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/フォント最適化",
+      "target": "/blog/google-fonts-optimizer",
+      "type": "normal"
     },
     {
       "source": "/tags/プラグイン",
@@ -2151,31 +1941,6 @@
       "source": "/tags/プラグイン",
       "target": "/blog/vault-organizer",
       "type": "normal"
-    },
-    {
-      "source": "/tags/リゾーム",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/リゾーム",
-      "target": "/blog/why-not-tree",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/フォント最適化",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/フォント最適化",
-      "target": "/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/プリフェッチ",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/tags/プリフェッチ",
@@ -2184,28 +1949,18 @@
     },
     {
       "source": "/tags/全文検索",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/全文検索",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
-      "source": "/tags/日本語校正",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/リゾーム",
+      "target": "/blog/why-not-tree",
+      "type": "normal"
     },
     {
       "source": "/tags/日本語校正",
       "target": "/blog/obsidian-textlint",
       "type": "normal"
-    },
-    {
-      "source": "/tags/画像最適化",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/tags/画像最適化",
@@ -2219,28 +1974,18 @@
     },
     {
       "source": "/tags/埋め込み",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/埋め込み",
       "target": "/blog/youtube-embed",
       "type": "normal"
     },
     {
-      "source": "/tags/温度情報",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
+      "source": "/tags/自作テーマ",
+      "target": "/blog/divergences",
+      "type": "normal"
     },
     {
       "source": "/tags/温度情報",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
-    },
-    {
-      "source": "/tailwind/core-concepts",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
     },
     {
       "source": "/tailwind/core-concepts",
@@ -2320,51 +2065,6 @@
     {
       "source": "/tailwind/core-concepts",
       "target": "https://tailwindcss.com/docs/responsive-design",
-      "type": "external"
-    },
-    {
-      "source": "/test/harmony",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/test/three",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/test/three-1",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/自作テーマ",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/自作テーマ",
-      "target": "/blog/divergences",
-      "type": "normal"
-    },
-    {
-      "source": "/test/three-2",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/test/threebase",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/test/three-3",
-      "target": "https://fonts.gstatic.com",
-      "type": "external"
-    },
-    {
-      "source": "/test/three-4",
-      "target": "https://fonts.gstatic.com",
       "type": "external"
     }
   ]
