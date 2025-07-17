@@ -91,6 +91,16 @@
       "ext": true
     },
     {
+      "id": "/blog/prefetch-enabled",
+      "label": "blog/prefetch-enabled",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/prefetch/",
+      "label": "https://docs.astro.build/ja/guides/prefetch/",
+      "ext": true
+    },
+    {
       "id": "/blog/vault-organizer",
       "label": "blog/vault-organizer",
       "ext": false
@@ -263,6 +273,11 @@
     {
       "id": "/tags/プラグイン",
       "label": "tags/プラグイン",
+      "ext": false
+    },
+    {
+      "id": "/tags/プリフェッチ",
+      "label": "tags/プリフェッチ",
       "ext": false
     },
     {
@@ -876,6 +891,10 @@
     },
     {
       "source": "/blog",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog",
       "target": "/blog/youtube-embed"
     },
     {
@@ -1073,6 +1092,78 @@
     {
       "source": "/blog/obsidian-textlint",
       "target": "/tags/日本語校正"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://docs.astro.build/ja/guides/prefetch/"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/プリフェッチ"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Webパフォーマンス"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1444,6 +1535,10 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/youtube-embed"
     },
     {
@@ -1663,6 +1758,10 @@
       "target": "/blog/image-embedding-guide"
     },
     {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/blog/prefetch-enabled"
+    },
+    {
       "source": "/tags/YouTube",
       "target": "/test/three"
     },
@@ -1833,6 +1932,10 @@
     {
       "source": "/tags",
       "target": "/tags/プラグイン"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/プリフェッチ"
     },
     {
       "source": "/tags",
@@ -2037,6 +2140,30 @@
     {
       "source": "/tags/プラグイン",
       "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/blog/prefetch-enabled"
     },
     {
       "source": "/tags/リゾーム",

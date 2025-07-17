@@ -14,6 +14,10 @@ import remarkExtractUrls from './remark-extract-urls.js';
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
 
+  prefetch: {
+    prefetchAll: true
+  },
+
   integrations: [
     react(),
     tailwind(),
