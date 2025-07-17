@@ -309,6 +309,34 @@
     },
     {
       "source": "/blog/download-box",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box"
+    },
+    {
+      "source": "/blog/download-box",
       "target": "/blog/download-box"
     },
     {
@@ -385,6 +413,26 @@
     },
     {
       "source": "/blog/mac-smartmontools",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
       "target": "/blog/mac-smartmontools"
     },
     {
@@ -414,6 +462,26 @@
     {
       "source": "/blog/mac-smartmontools",
       "target": "/tags/温度情報"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/test/three-4"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -510,6 +578,26 @@
     {
       "source": "/blog/obsidian-textlint",
       "target": "/tags/日本語校正"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-4"
     },
     {
       "source": "/blog/why-not-tree",
