@@ -77,6 +77,15 @@ const displayDate = validDate
   : '';
 
 // 余白調整用の変数は不要になるため削除
+
+// optimizedImg（画像パス）がpropsで渡された場合はWebP最適化
+if (rawProps.optimizedImg) {
+  const { getImage } = await import('astro:assets');
+  const imgMod = await import(rawProps.optimizedImg);
+  const optimized = await getImage({ src: imgMod.default ?? imgMod, format: 'webp', quality: 80 });
+  rawProps.optimizedImg = optimized.src;
+}
+
 const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 80 });
 ---
 

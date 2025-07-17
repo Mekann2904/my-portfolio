@@ -46,6 +46,16 @@
       "ext": false
     },
     {
+      "id": "/blog/image-embedding-guide",
+      "label": "blog/image-embedding-guide",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "ext": true
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
@@ -482,10 +492,6 @@
     },
     {
       "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
       "target": "https://docs.astro.build/ja/guides/assets/"
     },
     {
@@ -757,6 +763,74 @@
       "target": "/tags/Tailwind CSS"
     },
     {
+      "source": "/blog/image-embedding-guide",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/assets/"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/画像最適化"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/MDX"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Webパフォーマンス"
+    },
+    {
       "source": "/blog",
       "target": "/"
     },
@@ -795,6 +869,10 @@
     {
       "source": "/blog",
       "target": "/blog/divergences"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/image-embedding-guide"
     },
     {
       "source": "/blog",
@@ -1362,6 +1440,10 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "/blog/image-embedding-guide"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/youtube-embed"
     },
     {
@@ -1459,6 +1541,10 @@
     {
       "source": "/tags/MDX",
       "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "/blog/image-embedding-guide"
     },
     {
       "source": "/tags/MDX",
@@ -1571,6 +1657,10 @@
     {
       "source": "/tags/Webパフォーマンス",
       "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "/blog/image-embedding-guide"
     },
     {
       "source": "/tags/YouTube",
@@ -2091,6 +2181,10 @@
     {
       "source": "/tags/画像最適化",
       "target": "/blog/astro-image-optimization"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/blog/image-embedding-guide"
     },
     {
       "source": "/tags/自作テーマ",

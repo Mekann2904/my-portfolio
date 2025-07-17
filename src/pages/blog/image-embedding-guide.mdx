@@ -1,0 +1,58 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Astro + MDXで画像を最適化して埋め込む方法"
+date: "2025-07-17"
+author: "AI Language Model (Gemini 2.5 Pro)"
+description: "AstroのMDX記事で画像を最適化しつつ埋め込むベストプラクティス"
+tags: ["Astro", "画像最適化", "MDX", "Webパフォーマンス"]
+---
+import { Image } from 'astro:assets';
+
+AstroのMDX記事で画像を最適化しつつ埋め込むには、以下の手順を踏む。
+
+## 1. frontmatterはYAMLのみ
+
+MDXファイルの先頭はYAML形式で記述し、importやJS式は書かない。
+
+```yaml
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "記事タイトル"
+date: "2025-07-17"
+tags: ["タグ1", "タグ2"]
+---
+```
+
+## 2. 画像のimport
+
+frontmatterの直後で、astro:assetsのImageコンポーネントと画像ファイルをimportする。
+
+```js
+import { Image } from 'astro:assets';
+import sample1 from '../../assets/sample1.png';
+import sample2 from '../../assets/sample2.jpg';
+```
+
+## 3. 画像の埋め込み
+
+本文中でimportした画像変数を`<Image />`のsrcに指定する。
+
+```mdx
+<Image src={sample1} alt="サンプル画像1" />
+<Image src={sample2} alt="サンプル画像2" />
+```
+
+## 4. 注意点
+
+- frontmatter内でimportやJS式は絶対に書かない（YAMLのみ）
+- 画像のimportはMDX本文の先頭で行う
+- `<img src={...} />`ではなく、必ず`<Image src={...} />`を使うことで最適化の恩恵を受ける
+- 画像は`src/assets/`配下に置く（`public/`配下は最適化されない）
+
+
+---
+
+## 参考
+
+- [Astro公式: 画像最適化ガイド](https://docs.astro.build/ja/guides/assets/)
+- [Astro公式: MDXガイド](https://docs.astro.build/ja/guides/integrations-guide/mdx/) 
