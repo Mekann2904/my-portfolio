@@ -21,8 +21,8 @@
       "ext": true
     },
     {
-      "id": "https://www.google.com/search?q=https://github.com/Mekann2904/obsidian-divergences-theme",
-      "label": "https://www.google.com/search?q=https://github.com/Mekann2904/obsidian-divergences-theme",
+      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
       "ext": true
     },
     {
@@ -520,7 +520,7 @@
     },
     {
       "source": "/blog/divergences",
-      "target": "https://www.google.com/search?q=https://github.com/Mekann2904/obsidian-divergences-theme"
+      "target": "https://github.com/Mekann2904/obsidian-divergences-theme"
     },
     {
       "source": "/blog/divergences",
