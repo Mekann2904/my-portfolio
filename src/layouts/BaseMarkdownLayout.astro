@@ -7,6 +7,7 @@ import type { MarkdownHeading } from 'astro';
 import ExtractLinks from '../components/ExtractLinks.jsx';
 import DynamicToc from '../components/DynamicToc.jsx';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import Backlinks from '../components/Backlinks.jsx'; // 追加
 
 // --- Props処理 ---
 // Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
@@ -200,6 +201,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
                 ))}
               </div>
               <ExtractLinks client:idle />
+              <Backlinks slug={Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '')} client:idle />
             </div>
           </aside>
         )}
