@@ -11,6 +11,8 @@ import remarkMermaid from 'remark-mermaidjs';
 import rehypeSlug from 'rehype-slug';
 import remarkExtractUrls from './remark-extract-urls.js';
 
+import playformCompress from '@playform/compress';
+
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
 
@@ -18,35 +20,31 @@ export default defineConfig({
     prefetchAll: true
   },
 
-  integrations: [
-    react(),
-    tailwind(),
-    mdx({
-      remarkPlugins: [
-        remarkMath,
-        [remarkMermaid, {
-          wrap: {
-            tagName: 'div',
-            className: 'mermaid-diagram-container'
-          },
-          theme: 'base',
-          themeVariables: {
-            primaryColor: '#18181b',
-            primaryTextColor: '#f3f4f6',
-            primaryBorderColor: '#6366f1',
-            lineColor: '#6366f1',
-            fontFamily: 'sans-serif',
-          }
-        }],
-        remarkExtractUrls,
-      ],
-      rehypePlugins: [
-        [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
-        rehypeSlug,
-      ],
-    }),
-    // playformInlineは外して安定性重視の外部CSS運用に戻す
-  ],
+  integrations: [react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
+  mdx({
+    remarkPlugins: [
+      remarkMath,
+      [remarkMermaid, {
+        wrap: {
+          tagName: 'div',
+          className: 'mermaid-diagram-container'
+        },
+        theme: 'base',
+        themeVariables: {
+          primaryColor: '#18181b',
+          primaryTextColor: '#f3f4f6',
+          primaryBorderColor: '#6366f1',
+          lineColor: '#6366f1',
+          fontFamily: 'sans-serif',
+        }
+      }],
+      remarkExtractUrls,
+    ],
+    rehypePlugins: [
+      [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
+      rehypeSlug,
+    ],
+  }), playformCompress()],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],

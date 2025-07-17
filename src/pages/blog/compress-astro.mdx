@@ -1,0 +1,85 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Astroにビルドファイル圧縮を導入する"
+date: "2025-07-17"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "ファイル圧縮", "Webパフォーマンス"]
+description: "AstroでHTML・CSS・JS・画像を自動圧縮して通信量と表示速度を大幅に改善する方法を解説します。"
+---
+
+
+### Astroで@playform/compressを導入しビルドファイルを圧縮する方法
+
+Astroプロジェクトにおいて、`@playform/compress`インテグレーションを導入すると、ビルド時にHTML、CSS、JavaScript、画像といった静的ファイルを自動的に圧縮できる。これにより、Webサイトのパフォーマンスに直結する通信データ量を削減し、表示速度の向上が期待できる。
+
+-----
+
+### なぜファイル圧縮が重要なのか？
+
+Webサイトのパフォーマンスは、ユーザー体験に極めて大きな影響を与える。特にページの読み込み速度は重要であり、その速度を決定づける要因の一つが転送されるファイルサイズである。
+
+サーバーからブラウザへ送信されるファイルサイズが小さいほど、ネットワーク経由でのダウンロード時間が短縮される。これは、特にモバイル回線などの低速なネットワーク環境下で顕著な効果を発揮する。`@playform/compress`は、この圧縮プロセスをビルド時に自動で行い、最適化されたファイルを生成するためのツールである。
+
+-----
+
+### @playform/compressの主な機能
+
+このインテグレーションは、ビルドプロセス（`astro build`）中に以下の処理を実行する。
+
+  * テキストファイルの圧縮: HTML、CSS、JavaScriptファイルをGzipとBrotli形式で圧縮し、それぞれ`.gz`と`.br`の拡張子を持つファイルを生成する。BrotliはGzipよりも高い圧縮率を誇るモダンな圧縮アルゴリズムである。
+  * 画像ファイルの最適化: `public`フォルダ内の画像（JPG, PNG, WebP, SVGなど）を含め、サイト内の画像を画質を極力維持しながらファイルサイズを削減する。これはAstro標準の画像機能が主に`src/assets`配下を対象とするのに対し、`public`フォルダ内の画像も自動で処理する点で大きな利点となる。
+
+-----
+
+### 導入手順
+
+#### 1\. パッケージの追加
+
+Astroにはインテグレーションを簡単に追加するための`astro add`コマンドが用意されている。以下のコマンドを実行するのが最も簡単で推奨される方法だ。
+
+```sh
+npx astro add @playform/compress
+```
+
+このコマンドを実行すると、`@playform/compress`のインストールと、設定ファイル`astro.config.mjs`への記述が対話形式で自動的に行われる。
+
+#### 2\. 設定内容の確認
+
+コマンド実行後、`astro.config.mjs`には以下のようにインテグレーションが追加されていることを確認する。
+
+```js:astro.config.mjs
+import { defineConfig } from 'astro/config';
+import playformCompress from '@playform/compress';
+
+export default defineConfig({
+  integrations: [
+    // 他のインテグレーション
+    playformCompress({
+      // ここにオプションを記述できる
+      // 例: Loggerを無効化
+      // logger: 0
+    }),
+  ],
+});
+```
+
+`playformCompress()` の引数にオプションを渡すことで、圧縮の挙動をカスタマイズすることも可能だ。
+
+-----
+
+### 注意点と補足事項
+
+  * サーバー側の設定: `@playform/compress`はビルド時に`.gz`や`.br`ファイルを生成するだけである。実際に圧縮されたファイルがブラウザに配信されるためには、サーバー側で適切な設定が必要となる。例えば、NginxやApache、またはVercelやNetlifyといったホスティングサービスが、リクエストヘッダ（`Accept-Encoding`）に応じて適切な圧縮ファイルを返すように設定されている必要がある。多くのモダンなホスティングサービスでは、この設定は自動で行われる。
+
+  * Astro 4.5以降の圧縮機能との違い: Astro 4.5から、ミドルウェアを利用してリクエスト時に動的にレスポンスを圧縮する機能が実験的に導入された。`@playform/compress`はビルド時に静的ファイルを事前に圧縮しておく方式であり、サーバーの負荷を低減できるという利点がある。
+
+  * 圧縮対象の制御: 特定の画像を圧縮したくない場合や、圧縮率を細かく制御したい場合は、このインテグレーションの機能だけでは不十分な可能性がある。その際は、他の画像最適化ツールとの使い分けを検討する必要がある。
+
+  * ビルド後の確認: 導入後は、必ず`astro build`コマンドを実行して`dist`ディレクトリ内に`.gz`や`.br`ファイルが生成されているか、また画像の画質が許容範囲内であるかを確認することが重要だ。
+
+-----
+
+### 参考リンク
+
+  * GitHub: [playform/compress](https://github.com/playform/compress)
+  * Astro公式ドキュメント: [インテグレーション](https://docs.astro.build/ja/guides/integrations-guide/)
