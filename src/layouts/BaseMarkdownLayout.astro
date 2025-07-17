@@ -157,7 +157,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
                 Back to Blog
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
-              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:load />
+              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:idle />
             </div>
           </aside>
         )}
@@ -199,7 +199,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
                   </a>
                 ))}
               </div>
-              <ExtractLinks client:load />
+              <ExtractLinks client:idle />
             </div>
           </aside>
         )}
