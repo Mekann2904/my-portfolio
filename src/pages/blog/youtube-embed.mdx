@@ -1,0 +1,62 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Astroで軽量YouTube埋め込み"
+date: "2025-07-17"
+description: "@astro-community/astro-embed-youtubeとgetImageによる最適化手法のまとめ"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "YouTube", "埋め込み"]
+---
+
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+## 通常の使い方
+
+YouTube動画を軽量に埋め込むには、以下のようにします。
+
+```mdx
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+<YouTube id="AAAAAAA" title="動画タイトル" />
+```
+
+- `id` にはYouTube動画のID（URLのv=以降）を指定します。
+- `title` はアクセシビリティ用（省略可）。
+
+<YouTube id="jNQXAC9IVRw" title="Me at the zoo" />
+
+## サムネイル画像をローカル最適化したい場合
+
+Astroの`getImage`を使うことで、サムネイル画像をビルド時にダウンロードし、_astroディレクトリに配置できます。
+
+```js
+import { getImage } from "astro:assets";
+const posterURL = "https://i.ytimg.com/vi/AAAAAAA/hqdefault.jpg";
+const posterImage = await getImage({ src: posterURL, inferSize: true });
+
+<YouTube id="AAAAAAA" title="動画タイトル" poster={posterImage.src} />
+```
+
+- `poster` プロパティにローカル最適化した画像パスを渡せます。
+
+## 仕組み
+
+- 初期表示時はYouTube本体を読み込まず、サムネイル画像のみ表示
+- ユーザーが再生ボタンを押した時だけYouTubeのiframeをロード
+- サムネイル画像はデフォルトでi.ytimg.comから取得
+- `getImage`を使えばサムネイルも自サーバーから配信可能
+
+---
+
+### まとめ
+
+- `@astro-community/astro-embed-youtube`で軽量YouTube埋め込み
+- `getImage`でサムネイルも最適化可能
+
+---
+
+### 参考リンク
+
+- [@astro-community/astro-embed-youtube (npm)](https://www.npmjs.com/package/@astro-community/astro-embed-youtube)
+- [Astro公式ドキュメント: 画像最適化 (astro:assets)](https://docs.astro.build/ja/guides/assets/)
+- [Astro公式: Remote images（リモート画像の最適化）](https://docs.astro.build/en/guides/images/#remote-images)
+

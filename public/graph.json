@@ -86,6 +86,31 @@
       "ext": false
     },
     {
+      "id": "/blog/youtube-embed",
+      "label": "blog/youtube-embed",
+      "ext": false
+    },
+    {
+      "id": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "label": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "ext": true
+    },
+    {
+      "id": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "label": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/assets/",
+      "label": "https://docs.astro.build/ja/guides/assets/",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/en/guides/images/",
+      "label": "https://docs.astro.build/en/guides/images/",
+      "ext": true
+    },
+    {
       "id": "/",
       "label": "Home",
       "ext": false
@@ -126,6 +151,11 @@
       "ext": true
     },
     {
+      "id": "/tags/Astro",
+      "label": "tags/Astro",
+      "ext": false
+    },
+    {
       "id": "/tags/CSS",
       "label": "tags/CSS",
       "ext": false
@@ -158,6 +188,11 @@
     {
       "id": "/tags/Tailwind CSS",
       "label": "tags/Tailwind CSS",
+      "ext": false
+    },
+    {
+      "id": "/tags/YouTube",
+      "label": "tags/YouTube",
       "ext": false
     },
     {
@@ -218,6 +253,11 @@
     {
       "id": "/tags/全文検索",
       "label": "tags/全文検索",
+      "ext": false
+    },
+    {
+      "id": "/tags/埋め込み",
+      "label": "tags/埋め込み",
       "ext": false
     },
     {
@@ -655,6 +695,10 @@
     },
     {
       "source": "/blog",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog",
       "target": "/blog/download-box"
     },
     {
@@ -982,6 +1026,74 @@
       "target": "/tags/Zettelkasten"
     },
     {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://youtube.com/watch?v=jNQXAC9IVRw"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/ja/guides/assets/"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/en/guides/images/"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/YouTube"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/埋め込み"
+    },
+    {
       "source": "/",
       "target": "/test/three"
     },
@@ -1100,6 +1212,30 @@
     {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/youtube-embed"
     },
     {
       "source": "/tags/CSS",
@@ -1282,6 +1418,30 @@
       "target": "/blog/download-box"
     },
     {
+      "source": "/tags/YouTube",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/blog/youtube-embed"
+    },
+    {
       "source": "/tags/Zettelkasten",
       "target": "/test/three"
     },
@@ -1355,6 +1515,10 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/CSS"
     },
     {
@@ -1380,6 +1544,10 @@
     {
       "source": "/tags",
       "target": "/tags/Tailwind CSS"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/YouTube"
     },
     {
       "source": "/tags",
@@ -1424,6 +1592,10 @@
     {
       "source": "/tags",
       "target": "/tags/全文検索"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/埋め込み"
     },
     {
       "source": "/tags",
@@ -1660,6 +1832,30 @@
     {
       "source": "/tags/全文検索",
       "target": "/blog/command-palette-explanation"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "/blog/youtube-embed"
     },
     {
       "source": "/tags/日本語校正",
