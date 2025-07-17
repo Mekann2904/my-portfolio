@@ -10,7 +10,6 @@ import rehypeKatex from 'rehype-katex';
 import remarkMermaid from 'remark-mermaidjs';
 import rehypeSlug from 'rehype-slug';
 import remarkExtractUrls from './remark-extract-urls.js';
-import playformInline from "@playform/inline";
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
@@ -46,7 +45,7 @@ export default defineConfig({
         rehypeSlug,
       ],
     }),
-    playformInline({ critters: { fonts: false } }),
+    // playformInlineは外して安定性重視の外部CSS運用に戻す
   ],
   markdown: {
     shikiConfig: { theme: 'github-dark' },

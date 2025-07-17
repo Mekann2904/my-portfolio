@@ -996,6 +996,18 @@
     },
     {
       "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
       "target": "https://github.com/GoogleChromeLabs/critters"
     },
     {
