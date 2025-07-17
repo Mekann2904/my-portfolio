@@ -7,68 +7,122 @@ tags: ["Astro", "Google Fonts", "Webパフォーマンス", "フォント最適�
 description: "Astroでastro-google-fonts-optimizerを使い、Google Fontsをビルド時にインライン化して高速化する方法・効果・注意点を解説します。"
 ---
 
-Webフォントの最適化は、Webサイトのパフォーマンス向上に直結します。特にGoogle Fontsを利用する場合、**astro-google-fonts-optimizer**を使うことで、フォントCSSのインライン化による高速化が簡単に実現できます。
+
+### AstroでGoogle Fontsを最適化する「astro-google-fonts-optimizer」の解説
+
+AstroサイトでGoogle Fontsを利用する際、インテグレーション「astro-google-fonts-optimizer」を導入することで、パフォーマンスを向上させることができる。このツールは、ビルド時にフォント用のCSSをHTMLに直接インライン化し、ページの表示速度を改善する。
 
 -----
 
-### なぜGoogle Fontsの最適化が必要なのか？
+### なぜGoogle Fontsの最適化が必要か？
 
-Google Fontsは便利ですが、デフォルトのまま使うと「外部CSSの取得→フォントファイルの取得」という2段階のリクエストが発生し、初回表示が遅くなりがちです。最適化することで、**Googleのサーバーにアクセスする時間を短縮し、ページ表示速度を大幅に改善**できます。
+通常、Google Fontsを`<link>`タグで読み込むと、ブラウザは以下の順で処理を行う。
+
+1.  HTMLのレンダリングを一時停止する。
+2.  GoogleのサーバーへCSSファイルをリクエストし、ダウンロードする。
+3.  CSSファイルの内容を解析し、その中に記述されたフォントファイル（`.woff2`など）をダウンロードする。
+
+この「CSS取得」のステップはレンダリングブロックとなり、後続のフォントファイルのダウンロードも遅延させるため、ページの初回表示（FCP: First Contentful Paint）が悪化する一因となる。
+
+`astro-google-fonts-optimizer`は、この最初のCSS取得リクエストを不要にすることで、このボトルネックを解消する。
 
 -----
 
 ### astro-google-fonts-optimizerの導入手順
 
-1. パッケージのインストール
+#### 1\. パッケージのインストール
+
+プロジェクトにパッケージを追加する。
 
 ```sh
+# npm
 npm install astro-google-fonts-optimizer
+
+# yarn
+yarn add astro-google-fonts-optimizer
+
+# pnpm
+pnpm add astro-google-fonts-optimizer
 ```
 
-2. 使い方（headタグ内で利用）
+#### 2\. コンポーネントの利用
+
+レイアウトファイルやコンポーネントの`<head>`タグ内で、`GoogleFontsOptimizer`コンポーネントをインポートして使用する。
+
+例: `src/layouts/Layout.astro`
 
 ```astro
 ---
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 ---
-<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" />
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My Astro Site</title>
+    
+    <GoogleFontsOptimizer 
+      url="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" 
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
 ```
 
-- `GoogleFontsOptimizer`コンポーネントは、**必ず`<head>`タグ内**で使ってください。
-- `url`にはGoogle FontsのCSS URLを指定します。
-- ビルド時にこのCSSがダウンロードされ、**インライン化された状態でHTMLに埋め込まれます**。
+  * `url`プロパティには、Google Fontsで生成されるCSSのURLをそのまま指定する。
+  * 複数のフォントファミリーやウェイトは、`&family=`で繋げて1つのURLにまとめるのが標準的な方法である。
 
 -----
 
-### Next.jsとの類似点
+### ビルド時に何が起こるか？
 
-このツールはNext.jsのフォント最適化機能を模倣しており、**ビルド時にGoogle FontsのCSSを取得→HTMLにインライン化**という流れで動作します。
+`astro build`を実行すると、`astro-google-fonts-optimizer`は指定されたURLからCSSファイルの内容を取得し、HTMLファイルの`<head>`内に直接`<style>`タグとして埋め込む。
+
+ビルド後のHTML（抜粋）
+
+```html
+<head>
+  ...
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* devanagari */
+    @font-face {
+      font-family: 'Noto Sans JP';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/...) format('woff2');
+      ...
+    }
+    /* (以下、CSSの内容が続く) */
+  </style>
+  ...
+</head>
+```
+
+これにより、ブラウザは外部CSSをダウンロードすることなく、すぐにフォントファイルの取得を開始できる。
 
 -----
 
-### 効果・ベストプラクティス
+### 主な効果とベストプラクティス
 
-- 外部CSSのリクエストが不要になり、**初回表示が高速化**します。
-- FOUT（Flash of Unstyled Text）やレイアウトシフトのリスクが減ります。
-- 複数のフォントを使う場合も、URLをカンマ区切りでまとめて指定できます。
-- 必要なウェイト・スタイルだけを指定し、無駄なフォントデータを減らしましょう。
+  * 初回表示の高速化: レンダリングをブロックする外部CSSリクエストがなくなるため、ページの読み込みが速くなる。
+  * レイアウトシフトの抑制: `font-display: swap`がCSSに含まれるため、フォント適用時のちらつき（FOUT）やレイアウトのずれ（CLS）を軽減する効果が期待できる。
+  * データ量の最適化: `url`で指定するフォントは、実際にサイトで使用するファミリーとウェイト（太さ）のみに限定すること。不要なフォントを読み込まないことがパフォーマンスの鍵となる。
 
 -----
 
 ### 注意点
 
-- Google Fontsの利用規約やライセンスは必ず確認してください。
-- フォントのアップデートや追加時は、URLを適切に更新しましょう。
-- 他のフォント最適化プラグインやCDNとの併用時は挙動に注意してください。
+  * フォントファイル自体はGoogleから配信: このツールはCSSをインライン化するだけで、フォントファイル（`.woff2`など）自体をセルフホストするわけではない。そのため、ユーザーのブラウザは引き続きGoogleのサーバー（`fonts.gstatic.com`）へアクセスする。
+  * ライセンスの確認: Google Fontsの利用規約および各フォントのライセンスは、プロジェクトの要件と合致しているか各自で確認すること。
+  * URLの更新: 使用するフォントを変更・追加した場合は、コンポーネントの`url`プロパティを忘れずに更新する必要がある。
 
 -----
 
 ### 参考リンク
 
-- [astro-google-fonts-optimizer GitHub](https://github.com/aykutkardas/astro-google-fonts-optimizer)
-- [Google Fonts公式](https://fonts.google.com/)
-- [Astro公式ドキュメント](https://docs.astro.build/ja/)
-
----
-
-Google Fontsの最適化は、Webパフォーマンス改善の「最後の一押し」として非常に効果的です。Astroでも簡単に導入できるので、ぜひ活用してみてください！ 
+  * GitHub: [sebholstein/astro-google-fonts-optimizer](https://github.com/sebholstein/astro-google-fonts-optimizer)
+  * Google Fonts: [fonts.google.com](https://fonts.google.com/)
