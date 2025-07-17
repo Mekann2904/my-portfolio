@@ -61,6 +61,26 @@
       "ext": false
     },
     {
+      "id": "/blog/inline-css-astro",
+      "label": "blog/inline-css-astro",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/GoogleChromeLabs/critters",
+      "label": "https://github.com/GoogleChromeLabs/critters",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/playform/inline",
+      "label": "https://github.com/playform/inline",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/ja/",
+      "label": "https://docs.astro.build/ja/",
+      "ext": true
+    },
+    {
       "id": "/blog/mac-smartmontools",
       "label": "blog/mac-smartmontools",
       "ext": false
@@ -183,6 +203,11 @@
     {
       "id": "/tags/CSS",
       "label": "tags/CSS",
+      "ext": false
+    },
+    {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
       "ext": false
     },
     {
@@ -891,6 +916,10 @@
     },
     {
       "source": "/blog",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog",
       "target": "/blog/prefetch-enabled"
     },
     {
@@ -916,6 +945,82 @@
     {
       "source": "/blog",
       "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/_astro/output_gray.BX1gs_be_26uw6s.webp"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/playform/inline"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://docs.astro.build/ja/"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Astro"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/CSS最適化"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Webパフォーマンス"
     },
     {
       "source": "/blog/mac-smartmontools",
@@ -1535,6 +1640,10 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/prefetch-enabled"
     },
     {
@@ -1564,6 +1673,30 @@
     {
       "source": "/tags/CSS",
       "target": "/blog/divergences"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/blog/inline-css-astro"
     },
     {
       "source": "/tags/Divergences",
@@ -1759,6 +1892,10 @@
     },
     {
       "source": "/tags/Webパフォーマンス",
+      "target": "/blog/inline-css-astro"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
       "target": "/blog/prefetch-enabled"
     },
     {
@@ -1864,6 +2001,10 @@
     {
       "source": "/tags",
       "target": "/tags/CSS"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/CSS最適化"
     },
     {
       "source": "/tags",

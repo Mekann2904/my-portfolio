@@ -73,6 +73,20 @@
     "content": "import { Image } from 'astro:assets';\n\n子::[Astroブログ全体にプリフェッチを有効化する方法](../blog/prefetch-enabled)\n\nAstroのMDX記事で画像を最適化しつつ埋め込むには、以下の手順を踏む。\n\n## 1. frontmatterはYAMLのみ\n\nMDXファイルの先頭はYAML形式で記述し、importやJS式は書かない。\n\n```yaml\n---\nlayout: \"../../layouts/BaseMarkdownLayout.astro\"\ntitle: \"記事タイトル\"\ndate: \"2025-07-17\"\ntags: [\"タグ1\", \"タグ2\"]\n---\n```\n\n## 2. 画像のimport\n\nfrontmatterの直後で、astro:assetsのImageコンポーネントと画像ファイルをimportする。\n\n```js\nimport { Image } from 'astro:assets';\nimport sample1 from '../../assets/sample1.png';\nimport sample2 from '../../assets/sample2.jpg';\n```\n\n## 3. 画像の埋め込み\n\n本文中でimportした画像変数を`<Image />`のsrcに指定する。\n\n```mdx\n<Image src={sample1} alt=\"サンプル画像1\" />\n<Image src={sample2} alt=\"サンプル画像2\" />\n```\n\n## 4. 注意点\n\n- frontmatter内でimportやJS式は絶対に書かない（YAMLのみ）\n- 画像のimportはMDX本文の先頭で行う\n- `<img src={...} />`ではなく、必ず`<Image src={...} />`を使うことで最適化の恩恵を受ける\n- 画像は`src/assets/`配下に置く（`public/`配下は最適化されない）\n\n\n---\n\n## 参考\n\n- [Astro公式: 画像最適化ガイド](https://docs.astro.build/ja/guides/assets/)\n- [Astro公式: MDXガイド](https://docs.astro.build/ja/guides/integrations-guide/mdx/) "
   },
   {
+    "slug": "inline-css-astro",
+    "layout": "../../layouts/BaseMarkdownLayout.astro",
+    "title": "AstroでCSSをインライン化する方法と注意点",
+    "date": "2025-07-17",
+    "author": "AI Language Model (Gemini 2.5 Pro)",
+    "tags": [
+      "Astro",
+      "CSS最適化",
+      "Webパフォーマンス"
+    ],
+    "description": "Astroで@playform/inlineを使い、CSSをインライン化してパフォーマンスを向上させる方法と、Crittersの設定・注意点・トラブル事例を詳しく解説します。",
+    "content": "\nAstroでは、CSSをインライン化することで初回表示のパフォーマンスを大きく向上させることができます。この記事では、@playform/inlineパッケージとCrittersを使った最新のCSSインライン化手法、その設定例、実際に発生したトラブルと対策まで詳しく解説します。\n\n-----\n\n### なぜCSSをインライン化するのか？\n\nWebサイトでは、CSSが適用される前の「スタイルなしページ（FOUC）」が一瞬でも表示されると、ユーザー体験が大きく損なわれます。CSSをインライン化することで、最初に必要なスタイルだけを即座に適用し、見た目の崩れや遅延を防ぐことができます。\n\nただし、全ページで使わないCSSまで一括で読み込むと、無駄な通信が発生します。インライン化は「本当に必要なCSSだけを最初に読み込む」ための最適化手法です。\n\n-----\n\n### @playform/inlineの導入手順\n\n1. パッケージのインストール\n\n```sh\nnpm install -D -E @playform/inline\n```\n\n2. astro.config.mjsへの設定追加\n\n```js\nimport { defineConfig } from 'astro/config';\nimport playformInline from \"@playform/inline\";\n\nexport default defineConfig({\n  integrations: [\n    playformInline({ Critters: { fonts: false } })\n  ]\n});\n```\n\n- `Critters: { fonts: false }` の設定で、Webフォントのインライン化のみを無効化できます。\n- これにより、CSSはインライン化されますが、Webフォントは通常通り外部リソースとして読み込まれます。\n\n-----\n\n### Crittersとは？\n\n@playform/inlineは内部的に[Critters](https://github.com/GoogleChromeLabs/critters)というCSSインライン化ツールを利用しています。Crittersの設定はそのまま渡すことができ、細かい挙動を制御可能です。\n\n- 例: `playformInline({ Critters: { fonts: false } })`\n\n-----\n\n### 注意点・トラブル事例\n\n実際に本番環境で適用した際、**Webフォントがロードされない**という問題が発生することがあります。これはGoogle Fonts最適化系の他プラグイン（例: GoogleFontsOptimizer）との相性や、Crittersの仕様によるものかもしれません。\n\n- フォントが表示されない場合は、`fonts: false`でインライン化を無効化しても解決しないことがあります。\n- その場合は、他のフォント最適化プラグインとの併用を見直すか、Crittersの使用を一時的に停止するのが無難です。\n\n-----\n\n### ベストプラクティス\n\n- **まずは本番環境で十分にテスト**しましょう。\n- フォント最適化系プラグインとの併用時は、挙動に注意。\n- 通信量やパフォーマンスの変化は、LighthouseやWebPageTestなどで計測して確認しましょう。\n\n-----\n\n### 参考リンク\n\n- [@playform/inline GitHub](https://github.com/playform/inline)\n- [Critters公式](https://github.com/GoogleChromeLabs/critters)\n- [Astro公式ドキュメント](https://docs.astro.build/ja/)\n\n---\n\nAstroでのCSSインライン化は、パフォーマンス改善に非常に有効な手法です。Webフォントや他プラグインとの相性に注意しつつ、最適な設定を見つけてみてください。 "
+  },
+  {
     "slug": "mac-smartmontools",
     "layout": "../../layouts/BaseMarkdownLayout.astro",
     "title": "macOSでsmartmontoolsを使ってディスク情報を確認する",

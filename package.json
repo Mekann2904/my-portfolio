@@ -33,6 +33,7 @@
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@playform/inline": "0.1.2",
     "@tailwindcss/typography": "^0.5.16",
     "@types/animejs": "^3.1.13",
     "@types/three": "^0.176.0",

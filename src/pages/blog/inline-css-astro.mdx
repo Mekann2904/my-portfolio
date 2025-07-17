@@ -1,0 +1,81 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "AstroでCSSをインライン化する方法と注意点"
+date: "2025-07-17"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "CSS最適化", "Webパフォーマンス"]
+description: "Astroで@playform/inlineを使い、CSSをインライン化してパフォーマンスを向上させる方法と、Crittersの設定・注意点・トラブル事例を詳しく解説します。"
+---
+
+Astroでは、CSSをインライン化することで初回表示のパフォーマンスを大きく向上させることができます。この記事では、@playform/inlineパッケージとCrittersを使った最新のCSSインライン化手法、その設定例、実際に発生したトラブルと対策まで詳しく解説します。
+
+-----
+
+### なぜCSSをインライン化するのか？
+
+Webサイトでは、CSSが適用される前の「スタイルなしページ（FOUC）」が一瞬でも表示されると、ユーザー体験が大きく損なわれます。CSSをインライン化することで、最初に必要なスタイルだけを即座に適用し、見た目の崩れや遅延を防ぐことができます。
+
+ただし、全ページで使わないCSSまで一括で読み込むと、無駄な通信が発生します。インライン化は「本当に必要なCSSだけを最初に読み込む」ための最適化手法です。
+
+-----
+
+### @playform/inlineの導入手順
+
+1. パッケージのインストール
+
+```sh
+npm install -D -E @playform/inline
+```
+
+2. astro.config.mjsへの設定追加
+
+```js
+import { defineConfig } from 'astro/config';
+import playformInline from "@playform/inline";
+
+export default defineConfig({
+  integrations: [
+    playformInline({ Critters: { fonts: false } })
+  ]
+});
+```
+
+- `Critters: { fonts: false }` の設定で、Webフォントのインライン化のみを無効化できます。
+- これにより、CSSはインライン化されますが、Webフォントは通常通り外部リソースとして読み込まれます。
+
+-----
+
+### Crittersとは？
+
+@playform/inlineは内部的に[Critters](https://github.com/GoogleChromeLabs/critters)というCSSインライン化ツールを利用しています。Crittersの設定はそのまま渡すことができ、細かい挙動を制御可能です。
+
+- 例: `playformInline({ Critters: { fonts: false } })`
+
+-----
+
+### 注意点・トラブル事例
+
+実際に本番環境で適用した際、**Webフォントがロードされない**という問題が発生することがあります。これはGoogle Fonts最適化系の他プラグイン（例: GoogleFontsOptimizer）との相性や、Crittersの仕様によるものかもしれません。
+
+- フォントが表示されない場合は、`fonts: false`でインライン化を無効化しても解決しないことがあります。
+- その場合は、他のフォント最適化プラグインとの併用を見直すか、Crittersの使用を一時的に停止するのが無難です。
+
+-----
+
+### ベストプラクティス
+
+- **まずは本番環境で十分にテスト**しましょう。
+- フォント最適化系プラグインとの併用時は、挙動に注意。
+- 通信量やパフォーマンスの変化は、LighthouseやWebPageTestなどで計測して確認しましょう。
+
+-----
+
+### 参考リンク
+
+- [@playform/inline GitHub](https://github.com/playform/inline)
+- [Critters公式](https://github.com/GoogleChromeLabs/critters)
+- [Astro公式ドキュメント](https://docs.astro.build/ja/)
+
+---
+
+AstroでのCSSインライン化は、パフォーマンス改善に非常に有効な手法です。Webフォントや他プラグインとの相性に注意しつつ、最適な設定を見つけてみてください。 
