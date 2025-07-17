@@ -1,0 +1,205 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "React Hooksを駆使した高機能コマンドパレットの実装"
+date: "2025-07-17"
+description: "React Hooksを活用し、キーワード・タグ・ユーザーによるAND検索やサジェスト機能を備えた高機能なコマンドパレットを実装する方法を解説する。"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["React", "TypeScript", "全文検索", "Hooks", "UI/UX"]
+---
+
+### はじめに
+
+VS CodeやRaycast、Slackなどで見られる「コマンドパレット」は、現代的なアプリケーションに欠かせないUIとなりつつある。これはキーボードショートカット（多くは `Ctrl+K` や `Cmd+K`）で検索窓を呼び出し、さまざまな操作を高速に実行できる便利な機能だ。
+
+本記事では、ブログサイトに以下のような高機能なコマンドパレットを実装する方法を、React Hooksを活用して解説する。
+
+* キーボード主体の操作: ショートカット起動、ESCキーでのクローズ
+* 高度なAND検索: キーワード、タグ（`#tag`）、ユーザー（`>user`）の組み合わせ
+* 入力サジェスト: タグやユーザー名のインテリジェントな補完
+* ヘルプ機能: `?` 入力で使い方を表示
+
+---
+
+### アーキテクチャと設計思想
+
+効率的な実装のためには、まず全体の構造と設計のポイントを理解しておく必要がある。
+
+#### コンポーネントの全体像
+
+今回の実装は、役割の異なる2つのコンポーネントで構成されている。
+
+1.  **`BlogCommandPaletteWrapper.jsx`**
+    コマンドパレットの表示・非表示を管理し、起動トリガー（ボタンやショートカットキー）を提供するラッパー。
+
+2.  **`CommandPalette.jsx`**
+    検索ロジック、サジェスト、UIなど、コマンドパレット本体のすべての機能を担う中核コンポーネント。
+
+#### なぜ記事データをJSONで取得するのか？
+
+この実装の核心は、クライアントサイドで全記事データを一括で取得し、検索処理を行う点にある。`CommandPalette.jsx` は、マウント時に `/blog-contents.json` というファイルを取得する。
+
+```javascript
+// CommandPalette.jsx
+useEffect(() => {
+  fetch('/blog-contents.json')
+    .then(res => res.json())
+    .then(data => {
+      setPosts(data);
+      setLoading(false);
+    });
+}, []);
+```
+
+この設計には、主に3つのメリットがある。
+
+* 高速な全文検索: サーバーとの通信なしに、手元にある全データに対して即座にフィルタリングを実行できる。これにより、入力のたびにリアルタイムで結果が更新される快適なUXが実現する。
+* 静的サイトとの親和性: AstroやNext.jsなどのフレームワークでは、ビルド時に全記事データをまとめて一つのJSONファイルとして出力することが容易。APIサーバーが不要で、CDNから高速に配信できる。
+* シンプルな実装: サーバーサイドの複雑な検索APIを実装する必要がなく、フロントエンドのロジックに集中できる。
+
+---
+
+### 実装の詳細
+
+ここからは、具体的な実装をコンポーネントごとに解説する。
+
+#### ラッパーコンポーネント（`BlogCommandPaletteWrapper.jsx`）
+
+このコンポーネントの責務はシンプルで、「表示状態の管理」と「起動インターフェースの提供」だ。
+
+```javascript
+import React, { useState, useCallback, useEffect } from 'react';
+import CommandPalette from './CommandPalette.jsx';
+
+export default function BlogCommandPaletteWrapper({ posts }) {
+  const [showPalette, setShowPalette] = useState(false);
+  const openPalette = useCallback(() => setShowPalette(true), []);
+  const closePalette = useCallback(() => setShowPalette(false), []);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setShowPalette(true);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
+  return (
+    <>
+      <button /* ... */ onClick={openPalette}>
+        {/* ... SVG Icon ... */}
+      </button>
+      {showPalette && (
+        <CommandPalette posts={posts} onClose={closePalette} />
+      )}
+    </>
+  );
+}
+```
+
+* 状態管理: `useState` で表示状態（`showPalette`）を管理する。`useCallback` は、子コンポーネントに渡す関数の再生成を防ぐための最適化である。
+* ショートカット登録: `useEffect` で `keydown` イベントを監視し、`Ctrl/Cmd + K` が押されたらパレットを表示する。クリーンアップ関数でイベントリスナーを解除するのは、メモリリークを防ぐための重要な作法である。
+
+---
+
+#### コマンドパレット本体（`CommandPalette.jsx`）
+
+このコンポーネントが機能の中核をなす。ロジックを「状態管理」「クエリ解析と検索」「サジェスト機能」の3ステップで解説する。
+
+##### 1. 状態管理とデータ取得
+
+まず、コンポーネントが必要とする全ての状態を定義し、前述の通り記事データを取得する。
+
+```javascript
+const inputRef = useRef(null); // 入力欄へのフォーカス制御用
+```
+
+##### 2. クエリ解析と全文検索
+
+入力されたクエリを解析し、AND条件で記事をフィルタリングする検索機能の心臓部である。
+
+```javascript
+const tagTokens = tokens.filter(t => t.startsWith('#')).map(t => t.slice(1).toLowerCase());
+const userTokens = tokens.filter(t => t.startsWith('>')).map(t => t.slice(1).toLowerCase());
+const keywordTokens = tokens.filter(t => !t.startsWith('#') && !t.startsWith('>')).map(t => t.toLowerCase());
+
+// AND検索ロジック (useMemoで最適化)
+const filtered = useMemo(() => {
+  return posts.filter(post => {
+    // タグ条件
+    const postTags = (post.tags || []).map(t => t.toLowerCase());
+    if (!tagTokens.every(tag => postTags.includes(tag))) return false;
+    // ユーザー条件
+    const author = (post.author || '').toLowerCase();
+    if (!userTokens.every(user => author.includes(user))) return false;
+    // キーワード条件（全文検索）
+    const haystack = [post.title, post.description, post.content].join(' ').toLowerCase();
+    if (!keywordTokens.every(kw => haystack.includes(kw))) return false;
+    return true;
+  });
+}, [posts, tagTokens, userTokens, keywordTokens]);
+```
+
+* クエリ解析: 入力文字列を空白で分割し、`#` や `>` の接頭辞をもとに、タグ・ユーザー・キーワードの3種類に分類する。
+* 全文検索: キーワードは、記事の `title`, `description`, `content` を連結した一つの大きな文字列（`haystack`）に対して検索される。
+* AND検索: `Array.prototype.every()` を利用し、指定された全ての条件（タグ、ユーザー、キーワード）を満たす記事のみを抽出する。
+* 最適化: この重いフィルタリング処理は `useMemo` でメモ化し、依存する値が変更されたときのみ再計算されるようにしてパフォーマンスを確保している。
+
+##### 3. サジェストとキーボード操作
+
+入力中のトークンを検出し、候補を提示してキーボードで補完できるようにすることで、UXを大幅に向上させている。
+
+```javascript
+// サジェストロジック
+useEffect(() => {
+  // 入力中の "#" or ">" トークンを正規表現で検出
+  const match = query.match(/(?:^|\s)([#>][^\s]*)$/);
+  if (!match) { /* サジェストをクリア */ return; }
+  // ... マッチしたトークンに応じて候補を絞り込み、suggestionsステートを更新 ...
+}, [query, allTags, allUsers, tagTokens, userTokens]);
+
+// サジェストの選択と補完
+const handleSuggestSelect = (item) => {
+  // ... 入力中のトークンを選択されたサジェストで置換 ...
+  setQuery(newQuery);
+  // ... サジェストをクリアし、入力欄にフォーカスを戻す ...
+};
+
+// キーボードイベントのハンドリング
+const handleInputKeyDown = (e) => {
+  if (suggestions.length > 0) {
+    if (e.key === 'ArrowRight' || e.key === 'Tab' || e.key === 'Enter') {
+      e.preventDefault();
+      handleSuggestSelect(/* ...選択中のサジェスト... */);
+    }
+    // ... ArrowUp/Downでのサジェスト移動処理 ...
+  }
+};
+```
+
+* 候補検出: `useEffect` 内で、正規表現 `/(?:^|\s)([#>][^\s]*)$/` を使い、入力中の `#tag` や `>user` 形式のトークンを的確に捉える。
+* 候補提示: 全タグ・ユーザーリストから部分一致で候補を絞り込み、Stateを更新してUIに反映する。
+* キーボード操作: `Tab` や `Enter` キーでサジェストを確定し、クエリを補完する。`e.preventDefault()` でブラウザのデフォルト動作を抑制するのがポイントである。
+
+---
+
+### まとめと今後の展望
+
+本記事では、React Hooksを効果的に組み合わせることで、高機能かつパフォーマンスに優れたコマンドパレットを実装する方法を解説した。
+
+* `useState`/`useRef` で状態とDOM参照を管理
+* `useEffect` でデータ取得やイベントリスナなどの副作用を処理
+* `useMemo`/`useCallback` で重い処理や関数をメモ化し、パフォーマンスを最適化
+
+これらの基本的なHooksを適切に使い分けることで、複雑なUIでも宣言的で見通しの良いコードを書くことができる。
+
+この実装をベースとして、さらに以下のような拡張も考えられる。
+
+* ファジー検索: `Fuse.js` などのライブラリを導入し、より柔軟なあいまい検索に対応する。
+* 結果のキーボード操作: 矢印キーで検索結果自体を選択し、`Enter`でページ遷移できるようにする。
+* 検索対象の拡張: カテゴリやその他のメタデータも検索対象に加える。
+
+Webサイトに強力な検索機能と優れた操作性を提供したい場合、この実装は良い出発点となる。
+
