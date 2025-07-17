@@ -18,6 +18,7 @@
     "@tweenjs/tween.js": "^25.0.0",
     "animejs": "^3.2.2",
     "astro": "^5.11.2",
+    "astro-google-fonts-optimizer": "^0.2.2",
     "d3": "^7.9.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",

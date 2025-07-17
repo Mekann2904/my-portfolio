@@ -31,6 +31,11 @@
       "ext": false
     },
     {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "blog/google-fonts-optimizer",
+      "ext": false
+    },
+    {
       "id": "/blog/image-embedding-guide",
       "label": "blog/image-embedding-guide",
       "ext": false
@@ -126,6 +131,11 @@
       "ext": false
     },
     {
+      "id": "/tags/Google Fonts",
+      "label": "tags/Google Fonts",
+      "ext": false
+    },
+    {
       "id": "/tags/Hooks",
       "label": "tags/Hooks",
       "ext": false
@@ -208,6 +218,11 @@
     {
       "id": "/tags/ファイル圧縮",
       "label": "tags/ファイル圧縮",
+      "ext": false
+    },
+    {
+      "id": "/tags/フォント最適化",
+      "label": "tags/フォント最適化",
       "ext": false
     },
     {
@@ -302,6 +317,10 @@
       "target": "/tags/Tailwind CSS"
     },
     {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts"
+    },
+    {
       "source": "/blog/obsidian-textlint",
       "target": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw"
     },
@@ -312,6 +331,10 @@
     {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Google Fonts"
     },
     {
       "source": "/tags",

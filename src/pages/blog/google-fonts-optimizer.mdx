@@ -1,0 +1,74 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "AstroでGoogle Fontsを最適化・インライン化する方法（astro-google-fonts-optimizer解説）"
+date: "2025-07-17"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "Google Fonts", "Webパフォーマンス", "フォント最適化"]
+description: "Astroでastro-google-fonts-optimizerを使い、Google Fontsをビルド時にインライン化して高速化する方法・効果・注意点を解説します。"
+---
+
+Webフォントの最適化は、Webサイトのパフォーマンス向上に直結します。特にGoogle Fontsを利用する場合、**astro-google-fonts-optimizer**を使うことで、フォントCSSのインライン化による高速化が簡単に実現できます。
+
+-----
+
+### なぜGoogle Fontsの最適化が必要なのか？
+
+Google Fontsは便利ですが、デフォルトのまま使うと「外部CSSの取得→フォントファイルの取得」という2段階のリクエストが発生し、初回表示が遅くなりがちです。最適化することで、**Googleのサーバーにアクセスする時間を短縮し、ページ表示速度を大幅に改善**できます。
+
+-----
+
+### astro-google-fonts-optimizerの導入手順
+
+1. パッケージのインストール
+
+```sh
+npm install astro-google-fonts-optimizer
+```
+
+2. 使い方（headタグ内で利用）
+
+```astro
+---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+---
+<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" />
+```
+
+- `GoogleFontsOptimizer`コンポーネントは、**必ず`<head>`タグ内**で使ってください。
+- `url`にはGoogle FontsのCSS URLを指定します。
+- ビルド時にこのCSSがダウンロードされ、**インライン化された状態でHTMLに埋め込まれます**。
+
+-----
+
+### Next.jsとの類似点
+
+このツールはNext.jsのフォント最適化機能を模倣しており、**ビルド時にGoogle FontsのCSSを取得→HTMLにインライン化**という流れで動作します。
+
+-----
+
+### 効果・ベストプラクティス
+
+- 外部CSSのリクエストが不要になり、**初回表示が高速化**します。
+- FOUT（Flash of Unstyled Text）やレイアウトシフトのリスクが減ります。
+- 複数のフォントを使う場合も、URLをカンマ区切りでまとめて指定できます。
+- 必要なウェイト・スタイルだけを指定し、無駄なフォントデータを減らしましょう。
+
+-----
+
+### 注意点
+
+- Google Fontsの利用規約やライセンスは必ず確認してください。
+- フォントのアップデートや追加時は、URLを適切に更新しましょう。
+- 他のフォント最適化プラグインやCDNとの併用時は挙動に注意してください。
+
+-----
+
+### 参考リンク
+
+- [astro-google-fonts-optimizer GitHub](https://github.com/aykutkardas/astro-google-fonts-optimizer)
+- [Google Fonts公式](https://fonts.google.com/)
+- [Astro公式ドキュメント](https://docs.astro.build/ja/)
+
+---
+
+Google Fontsの最適化は、Webパフォーマンス改善の「最後の一押し」として非常に効果的です。Astroでも簡単に導入できるので、ぜひ活用してみてください！ 

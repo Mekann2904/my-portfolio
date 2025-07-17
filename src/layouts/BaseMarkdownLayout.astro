@@ -6,6 +6,7 @@ import outputGray from '../assets/output_gray.png';
 import type { MarkdownHeading } from 'astro';
 import ExtractLinks from '../components/ExtractLinks.jsx';
 import DynamicToc from '../components/DynamicToc.jsx';
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
 // --- Props処理 ---
 // Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
@@ -110,6 +111,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={absoluteImageUrl} />
     <link rel="preload" as="image" href={optimizedBg.src} />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" />
   </head>
 
   <body class="bg-black text-white text-base bg-faint-image"

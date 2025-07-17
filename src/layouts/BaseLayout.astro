@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import outputGray from '../assets/output_gray.png';
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 const { title, description } = Astro.props;
 const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 80 });
 ---
@@ -11,6 +12,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" />
   </head>
   <body class="bg-black text-white relative flex flex-col min-h-screen bg-faint-image"
     style={`--faint-bg: url('${optimizedBg.src}');`}
