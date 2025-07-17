@@ -71,6 +71,16 @@
       "ext": true
     },
     {
+      "id": "/blog/vault-organizer",
+      "label": "blog/vault-organizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "ext": true
+    },
+    {
       "id": "/blog/why-not-tree",
       "label": "blog/why-not-tree",
       "ext": false
@@ -178,6 +188,11 @@
     {
       "id": "/tags/textlint",
       "label": "tags/textlint",
+      "ext": false
+    },
+    {
+      "id": "/tags/vault-organizer",
+      "label": "tags/vault-organizer",
       "ext": false
     },
     {
@@ -655,6 +670,10 @@
       "target": "/blog/obsidian-textlint"
     },
     {
+      "source": "/blog",
+      "target": "/blog/vault-organizer"
+    },
+    {
       "source": "/blog/mac-smartmontools",
       "target": "/test/three"
     },
@@ -821,6 +840,82 @@
     {
       "source": "/blog/obsidian-textlint",
       "target": "/tags/日本語校正"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/Obsidian"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/プラグイン"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/vault-organizer"
     },
     {
       "source": "/blog/why-not-tree",
@@ -1135,6 +1230,10 @@
       "target": "/blog/obsidian-textlint"
     },
     {
+      "source": "/tags/Obsidian",
+      "target": "/blog/vault-organizer"
+    },
+    {
       "source": "/tags/React",
       "target": "/test/three"
     },
@@ -1304,6 +1403,10 @@
     },
     {
       "source": "/tags",
+      "target": "/tags/vault-organizer"
+    },
+    {
+      "source": "/tags",
       "target": "/tags/ツリー構造"
     },
     {
@@ -1411,6 +1514,30 @@
       "target": "/blog/obsidian-textlint"
     },
     {
+      "source": "/tags/vault-organizer",
+      "target": "/test/three"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "/test/three-1"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "/test/three-2"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "/test/three-3"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "/test/three-4"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "/blog/vault-organizer"
+    },
+    {
       "source": "/tags/ツリー構造",
       "target": "/test/three"
     },
@@ -1481,6 +1608,10 @@
     {
       "source": "/tags/プラグイン",
       "target": "/blog/obsidian-textlint"
+    },
+    {
+      "source": "/tags/プラグイン",
+      "target": "/blog/vault-organizer"
     },
     {
       "source": "/tags/リゾーム",
