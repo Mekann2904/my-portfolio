@@ -155,7 +155,7 @@ export default function CommandPalette({ onClose }) {
 
   return (
     <div
-      className="absolute left-1/2 top-4 sm:top-24 z-20 w-full max-w-2xl -translate-x-1/2 mx-auto px-2"
+      className="absolute left-1/2 top-20 sm:top-24 z-20 w-full max-w-2xl -translate-x-1/2 mx-auto px-2"
       style={{ pointerEvents: 'auto' }}
     >
       <div className="rounded-xl sm:rounded-3xl bg-gray-900 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)] border border-gray-700 p-4 sm:p-8 relative text-white">
