@@ -8,6 +8,7 @@ import ExtractLinks from '../components/ExtractLinks.jsx';
 import DynamicToc from '../components/DynamicToc.jsx';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import Backlinks from '../components/Backlinks.jsx';
+import BlogGraph from '../components/BlogGraph.jsx';
 import fs from 'fs';
 import path from 'path';
 
@@ -176,8 +177,8 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
             </button>
             <ul class="absolute right-0 mt-2 min-w-[12rem] max-w-[90vw] bg-black border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-x-auto">
               <li><a href="/test/three" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Knowledge Network 3D</a></li>
-              <li><a href="/test/three-1" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Light Examples</a></li>
-              <li><a href="/test/three-2" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Water Animation</a></li>
+              <li><a href="/test/three-1" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Water Animation</a></li>
+              <li><a href="/test/three-2" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Light Examples</a></li>
               <li><a href="/test/three-3" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js 3D Model Demo</a></li>
               <li><a href="/test/three-4" class="block px-4 py-2 text-sm text-gray-500 hover:text-white hover:bg-white/5">Three.js Projector Demo</a></li>
             </ul>
@@ -238,26 +239,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
               <div class="mb-8">
                 <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Knowledge Graph</h2>
                 <div class="bg-gray-800 border border-gray-600 rounded-lg p-3 h-80 overflow-hidden">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs text-gray-400">Blog Network</span>
-                    <button 
-                      id="blog-reload-btn" 
-                      class="text-xs text-blue-400 hover:text-blue-300 transition-colors"
-                      aria-label="Reload graph"
-                    >
-                      ↻
-                    </button>
-                  </div>
-                  <div id="blog-graph-container" class="w-full h-64 overflow-hidden">
-                    <div class="flex items-center justify-center h-full text-gray-500">
-                      <div class="text-center">
-                        <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                        <p class="text-xs">Loading graph...</p>
-                      </div>
-                    </div>
-                  </div>
+                  <BlogGraph client:visible />
                 </div>
               </div>
 
@@ -288,205 +270,5 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
       </div>
     </footer>
 
-    {/* グラフ表示用のスクリプト */}
-    <script type="module">
-      // blog-graph.jsonを読み込んでD3.jsでグラフを表示
-      let blogSvg, blogSim;
-      let blogGraphLoaded = false;
-
-      // IntersectionObserver が初めて可視領域を検知したらロード
-      const blogContainer = document.getElementById('blog-graph-container');
-      const blogReloadBtn = document.getElementById('blog-reload-btn');
-      
-      if (blogContainer) {
-        const blogIo = new IntersectionObserver(
-          (entries) => {
-            if (entries[0]?.isIntersecting && !blogGraphLoaded) {
-              blogGraphLoaded = true;
-              initBlogGraph();
-              blogIo.disconnect();
-            }
-          },
-          { rootMargin: '100px' }
-        );
-        blogIo.observe(blogContainer);
-      }
-
-      async function initBlogGraph() {
-        // @ts-ignore
-        const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm');
-
-        async function buildBlogGraph() {
-          if (!blogContainer) return;
-          
-          // blog-graph.json の読み込み
-          let nodes = [], links = [];
-          try {
-            const graph = await fetch('/blog-graph.json').then((r) => r.json());
-            nodes = graph.nodes || [];
-            links = graph.links || [];
-          } catch (e) {
-            console.warn('blog-graph.json の読み込みに失敗しました:', e);
-            blogContainer.innerHTML = `
-              <div class="flex items-center justify-center h-full text-gray-500">
-                <div class="text-center">
-                  <svg class="w-6 h-6 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                  </svg>
-                  <p class="text-xs">Graph not available</p>
-                </div>
-              </div>
-            `;
-            return;
-          }
-
-          // 存在しないノードを参照するリンクを除外
-          const nodeIds = new Set(nodes.map((d) => d.id));
-          links = links.filter((l) => nodeIds.has(l.source) && nodeIds.has(l.target));
-
-          const W = blogContainer.clientWidth;
-          const H = blogContainer.clientHeight;
-
-          blogSvg = d3.select(blogContainer)
-            .append('svg')
-            .attr('width', W)
-            .attr('height', H)
-            .call(
-              d3.zoom()
-                .scaleExtent([0.3, 3])
-                .on('zoom', ({ transform }) => inner.attr('transform', transform))
-            );
-
-          const inner = blogSvg.append('g');
-
-          const link = inner.append('g')
-            .attr('stroke', '#444')
-            .attr('stroke-opacity', 0.4)
-            .selectAll('line')
-            .data(links)
-            .join('line')
-            .attr('stroke-width', 0.8);
-
-          const node = inner.append('g')
-            .selectAll('g')
-            .data(nodes)
-            .join('g');
-
-          // 現在のページのノードを特定
-          const currentPath = window.location.pathname;
-          console.log('Current path:', currentPath);
-          console.log('Available nodes:', nodes.map((d) => d.id));
-          
-          const currentNode = nodes.find((d) => d.id === currentPath);
-          console.log('Found current node:', currentNode);
-          
-          // パスが完全一致しない場合の代替手段
-          let targetNode = currentNode;
-          if (!targetNode) {
-            // 末尾のスラッシュを除去して再試行
-            const pathWithoutSlash = currentPath.replace(/\/$/, '');
-            targetNode = nodes.find((d) => d.id === pathWithoutSlash);
-            console.log('Trying without trailing slash:', pathWithoutSlash, 'Found:', targetNode);
-          }
-          if (!targetNode) {
-            // blog/プレフィックスを追加して再試行
-            const pathWithBlog = currentPath.startsWith('/blog/') ? currentPath : `/blog${currentPath}`;
-            targetNode = nodes.find((d) => d.id === pathWithBlog);
-            console.log('Trying with blog prefix:', pathWithBlog, 'Found:', targetNode);
-          }
-          if (!targetNode) {
-            // 部分一致で検索
-            targetNode = nodes.find((d) => d.id.includes(currentPath.replace(/^\//, '')));
-            console.log('Trying partial match, Found:', targetNode);
-          }
-
-          node.append('circle')
-            .attr('r', (d) => {
-              if (d.id === (targetNode?.id || currentPath)) return 8; // 現在のノード
-              return d.ext ? 6 : 4; // 外部リンク or 内部リンク
-            })
-            .attr('fill', (d) => (d.ext ? '#ff9b00' : '#fff'))
-            .attr('stroke', (d) => d.id === (targetNode?.id || currentPath) ? '#3b82f6' : '#fff')
-            .attr('stroke-width', (d) => d.id === (targetNode?.id || currentPath) ? 3 : (d.ext ? 1.5 : 0.8))
-            .on('click', (_, d) => { 
-              if (!d.ext && d.id.startsWith('/blog/')) {
-                location.href = d.id; 
-              }
-            });
-
-          node.append('text')
-            .text((d) => d.label.length > 15 ? d.label.substring(0, 15) + '...' : d.label)
-            .attr('x', 8)
-            .attr('y', 3)
-            .attr('fill', '#fff')
-            .attr('font-size', '8px')
-            .style('pointer-events', 'none')
-            .style('text-shadow', '0 0 3px rgba(0,0,0,0.8)');
-
-          blogSim = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id((d) => d.id).distance(80))
-            .force('charge', d3.forceManyBody().strength(-300))
-            .force('collide', d3.forceCollide().radius((d) => (d.ext ? 6 : 4) + 10))
-            .force('center', d3.forceCenter(W / 2, H / 2))
-            .alpha(1)
-            .alphaDecay(0.05)
-            .on('tick', () => {
-              link
-                .attr('x1', (d) => d.source.x).attr('y1', (d) => d.source.y)
-                .attr('x2', (d) => d.target.x).attr('y2', (d) => d.target.y);
-              node.attr('transform', (d) => `translate(${d.x},${d.y})`);
-            });
-
-          // 現在のページのノードを中央に固定（シミュレーション開始後に実行）
-          if (targetNode) {
-            console.log('Fixing node to center:', targetNode.id);
-            // 少し遅延させてシミュレーションが開始された後に固定
-            setTimeout(() => {
-              targetNode.fx = W / 2;
-              targetNode.fy = H / 2;
-              blogSim.alpha(0.3).restart(); // シミュレーションを再開
-            }, 100);
-          } else {
-            console.log('No matching node found for current path');
-          }
-
-          node.call(
-            d3.drag()
-              .on('start', (e, d) => {
-                if (!e.active) blogSim.alphaTarget(0.3).restart();
-                d.fx = d.x; d.fy = d.y;
-              })
-              .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
-              .on('end', (e, d) => {
-                if (!e.active) blogSim.alphaTarget(0);
-                d.fx = d.fy = null;
-              })
-          );
-        }
-
-        function resizeBlogGraph() {
-          if (!blogContainer) return;
-          const w = blogContainer.clientWidth;
-          const h = blogContainer.clientHeight;
-          blogSvg?.attr('width', w).attr('height', h);
-          blogSim?.force('center', d3.forceCenter(w / 2, h / 2)).alpha(0.3).restart();
-        }
-
-        async function reloadBlogGraph() {
-          blogSim?.stop();
-          if (blogContainer) {
-            blogContainer.replaceChildren();
-            await buildBlogGraph();
-          }
-        }
-
-        await reloadBlogGraph();
-
-        if (blogReloadBtn) {
-          blogReloadBtn.addEventListener('click', reloadBlogGraph, { passive: true });
-        }
-        window.addEventListener('resize', resizeBlogGraph, { passive: true });
-      }
-    </script>
-  </body>
+    </body>
 </html>
