@@ -54,13 +54,14 @@ export default defineConfig({
     build: {
       cssMinify: 'esbuild',
       minify: true,
-      // manualChunksでBacklinksとExtractLinksをまとめる
+      // manualChunksでBacklinksとExtractLinksをmainチャンクにまとめる
       rollupOptions: {
         output: {
           manualChunks: {
             blogUtils: [
               './src/components/Backlinks.jsx',
               './src/components/ExtractLinks.jsx',
+              // 必要なら他の小チャンクもここに追加
             ],
           },
         },

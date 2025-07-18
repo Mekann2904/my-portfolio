@@ -11,16 +11,30 @@ export default function BlogCommandPaletteWrapper() {
   const closePalette = useCallback(() => setShowPalette(false), []);
 
   useEffect(() => {
-    fetch('/blog-contents.json')
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data);
+    // まずインラインJSON（blogHead）を利用
+    const headScript = document.getElementById('blogHead');
+    if (headScript) {
+      try {
+        const headData = JSON.parse(headScript.textContent || '[]');
+        setPosts(headData);
         setLoading(false);
-      })
-      .catch(e => {
-        setError('記事データの取得に失敗しました');
-        setLoading(false);
-      });
+      } catch (e) {
+        // パース失敗時はfetchにフォールバック
+      }
+    }
+    // LCP後に全件fetch
+    window.addEventListener('load', () => {
+      fetch('/blog-contents.json')
+        .then(res => res.json())
+        .then(data => {
+          setPosts(data);
+          setLoading(false);
+        })
+        .catch(e => {
+          setError('記事データの取得に失敗しました');
+          setLoading(false);
+        });
+    }, { once: true });
   }, []);
 
   useEffect(() => {

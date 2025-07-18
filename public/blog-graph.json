@@ -16,6 +16,11 @@
       "ext": true
     },
     {
+      "id": "https://static.cloudflareinsights.com",
+      "label": "https://static.cloudflareinsights.com",
+      "ext": true
+    },
+    {
       "id": "/blog/astro-image-optimization",
       "label": "astro-image-optimization",
       "ext": false
@@ -66,11 +71,6 @@
       "ext": true
     },
     {
-      "id": "/blog/download-box",
-      "label": "download-box",
-      "ext": false
-    },
-    {
       "id": "/blog/generate-graph",
       "label": "generate-graph",
       "ext": false
@@ -86,6 +86,21 @@
       "ext": true
     },
     {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
+    },
+    {
+      "id": "/blog/image-embedding-guide",
+      "label": "image-embedding-guide",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "ext": true
+    },
+    {
       "id": "/blog/google-fonts-optimizer",
       "label": "google-fonts-optimizer",
       "ext": false
@@ -98,16 +113,6 @@
     {
       "id": "https://fonts.google.com/",
       "label": "https://fonts.google.com/",
-      "ext": true
-    },
-    {
-      "id": "/blog/image-embedding-guide",
-      "label": "image-embedding-guide",
-      "ext": false
-    },
-    {
-      "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
-      "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
       "ext": true
     },
     {
@@ -215,6 +220,16 @@
     {
       "source": "/blog",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -344,6 +359,16 @@
     },
     {
       "source": "/blog/astro-image-optimization",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
       "target": "/",
       "type": "normal"
     },
@@ -450,6 +475,16 @@
     {
       "source": "/blog/command-palette-explanation",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -570,6 +605,16 @@
     {
       "source": "/blog/divergences",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -729,6 +774,16 @@
     },
     {
       "source": "/blog/compress-astro",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
     },
@@ -833,106 +888,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
-      "type": "tag"
-    },
-    {
       "source": "/blog/generate-graph",
       "target": "/",
       "type": "normal"
@@ -945,6 +900,16 @@
     {
       "source": "/blog/generate-graph",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -1083,6 +1048,236 @@
       "type": "tag"
     },
     {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#2-画像のimport",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#3-画像の埋め込み",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#4-注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/image-embedding-guide/#参考",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/blog/prefetch-enabled",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/画像最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
       "source": "/blog/google-fonts-optimizer",
       "target": "/",
       "type": "normal"
@@ -1095,6 +1290,16 @@
     {
       "source": "/blog/google-fonts-optimizer",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -1208,116 +1413,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/image-embedding-guide",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/image-embedding-guide/#2-画像のimport",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/image-embedding-guide/#3-画像の埋め込み",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/image-embedding-guide/#4-注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/image-embedding-guide/#参考",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/tags/画像最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
       "source": "/blog/inline-css-astro",
       "target": "/",
       "type": "normal"
@@ -1330,6 +1425,16 @@
     {
       "source": "/blog/inline-css-astro",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -1469,6 +1574,16 @@
     },
     {
       "source": "/blog/mac-smartmontools",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
       "target": "/",
       "type": "normal"
     },
@@ -1555,6 +1670,16 @@
     {
       "source": "/blog/obsidian-textlint",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -1729,6 +1854,16 @@
     },
     {
       "source": "/blog/prefetch-enabled",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
       "target": "/",
       "type": "normal"
     },
@@ -1840,6 +1975,16 @@
     {
       "source": "/blog/vault-organizer",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -1964,6 +2109,16 @@
     },
     {
       "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
       "target": "/",
       "type": "normal"
     },
@@ -2065,6 +2220,16 @@
     {
       "source": "/blog/youtube-embed",
       "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {

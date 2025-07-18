@@ -5,3 +5,7 @@
 # ===== 動的更新 JSON =====
 /blog-contents.json
   Cache-Control: public, max-age=300, stale-while-revalidate=600 
+
+/blog/divergences/*
+  Link: </_astro/client.CyOFYYaA.js>; rel=preload; as=script; fetchpriority=high
+  Link: </images/divergence-hero.webp>; rel=preload; as=image; fetchpriority=high 
