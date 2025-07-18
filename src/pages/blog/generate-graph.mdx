@@ -1,0 +1,220 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "サイト構造を解析し、関係グラフを生成する"
+date: "2025-07-18"
+description: "build時にサイト構造を解析し、jsonファイルにして関係グラフを生成する"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["Astro", "グラフ構造","json"]
+---
+
+## `generate-graph.mjs` コード解説：サイト構造を解析し、関係グラフを生成する
+
+このスクリプトは、静的に生成されたウェブサイトの`dist`ディレクトリ内にある全HTMLファイルを解析し、ページ間のリンク構造を抽出して、それをグラフデータ（ノードとリンク）としてJSONファイルに出力するものである。
+
+具体的には、サイト全体のページ相関図である `graph.json` と、ブログ記事間の関連に特化した `blog-graph.json` の2つのファイルを生成する。これにより、サイトの構造を可視化したり、ページ間の関連性を分析したりすることが可能になる。
+
+### 全体構成
+
+スクリプトは主に3つの非同期関数で構成されている。
+
+1.  `main()`: サイト全体のグラフデータ (`graph.json`) を生成する。
+2.  `generateBlogGraph()`: ブログ記事のみに絞ったグラフデータ (`blog-graph.json`) を生成する。
+3.  `runAll()`: 上記2つの関数を順次実行し、スクリプト全体を動かすエントリーポイント。
+
+### 使用モジュール
+
+スクリプトの冒頭で、Node.jsの標準モジュールと外部ライブラリをインポートしている。
+
+```javascript
+// generate-graph.mjs
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import fg from 'fast-glob';
+```
+
+  * `node:fs/promises`: ファイルシステムを操作するためのモジュール。ファイルの読み書きを非同期（`Promise`ベース）で行うために使用する。
+  * `node:path`: ファイルパスやディレクトリパスを扱うためのモジュール。OS間の差異（Windowsの `\` とUnix系の `/`）を吸収し、パスの結合や正規化を行う。
+  * `fast-glob` (`fg`): globパターン（例: `/*.html`）を使って、条件に一致するファイルやディレクトリを高速に検索するための外部ライブラリ。
+
+-----
+
+## `main`関数: サイト全体のグラフ生成
+
+この関数がスクリプトの中核を担い、サイト全体のページとリンクの関係を解析する。
+
+### 1. ファイルの探索と初期化
+
+```javascript
+async function main() {
+  const dist = path.resolve('./dist');
+  // fast-globで全index.htmlを取得
+  const htmlFiles = await fg('/index.html', { cwd: dist, absolute: true });
+  const nodes = [];
+  const links = [];
+  // ...
+}
+```
+
+  * `path.resolve('./dist')`で、ビルド成果物が格納されている`dist`ディレクトリの絶対パスを取得する。
+  * `fg('/index.html', ...)`を使い、`dist`ディレクトリ内の全ての`index.html`を再帰的に検索する。`absolute: true`オプションにより、結果は絶対パスの配列として得られる。
+  * `nodes`（グラフのノード、つまり各ページ）と`links`（ノード間をつなぐエッジ、つまりリンク）を格納するための空の配列を初期化する。
+
+### 2. フィルタリングルールの定義
+
+```javascript
+  /* ---------------------------- 許可リスト ---------------------------- */
+  // Home ('/') へのリンクを許可するページ
+  const allowHomeLinks = new Set([
+    '/portfolio',
+    '/blog',
+    '/my-journey',
+  ]);
+  // ... (allowBlogLinks)
+
+  /* ------------------------------------------------------------------- */
+
+  // 除外対象のナビゲーションパス
+  const navPaths = new Set([
+    '/', '/blog', '/tags', '/portfolio', '/anime', '/my-journey',
+  ]);
+  const navPrefixes = ['/test/', '/tailwind/'];
+  const assetPrefixes = ['/_astro/', '/public/', '/model/', '/images/'];
+```
+
+グラフに含めるリンクを細かく制御するため、許可リストと除外リストを`Set`オブジェクトで定義している。`Set`は値の重複を許さず、特定の要素が含まれているかを高速にチェック（`.has()`）できるため、このような用途に適している。
+
+  * 許可リスト (`allow...Links`): 特定のページ（例: ホーム `/`）へのリンクを、どのページから許可するかを定義する。これにより、ヘッダーのロゴなど、全ページから張られる共通リンクをグラフから除外しつつ、意図したページからのリンクは残すことができる。（※現在のコードではこの許可リストは実際には使われていないが、将来的な拡張のために用意されていると考えられる。）
+  * 除外対象 (`navPaths`, `navPrefixes`, `assetPrefixes`): ナビゲーションメニューのリンクや、画像・CSS・JavaScriptといったアセットファイルへのリンクなど、ページの主題とは直接関係のないリンクをグラフから除外するために使う。
+
+### 3. HTMLファイルのループ処理と解析
+
+`htmlFiles`配列をループし、1つ1つのHTMLファイルを処理していく。
+
+#### パスの正規化
+
+```javascript
+for (const file of htmlFiles) {
+    const rel = path.relative(dist, file);
+    let pagePath;
+    if (rel.endsWith('index.html')) {
+      pagePath = '/' + path.dirname(rel).replace(/\\/g, '/');
+      if (pagePath === '/.') pagePath = '/';
+    } else {
+      // ... (このコードでは使われない)
+    }
+```
+
+  * `path.relative(dist, file)`で、`dist`ディレクトリから見たファイルの相対パスを取得する。
+  * Astroなどのフレームワークでは、ページは通常 `[page-name]/index.html` という構造で生成されるため、`path.dirname()`でディレクトリ名を取得し、それをページパスとしている。
+  * `replace(/\\/g, '/')`は、Windows環境でパス区切り文字が `\` になることを想定し、URLとして扱えるように `/` へ統一している。
+  * ルートディレクトリの`index.html`はパスが `.` となるため、`/` に変換している。
+
+#### ノードの追加
+
+```javascript
+    // ノードを追加
+    nodes.push({
+      id: pagePath,
+      label: pagePath === '/' ? 'Home' : pagePath.slice(1),
+      ext: false,
+    });
+```
+
+正規化された`pagePath`を`id`として、グラフのノードを`nodes`配列に追加する。`label`にはページ名が表示されるようにし、`ext: false`で内部リンクのノードであることを示す。
+
+#### リンクの抽出と解析
+
+```javascript
+    const html = await fs.readFile(file, 'utf8');
+    for (const m of html.matchAll(/href=(?:"([^"]+)"|'([^']+)'|([^\s>]+))/g)) {
+      const href = m[1] || m[2] || m[3];
+      // ...
+    }
+```
+
+  * `fs.readFile`でHTMLファイルの中身を文字列として読み込む。
+  * `html.matchAll()`と正規表現を使い、`href`属性を持つ全てのリンク（`<a>`タグなど）を抽出する。
+  * この正規表現 `/href=(?:"([^"]+)"|'([^']+)'|([^\s>]+))/g` は秀逸で、以下の3つの形式の`href`属性に対応している。
+    1.  `href="..."` （ダブルクォート）
+    2.  `href='...'` （シングルクォート）
+    3.  `href=...` （クォートなし）
+
+#### リンクの種別判定とフィルタリング
+
+抽出した`href`の値ごとに、外部リンクか、アセットか、内部リンクかを判定し、必要なものだけを`links`配列に追加する。
+
+  * 外部リンク: `if (/^https?:\/\//.test(href) || ...)` で判定。外部リンクもグラフのノードとして追加し、`type: 'external'` のリンクで結ぶ。
+  * アセット: `href.match(/\.(css|js|...)$/)` や `assetPrefixes` を使って、画像やCSSなどのアセットを除外する。これらはページ間の関係性を示さないため不要。
+  * 内部リンク:
+      * `'/'` で始まる絶対パス、`'./'` や `'../'` で始まる相対パスを正しく解釈する。相対パスは `path.posix.normalize(path.posix.join(pagePath, href))` を使って、現在のページパスを基準に絶対パスへ変換する。
+      * 自分自身へのリンク（自己ループ）や、`navPaths`に含まれるナビゲーションリンクは除外する。
+      * 全てのチェックを通過した有効な内部リンクのみを、`links.push({ source: pagePath, target: tgt, type })` のようにして`links`配列に追加する。
+
+### 4. 重複排除とJSON書き出し
+
+```javascript
+  /* ---------- ノードの重複排除 ---------- */
+  const uniqNodes = Array.from(new Map(nodes.map(n => [n.id, n])).values());
+
+  /* ---------- JSON 書き出し ---------- */
+  await fs.mkdir(path.resolve('./public'), { recursive: true });
+  await fs.writeFile(
+    path.resolve('./public/graph.json'),
+    JSON.stringify({ nodes: uniqNodes, links }, null, 2),
+    'utf8'
+  );
+```
+
+  * ノードの重複排除: ループ処理の中で、同じ外部リンクが複数のページから参照されると、`nodes`配列に重複して追加されてしまう。そこで `new Map(nodes.map(n => [n.id, n]))` というテクニックを使い、`id`をキーにしてノードをMapに格納することで重複をなくしている。最後に `Array.from(... .values())` でMapの値を配列に戻し、一意なノードリスト`uniqNodes`を得る。
+  * JSON書き出し: `fs.mkdir`で出力先の`public`ディレクトリを（なければ）作成し、`fs.writeFile`で最終的なグラフデータを `public/graph.json` として書き出す。`JSON.stringify`の第3引数に`2`を指定することで、人間が読みやすいようにインデントされたJSONが生成される。
+
+-----
+
+## `generateBlogGraph`関数: ブログ専用グラフ
+
+この関数は`main`関数とほぼ同じロジックだが、ブログに関連するページとリンクのみを対象とする点が異なる。
+
+```javascript
+async function generateBlogGraph() {
+  // blogディレクトリ内のHTMLファイルのみを取得
+  const blogHtmlFiles = await fg('blog//index.html', { cwd: dist, absolute: true });
+  // ...
+  const blogNavPaths = new Set(['/blog']);
+  // ...
+}
+```
+
+`main`関数との主な違い:
+
+  * 探索対象: `fg('blog//index.html', ...)` のように、探索範囲を`dist/blog/`ディレクトリ配下に限定している。
+  * 除外ルール: 除外対象となるナビゲーションパスが `/blog` のみになるなど、ブログに特化したシンプルなルールになっている。
+  * ラベル生成: ノードのラベルを生成する際に、`pagePath.slice(6)` とすることで、共通の接頭辞 `/blog/` を取り除き、記事名だけを表示するようにしている。
+  * 出力ファイル: 結果は `public/blog-graph.json` に書き出される。
+
+これにより、ブログ記事同士や、記事からタグへのリンクといった、より密な関係性だけを抽出したグラフを得ることができる。
+
+-----
+
+## `runAll`関数と実行
+
+```javascript
+// メイン実行
+async function runAll() {
+  await main();
+  await generateBlogGraph();
+}
+
+runAll().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
+```
+
+この部分はスクリプトの実行を管理する。
+
+  * `runAll`関数内で、`main()`と`generateBlogGraph()`を`await`を使って直列に実行する。
+  * `.catch()`で、処理中に何らかのエラーが発生した場合にそれをコンソールに出力し、`process.exit(1)`で異常終了を知らせる。
+
+### まとめ
+
+このスクリプトは、静的サイトジェネレータ（Astroなど）でビルドした後のHTMLを解析し、サイトの構造を把握するための強力なツールである。フィルタリングルールが柔軟に記述されているため、様々な要件に合わせてカスタマイズが可能だ。生成されたJSONファイルは、[D3.js](https://d3js.org/)や[vis-network](https://visjs.github.io/vis-network/docs/network/)などのライブラリと組み合わせることで、ウェブ上でインタラクティブなネットワークグラフとして可視化することに利用できる。
