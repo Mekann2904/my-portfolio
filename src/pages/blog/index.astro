@@ -41,9 +41,7 @@ const posts: Array<{
 
 <BaseLayout title="ブログ一覧" description="すべてのブログ記事" backgroundImage="/images/output_gray.png">
   <head>
-    <script type="application/json" id="blogHead">
-      {JSON.stringify(posts.slice(0, 5))}
-    </script>
+    <script type="application/json" id="blogHead">{JSON.stringify(posts.slice(0, 5))}</script>
   </head>
   <main class="pt-24 container mx-auto px-6 py-8">
     <div class="flex items-center mb-8">
