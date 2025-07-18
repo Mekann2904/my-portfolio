@@ -1,27 +1,11 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-export default function CommandPalette({ onClose }) {
+export default function CommandPalette({ posts = [], onClose }) {
   const [query, setQuery] = useState('');
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [suggestions, setSuggestions] = useState([]); // サジェスト候補
   const [suggestIndex, setSuggestIndex] = useState(-1); // サジェスト選択中
   const inputRef = useRef(null);
-
-  // fetch blog-contents.json
-  useEffect(() => {
-    fetch('/blog-contents.json')
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError('記事データの取得に失敗しました');
-        setLoading(false);
-      });
-  }, []);
 
   // クエリ解析
   const tokens = query.trim().split(/\s+/).filter(Boolean);
@@ -50,7 +34,6 @@ export default function CommandPalette({ onClose }) {
 
   // サジェストロジック
   useEffect(() => {
-    // 入力中のトークンを特定
     const match = query.match(/(?:^|\s)([#>][^\s]*)$/);
     if (!match) {
       setSuggestions([]);
@@ -96,7 +79,6 @@ export default function CommandPalette({ onClose }) {
   };
 
   const handleSuggestSelect = (item) => {
-    // 入力中のトークンを置換
     const match = query.match(/(?:^|\s)([#>][^\s]*)$/);
     if (!match) return;
     const before = query.slice(0, match.index + match[0].length - match[1].length);
@@ -105,7 +87,6 @@ export default function CommandPalette({ onClose }) {
     setQuery((before + insert + ' ' + after).replace(/\s+$/, ' '));
     setSuggestions([]);
     setSuggestIndex(-1);
-    // フォーカスを戻す
     setTimeout(() => {
       inputRef.current && inputRef.current.focus();
     }, 0);
@@ -123,17 +104,14 @@ export default function CommandPalette({ onClose }) {
       ];
     }
     return posts.filter(post => {
-      // タグ条件
       if (tagTokens.length > 0) {
         const postTags = (post.tags || []).map(t => t.toLowerCase());
         if (!tagTokens.every(tag => postTags.includes(tag))) return false;
       }
-      // ユーザー条件
       if (userTokens.length > 0) {
         const author = (post.author || '').toLowerCase();
         if (!userTokens.every(user => author.includes(user))) return false;
       }
-      // キーワード条件
       if (keywordTokens.length > 0) {
         const haystack = [post.title, post.description, post.content].map(x => (x || '').toLowerCase()).join(' ');
         if (!keywordTokens.every(kw => haystack.includes(kw))) return false;
@@ -206,9 +184,8 @@ export default function CommandPalette({ onClose }) {
         )}
         {/* 検索結果リスト */}
         <div>
-          {loading && <div className="py-8 text-center text-gray-400">読み込み中...</div>}
           {error && <div className="py-8 text-center text-red-400">{error}</div>}
-          {!loading && !error && (
+          {!error && (
             <>
               {isHelp ? (
                 <>

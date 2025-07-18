@@ -16,26 +16,6 @@
       "ext": true
     },
     {
-      "id": "/blog/divergences",
-      "label": "divergences",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/AnubisNekhet/AnuPpuccin",
-      "label": "https://github.com/AnubisNekhet/AnuPpuccin",
-      "ext": true
-    },
-    {
-      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
-      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
-      "ext": true
-    },
-    {
-      "id": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
-      "label": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
-      "ext": true
-    },
-    {
       "id": "/blog/command-palette-explanation",
       "label": "command-palette-explanation",
       "ext": false
@@ -53,6 +33,26 @@
     {
       "id": "https://docs.astro.build/ja/guides/integrations-guide/",
       "label": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "ext": true
+    },
+    {
+      "id": "/blog/divergences",
+      "label": "divergences",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "label": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "label": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
       "ext": true
     },
     {
@@ -408,151 +408,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#1-緒言",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#2-既存テーマの改変と課題",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#21-カスタマイズの動機と初期段階",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#22-技術的課題",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#23-自作テーマ開発への移行",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#3-新規テーマdivergencesの開発",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#31-開発理念と目標",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#32-開発手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#4-divergencesの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#41-step-1-テーマのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#42-step-2-関連プラグインの導入",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#43-step-3-カスタム背景の設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#5-考察",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#6-結論",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
-      "type": "external"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
-      "type": "external"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
-      "type": "external"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/tags/自作テーマ",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/tags/CSS",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/tags/Divergences",
-      "type": "tag"
-    },
-    {
       "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
@@ -770,6 +625,151 @@
     {
       "source": "/blog/compress-astro",
       "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#1-緒言",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#2-既存テーマの改変と課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#21-カスタマイズの動機と初期段階",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#22-技術的課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#23-自作テーマ開発への移行",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#3-新規テーマdivergencesの開発",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#31-開発理念と目標",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#32-開発手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#4-divergencesの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#41-step-1-テーマのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#42-step-2-関連プラグインの導入",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#43-step-3-カスタム背景の設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#5-考察",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#6-結論",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/自作テーマ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/CSS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Divergences",
       "type": "tag"
     },
     {
