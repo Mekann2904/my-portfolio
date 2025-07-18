@@ -23,8 +23,6 @@ export default function ExtractLinks() {
           <li key={link.url}>
             <a
               href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-blue-400 hover:underline break-all"
             >
               {link.title}
