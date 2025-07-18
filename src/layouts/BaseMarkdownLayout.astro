@@ -86,15 +86,15 @@ if (rawProps.optimizedImg) {
   const imgMod = await import(rawProps.optimizedImg);
   const optimized = await getImage({ 
     src: imgMod.default ?? imgMod, 
-    format: 'webp', 
-    quality: 80,
+    format: 'avif', 
+    quality: 60,
     widths: [400, 800, 1200, 1600], // レスポンシブ対応のための複数サイズ
     densities: [1, 2] // 高解像度ディスプレイ対応
   });
   rawProps.optimizedImg = optimized.src;
 }
 
-const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 80 });
+const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 60 });
 ---
 
 <html lang="ja" class="bg-black">
