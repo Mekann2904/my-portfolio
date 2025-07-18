@@ -76,6 +76,36 @@
       "ext": false
     },
     {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
+    },
+    {
+      "id": "/blog/generate-graph",
+      "label": "generate-graph",
+      "ext": false
+    },
+    {
+      "id": "https://d3js.org/",
+      "label": "https://d3js.org/",
+      "ext": true
+    },
+    {
+      "id": "https://visjs.github.io/vis-network/docs/network/",
+      "label": "https://visjs.github.io/vis-network/docs/network/",
+      "ext": true
+    },
+    {
       "id": "/blog/image-embedding-guide",
       "label": "image-embedding-guide",
       "ext": false
@@ -136,21 +166,6 @@
       "ext": true
     },
     {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "ext": true
-    },
-    {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
-      "ext": true
-    },
-    {
       "id": "/blog/prefetch-enabled",
       "label": "prefetch-enabled",
       "ext": false
@@ -161,24 +176,19 @@
       "ext": true
     },
     {
+      "id": "/blog/vault-organizer",
+      "label": "vault-organizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "ext": true
+    },
+    {
       "id": "/blog/why-not-tree",
       "label": "why-not-tree",
       "ext": false
-    },
-    {
-      "id": "/blog/generate-graph",
-      "label": "generate-graph",
-      "ext": false
-    },
-    {
-      "id": "https://d3js.org/",
-      "label": "https://d3js.org/",
-      "ext": true
-    },
-    {
-      "id": "https://visjs.github.io/vis-network/docs/network/",
-      "label": "https://visjs.github.io/vis-network/docs/network/",
-      "ext": true
     },
     {
       "id": "/blog/youtube-embed",
@@ -198,16 +208,6 @@
     {
       "id": "https://docs.astro.build/en/guides/images/#remote-images",
       "label": "https://docs.astro.build/en/guides/images/#remote-images",
-      "ext": true
-    },
-    {
-      "id": "/blog/vault-organizer",
-      "label": "vault-organizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
-      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
       "ext": true
     }
   ],
@@ -591,6 +591,11 @@
       "source": "/blog/compress-astro",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/inline-css-astro",
+      "type": "normal"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -998,6 +1003,306 @@
       "type": "tag"
     },
     {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/compress-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#generate-graphmjs-コード解説サイト構造を解析し関係グラフを生成する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#全体構成",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#使用モジュール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#main関数-サイト全体のグラフ生成",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#1-ファイルの探索と初期化",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#2-フィルタリングルールの定義",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#3-htmlファイルのループ処理と解析",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#パスの正規化",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#ノードの追加",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#リンクの抽出と解析",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#リンクの種別判定とフィルタリング",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#4-重複排除とjson書き出し",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#generatebloggraph関数-ブログ専用グラフ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#runall関数と実行",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog/generate-graph/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://d3js.org/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://visjs.github.io/vis-network/docs/network/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/tags/グラフ構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/tags/json",
+      "type": "tag"
+    },
+    {
       "source": "/blog/image-embedding-guide",
       "target": "/",
       "type": "normal"
@@ -1116,6 +1421,11 @@
       "source": "/blog/image-embedding-guide",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog/astro-image-optimization",
+      "type": "normal"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1261,6 +1571,11 @@
       "source": "/blog/inline-css-astro",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/prefetch-enabled",
+      "type": "normal"
     },
     {
       "source": "/blog/mac-smartmontools",
@@ -1543,141 +1858,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
-      "type": "tag"
-    },
-    {
       "source": "/blog/prefetch-enabled",
       "target": "/",
       "type": "normal"
@@ -1803,399 +1983,9 @@
       "type": "tag"
     },
     {
-      "source": "/blog/why-not-tree",
-      "target": "/",
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/image-embedding-guide",
       "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/ツリー構造",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/リゾーム",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Zettelkasten",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#generate-graphmjs-コード解説サイト構造を解析し関係グラフを生成する",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#全体構成",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#使用モジュール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#main関数-サイト全体のグラフ生成",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#1-ファイルの探索と初期化",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#2-フィルタリングルールの定義",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#3-htmlファイルのループ処理と解析",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#パスの正規化",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#ノードの追加",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#リンクの抽出と解析",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#リンクの種別判定とフィルタリング",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#4-重複排除とjson書き出し",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#generatebloggraph関数-ブログ専用グラフ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#runall関数と実行",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog/generate-graph/#まとめ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://d3js.org/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://visjs.github.io/vis-network/docs/network/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/tags/グラフ構造",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/tags/json",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog/youtube-embed/#通常の使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog/youtube-embed/#サムネイル画像をローカル最適化したい場合",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog/youtube-embed/#仕組み",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog/youtube-embed/#まとめ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog/youtube-embed/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://youtube.com/watch?v=jNQXAC9IVRw",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://docs.astro.build/en/guides/images/#remote-images",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/tags/YouTube",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/tags/埋め込み",
-      "type": "tag"
     },
     {
       "source": "/blog/vault-organizer",
@@ -2325,6 +2115,241 @@
     {
       "source": "/blog/vault-organizer",
       "target": "/tags/vault-organizer",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/ツリー構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/リゾーム",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Zettelkasten",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#通常の使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#サムネイル画像をローカル最適化したい場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#仕組み",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog/youtube-embed/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://youtube.com/watch?v=jNQXAC9IVRw",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/en/guides/images/#remote-images",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/YouTube",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/tags/埋め込み",
       "type": "tag"
     }
   ]
