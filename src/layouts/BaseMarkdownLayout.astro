@@ -252,9 +252,9 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
     </footer>
 
     {/* グラフ表示用のスクリプト */}
-    <script>
+    <script type="module">
       // blog-graph.jsonを読み込んでD3.jsでグラフを表示
-      let blogSvg: any, blogSim: any;
+      let blogSvg, blogSim;
       let blogGraphLoaded = false;
 
       // IntersectionObserver が初めて可視領域を検知したらロード
@@ -283,7 +283,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
           if (!blogContainer) return;
           
           // blog-graph.json の読み込み
-          let nodes: any[] = [], links: any[] = [];
+          let nodes = [], links = [];
           try {
             const graph = await fetch('/blog-graph.json').then((r) => r.json());
             nodes = graph.nodes || [];
@@ -305,8 +305,8 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
           }
 
           // 存在しないノードを参照するリンクを除外
-          const nodeIds = new Set(nodes.map((d: any) => d.id));
-          links = links.filter((l: any) => nodeIds.has(l.source) && nodeIds.has(l.target));
+          const nodeIds = new Set(nodes.map((d) => d.id));
+          links = links.filter((l) => nodeIds.has(l.source) && nodeIds.has(l.target));
 
           const W = blogContainer.clientWidth;
           const H = blogContainer.clientHeight;
@@ -318,7 +318,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
             .call(
               d3.zoom()
                 .scaleExtent([0.3, 3])
-                .on('zoom', ({ transform }: any) => inner.attr('transform', transform))
+                .on('zoom', ({ transform }) => inner.attr('transform', transform))
             );
 
           const inner = blogSvg.append('g');
@@ -339,9 +339,9 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
           // 現在のページのノードを特定
           const currentPath = window.location.pathname;
           console.log('Current path:', currentPath);
-          console.log('Available nodes:', nodes.map((d: any) => d.id));
+          console.log('Available nodes:', nodes.map((d) => d.id));
           
-          const currentNode = nodes.find((d: any) => d.id === currentPath);
+          const currentNode = nodes.find((d) => d.id === currentPath);
           console.log('Found current node:', currentNode);
           
           // パスが完全一致しない場合の代替手段
@@ -349,37 +349,37 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
           if (!targetNode) {
             // 末尾のスラッシュを除去して再試行
             const pathWithoutSlash = currentPath.replace(/\/$/, '');
-            targetNode = nodes.find((d: any) => d.id === pathWithoutSlash);
+            targetNode = nodes.find((d) => d.id === pathWithoutSlash);
             console.log('Trying without trailing slash:', pathWithoutSlash, 'Found:', targetNode);
           }
           if (!targetNode) {
             // blog/プレフィックスを追加して再試行
             const pathWithBlog = currentPath.startsWith('/blog/') ? currentPath : `/blog${currentPath}`;
-            targetNode = nodes.find((d: any) => d.id === pathWithBlog);
+            targetNode = nodes.find((d) => d.id === pathWithBlog);
             console.log('Trying with blog prefix:', pathWithBlog, 'Found:', targetNode);
           }
           if (!targetNode) {
             // 部分一致で検索
-            targetNode = nodes.find((d: any) => d.id.includes(currentPath.replace(/^\//, '')));
+            targetNode = nodes.find((d) => d.id.includes(currentPath.replace(/^\//, '')));
             console.log('Trying partial match, Found:', targetNode);
           }
 
           node.append('circle')
-            .attr('r', (d: any) => {
+            .attr('r', (d) => {
               if (d.id === (targetNode?.id || currentPath)) return 8; // 現在のノード
               return d.ext ? 6 : 4; // 外部リンク or 内部リンク
             })
-            .attr('fill', (d: any) => (d.ext ? '#ff9b00' : '#fff'))
-            .attr('stroke', (d: any) => d.id === (targetNode?.id || currentPath) ? '#3b82f6' : '#fff')
-            .attr('stroke-width', (d: any) => d.id === (targetNode?.id || currentPath) ? 3 : (d.ext ? 1.5 : 0.8))
-            .on('click', (_: any, d: any) => { 
+            .attr('fill', (d) => (d.ext ? '#ff9b00' : '#fff'))
+            .attr('stroke', (d) => d.id === (targetNode?.id || currentPath) ? '#3b82f6' : '#fff')
+            .attr('stroke-width', (d) => d.id === (targetNode?.id || currentPath) ? 3 : (d.ext ? 1.5 : 0.8))
+            .on('click', (_, d) => { 
               if (!d.ext && d.id.startsWith('/blog/')) {
                 location.href = d.id; 
               }
             });
 
           node.append('text')
-            .text((d: any) => d.label.length > 15 ? d.label.substring(0, 15) + '...' : d.label)
+            .text((d) => d.label.length > 15 ? d.label.substring(0, 15) + '...' : d.label)
             .attr('x', 8)
             .attr('y', 3)
             .attr('fill', '#fff')
@@ -388,17 +388,17 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
             .style('text-shadow', '0 0 3px rgba(0,0,0,0.8)');
 
           blogSim = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id((d: any) => d.id).distance(80))
+            .force('link', d3.forceLink(links).id((d) => d.id).distance(80))
             .force('charge', d3.forceManyBody().strength(-300))
-            .force('collide', d3.forceCollide().radius((d: any) => (d.ext ? 6 : 4) + 10))
+            .force('collide', d3.forceCollide().radius((d) => (d.ext ? 6 : 4) + 10))
             .force('center', d3.forceCenter(W / 2, H / 2))
             .alpha(1)
             .alphaDecay(0.05)
             .on('tick', () => {
               link
-                .attr('x1', (d: any) => d.source.x).attr('y1', (d: any) => d.source.y)
-                .attr('x2', (d: any) => d.target.x).attr('y2', (d: any) => d.target.y);
-              node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+                .attr('x1', (d) => d.source.x).attr('y1', (d) => d.source.y)
+                .attr('x2', (d) => d.target.x).attr('y2', (d) => d.target.y);
+              node.attr('transform', (d) => `translate(${d.x},${d.y})`);
             });
 
           // 現在のページのノードを中央に固定（シミュレーション開始後に実行）
@@ -416,12 +416,12 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
 
           node.call(
             d3.drag()
-              .on('start', (e: any, d: any) => {
+              .on('start', (e, d) => {
                 if (!e.active) blogSim.alphaTarget(0.3).restart();
                 d.fx = d.x; d.fy = d.y;
               })
-              .on('drag', (e: any, d: any) => { d.fx = e.x; d.fy = e.y; })
-              .on('end', (e: any, d: any) => {
+              .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+              .on('end', (e, d) => {
                 if (!e.active) blogSim.alphaTarget(0);
                 d.fx = d.fy = null;
               })

@@ -17,7 +17,7 @@ export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
 
   prefetch: {
-    prefetchAll: true
+    prefetchAll: false
   },
 
   integrations: [react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
