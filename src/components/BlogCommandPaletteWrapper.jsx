@@ -11,42 +11,36 @@ export default function BlogCommandPaletteWrapper() {
   const closePalette = useCallback(() => setShowPalette(false), []);
 
   useEffect(() => {
-    // まずインラインJSON（blogHead）を利用
-    const headScript = document.getElementById('blogHead');
-    if (headScript) {
-      try {
-        const headData = JSON.parse(headScript.textContent || '[]');
-        setPosts(headData);
+    // コンポーネントのマウント時に一度だけデータを取得
+    fetch('/blog-contents.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then(data => {
+        setPosts(data);
+      })
+      .catch(e => {
+        console.error("Failed to fetch blog contents:", e);
+        setError('記事データの取得に失敗しました');
+      })
+      .finally(() => {
         setLoading(false);
-      } catch (e) {
-        // パース失敗時はfetchにフォールバック
-      }
-    }
-    // LCP後に全件fetch
-    window.addEventListener('load', () => {
-      fetch('/blog-contents.json')
-        .then(res => res.json())
-        .then(data => {
-          setPosts(data);
-          setLoading(false);
-        })
-        .catch(e => {
-          setError('記事データの取得に失敗しました');
-          setLoading(false);
-        });
-    }, { once: true });
+      });
   }, []);
 
   useEffect(() => {
     const handler = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        setShowPalette(true);
+        openPalette();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, []);
+  }, [openPalette]);
 
   return (
     <>
@@ -64,10 +58,8 @@ export default function BlogCommandPaletteWrapper() {
         </svg>
       </button>
       {showPalette && (
-        <CommandPalette posts={posts} onClose={closePalette} />
+        <CommandPalette posts={posts} onClose={closePalette} loading={loading} error={error} />
       )}
-      {loading && <div className="py-8 text-center text-gray-400">読み込み中...</div>}
-      {error && <div className="py-8 text-center text-red-400">{error}</div>}
     </>
   );
-} 
+}

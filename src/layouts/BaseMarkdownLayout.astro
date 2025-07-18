@@ -11,6 +11,13 @@ import Backlinks from '../components/Backlinks.jsx';
 import fs from 'fs';
 import path from 'path';
 
+// --- 型定義 ---
+interface BlogPost {
+  slug: string;
+  title: string;
+  content: string;
+}
+
 // --- Props処理 ---
 // Markdownレイアウトとして使用する場合、Astroが自動的にheadingsをpropsに含めてくれる
 const { headings } = Astro.props as { headings: MarkdownHeading[] };
@@ -44,7 +51,7 @@ const linksToShow = links && links.length > 0 ? links : autoLinks;
 
 // --- Backlinks生成ロジック ---
 const blogContentsPath = path.join(process.cwd(), 'public', 'blog-contents.json');
-const blogContents = JSON.parse(fs.readFileSync(blogContentsPath, 'utf-8'));
+const blogContents: BlogPost[] = JSON.parse(fs.readFileSync(blogContentsPath, 'utf-8'));
 const currentSlug = Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
 const candidates = [
   `../blog/${currentSlug}`,
@@ -53,17 +60,17 @@ const candidates = [
   `${currentSlug}`,
 ];
 const backlinks = blogContents
-  .filter(post => {
+  .filter((post: BlogPost) => {
     if (!post.content || !post.slug) return false;
     // 自分自身へのリンクは除外
     if (post.slug === currentSlug) return false;
     const matches = Array.from(post.content.matchAll(/\[[^\]]+]\(([^)]+)\)/g));
-    return matches.some(m => {
+    return matches.some((m: RegExpMatchArray) => {
       const linkPath = m[1].replace(/\.(md|mdx)$/, '').replace(/\/$/, '');
       return candidates.some(c => linkPath.endsWith(c));
     });
   })
-  .map(post => ({ slug: post.slug, title: post.title }));
+  .map((post: BlogPost) => ({ slug: post.slug, title: post.title }));
 
 // --- OGP/URL関連 (変更なし) ---
 const canonicalURL = Astro.url;

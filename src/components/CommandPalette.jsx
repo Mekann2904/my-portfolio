@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-export default function CommandPalette({ posts = [], onClose }) {
+export default function CommandPalette({ posts = [], onClose, loading, error: parentError }) {
   const [query, setQuery] = useState('');
-  const [error, setError] = useState(null);
   const [suggestions, setSuggestions] = useState([]); // サジェスト候補
   const [suggestIndex, setSuggestIndex] = useState(-1); // サジェスト選択中
   const inputRef = useRef(null);
@@ -13,6 +12,14 @@ export default function CommandPalette({ posts = [], onClose }) {
   const userTokens = tokens.filter(t => t.startsWith('>')).map(t => t.slice(1).toLowerCase());
   const keywordTokens = tokens.filter(t => !t.startsWith('#') && !t.startsWith('>') && t !== '?').map(t => t.toLowerCase());
   const isHelp = tokens.length === 1 && tokens[0] === '?';
+
+  // 検索用にデータを事前処理
+  const searchablePosts = useMemo(() => {
+    return posts.map(post => ({
+      ...post,
+      searchableText: [post.title, post.description, post.content].map(x => (x || '').toLowerCase()).join(' ')
+    }));
+  }, [posts]);
 
   // タグ・ユーザー一覧
   const allTags = useMemo(() => {
@@ -34,7 +41,7 @@ export default function CommandPalette({ posts = [], onClose }) {
 
   // サジェストロジック
   useEffect(() => {
-    const match = query.match(/(?:^|\s)([#>][^\s]*)$/);
+    const match = query.match(/(?:^|\s)([#>]\S*)$/);
     if (!match) {
       setSuggestions([]);
       setSuggestIndex(-1);
@@ -79,7 +86,7 @@ export default function CommandPalette({ posts = [], onClose }) {
   };
 
   const handleSuggestSelect = (item) => {
-    const match = query.match(/(?:^|\s)([#>][^\s]*)$/);
+    const match = query.match(/(?:^|\s)([#>]\S*)$/);
     if (!match) return;
     const before = query.slice(0, match.index + match[0].length - match[1].length);
     const insert = item.type === 'tag' ? `#${item.value}` : `>${item.value}`;
@@ -103,7 +110,7 @@ export default function CommandPalette({ posts = [], onClose }) {
         '「?」のみでこのヘルプを表示'
       ];
     }
-    return posts.filter(post => {
+    return searchablePosts.filter(post => {
       if (tagTokens.length > 0) {
         const postTags = (post.tags || []).map(t => t.toLowerCase());
         if (!tagTokens.every(tag => postTags.includes(tag))) return false;
@@ -113,12 +120,11 @@ export default function CommandPalette({ posts = [], onClose }) {
         if (!userTokens.every(user => author.includes(user))) return false;
       }
       if (keywordTokens.length > 0) {
-        const haystack = [post.title, post.description, post.content].map(x => (x || '').toLowerCase()).join(' ');
-        if (!keywordTokens.every(kw => haystack.includes(kw))) return false;
+        if (!keywordTokens.every(kw => post.searchableText.includes(kw))) return false;
       }
       return true;
     });
-  }, [isHelp, posts, tagTokens, userTokens, keywordTokens]);
+  }, [isHelp, searchablePosts, tagTokens, userTokens, keywordTokens]);
 
   // ESCキーで閉じる
   useEffect(() => {
@@ -184,8 +190,9 @@ export default function CommandPalette({ posts = [], onClose }) {
         )}
         {/* 検索結果リスト */}
         <div>
-          {error && <div className="py-8 text-center text-red-400">{error}</div>}
-          {!error && (
+          {parentError && <div className="py-8 text-center text-red-400">{parentError}</div>}
+          {loading && <div className="py-8 text-center text-gray-400">読み込み中...</div>}
+          {!parentError && !loading && (
             <>
               {isHelp ? (
                 <>
