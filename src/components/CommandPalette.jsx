@@ -55,7 +55,7 @@ export default function CommandPalette({ posts = [], onClose }) {
       setSuggestions([]);
       setSuggestIndex(-1);
     }
-  }, [query, allTags, allUsers, tagTokens, userTokens]);
+  }, [query, allTags, allUsers]);
 
   // サジェスト選択・補完
   const handleInputKeyDown = (e) => {
@@ -242,7 +242,7 @@ export default function CommandPalette({ posts = [], onClose }) {
             <span className="font-mono text-gray-200">?</span> ヘルプ
           </span>
         </div>
-        <style jsx>{`
+        <style>{`
           .scrollbar-hide::-webkit-scrollbar {
             display: none;
           }

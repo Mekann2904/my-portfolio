@@ -295,7 +295,6 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
             links = graph.links || [];
           } catch (e) {
             console.warn('blog-graph.json の読み込みに失敗しました:', e);
-            // エラー時の表示
             blogContainer.innerHTML = `
               <div class="flex items-center justify-center h-full text-gray-500">
                 <div class="text-center">
