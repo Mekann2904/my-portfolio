@@ -12,6 +12,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkExtractUrls from './remark-extract-urls.js';
 
 import playformCompress from '@playform/compress';
+import critters from 'astro-critters';
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
@@ -44,7 +45,7 @@ export default defineConfig({
       [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
       rehypeSlug,
     ],
-  }), playformCompress()],
+  }), playformCompress(), critters()],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],
