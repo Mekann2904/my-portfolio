@@ -131,6 +131,49 @@ article.prose span.katex {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* レスポンシブ画像のアスペクト比維持 */
+.prose img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* 大きな画像の場合はスクロール可能にする */
+.prose img {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* picture要素内の画像も同様にスタイリング */
+.prose picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.prose picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 画像キャプションのスタイリング */
+.prose figure {
+  margin: 2rem 0;
+}
+
+.prose figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 .prose svg,

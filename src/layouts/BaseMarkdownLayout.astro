@@ -84,7 +84,13 @@ const displayDate = validDate
 if (rawProps.optimizedImg) {
   const { getImage } = await import('astro:assets');
   const imgMod = await import(rawProps.optimizedImg);
-  const optimized = await getImage({ src: imgMod.default ?? imgMod, format: 'webp', quality: 80 });
+  const optimized = await getImage({ 
+    src: imgMod.default ?? imgMod, 
+    format: 'webp', 
+    quality: 80,
+    widths: [400, 800, 1200, 1600], // レスポンシブ対応のための複数サイズ
+    densities: [1, 2] // 高解像度ディスプレイ対応
+  });
   rawProps.optimizedImg = optimized.src;
 }
 
@@ -170,7 +176,9 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
                    bg-black/0
                    prose-pre:bg-slate-800 prose-pre:text-gray-100 prose-pre:p-4 
                    prose-pre:rounded-lg prose-pre:overflow-auto prose-pre:my-6
-                   prose-code:bg-transparent prose-code:text-inherit"
+                   prose-code:bg-transparent prose-code:text-inherit
+                   prose-img:max-w-full prose-img:h-auto prose-img:rounded-lg
+                   prose-img:shadow-lg prose-img:my-6"
           >
             {validDate && (
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-6 lg:mb-8">
@@ -268,6 +276,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
       }
 
       async function initBlogGraph() {
+        // @ts-ignore
         const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm');
 
         async function buildBlogGraph() {
