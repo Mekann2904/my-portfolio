@@ -1,0 +1,7 @@
+# ===== 静的アセット =====
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ===== 動的更新 JSON =====
+/blog-contents.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=600 
