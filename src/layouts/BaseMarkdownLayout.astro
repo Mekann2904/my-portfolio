@@ -268,6 +268,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'webp', quality: 8
       }
 
       async function initBlogGraph() {
+        // @ts-ignore
         const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm');
 
         async function buildBlogGraph() {

@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import cloudflare from '@astrojs/cloudflare';
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -15,44 +16,46 @@ import playformCompress from '@playform/compress';
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
-
-  prefetch: {
-    prefetchAll: true
-  },
-
-  integrations: [react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
-  mdx({
-    remarkPlugins: [
-      remarkMath,
-      [remarkMermaid, {
-        wrap: {
-          tagName: 'div',
-          className: 'mermaid-diagram-container'
-        },
-        theme: 'base',
-        themeVariables: {
-          primaryColor: '#18181b',
-          primaryTextColor: '#f3f4f6',
-          primaryBorderColor: '#6366f1',
-          lineColor: '#6366f1',
-          fontFamily: 'sans-serif',
-        }
-      }],
-      remarkExtractUrls,
-    ],
-    rehypePlugins: [
-      [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
-      rehypeSlug,
-    ],
-  }), playformCompress()],
+  adapter: cloudflare(),
+  
+  integrations: [
+    react(), 
+    tailwind(), 
+    mdx({
+      remarkPlugins: [
+        remarkMath,
+        [remarkMermaid, {
+          wrap: {
+            tagName: 'div',
+            className: 'mermaid-diagram-container'
+          },
+          theme: 'base',
+          themeVariables: {
+            primaryColor: '#18181b',
+            primaryTextColor: '#f3f4f6',
+            primaryBorderColor: '#6366f1',
+            lineColor: '#6366f1',
+            fontFamily: 'sans-serif',
+          }
+        }],
+        remarkExtractUrls,
+      ],
+      rehypePlugins: [
+        [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
+        rehypeSlug,
+      ],
+    }), 
+    playformCompress()
+  ],
+  
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],
   },
+  
   vite: {
     build: {
-      cssMinify: 'esbuild',
-      minify: true,
+      minify: false,
     },
     optimizeDeps: { include: ['three'] },
     ssr: { noExternal: ['three'] },

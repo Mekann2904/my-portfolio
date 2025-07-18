@@ -21,21 +21,6 @@
       "ext": false
     },
     {
-      "id": "/blog/compress-astro",
-      "label": "compress-astro",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/playform/compress",
-      "label": "https://github.com/playform/compress",
-      "ext": true
-    },
-    {
-      "id": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "label": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "ext": true
-    },
-    {
       "id": "/blog/divergences",
       "label": "divergences",
       "ext": false
@@ -56,23 +41,18 @@
       "ext": true
     },
     {
-      "id": "/blog/download-box",
-      "label": "download-box",
+      "id": "/blog/compress-astro",
+      "label": "compress-astro",
       "ext": false
     },
     {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "id": "https://github.com/playform/compress",
+      "label": "https://github.com/playform/compress",
       "ext": true
     },
     {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/",
       "ext": true
     },
     {
@@ -91,6 +71,21 @@
       "ext": true
     },
     {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
+    },
+    {
       "id": "/blog/image-embedding-guide",
       "label": "image-embedding-guide",
       "ext": false
@@ -99,6 +94,11 @@
       "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
       "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
       "ext": true
+    },
+    {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
     },
     {
       "id": "/blog/inline-css-astro",
@@ -518,116 +518,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#playformcompressの主な機能",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#1-パッケージの追加",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#2-設定内容の確認",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#注意点と補足事項",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://github.com/playform/compress",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/ファイル圧縮",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
       "source": "/blog/divergences",
       "target": "/",
       "type": "normal"
@@ -773,208 +663,113 @@
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/test/three",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/test/three-1",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/test/three-2",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/test/three-3",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/compress-astro",
       "target": "/test/three-4",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#playformcompressの主な機能",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#導入手順",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#1-パッケージの追加",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#2-設定内容の確認",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#注意点と補足事項",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#参考リンク",
       "type": "normal"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
+      "source": "/blog/compress-astro",
+      "target": "/blog/blog/google-fonts-optimizer",
       "type": "normal"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "source": "/blog/compress-astro",
+      "target": "https://github.com/playform/compress",
       "type": "external"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
+      "source": "/blog/compress-astro",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
       "type": "external"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
+      "source": "/blog/compress-astro",
       "target": "/tags/Astro",
       "type": "tag"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
+      "source": "/blog/compress-astro",
+      "target": "/tags/ファイル圧縮",
       "type": "tag"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
+      "source": "/blog/compress-astro",
       "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
       "type": "tag"
     },
     {
@@ -1118,6 +913,121 @@
       "type": "tag"
     },
     {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
       "source": "/blog/image-embedding-guide",
       "target": "/",
       "type": "normal"
@@ -1215,6 +1125,96 @@
     {
       "source": "/blog/image-embedding-guide",
       "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
       "type": "tag"
     },
     {
