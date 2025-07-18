@@ -19,6 +19,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
     <meta name="description" content={description} />
     <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" />
     <script src="https://static.cloudflareinsights.com/beacon.min.js" async defer data-cf-beacon='{"token":"YOUR_TOKEN_HERE"}'></script>
+    <slot name="head" />
   </head>
   <body class="bg-black text-white relative flex flex-col min-h-screen bg-faint-image"
     style={`--faint-bg: url('${optimizedBg.src}');`}
@@ -61,15 +62,5 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
         © {new Date().getFullYear()} Mekann. All rights reserved.
       </div>
     </footer>
-
-    <!-- Mermaid Initialization -->
-    <script is:inline>
-      import mermaid from 'mermaid';
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        securityLevel: 'loose'
-      });
-    </script>
   </body>
 </html>

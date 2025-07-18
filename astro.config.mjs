@@ -7,7 +7,6 @@ import mdx from '@astrojs/mdx';
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import remarkMermaid from 'remark-mermaidjs';
 import rehypeSlug from 'rehype-slug';
 import remarkExtractUrls from './remark-extract-urls.js';
 
@@ -25,20 +24,6 @@ export default defineConfig({
   mdx({
     remarkPlugins: [
       remarkMath,
-      [remarkMermaid, {
-        wrap: {
-          tagName: 'div',
-          className: 'mermaid-diagram-container'
-        },
-        theme: 'base',
-        themeVariables: {
-          primaryColor: '#18181b',
-          primaryTextColor: '#f3f4f6',
-          primaryBorderColor: '#6366f1',
-          lineColor: '#6366f1',
-          fontFamily: 'sans-serif',
-        }
-      }],
       remarkExtractUrls,
     ],
     rehypePlugins: [

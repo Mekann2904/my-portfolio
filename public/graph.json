@@ -226,11 +226,6 @@
       "ext": true
     },
     {
-      "id": "/blog/why-not-tree",
-      "label": "blog/why-not-tree",
-      "ext": false
-    },
-    {
       "id": "/blog/vault-organizer",
       "label": "blog/vault-organizer",
       "ext": false
@@ -239,6 +234,11 @@
       "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
       "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
       "ext": true
+    },
+    {
+      "id": "/blog/why-not-tree",
+      "label": "blog/why-not-tree",
+      "ext": false
     },
     {
       "id": "/blog/youtube-embed",
@@ -2073,81 +2073,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/why-not-tree",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/ツリー構造",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/リゾーム",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Zettelkasten",
-      "type": "tag"
-    },
-    {
       "source": "/blog/vault-organizer",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
@@ -2235,6 +2160,81 @@
     {
       "source": "/blog/vault-organizer",
       "target": "/tags/vault-organizer",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/ツリー構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/リゾーム",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Zettelkasten",
       "type": "tag"
     },
     {
