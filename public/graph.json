@@ -6,6 +6,16 @@
       "ext": false
     },
     {
+      "id": "https://cdn.jsdelivr.net",
+      "label": "https://cdn.jsdelivr.net",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.googleapis.com",
+      "label": "https://fonts.googleapis.com",
+      "ext": true
+    },
+    {
       "id": "https://note.com/mekann",
       "label": "https://note.com/mekann",
       "ext": true
@@ -296,13 +306,13 @@
       "ext": false
     },
     {
-      "id": "/tags/Webパフォーマンス",
-      "label": "tags/Webパフォーマンス",
+      "id": "/tags/YouTube",
+      "label": "tags/YouTube",
       "ext": false
     },
     {
-      "id": "/tags/YouTube",
-      "label": "tags/YouTube",
+      "id": "/tags/Webパフォーマンス",
+      "label": "tags/Webパフォーマンス",
       "ext": false
     },
     {
@@ -534,6 +544,16 @@
   "links": [
     {
       "source": "/",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/",
       "target": "https://note.com/mekann",
       "type": "external"
     },
@@ -550,6 +570,26 @@
     {
       "source": "/",
       "target": "https://x.com/Mekann2904",
+      "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog",
+      "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
@@ -628,8 +668,38 @@
       "type": "normal"
     },
     {
+      "source": "/my-journey",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/portfolio",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/portfolio",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
+      "type": "external"
+    },
+    {
+      "source": "/tags",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags",
+      "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
@@ -799,6 +869,16 @@
     },
     {
       "source": "/blog/astro-image-optimization",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
       "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
       "type": "normal"
     },
@@ -856,6 +936,16 @@
       "source": "/blog/astro-image-optimization",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -929,6 +1019,16 @@
     },
     {
       "source": "/blog/compress-astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
       "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
       "type": "normal"
     },
@@ -996,6 +1096,16 @@
       "source": "/blog/compress-astro",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/divergences",
@@ -1104,6 +1214,16 @@
     },
     {
       "source": "/blog/download-box",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
       "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
       "type": "normal"
     },
@@ -1151,6 +1271,16 @@
       "source": "/blog/download-box",
       "target": "/tags/Tailwind CSS",
       "type": "tag"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/generate-graph",
@@ -1254,6 +1384,16 @@
     },
     {
       "source": "/blog/google-fonts-optimizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
       "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
     },
@@ -1329,6 +1469,16 @@
     },
     {
       "source": "/blog/image-embedding-guide",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
       "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
       "type": "normal"
     },
@@ -1386,6 +1536,16 @@
       "source": "/blog/image-embedding-guide",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1474,6 +1634,16 @@
     },
     {
       "source": "/blog/mac-smartmontools",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
       "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
       "type": "normal"
     },
@@ -1511,6 +1681,16 @@
       "source": "/blog/mac-smartmontools",
       "target": "/tags/温度情報",
       "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -1634,6 +1814,16 @@
     },
     {
       "source": "/blog/prefetch-enabled",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
       "target": "/blog/prefetch-enabled/#プリフェッチとは",
       "type": "normal"
     },
@@ -1696,6 +1886,16 @@
       "source": "/blog/prefetch-enabled",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1769,6 +1969,16 @@
     },
     {
       "source": "/blog/why-not-tree",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
       "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
       "type": "normal"
     },
@@ -1821,6 +2031,16 @@
       "source": "/blog/why-not-tree",
       "target": "/tags/Zettelkasten",
       "type": "tag"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/youtube-embed",
@@ -1884,6 +2104,16 @@
     },
     {
       "source": "/tags/Astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Astro",
       "target": "/blog/generate-graph",
       "type": "normal"
     },
@@ -1924,8 +2154,28 @@
     },
     {
       "source": "/tags/CSS",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/CSS",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/CSS",
       "target": "/blog/divergences",
       "type": "normal"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/CSS最適化",
@@ -1934,8 +2184,28 @@
     },
     {
       "source": "/tags/Divergences",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Divergences",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Divergences",
       "target": "/blog/divergences",
       "type": "normal"
+    },
+    {
+      "source": "/tags/Google Fonts",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Google Fonts",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/Google Fonts",
@@ -1944,8 +2214,28 @@
     },
     {
       "source": "/tags/Hooks",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Hooks",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Hooks",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/MDX",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/MDX",
@@ -1961,6 +2251,16 @@
       "source": "/tags/MDX",
       "target": "/blog/download-box",
       "type": "normal"
+    },
+    {
+      "source": "/tags/Obsidian",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Obsidian",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/Obsidian",
@@ -1984,13 +2284,58 @@
     },
     {
       "source": "/tags/React",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
       "source": "/tags/Tailwind CSS",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
       "target": "/blog/download-box",
       "type": "normal"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/YouTube",
+      "target": "/blog/youtube-embed",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Webパフォーマンス",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/Webパフォーマンス",
@@ -2023,9 +2368,14 @@
       "type": "normal"
     },
     {
-      "source": "/tags/YouTube",
-      "target": "/blog/youtube-embed",
-      "type": "normal"
+      "source": "/tags/Zettelkasten",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/Zettelkasten",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/Zettelkasten",
@@ -2034,8 +2384,28 @@
     },
     {
       "source": "/tags/components",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/components",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/components",
       "target": "/blog/download-box",
       "type": "normal"
+    },
+    {
+      "source": "/tags/json",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/json",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/json",
@@ -2044,8 +2414,28 @@
     },
     {
       "source": "/tags/macOS",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/macOS",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/macOS",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
+    },
+    {
+      "source": "/tags/smartmontools",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/smartmontools",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/smartmontools",
@@ -2054,8 +2444,28 @@
     },
     {
       "source": "/tags/textlint",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/textlint",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/textlint",
       "target": "/blog/obsidian-textlint",
       "type": "normal"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/vault-organizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/vault-organizer",
@@ -2064,8 +2474,28 @@
     },
     {
       "source": "/tags/グラフ構造",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/グラフ構造",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/グラフ構造",
       "target": "/blog/generate-graph",
       "type": "normal"
+    },
+    {
+      "source": "/tags/ツリー構造",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/ツリー構造",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/ツリー構造",
@@ -2074,8 +2504,28 @@
     },
     {
       "source": "/tags/ディスク情報",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/ディスク情報",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/ディスク情報",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
+    },
+    {
+      "source": "/tags/ファイル圧縮",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/ファイル圧縮",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/ファイル圧縮",
@@ -2084,8 +2534,28 @@
     },
     {
       "source": "/tags/フォント最適化",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/フォント最適化",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/フォント最適化",
       "target": "/blog/google-fonts-optimizer",
       "type": "normal"
+    },
+    {
+      "source": "/tags/プラグイン",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/プラグイン",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/プラグイン",
@@ -2099,8 +2569,28 @@
     },
     {
       "source": "/tags/プリフェッチ",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/プリフェッチ",
       "target": "/blog/prefetch-enabled",
       "type": "normal"
+    },
+    {
+      "source": "/tags/リゾーム",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/リゾーム",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/リゾーム",
@@ -2109,8 +2599,28 @@
     },
     {
       "source": "/tags/全文検索",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/全文検索",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/全文検索",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/埋め込み",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/埋め込み",
@@ -2119,13 +2629,43 @@
     },
     {
       "source": "/tags/日本語校正",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/日本語校正",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/日本語校正",
       "target": "/blog/obsidian-textlint",
       "type": "normal"
     },
     {
       "source": "/tags/温度情報",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/温度情報",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/温度情報",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tags/画像最適化",
@@ -2139,8 +2679,28 @@
     },
     {
       "source": "/tags/自作テーマ",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/自作テーマ",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/自作テーマ",
       "target": "/blog/divergences",
       "type": "normal"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tailwind/core-concepts",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/tailwind/core-concepts",
@@ -2220,6 +2780,76 @@
     {
       "source": "/tailwind/core-concepts",
       "target": "https://tailwindcss.com/docs/responsive-design",
+      "type": "external"
+    },
+    {
+      "source": "/test/harmony",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/harmony",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/three",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/three",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-1",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-1",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-2",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-2",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-3",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-3",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-4",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/three-4",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/test/threebase",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/test/threebase",
+      "target": "https://fonts.googleapis.com",
       "type": "external"
     }
   ]

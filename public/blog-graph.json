@@ -6,6 +6,16 @@
       "ext": false
     },
     {
+      "id": "https://cdn.jsdelivr.net",
+      "label": "https://cdn.jsdelivr.net",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.googleapis.com",
+      "label": "https://fonts.googleapis.com",
+      "ext": true
+    },
+    {
       "id": "/blog/astro-image-optimization",
       "label": "astro-image-optimization",
       "ext": false
@@ -56,6 +66,11 @@
       "ext": true
     },
     {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
+    },
+    {
       "id": "/blog/generate-graph",
       "label": "generate-graph",
       "ext": false
@@ -71,9 +86,19 @@
       "ext": true
     },
     {
-      "id": "/blog/download-box",
-      "label": "download-box",
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
       "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
     },
     {
       "id": "/blog/image-embedding-guide",
@@ -109,21 +134,6 @@
       "id": "/blog/mac-smartmontools",
       "label": "mac-smartmontools",
       "ext": false
-    },
-    {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "ext": true
-    },
-    {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
-      "ext": true
     },
     {
       "id": "/blog/obsidian-textlint",
@@ -197,6 +207,16 @@
     }
   ],
   "links": [
+    {
+      "source": "/blog",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
     {
       "source": "/blog",
       "target": "/",
@@ -314,6 +334,16 @@
     },
     {
       "source": "/blog/astro-image-optimization",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
       "target": "/",
       "type": "normal"
     },
@@ -411,6 +441,16 @@
       "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -521,6 +561,16 @@
       "source": "/blog/divergences",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/divergences",
@@ -669,6 +719,16 @@
     },
     {
       "source": "/blog/compress-astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
     },
@@ -773,9 +833,119 @@
       "type": "tag"
     },
     {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
+      "type": "tag"
+    },
+    {
       "source": "/blog/generate-graph",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/generate-graph",
@@ -913,99 +1083,144 @@
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/test/three",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/test/three-1",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/test/three-2",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/test/three-3",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/google-fonts-optimizer",
       "target": "/test/three-4",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
       "type": "tag"
     },
     {
       "source": "/blog/image-embedding-guide",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/image-embedding-guide",
@@ -1106,6 +1321,16 @@
       "source": "/blog/inline-css-astro",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1234,6 +1459,16 @@
     },
     {
       "source": "/blog/mac-smartmontools",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
       "target": "/",
       "type": "normal"
     },
@@ -1308,124 +1543,19 @@
       "type": "tag"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
-      "type": "tag"
-    },
-    {
       "source": "/blog/obsidian-textlint",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -1589,6 +1719,16 @@
     },
     {
       "source": "/blog/prefetch-enabled",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
       "target": "/",
       "type": "normal"
     },
@@ -1691,6 +1831,16 @@
       "source": "/blog/vault-organizer",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1804,6 +1954,16 @@
     },
     {
       "source": "/blog/why-not-tree",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
       "target": "/",
       "type": "normal"
     },
@@ -1896,6 +2056,16 @@
       "source": "/blog/youtube-embed",
       "target": "/",
       "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
     },
     {
       "source": "/blog/youtube-embed",
