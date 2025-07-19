@@ -17,7 +17,7 @@ import DownloadBox from '../../components/DownloadBox.jsx'
     <DownloadBox
       fileName="output_gray.png"
       fileUrl="/images/output_gray.png"
-      client:load
+      client:visible
     />
 
 -----
@@ -49,7 +49,7 @@ import DownloadBox from '../../components/DownloadBox.jsx'
     <DownloadBox
       fileName="sample.pdf"
       fileUrl="/files/sample.pdf"
-      client:load
+      client:visible
     />
     ```
 
@@ -60,7 +60,7 @@ import DownloadBox from '../../components/DownloadBox.jsx'
       fileName="sample.pdf"
       fileUrl="/files/sample.pdf"
       description="サンプルファイルのダウンロード"
-      client:load
+      client:visible
     />
     ```
 
@@ -71,7 +71,7 @@ import DownloadBox from '../../components/DownloadBox.jsx'
   - 対象ファイル（例: PDF）は`public/`フォルダに配置する必要がある。
   - `fileUrl`には`/ファイル名`のようにルートパスで指定する。
   - `description`は省略可能である。
-  - **MDXで使う場合は必ず`client:load`を付与する必要がある。**
+  - **MDXで使う場合は必ず`client:visible`を付与する必要がある。**
 
 -----
 

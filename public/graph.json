@@ -41,13 +41,18 @@
       "ext": true
     },
     {
+      "id": "/anime",
+      "label": "anime",
+      "ext": false
+    },
+    {
       "id": "/blog",
       "label": "blog",
       "ext": false
     },
     {
-      "id": "/anime",
-      "label": "anime",
+      "id": "/my-journey",
+      "label": "my-journey",
       "ext": false
     },
     {
@@ -59,11 +64,6 @@
       "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
-    },
-    {
-      "id": "/my-journey",
-      "label": "my-journey",
-      "ext": false
     },
     {
       "id": "/tags",
@@ -296,13 +296,13 @@
       "ext": false
     },
     {
-      "id": "/tags/Obsidian",
-      "label": "tags/Obsidian",
+      "id": "/tags/React",
+      "label": "tags/React",
       "ext": false
     },
     {
-      "id": "/tags/React",
-      "label": "tags/React",
+      "id": "/tags/Obsidian",
+      "label": "tags/Obsidian",
       "ext": false
     },
     {
@@ -588,6 +588,26 @@
       "type": "external"
     },
     {
+      "source": "/anime",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
       "source": "/blog",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
@@ -683,22 +703,22 @@
       "type": "normal"
     },
     {
-      "source": "/anime",
+      "source": "/my-journey",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
     },
     {
-      "source": "/anime",
+      "source": "/my-journey",
       "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
-      "source": "/anime",
+      "source": "/my-journey",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/anime",
+      "source": "/my-journey",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
@@ -725,26 +745,6 @@
     {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
-      "type": "external"
-    },
-    {
-      "source": "/my-journey",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/my-journey",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/my-journey",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/my-journey",
-      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
@@ -2563,6 +2563,31 @@
       "type": "normal"
     },
     {
+      "source": "/tags/React",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "/blog/command-palette-explanation",
+      "type": "normal"
+    },
+    {
       "source": "/tags/Obsidian",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
@@ -2600,31 +2625,6 @@
     {
       "source": "/tags/Obsidian",
       "target": "/blog/vault-organizer",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {

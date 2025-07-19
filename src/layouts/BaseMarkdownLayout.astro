@@ -233,7 +233,7 @@ if (rawProps.optimizedImg) {
                 Back to Blog
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
-              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:load />
+              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:visible />
             </div>
           </aside>
         )}
@@ -270,7 +270,7 @@ if (rawProps.optimizedImg) {
               <div class="mb-8">
                 <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Knowledge Graph</h2>
                 <div class="bg-gray-800 border border-gray-600 rounded-lg p-3 h-80 overflow-hidden">
-                  <BlogGraph client:load />
+                  <BlogGraph client:visible />
                 </div>
               </div>
 
@@ -285,7 +285,7 @@ if (rawProps.optimizedImg) {
                   </a>
                 ))}
               </div>
-              <ExtractLinks client:load />
+              <ExtractLinks client:visible />
               <Backlinks backlinks={backlinks} />
             </div>
           </aside>

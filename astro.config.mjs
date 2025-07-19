@@ -39,17 +39,46 @@ export default defineConfig({
     build: {
       cssMinify: 'esbuild',
       minify: true,
-      // manualChunksでBacklinksとExtractLinksをmainチャンクにまとめる
+      // チャンクサイズの警告閾値を調整
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
+          // より細かいチャンク分割で未使用コードを削減
           manualChunks: {
+            // React関連
+            react: ['react', 'react-dom'],
+            // Three.js関連（重いので分離）
+            three: ['three'],
+            threeControls: ['three/examples/jsm/controls/OrbitControls'],
+            threeLoaders: ['three/examples/jsm/loaders/OBJLoader'],
+            threeObjects: ['three/examples/jsm/objects/Water', 'three/examples/jsm/objects/Sky'],
+            threePostprocessing: ['three/examples/jsm/postprocessing/EffectComposer', 'three/examples/jsm/postprocessing/RenderPass', 'three/examples/jsm/postprocessing/UnrealBloomPass'],
+            // D3関連
+            d3: ['d3-selection', 'd3-force', 'd3-drag', 'd3-zoom'],
+            // その他のライブラリ
+            tween: ['@tweenjs/tween.js'],
+            gsap: ['gsap'],
+            // ブログ関連のコンポーネント
             blogUtils: [
               './src/components/Backlinks.jsx',
               './src/components/ExtractLinks.jsx',
-              // 必要なら他の小チャンクもここに追加
+              './src/components/DynamicToc.jsx',
+              './src/components/BlogGraph.jsx',
+              './src/components/BlogCommandPaletteWrapper.jsx',
+              './src/components/DownloadBox.jsx'
             ],
-            three: ['three'],
-            react: ['react', 'react-dom'],
+            // Three.jsコンポーネント（重いので分離）
+            threeComponents: [
+              './src/components/ThreeBox.jsx',
+              './src/components/ThreeBox-1.jsx',
+              './src/components/ThreeBox-2.jsx',
+              './src/components/ThreeBox-3.jsx',
+              './src/components/ThreeBox-4.jsx',
+              './src/components/ThreeBase.jsx',
+              './src/components/Harmony.jsx'
+            ],
+            // React Three Fiber関連
+            reactThree: ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
           },
         },
       },
