@@ -41,18 +41,13 @@
       "ext": true
     },
     {
-      "id": "/anime",
-      "label": "anime",
-      "ext": false
-    },
-    {
       "id": "/blog",
       "label": "blog",
       "ext": false
     },
     {
-      "id": "/my-journey",
-      "label": "my-journey",
+      "id": "/anime",
+      "label": "anime",
       "ext": false
     },
     {
@@ -64,6 +59,11 @@
       "id": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "label": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
       "ext": true
+    },
+    {
+      "id": "/my-journey",
+      "label": "my-journey",
+      "ext": false
     },
     {
       "id": "/tags",
@@ -588,26 +588,6 @@
       "type": "external"
     },
     {
-      "source": "/anime",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/anime",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/anime",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/anime",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
       "source": "/blog",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
@@ -703,22 +683,22 @@
       "type": "normal"
     },
     {
-      "source": "/my-journey",
+      "source": "/anime",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
     },
     {
-      "source": "/my-journey",
+      "source": "/anime",
       "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
-      "source": "/my-journey",
+      "source": "/anime",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/my-journey",
+      "source": "/anime",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
@@ -745,6 +725,26 @@
     {
       "source": "/portfolio",
       "target": "https://note.com/mekann/n/nccf0f1e01410?sub_rt=share_b",
+      "type": "external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/my-journey",
+      "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {

@@ -121,7 +121,7 @@ const optimizedBg = await getImage({
 
 // optimizedImg（画像パス）がpropsで渡された場合はWebP最適化
 if (rawProps.optimizedImg) {
-  const imgMod = await import(rawProps.optimizedImg);
+  const imgMod = await import(/* @vite-ignore */ rawProps.optimizedImg);
   const optimized = await getImage({ 
     src: imgMod.default ?? imgMod, 
     format: 'avif', 
