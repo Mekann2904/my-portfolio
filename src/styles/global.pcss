@@ -203,6 +203,50 @@ h2, h3, h4, h5, h6 {
   background-color: #1e293b !important;
 }
 
+/* --- コードブロックの横スクロール対応 --- */
+.prose pre {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: pre;
+  word-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* コードブロック内のコード要素も同様に */
+.prose pre code {
+  white-space: pre;
+  word-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* インラインコードは折り返し可能 */
+.prose :not(pre) > code {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* --- ページ全体の横スクロールを防ぐ --- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* メインコンテンツエリアの横スクロールを防ぐ */
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* 記事コンテンツエリアの横スクロールを防ぐ */
+.prose {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .bg-faint-image {
   position: relative;
   z-index: 0;

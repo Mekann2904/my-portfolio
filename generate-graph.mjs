@@ -57,8 +57,14 @@ async function main() {
 
       // 外部リンク
       if (/^https?:\/\//.test(href) || href.startsWith('mailto:')) {
-        // fonts.gstatic.comを除外
-        if (href.includes('fonts.gstatic.com')) continue;
+        // 除外する外部ドメイン
+        const excludedDomains = [
+          'fonts.gstatic.com',
+          'static.cloudflareinsights.com',
+          'fonts.googleapis.com',
+          'cdn.jsdelivr.net'
+        ];
+        if (excludedDomains.some(domain => href.includes(domain))) continue;
         
         nodes.push({ id: href, label: href, ext: true });
         links.push({ source: pagePath, target: href, type: 'external' });
@@ -138,10 +144,13 @@ async function generateBlogGraph() {
       pagePath = '/' + rel.replace(/\\/g, '/').replace(/\.html$/, '');
     }
 
-    // blogノードを追加
+    // blogノードを除外（すべての記事とつながるため）
+    if (pagePath === '/blog') continue;
+
+    // blog記事ノードを追加
     blogNodes.push({
       id: pagePath,
-      label: pagePath === '/blog' ? 'Blog' : pagePath.slice(6), // '/blog/'を除去
+      label: pagePath.slice(6), // '/blog/'を除去
       ext: false,
     });
 
@@ -153,8 +162,14 @@ async function generateBlogGraph() {
 
       // 外部リンク
       if (/^https?:\/\//.test(href) || href.startsWith('mailto:')) {
-        // fonts.gstatic.comを除外
-        if (href.includes('fonts.gstatic.com')) continue;
+        // 除外する外部ドメイン
+        const excludedDomains = [
+          'fonts.gstatic.com',
+          'static.cloudflareinsights.com',
+          'fonts.googleapis.com',
+          'cdn.jsdelivr.net'
+        ];
+        if (excludedDomains.some(domain => href.includes(domain))) continue;
         
         blogNodes.push({ id: href, label: href, ext: true });
         blogLinks.push({ source: pagePath, target: href, type: 'external' });
@@ -188,6 +203,8 @@ async function generateBlogGraph() {
         if (tgt.startsWith('/tags/')) type = 'tag';
         else if (blogNavPaths.has(tgt)) type = 'nav';
         else if (blogAssetPrefixes.some(prefix => tgt.startsWith(prefix))) type = 'asset';
+        // blogノードへのリンクも除外
+        if (tgt === '/blog') continue;
         blogLinks.push({ source: pagePath, target: tgt, type });
       }
     }
