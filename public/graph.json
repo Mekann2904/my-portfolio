@@ -296,13 +296,13 @@
       "ext": false
     },
     {
-      "id": "/tags/React",
-      "label": "tags/React",
+      "id": "/tags/Obsidian",
+      "label": "tags/Obsidian",
       "ext": false
     },
     {
-      "id": "/tags/Obsidian",
-      "label": "tags/Obsidian",
+      "id": "/tags/React",
+      "label": "tags/React",
       "ext": false
     },
     {
@@ -2563,31 +2563,6 @@
       "type": "normal"
     },
     {
-      "source": "/tags/React",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/tags/React",
-      "target": "/blog/command-palette-explanation",
-      "type": "normal"
-    },
-    {
       "source": "/tags/Obsidian",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
@@ -2625,6 +2600,31 @@
     {
       "source": "/tags/Obsidian",
       "target": "/blog/vault-organizer",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/tags/React",
+      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {

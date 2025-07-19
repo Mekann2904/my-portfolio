@@ -1,9 +1,9 @@
 // ThreeSeaScene.jsx
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Water } from 'three/examples/jsm/objects/Water.js';
-import { Sky } from 'three/examples/jsm/objects/Sky.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Water } from 'three/addons/objects/Water.js';
+import { Sky } from 'three/addons/objects/Sky.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { useWindowSize } from '@react-hook/window-size';
 
 

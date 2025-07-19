@@ -31,11 +31,6 @@
       "ext": true
     },
     {
-      "id": "/blog/command-palette-explanation",
-      "label": "command-palette-explanation",
-      "ext": false
-    },
-    {
       "id": "/blog/divergences",
       "label": "divergences",
       "ext": false
@@ -71,8 +66,8 @@
       "ext": true
     },
     {
-      "id": "/blog/download-box",
-      "label": "download-box",
+      "id": "/blog/command-palette-explanation",
+      "label": "command-palette-explanation",
       "ext": false
     },
     {
@@ -91,6 +86,21 @@
       "ext": true
     },
     {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
+    },
+    {
       "id": "/blog/image-embedding-guide",
       "label": "image-embedding-guide",
       "ext": false
@@ -99,6 +109,11 @@
       "id": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
       "label": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
       "ext": true
+    },
+    {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
     },
     {
       "id": "/blog/inline-css-astro",
@@ -118,21 +133,6 @@
     {
       "id": "https://docs.astro.build/ja/",
       "label": "https://docs.astro.build/ja/",
-      "ext": true
-    },
-    {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "ext": true
-    },
-    {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
       "ext": true
     },
     {
@@ -463,136 +463,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#はじめに",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#実装の詳細",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/React",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/全文検索",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/Hooks",
-      "type": "tag"
-    },
-    {
       "source": "/blog/divergences",
       "target": "/",
       "type": "normal"
@@ -893,113 +763,133 @@
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/test/three",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/test/three-1",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/test/three-2",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/test/three-3",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
+      "source": "/blog/command-palette-explanation",
       "target": "/test/three-4",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#はじめに",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#実装の詳細",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
       "type": "normal"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/React",
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/全文検索",
       "type": "tag"
     },
     {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/Hooks",
       "type": "tag"
     },
     {
@@ -1163,6 +1053,146 @@
       "type": "tag"
     },
     {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/compress-astro",
+      "type": "normal"
+    },
+    {
       "source": "/blog/image-embedding-guide",
       "target": "/",
       "type": "normal"
@@ -1286,6 +1316,116 @@
       "source": "/blog/image-embedding-guide",
       "target": "/blog/astro-image-optimization",
       "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
+      "type": "tag"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1435,146 +1575,6 @@
     {
       "source": "/blog/inline-css-astro",
       "target": "/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/compress-astro",
       "type": "normal"
     },
     {
