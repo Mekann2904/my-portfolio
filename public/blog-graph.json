@@ -21,6 +21,11 @@
       "ext": true
     },
     {
+      "id": "/blog/command-palette-explanation",
+      "label": "command-palette-explanation",
+      "ext": false
+    },
+    {
       "id": "/blog/astro-image-optimization",
       "label": "astro-image-optimization",
       "ext": false
@@ -28,26 +33,6 @@
     {
       "id": "https://docs.astro.build/ja/guides/assets/",
       "label": "https://docs.astro.build/ja/guides/assets/",
-      "ext": true
-    },
-    {
-      "id": "/blog/command-palette-explanation",
-      "label": "command-palette-explanation",
-      "ext": false
-    },
-    {
-      "id": "/blog/compress-astro",
-      "label": "compress-astro",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/playform/compress",
-      "label": "https://github.com/playform/compress",
-      "ext": true
-    },
-    {
-      "id": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "label": "https://docs.astro.build/ja/guides/integrations-guide/",
       "ext": true
     },
     {
@@ -88,21 +73,6 @@
     {
       "id": "https://visjs.github.io/vis-network/docs/network/",
       "label": "https://visjs.github.io/vis-network/docs/network/",
-      "ext": true
-    },
-    {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "ext": true
-    },
-    {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
       "ext": true
     },
     {
@@ -166,6 +136,21 @@
       "ext": true
     },
     {
+      "id": "/blog/compress-astro",
+      "label": "compress-astro",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/playform/compress",
+      "label": "https://github.com/playform/compress",
+      "ext": true
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "label": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "ext": true
+    },
+    {
       "id": "/blog/prefetch-enabled",
       "label": "prefetch-enabled",
       "ext": false
@@ -208,6 +193,21 @@
     {
       "id": "https://docs.astro.build/en/guides/images/#remote-images",
       "label": "https://docs.astro.build/en/guides/images/#remote-images",
+      "ext": true
+    },
+    {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
       "ext": true
     }
   ],
@@ -343,126 +343,6 @@
       "type": "normal"
     },
     {
-      "source": "/blog/astro-image-optimization",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#2-cssによる背景画像表示の仕組み",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#3-画像最適化のビルド出力の流れ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#4-背景画像が表示されない場合のトラブルシュート",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#5-その他の注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/astro-image-optimization/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/tags/画像最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
       "source": "/blog/command-palette-explanation",
       "target": "/",
       "type": "normal"
@@ -593,139 +473,124 @@
       "type": "tag"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "https://cdn.jsdelivr.net",
       "type": "external"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "https://fonts.googleapis.com",
       "type": "external"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "https://static.cloudflareinsights.com",
       "type": "external"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/test/three",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/test/three-1",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/test/three-2",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/test/three-3",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/test/three-4",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#2-cssによる背景画像表示の仕組み",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#playformcompressの主な機能",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#3-画像最適化のビルド出力の流れ",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#導入手順",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#4-背景画像が表示されない場合のトラブルシュート",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#1-パッケージの追加",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#5-その他の注意点",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#2-設定内容の確認",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/astro-image-optimization/#参考リンク",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#注意点と補足事項",
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog/blog/image-embedding-guide",
       "type": "normal"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/compress-astro/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "https://github.com/playform/compress",
+      "source": "/blog/astro-image-optimization",
+      "target": "https://docs.astro.build/ja/guides/assets/",
       "type": "external"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
       "target": "/tags/Astro",
       "type": "tag"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/tags/ファイル圧縮",
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/画像最適化",
       "type": "tag"
     },
     {
-      "source": "/blog/compress-astro",
+      "source": "/blog/astro-image-optimization",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog/inline-css-astro",
-      "type": "normal"
     },
     {
       "source": "/blog/divergences",
@@ -1161,146 +1026,6 @@
       "source": "/blog/generate-graph",
       "target": "/tags/json",
       "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://cdn.jsdelivr.net",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.googleapis.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://static.cloudflareinsights.com",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/compress-astro",
-      "type": "normal"
     },
     {
       "source": "/blog/image-embedding-guide",
@@ -1858,6 +1583,141 @@
       "type": "tag"
     },
     {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#astroでplayformcompressを導入しビルドファイルを圧縮する方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#なぜファイル圧縮が重要なのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#playformcompressの主な機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#1-パッケージの追加",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#2-設定内容の確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#注意点と補足事項",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/compress-astro/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://github.com/playform/compress",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/ファイル圧縮",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
       "source": "/blog/prefetch-enabled",
       "target": "/",
       "type": "normal"
@@ -2351,6 +2211,146 @@
       "source": "/blog/youtube-embed",
       "target": "/tags/埋め込み",
       "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://cdn.jsdelivr.net",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.googleapis.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://static.cloudflareinsights.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/compress-astro",
+      "type": "normal"
     }
   ]
 }

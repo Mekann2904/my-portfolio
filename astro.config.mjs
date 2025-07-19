@@ -48,11 +48,16 @@ export default defineConfig({
               './src/components/ExtractLinks.jsx',
               // 必要なら他の小チャンクもここに追加
             ],
+            three: ['three'],
+            react: ['react', 'react-dom'],
           },
         },
       },
     },
-    optimizeDeps: { include: ['three'] },
+    optimizeDeps: { 
+      include: ['three'],
+      exclude: ['lil-gui']
+    },
     ssr: { noExternal: ['three'] },
   },
 });
