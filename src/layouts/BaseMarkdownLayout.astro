@@ -111,23 +111,25 @@ const displayDate = validDate
     })
   : '';
 
-// 余白調整用の変数は不要になるため削除
+// 画像最適化を事前に行い、遅延読み込みを追加
+const optimizedBg = await getImage({ 
+  src: outputGray, 
+  format: 'avif', 
+  quality: 80,
+  widths: [400, 800, 1200]
+});
 
 // optimizedImg（画像パス）がpropsで渡された場合はWebP最適化
 if (rawProps.optimizedImg) {
-  const { getImage } = await import('astro:assets');
   const imgMod = await import(rawProps.optimizedImg);
   const optimized = await getImage({ 
     src: imgMod.default ?? imgMod, 
     format: 'avif', 
     quality: 60,
-    widths: [400, 800, 1200, 1600], // レスポンシブ対応のための複数サイズ
-    densities: [1, 2] // 高解像度ディスプレイ対応
+    widths: [400, 800, 1200, 1600]
   });
   rawProps.optimizedImg = optimized.src;
 }
-
-const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 60 });
 ---
 
 <html lang="ja" class="bg-black">
@@ -157,13 +159,42 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
     <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+    
+    {/* パフォーマンス最適化のためのCSS */}
+    <style>
+      .gpu-accelerated {
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      .layout-optimized {
+        /* contain: layout style paint; */
+      }
+      .sticky-optimized {
+        position: sticky;
+        top: 7rem;
+        transform: translateZ(0);
+        will-change: transform;
+        /* contain: layout style paint; */
+      }
+      .grid-optimized {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      @media (min-width: 1024px) {
+        .grid-optimized {
+          grid-template-columns: 1fr 2fr 1fr;
+          gap: 2rem;
+        }
+      }
+    </style>
   </head>
 
-  <body class="bg-black text-white text-base bg-faint-image"
+  <body class="bg-black text-white text-base bg-faint-image layout-optimized"
     style={`--faint-bg: url('${optimizedBg.src}');`}
   >
     {/* --- Header (変更なし) --- */}
-    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10 w-full">
+    <header class="fixed inset-x-0 top-0 z-50 bg-black border-b border-white/10 w-full gpu-accelerated">
       <nav class="flex items-center justify-between px-8 py-5">
         <a href="/" class="text-white font-semibold text-lg">Mekann</a>
         <ul class="flex gap-8 text-sm">
@@ -188,13 +219,13 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
       </nav>
     </header>
 
-    {/* --- Main Content (3カラムレイアウトに変更) --- */}
+    {/* --- Main Content (最適化されたレイアウト) --- */}
     <main class="w-full px-4 sm:px-6 lg:px-8 pt-28 pb-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
+      <div class="grid-optimized">
         
         {headings && headings.length > 1 && (
-          <aside class="hidden lg:block lg:col-span-3">
-            <div class="sticky top-28">
+          <aside class="hidden lg:block">
+            <div class="sticky-optimized">
               <a href="/blog/" class="inline-flex items-center text-gray-500 hover:text-white mb-6 lg:mb-8 no-underline text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -202,12 +233,12 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
                 Back to Blog
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
-              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:idle />
+              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:load />
             </div>
           </aside>
         )}
 
-        <div class="lg:col-span-6 px-0">
+        <div class="px-0">
           <article
             class="prose prose-sm prose-invert mx-auto max-w-4xl
                    leading-snug font-jp-sans
@@ -233,13 +264,13 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
         </div>
         
         {tags && tags.length > 0 && (
-          <aside class="lg:col-span-3 mt-16 lg:mt-0">
-            <div class="sticky top-28">
+          <aside class="mt-16 lg:mt-0">
+            <div class="sticky-optimized">
               {/* グラフビューセクション */}
               <div class="mb-8">
                 <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Knowledge Graph</h2>
                 <div class="bg-gray-800 border border-gray-600 rounded-lg p-3 h-80 overflow-hidden">
-                  <BlogGraph client:visible />
+                  <BlogGraph client:load />
                 </div>
               </div>
 
@@ -254,7 +285,7 @@ const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 6
                   </a>
                 ))}
               </div>
-              <ExtractLinks client:idle />
+              <ExtractLinks client:load />
               <Backlinks backlinks={backlinks} />
             </div>
           </aside>
