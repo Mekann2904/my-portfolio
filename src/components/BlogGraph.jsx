@@ -152,14 +152,14 @@ function filterGraphByHops(fullData, startNodeId, hops) {
 
 
 // --- メインコンポーネント ---
-export default function BlogGraph() {
+export default function BlogGraph({ data }) {
   const containerRef = useRef(null);
   const svgRef = useRef(null);
   const simulationRef = useRef(null);
   
   const [fullData, setFullData] = useState({ nodes: [], links: [] });
   const [displayData, setDisplayData] = useState({ nodes: [], links: [] });
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [hopCount, setHopCount] = useState(2);
 
@@ -199,29 +199,26 @@ export default function BlogGraph() {
     });
   }, []);
 
-  // 1. 全データを一度だけ取得
+  // 1. propsからデータを取得して処理
   useEffect(() => {
-    const fetchGraphData = async () => {
-      try {
-        const response = await fetch('/blog-graph.json');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        const nodeIds = new Set(data.nodes.map((d) => d.id));
-        const filteredLinks = data.links.filter((l) => {
-          const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-          const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-          return nodeIds.has(sourceId) && nodeIds.has(targetId);
-        });
-        setFullData({ nodes: data.nodes, links: filteredLinks });
-      } catch (e) {
-        console.error('Failed to fetch blog graph data:', e);
-        setError('グラフデータの取得に失敗しました');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchGraphData();
-  }, []);
+    if (!data) {
+      setError('グラフデータが提供されていません');
+      return;
+    }
+    
+    try {
+      const nodeIds = new Set(data.nodes.map((d) => d.id));
+      const filteredLinks = data.links.filter((l) => {
+        const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+        const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+        return nodeIds.has(sourceId) && nodeIds.has(targetId);
+      });
+      setFullData({ nodes: data.nodes, links: filteredLinks });
+    } catch (e) {
+      console.error('Failed to process blog graph data:', e);
+      setError('グラフデータの処理に失敗しました');
+    }
+  }, [data]);
   
   // 2. 全データかホップ数が変更されたら、フィルタリングして表示用データを更新
   useEffect(() => {

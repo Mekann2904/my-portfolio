@@ -26,13 +26,13 @@
       "ext": true
     },
     {
-      "id": "/anime",
-      "label": "anime",
+      "id": "/blog",
+      "label": "blog",
       "ext": false
     },
     {
-      "id": "/blog",
-      "label": "blog",
+      "id": "/anime",
+      "label": "anime",
       "ext": false
     },
     {
@@ -171,11 +171,6 @@
       "ext": true
     },
     {
-      "id": "/blog/mac-smartmontools",
-      "label": "blog/mac-smartmontools",
-      "ext": false
-    },
-    {
       "id": "/blog/obsidian-textlint",
       "label": "blog/obsidian-textlint",
       "ext": false
@@ -246,6 +241,11 @@
       "ext": true
     },
     {
+      "id": "/blog/mac-smartmontools",
+      "label": "blog/mac-smartmontools",
+      "ext": false
+    },
+    {
       "id": "/tags/Astro",
       "label": "tags/Astro",
       "ext": false
@@ -276,6 +276,11 @@
       "ext": false
     },
     {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
+      "ext": false
+    },
+    {
       "id": "/tags/Obsidian",
       "label": "tags/Obsidian",
       "ext": false
@@ -283,6 +288,11 @@
     {
       "id": "/tags/React",
       "label": "tags/React",
+      "ext": false
+    },
+    {
+      "id": "/tags/Tailwind CSS",
+      "label": "tags/Tailwind CSS",
       "ext": false
     },
     {
@@ -296,13 +306,13 @@
       "ext": false
     },
     {
-      "id": "/tags/Zettelkasten",
-      "label": "tags/Zettelkasten",
+      "id": "/tags/components",
+      "label": "tags/components",
       "ext": false
     },
     {
-      "id": "/tags/components",
-      "label": "tags/components",
+      "id": "/tags/Zettelkasten",
+      "label": "tags/Zettelkasten",
       "ext": false
     },
     {
@@ -316,18 +326,8 @@
       "ext": false
     },
     {
-      "id": "/tags/Tailwind CSS",
-      "label": "tags/Tailwind CSS",
-      "ext": false
-    },
-    {
       "id": "/tags/smartmontools",
       "label": "tags/smartmontools",
-      "ext": false
-    },
-    {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
       "ext": false
     },
     {
@@ -351,11 +351,6 @@
       "ext": false
     },
     {
-      "id": "/tags/ディスク情報",
-      "label": "tags/ディスク情報",
-      "ext": false
-    },
-    {
       "id": "/tags/ファイル圧縮",
       "label": "tags/ファイル圧縮",
       "ext": false
@@ -371,8 +366,8 @@
       "ext": false
     },
     {
-      "id": "/tags/プリフェッチ",
-      "label": "tags/プリフェッチ",
+      "id": "/tags/ディスク情報",
+      "label": "tags/ディスク情報",
       "ext": false
     },
     {
@@ -381,8 +376,8 @@
       "ext": false
     },
     {
-      "id": "/tags/全文検索",
-      "label": "tags/全文検索",
+      "id": "/tags/プリフェッチ",
+      "label": "tags/プリフェッチ",
       "ext": false
     },
     {
@@ -396,6 +391,11 @@
       "ext": false
     },
     {
+      "id": "/tags/全文検索",
+      "label": "tags/全文検索",
+      "ext": false
+    },
+    {
       "id": "/tags/温度情報",
       "label": "tags/温度情報",
       "ext": false
@@ -406,8 +406,8 @@
       "ext": false
     },
     {
-      "id": "/tags/自作テーマ",
-      "label": "tags/自作テーマ",
+      "id": "/test/harmony",
+      "label": "test/harmony",
       "ext": false
     },
     {
@@ -496,6 +496,11 @@
       "ext": true
     },
     {
+      "id": "/tags/自作テーマ",
+      "label": "tags/自作テーマ",
+      "ext": false
+    },
+    {
       "id": "/test/three",
       "label": "test/three",
       "ext": false
@@ -511,8 +516,8 @@
       "ext": false
     },
     {
-      "id": "/test/three-4",
-      "label": "test/three-4",
+      "id": "/test/three-3",
+      "label": "test/three-3",
       "ext": false
     },
     {
@@ -521,13 +526,8 @@
       "ext": false
     },
     {
-      "id": "/test/harmony",
-      "label": "test/harmony",
-      "ext": false
-    },
-    {
-      "id": "/test/three-3",
-      "label": "test/three-3",
+      "id": "/test/three-4",
+      "label": "test/three-4",
       "ext": false
     }
   ],
@@ -799,16 +799,6 @@
     },
     {
       "source": "/blog/astro-image-optimization",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/astro-image-optimization",
       "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
       "type": "normal"
     },
@@ -871,16 +861,6 @@
       "source": "/blog/astro-image-optimization",
       "target": "https://docs.astro.build/ja/guides/assets/",
       "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog-contents.json",
-      "type": "normal"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -951,16 +931,6 @@
       "source": "/blog/command-palette-explanation",
       "target": "/tags/Hooks",
       "type": "tag"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/compress-astro",
-      "target": "/blog-contents.json",
-      "type": "normal"
     },
     {
       "source": "/blog/compress-astro",
@@ -1045,16 +1015,6 @@
     {
       "source": "/blog/compress-astro",
       "target": "/blog/inline-css-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -1179,16 +1139,6 @@
     },
     {
       "source": "/blog/download-box",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
       "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
       "type": "normal"
     },
@@ -1236,16 +1186,6 @@
       "source": "/blog/download-box",
       "target": "/tags/Tailwind CSS",
       "type": "tag"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "/blog-contents.json",
-      "type": "normal"
     },
     {
       "source": "/blog/generate-graph",
@@ -1359,16 +1299,6 @@
     },
     {
       "source": "/blog/google-fonts-optimizer",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
       "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
     },
@@ -1459,16 +1389,6 @@
     },
     {
       "source": "/blog/image-embedding-guide",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
       "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
       "type": "normal"
     },
@@ -1540,16 +1460,6 @@
     {
       "source": "/blog/image-embedding-guide",
       "target": "/blog/astro-image-optimization",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -1660,66 +1570,6 @@
     {
       "source": "/blog/inline-css-astro",
       "target": "/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog/mac-smartmontools/#2-接続されているディスクの識別",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog/mac-smartmontools/#3-smartctlで温度情報を取得",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/blog/mac-smartmontools/#まとめ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/tags/macOS",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/tags/smartmontools",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/tags/ディスク情報",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/mac-smartmontools",
-      "target": "/tags/温度情報",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -1869,16 +1719,6 @@
     },
     {
       "source": "/blog/prefetch-enabled",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
       "target": "/blog/prefetch-enabled/#プリフェッチとは",
       "type": "normal"
     },
@@ -1950,16 +1790,6 @@
     {
       "source": "/blog/prefetch-enabled",
       "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -2039,16 +1869,6 @@
     },
     {
       "source": "/blog/why-not-tree",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog-contents.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
       "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
       "type": "normal"
     },
@@ -2101,16 +1921,6 @@
       "source": "/blog/why-not-tree",
       "target": "/tags/Zettelkasten",
       "type": "tag"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog-graph.json",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "/blog-contents.json",
-      "type": "normal"
     },
     {
       "source": "/blog/youtube-embed",
@@ -2188,6 +1998,46 @@
       "type": "external"
     },
     {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#2-接続されているディスクの識別",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#3-smartctlで温度情報を取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog/mac-smartmontools/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/macOS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/smartmontools",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/ディスク情報",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/tags/温度情報",
+      "type": "tag"
+    },
+    {
       "source": "/tags/Astro",
       "target": "/blog/generate-graph",
       "type": "normal"
@@ -2263,6 +2113,11 @@
       "type": "normal"
     },
     {
+      "source": "/tags/CSS最適化",
+      "target": "/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
       "source": "/tags/Obsidian",
       "target": "/blog/divergences",
       "type": "normal"
@@ -2285,6 +2140,11 @@
     {
       "source": "/tags/React",
       "target": "/blog/command-palette-explanation",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Tailwind CSS",
+      "target": "/blog/download-box",
       "type": "normal"
     },
     {
@@ -2323,13 +2183,13 @@
       "type": "normal"
     },
     {
-      "source": "/tags/Zettelkasten",
-      "target": "/blog/why-not-tree",
+      "source": "/tags/components",
+      "target": "/blog/download-box",
       "type": "normal"
     },
     {
-      "source": "/tags/components",
-      "target": "/blog/download-box",
+      "source": "/tags/Zettelkasten",
+      "target": "/blog/why-not-tree",
       "type": "normal"
     },
     {
@@ -2343,18 +2203,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/Tailwind CSS",
-      "target": "/blog/download-box",
-      "type": "normal"
-    },
-    {
       "source": "/tags/smartmontools",
       "target": "/blog/mac-smartmontools",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/CSS最適化",
-      "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
@@ -2378,11 +2228,6 @@
       "type": "normal"
     },
     {
-      "source": "/tags/ディスク情報",
-      "target": "/blog/mac-smartmontools",
-      "type": "normal"
-    },
-    {
       "source": "/tags/ファイル圧縮",
       "target": "/blog/compress-astro",
       "type": "normal"
@@ -2403,8 +2248,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/プリフェッチ",
-      "target": "/blog/prefetch-enabled",
+      "source": "/tags/ディスク情報",
+      "target": "/blog/mac-smartmontools",
       "type": "normal"
     },
     {
@@ -2413,8 +2258,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/全文検索",
-      "target": "/blog/command-palette-explanation",
+      "source": "/tags/プリフェッチ",
+      "target": "/blog/prefetch-enabled",
       "type": "normal"
     },
     {
@@ -2425,6 +2270,11 @@
     {
       "source": "/tags/日本語校正",
       "target": "/blog/obsidian-textlint",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/全文検索",
+      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
@@ -2440,11 +2290,6 @@
     {
       "source": "/tags/画像最適化",
       "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/自作テーマ",
-      "target": "/blog/divergences",
       "type": "normal"
     },
     {
@@ -2526,6 +2371,11 @@
       "source": "/tailwind/core-concepts",
       "target": "https://tailwindcss.com/docs/responsive-design",
       "type": "external"
+    },
+    {
+      "source": "/tags/自作テーマ",
+      "target": "/blog/divergences",
+      "type": "normal"
     }
   ]
 }
