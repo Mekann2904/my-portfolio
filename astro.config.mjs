@@ -30,7 +30,11 @@ export default defineConfig({
       [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
       rehypeSlug,
     ],
-  }), playformCompress(), critters()],
+  }), playformCompress({
+    Exclude: [
+      'public/model/**'
+    ]
+  }), critters()],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],
