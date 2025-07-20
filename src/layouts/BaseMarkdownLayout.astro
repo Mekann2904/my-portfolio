@@ -167,14 +167,14 @@ if (rawProps.optimizedImg) {
         will-change: transform;
       }
       .layout-optimized {
-        /* contain: layout style paint; */
+        contain: layout style paint;
       }
       .sticky-optimized {
         position: sticky;
         top: 1rem;
         transform: translateZ(0);
         will-change: transform;
-        /* contain: layout style paint; */
+        contain: layout style paint;
       }
       .grid-optimized {
         display: grid;
@@ -233,7 +233,9 @@ if (rawProps.optimizedImg) {
                 Back to Blog
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
-              <DynamicToc headings={headings} pathname={Astro.url.pathname} client:visible />
+              <div class="min-h-[12rem]">
+                <DynamicToc headings={headings} pathname={Astro.url.pathname} client:visible />
+              </div>
             </div>
           </aside>
         )}
@@ -285,7 +287,9 @@ if (rawProps.optimizedImg) {
                   </a>
                 ))}
               </div>
-              <ExtractLinks client:visible />
+              <div class="min-h-[8rem]">
+                <ExtractLinks client:visible />
+              </div>
               <Backlinks backlinks={backlinks} />
             </div>
           </aside>

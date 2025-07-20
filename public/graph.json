@@ -251,18 +251,28 @@
       "ext": false
     },
     {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
-      "ext": false
-    },
-    {
       "id": "/tags/CSS",
       "label": "tags/CSS",
       "ext": false
     },
     {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
+      "ext": false
+    },
+    {
+      "id": "/tags/Divergences",
+      "label": "tags/Divergences",
+      "ext": false
+    },
+    {
       "id": "/tags/Google Fonts",
       "label": "tags/Google Fonts",
+      "ext": false
+    },
+    {
+      "id": "/tags/Hooks",
+      "label": "tags/Hooks",
       "ext": false
     },
     {
@@ -286,18 +296,8 @@
       "ext": false
     },
     {
-      "id": "/tags/Hooks",
-      "label": "tags/Hooks",
-      "ext": false
-    },
-    {
       "id": "/tags/Webパフォーマンス",
       "label": "tags/Webパフォーマンス",
-      "ext": false
-    },
-    {
-      "id": "/tags/Divergences",
-      "label": "tags/Divergences",
       "ext": false
     },
     {
@@ -521,13 +521,13 @@
       "ext": false
     },
     {
-      "id": "/test/threebase",
-      "label": "test/threebase",
+      "id": "/test/three-4",
+      "label": "test/three-4",
       "ext": false
     },
     {
-      "id": "/test/three-4",
-      "label": "test/three-4",
+      "id": "/test/threebase",
+      "label": "test/threebase",
       "ext": false
     }
   ],
@@ -1948,18 +1948,28 @@
       "type": "normal"
     },
     {
+      "source": "/tags/CSS",
+      "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
       "source": "/tags/CSS最適化",
       "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
-      "source": "/tags/CSS",
+      "source": "/tags/Divergences",
       "target": "/blog/divergences",
       "type": "normal"
     },
     {
       "source": "/tags/Google Fonts",
       "target": "/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Hooks",
+      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
@@ -2008,11 +2018,6 @@
       "type": "normal"
     },
     {
-      "source": "/tags/Hooks",
-      "target": "/blog/command-palette-explanation",
-      "type": "normal"
-    },
-    {
       "source": "/tags/Webパフォーマンス",
       "target": "/blog/astro-image-optimization",
       "type": "normal"
@@ -2040,11 +2045,6 @@
     {
       "source": "/tags/Webパフォーマンス",
       "target": "/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Divergences",
-      "target": "/blog/divergences",
       "type": "normal"
     },
     {
