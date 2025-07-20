@@ -11,6 +11,11 @@
       "ext": true
     },
     {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
+    },
+    {
       "id": "/blog/command-palette-explanation",
       "label": "command-palette-explanation",
       "ext": false
@@ -49,11 +54,6 @@
       "id": "https://docs.astro.build/ja/guides/integrations-guide/",
       "label": "https://docs.astro.build/ja/guides/integrations-guide/",
       "ext": true
-    },
-    {
-      "id": "/blog/download-box",
-      "label": "download-box",
-      "ext": false
     },
     {
       "id": "/blog/generate-graph",
@@ -290,6 +290,96 @@
     {
       "source": "/blog/astro-image-optimization",
       "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
       "type": "tag"
     },
     {
@@ -661,96 +751,6 @@
       "source": "/blog/compress-astro",
       "target": "/blog/inline-css-astro",
       "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
-      "type": "tag"
     },
     {
       "source": "/blog/generate-graph",
