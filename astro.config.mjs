@@ -27,7 +27,8 @@ export default defineConfig({
   },
 
   integrations: [
-    react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
+    react(),
+    tailwind(),
     mdx({
       remarkPlugins: [
         remarkMath,
@@ -37,11 +38,14 @@ export default defineConfig({
         [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
         rehypeSlug,
       ],
-    }), playformCompress({
+    }),
+    critters(),
+    playformCompress({
       Exclude: [
-        /^public\/model\//
+        (file) => file.includes('/model/')
       ]
-    }), critters()],
+    })
+  ],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],

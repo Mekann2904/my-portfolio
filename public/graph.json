@@ -256,11 +256,6 @@
       "ext": false
     },
     {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
-      "ext": false
-    },
-    {
       "id": "/tags/Divergences",
       "label": "tags/Divergences",
       "ext": false
@@ -288,11 +283,6 @@
     {
       "id": "/tags/React",
       "label": "tags/React",
-      "ext": false
-    },
-    {
-      "id": "/tags/Tailwind CSS",
-      "label": "tags/Tailwind CSS",
       "ext": false
     },
     {
@@ -326,8 +316,18 @@
       "ext": false
     },
     {
+      "id": "/tags/Tailwind CSS",
+      "label": "tags/Tailwind CSS",
+      "ext": false
+    },
+    {
       "id": "/tags/smartmontools",
       "label": "tags/smartmontools",
+      "ext": false
+    },
+    {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
       "ext": false
     },
     {
@@ -496,11 +496,6 @@
       "ext": true
     },
     {
-      "id": "/test/harmony",
-      "label": "test/harmony",
-      "ext": false
-    },
-    {
       "id": "/test/three",
       "label": "test/three",
       "ext": false
@@ -516,11 +511,6 @@
       "ext": false
     },
     {
-      "id": "/test/three-3",
-      "label": "test/three-3",
-      "ext": false
-    },
-    {
       "id": "/test/three-4",
       "label": "test/three-4",
       "ext": false
@@ -528,6 +518,16 @@
     {
       "id": "/test/threebase",
       "label": "test/threebase",
+      "ext": false
+    },
+    {
+      "id": "/test/harmony",
+      "label": "test/harmony",
+      "ext": false
+    },
+    {
+      "id": "/test/three-3",
+      "label": "test/three-3",
       "ext": false
     }
   ],
@@ -2233,11 +2233,6 @@
       "type": "normal"
     },
     {
-      "source": "/tags/CSS最適化",
-      "target": "/blog/inline-css-astro",
-      "type": "normal"
-    },
-    {
       "source": "/tags/Divergences",
       "target": "/blog/divergences",
       "type": "normal"
@@ -2290,11 +2285,6 @@
     {
       "source": "/tags/React",
       "target": "/blog/command-palette-explanation",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Tailwind CSS",
-      "target": "/blog/download-box",
       "type": "normal"
     },
     {
@@ -2353,8 +2343,18 @@
       "type": "normal"
     },
     {
+      "source": "/tags/Tailwind CSS",
+      "target": "/blog/download-box",
+      "type": "normal"
+    },
+    {
       "source": "/tags/smartmontools",
       "target": "/blog/mac-smartmontools",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
