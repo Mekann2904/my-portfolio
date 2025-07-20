@@ -211,16 +211,6 @@
       "ext": true
     },
     {
-      "id": "/blog/vault-organizer",
-      "label": "blog/vault-organizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
-      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
-      "ext": true
-    },
-    {
       "id": "/blog/why-not-tree",
       "label": "blog/why-not-tree",
       "ext": false
@@ -256,9 +246,14 @@
       "ext": false
     },
     {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
+      "id": "/blog/vault-organizer",
+      "label": "blog/vault-organizer",
       "ext": false
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "ext": true
     },
     {
       "id": "/tags/Divergences",
@@ -268,6 +263,11 @@
     {
       "id": "/tags/Google Fonts",
       "label": "tags/Google Fonts",
+      "ext": false
+    },
+    {
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
       "ext": false
     },
     {
@@ -371,18 +371,8 @@
       "ext": false
     },
     {
-      "id": "/tags/プリフェッチ",
-      "label": "tags/プリフェッチ",
-      "ext": false
-    },
-    {
       "id": "/tags/リゾーム",
       "label": "tags/リゾーム",
-      "ext": false
-    },
-    {
-      "id": "/tags/全文検索",
-      "label": "tags/全文検索",
       "ext": false
     },
     {
@@ -391,8 +381,13 @@
       "ext": false
     },
     {
-      "id": "/tags/日本語校正",
-      "label": "tags/日本語校正",
+      "id": "/tags/全文検索",
+      "label": "tags/全文検索",
+      "ext": false
+    },
+    {
+      "id": "/tags/プリフェッチ",
+      "label": "tags/プリフェッチ",
       "ext": false
     },
     {
@@ -403,11 +398,6 @@
     {
       "id": "/tags/画像最適化",
       "label": "tags/画像最適化",
-      "ext": false
-    },
-    {
-      "id": "/tags/自作テーマ",
-      "label": "tags/自作テーマ",
       "ext": false
     },
     {
@@ -513,6 +503,16 @@
     {
       "id": "/test/three-2",
       "label": "test/three-2",
+      "ext": false
+    },
+    {
+      "id": "/tags/日本語校正",
+      "label": "tags/日本語校正",
+      "ext": false
+    },
+    {
+      "id": "/tags/自作テーマ",
+      "label": "tags/自作テーマ",
       "ext": false
     },
     {
@@ -1723,76 +1723,6 @@
       "type": "normal"
     },
     {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#obsidianプラグインvault-organizerリリースしました",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#はじめに",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#vault-organizerの概要",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#主な機能",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#手動によるファイル移動",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#undo機能",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#インストール方法",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#使用例",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#今後の展望",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/blog/vault-organizer/#まとめ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
-      "type": "external"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/tags/プラグイン",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/vault-organizer",
-      "target": "/tags/vault-organizer",
-      "type": "tag"
-    },
-    {
       "source": "/blog/why-not-tree",
       "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
       "type": "normal"
@@ -1953,9 +1883,74 @@
       "type": "normal"
     },
     {
-      "source": "/tags/CSS最適化",
-      "target": "/blog/inline-css-astro",
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#obsidianプラグインvault-organizerリリースしました",
       "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#はじめに",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#vault-organizerの概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#主な機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#手動によるファイル移動",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#undo機能",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#インストール方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#使用例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/blog/vault-organizer/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/プラグイン",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/vault-organizer",
+      "target": "/tags/vault-organizer",
+      "type": "tag"
     },
     {
       "source": "/tags/Divergences",
@@ -1965,6 +1960,11 @@
     {
       "source": "/tags/Google Fonts",
       "target": "/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/CSS最適化",
+      "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
@@ -2123,18 +2123,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/プリフェッチ",
-      "target": "/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
       "source": "/tags/リゾーム",
       "target": "/blog/why-not-tree",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/全文検索",
-      "target": "/blog/command-palette-explanation",
       "type": "normal"
     },
     {
@@ -2143,8 +2133,13 @@
       "type": "normal"
     },
     {
-      "source": "/tags/日本語校正",
-      "target": "/blog/obsidian-textlint",
+      "source": "/tags/全文検索",
+      "target": "/blog/command-palette-explanation",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/プリフェッチ",
+      "target": "/blog/prefetch-enabled",
       "type": "normal"
     },
     {
@@ -2160,11 +2155,6 @@
     {
       "source": "/tags/画像最適化",
       "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/自作テーマ",
-      "target": "/blog/divergences",
       "type": "normal"
     },
     {
@@ -2246,6 +2236,16 @@
       "source": "/tailwind/core-concepts",
       "target": "https://tailwindcss.com/docs/responsive-design",
       "type": "external"
+    },
+    {
+      "source": "/tags/日本語校正",
+      "target": "/blog/obsidian-textlint",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/自作テーマ",
+      "target": "/blog/divergences",
+      "type": "normal"
     }
   ]
 }

@@ -37,6 +37,7 @@ export default defineConfig({
   },
   vite: {
     build: {
+      target: 'esnext',
       cssMinify: 'esbuild',
       minify: true,
       chunkSizeWarningLimit: 1000,
@@ -45,9 +46,7 @@ export default defineConfig({
           manualChunks: (id) => {
             if (id.includes('node_modules')) {
               if (id.includes('react')) return 'react';
-              if (id.includes('three')) return 'three';
-              if (id.includes('d3-')) return 'd3';
-              return 'vendor';
+              return 'vendor'; // Group other vendor libraries
             }
           },
         },
