@@ -20,21 +20,28 @@ export default defineConfig({
     prefetchAll: true
   },
 
-  integrations: [react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
-  mdx({
-    remarkPlugins: [
-      remarkMath,
-      remarkExtractUrls,
-    ],
-    rehypePlugins: [
-      [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
-      rehypeSlug,
-    ],
-  }), playformCompress({
-    Exclude: [
-      'public/model/**'
-    ]
-  }), critters()],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  },
+
+  integrations: [
+    react(), tailwind(), // playformInlineは外して安定性重視の外部CSS運用に戻す
+    mdx({
+      remarkPlugins: [
+        remarkMath,
+        remarkExtractUrls,
+      ],
+      rehypePlugins: [
+        [rehypeKatex, { throwOnError: false, errorColor: '#cc0000' }],
+        rehypeSlug,
+      ],
+    }), playformCompress({
+      Exclude: [
+        /^public\/model\//
+      ]
+    }), critters()],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
     rehypePlugins: [rehypeSlug],
