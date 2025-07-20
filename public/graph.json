@@ -211,11 +211,6 @@
       "ext": true
     },
     {
-      "id": "/blog/why-not-tree",
-      "label": "blog/why-not-tree",
-      "ext": false
-    },
-    {
       "id": "/blog/vault-organizer",
       "label": "blog/vault-organizer",
       "ext": false
@@ -248,6 +243,11 @@
     {
       "id": "/tags/Astro",
       "label": "tags/Astro",
+      "ext": false
+    },
+    {
+      "id": "/blog/why-not-tree",
+      "label": "blog/why-not-tree",
       "ext": false
     },
     {
@@ -799,6 +799,16 @@
     },
     {
       "source": "/blog/astro-image-optimization",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/astro-image-optimization",
       "target": "/blog/astro-image-optimization/#1-背景画像のwebp最適化対応",
       "type": "normal"
     },
@@ -861,6 +871,16 @@
       "source": "/blog/astro-image-optimization",
       "target": "https://docs.astro.build/ja/guides/assets/",
       "type": "external"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog-contents.json",
+      "type": "normal"
     },
     {
       "source": "/blog/command-palette-explanation",
@@ -931,6 +951,16 @@
       "source": "/blog/command-palette-explanation",
       "target": "/tags/Hooks",
       "type": "tag"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "/blog-contents.json",
+      "type": "normal"
     },
     {
       "source": "/blog/compress-astro",
@@ -1015,6 +1045,16 @@
     {
       "source": "/blog/compress-astro",
       "target": "/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -1139,6 +1179,16 @@
     },
     {
       "source": "/blog/download-box",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
       "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
       "type": "normal"
     },
@@ -1186,6 +1236,16 @@
       "source": "/blog/download-box",
       "target": "/tags/Tailwind CSS",
       "type": "tag"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "/blog-contents.json",
+      "type": "normal"
     },
     {
       "source": "/blog/generate-graph",
@@ -1299,6 +1359,16 @@
     },
     {
       "source": "/blog/google-fonts-optimizer",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
       "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
     },
@@ -1389,6 +1459,16 @@
     },
     {
       "source": "/blog/image-embedding-guide",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
       "target": "/blog/image-embedding-guide/#1-frontmatterはyamlのみ",
       "type": "normal"
     },
@@ -1460,6 +1540,16 @@
     {
       "source": "/blog/image-embedding-guide",
       "target": "/blog/astro-image-optimization",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/blog-contents.json",
       "type": "normal"
     },
     {
@@ -1574,6 +1664,16 @@
     },
     {
       "source": "/blog/mac-smartmontools",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/mac-smartmontools",
       "target": "/blog/mac-smartmontools/#1-smartmontoolsのインストール",
       "type": "normal"
     },
@@ -1611,6 +1711,16 @@
       "source": "/blog/mac-smartmontools",
       "target": "/tags/温度情報",
       "type": "tag"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "/blog-contents.json",
+      "type": "normal"
     },
     {
       "source": "/blog/obsidian-textlint",
@@ -1759,6 +1869,16 @@
     },
     {
       "source": "/blog/prefetch-enabled",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
       "target": "/blog/prefetch-enabled/#プリフェッチとは",
       "type": "normal"
     },
@@ -1833,59 +1953,14 @@
       "type": "normal"
     },
     {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "source": "/blog/vault-organizer",
+      "target": "/blog-graph.json",
       "type": "normal"
     },
     {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "source": "/blog/vault-organizer",
+      "target": "/blog-contents.json",
       "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/ツリー構造",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/リゾーム",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Zettelkasten",
-      "type": "tag"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1961,6 +2036,16 @@
       "source": "/blog/vault-organizer",
       "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
       "type": "external"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/youtube-embed",
+      "target": "/blog-contents.json",
+      "type": "normal"
     },
     {
       "source": "/blog/youtube-embed",
@@ -2076,6 +2161,71 @@
       "source": "/tags/Astro",
       "target": "/blog/youtube-embed",
       "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog-graph.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog-contents.json",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/ツリー構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/リゾーム",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Zettelkasten",
+      "type": "tag"
     },
     {
       "source": "/tags/CSS",

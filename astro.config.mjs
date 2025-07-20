@@ -53,8 +53,13 @@ export default defineConfig({
             threeLoaders: ['three/examples/jsm/loaders/OBJLoader'],
             threeObjects: ['three/examples/jsm/objects/Water', 'three/examples/jsm/objects/Sky'],
             threePostprocessing: ['three/examples/jsm/postprocessing/EffectComposer', 'three/examples/jsm/postprocessing/RenderPass', 'three/examples/jsm/postprocessing/UnrealBloomPass'],
-            // D3関連
-            d3: ['d3-selection', 'd3-force', 'd3-drag', 'd3-zoom'],
+            // D3関連（統合バンドル）
+            d3: [
+              'd3-selection',
+              'd3-force',
+              'd3-drag',
+              'd3-zoom'
+            ],
             // その他のライブラリ
             tween: ['@tweenjs/tween.js'],
             gsap: ['gsap'],
@@ -83,8 +88,13 @@ export default defineConfig({
         },
       },
     },
-    optimizeDeps: { 
-      include: ['three'],
+    optimizeDeps: {
+      include: [
+        'd3-selection',
+        'd3-force',
+        'd3-drag',
+        'd3-zoom'
+      ],
       exclude: ['lil-gui']
     },
     ssr: { noExternal: ['three'] },

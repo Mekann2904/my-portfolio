@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { select } from 'd3-selection';
-import {
-  forceSimulation,
-  forceLink,
-  forceManyBody,
-  forceCollide,
-  forceX,
-  forceY,
-} from 'd3-force';
+import { forceSimulation, forceLink, forceManyBody, forceCollide, forceX, forceY } from 'd3-force';
 import { zoom } from 'd3-zoom';
 import { drag } from 'd3-drag';
 
