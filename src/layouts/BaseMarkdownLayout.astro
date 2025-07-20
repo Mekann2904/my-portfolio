@@ -171,14 +171,14 @@ if (rawProps.optimizedImg) {
       }
       .sticky-optimized {
         position: sticky;
-        top: 7rem;
+        top: 1rem;
         transform: translateZ(0);
         will-change: transform;
         /* contain: layout style paint; */
       }
       .grid-optimized {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 2rem;
       }
       @media (min-width: 1024px) {
