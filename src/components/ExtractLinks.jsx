@@ -1,19 +1,5 @@
-import { useEffect, useState } from 'react';
-
-export default function ExtractLinks() {
-  const [links, setLinks] = useState([]);
-
-  useEffect(() => {
-    const article = document.querySelector('article');
-    if (!article) return;
-    const anchors = Array.from(article.querySelectorAll('a'));
-    const urls = anchors
-      .map(a => ({ title: a.textContent, url: a.href }))
-      .filter(link => /^https?:/.test(link.url));
-    setLinks(urls);
-  }, []);
-
-  if (links.length === 0) return null;
+export default function ExtractLinks({ links }) {
+  if (!links || links.length === 0) return null;
 
   return (
     <div className="mt-8">
@@ -24,6 +10,8 @@ export default function ExtractLinks() {
             <a
               href={link.url}
               className="text-blue-400 hover:underline break-all"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {link.title}
             </a>
@@ -32,4 +20,4 @@ export default function ExtractLinks() {
       </ul>
     </div>
   );
-} 
+}

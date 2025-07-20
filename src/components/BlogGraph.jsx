@@ -239,19 +239,31 @@ export default function BlogGraph() {
     }
   }, [fullData, hopCount]);
 
-  // 3. 表示用データが更新されたら、コンテナサイズを監視してグラフを描画
+  // 3. 表示用データが更新されたら、コンテナサイズが利用可能になるのを待ってグラフを描画
   useEffect(() => {
     if (loading || error || displayData.nodes.length === 0 || !containerRef.current) {
       return;
     }
-    const observer = new ResizeObserver(entries => {
-      if (entries[0] && entries[0].contentRect.width > 0) {
-        buildGraph(displayData.nodes, displayData.links);
-        observer.disconnect();
+
+    const checkSizeAndBuild = () => {
+      if (containerRef.current) {
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        if (width > 0 && height > 0) {
+          buildGraph(displayData.nodes, displayData.links);
+          return; // 描画が成功したらポーリングを停止
+        }
       }
-    });
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
+      // コンテナのサイズがまだ利用できない場合は、少し待ってから再試行
+      requestAnimationFrame(checkSizeAndBuild);
+    };
+
+    // ポーリングを開始
+    const frameId = requestAnimationFrame(checkSizeAndBuild);
+
+    // クリーンアップ関数
+    return () => {
+      cancelAnimationFrame(frameId);
+    };
   }, [loading, error, displayData, buildGraph]);
   
   // 4. ウィンドウリサイズ時の処理

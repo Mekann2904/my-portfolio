@@ -1,0 +1,34 @@
+---
+// src/components/LiteYouTube.astro
+import 'lite-youtube-embed/src/lite-yt-embed.css';
+
+export interface Props {
+  id: string;
+  title: string;
+  poster?: string;
+}
+
+const { id, title, poster } = Astro.props;
+---
+
+<div class="yt-embed">
+  <lite-youtube videoid={id} style={`background-image: url('${poster || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`}')`}>
+    <button type="button" class="lty-playbtn">
+      <span class="lyt-visually-hidden">{title}</span>
+    </button>
+  </lite-youtube>
+</div>
+
+<script>
+  import 'lite-youtube-embed/src/lite-yt-embed.js';
+</script>
+
+<style>
+  .yt-embed {
+    margin: 2rem 0;
+  }
+  lite-youtube {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+</style>

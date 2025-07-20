@@ -221,6 +221,11 @@
       "ext": true
     },
     {
+      "id": "/blog/why-not-tree",
+      "label": "blog/why-not-tree",
+      "ext": false
+    },
+    {
       "id": "/blog/youtube-embed",
       "label": "blog/youtube-embed",
       "ext": false
@@ -241,23 +246,8 @@
       "ext": true
     },
     {
-      "id": "/tags/Astro",
-      "label": "tags/Astro",
-      "ext": false
-    },
-    {
-      "id": "/tags/CSS",
-      "label": "tags/CSS",
-      "ext": false
-    },
-    {
       "id": "/tags/CSS最適化",
       "label": "tags/CSS最適化",
-      "ext": false
-    },
-    {
-      "id": "/blog/why-not-tree",
-      "label": "blog/why-not-tree",
       "ext": false
     },
     {
@@ -286,6 +276,16 @@
       "ext": false
     },
     {
+      "id": "/tags/Astro",
+      "label": "tags/Astro",
+      "ext": false
+    },
+    {
+      "id": "/tags/CSS",
+      "label": "tags/CSS",
+      "ext": false
+    },
+    {
       "id": "/tags/React",
       "label": "tags/React",
       "ext": false
@@ -293,6 +293,11 @@
     {
       "id": "/tags/Tailwind CSS",
       "label": "tags/Tailwind CSS",
+      "ext": false
+    },
+    {
+      "id": "/tags/Webパフォーマンス",
+      "label": "tags/Webパフォーマンス",
       "ext": false
     },
     {
@@ -321,16 +326,6 @@
       "ext": false
     },
     {
-      "id": "/tags/textlint",
-      "label": "tags/textlint",
-      "ext": false
-    },
-    {
-      "id": "/tags/Webパフォーマンス",
-      "label": "tags/Webパフォーマンス",
-      "ext": false
-    },
-    {
       "id": "/tags/smartmontools",
       "label": "tags/smartmontools",
       "ext": false
@@ -351,11 +346,6 @@
       "ext": false
     },
     {
-      "id": "/tags/ディスク情報",
-      "label": "tags/ディスク情報",
-      "ext": false
-    },
-    {
       "id": "/tags/ファイル圧縮",
       "label": "tags/ファイル圧縮",
       "ext": false
@@ -366,8 +356,8 @@
       "ext": false
     },
     {
-      "id": "/tags/プラグイン",
-      "label": "tags/プラグイン",
+      "id": "/tags/textlint",
+      "label": "tags/textlint",
       "ext": false
     },
     {
@@ -376,8 +366,8 @@
       "ext": false
     },
     {
-      "id": "/tags/全文検索",
-      "label": "tags/全文検索",
+      "id": "/tags/リゾーム",
+      "label": "tags/リゾーム",
       "ext": false
     },
     {
@@ -386,18 +376,28 @@
       "ext": false
     },
     {
+      "id": "/tags/全文検索",
+      "label": "tags/全文検索",
+      "ext": false
+    },
+    {
+      "id": "/tags/ディスク情報",
+      "label": "tags/ディスク情報",
+      "ext": false
+    },
+    {
       "id": "/tags/日本語校正",
       "label": "tags/日本語校正",
       "ext": false
     },
     {
-      "id": "/tags/画像最適化",
-      "label": "tags/画像最適化",
+      "id": "/tags/自作テーマ",
+      "label": "tags/自作テーマ",
       "ext": false
     },
     {
-      "id": "/tags/自作テーマ",
-      "label": "tags/自作テーマ",
+      "id": "/tags/温度情報",
+      "label": "tags/温度情報",
       "ext": false
     },
     {
@@ -486,13 +486,13 @@
       "ext": true
     },
     {
-      "id": "/test/harmony",
-      "label": "test/harmony",
+      "id": "/tags/プラグイン",
+      "label": "tags/プラグイン",
       "ext": false
     },
     {
-      "id": "/tags/温度情報",
-      "label": "tags/温度情報",
+      "id": "/test/harmony",
+      "label": "test/harmony",
       "ext": false
     },
     {
@@ -501,23 +501,23 @@
       "ext": false
     },
     {
-      "id": "/test/three-1",
-      "label": "test/three-1",
-      "ext": false
-    },
-    {
       "id": "/test/three-2",
       "label": "test/three-2",
       "ext": false
     },
     {
-      "id": "/test/three-3",
-      "label": "test/three-3",
+      "id": "/tags/画像最適化",
+      "label": "tags/画像最適化",
       "ext": false
     },
     {
-      "id": "/tags/リゾーム",
-      "label": "tags/リゾーム",
+      "id": "/test/three-1",
+      "label": "test/three-1",
+      "ext": false
+    },
+    {
+      "id": "/test/three-3",
+      "label": "test/three-3",
       "ext": false
     },
     {
@@ -858,6 +858,11 @@
       "type": "tag"
     },
     {
+      "source": "/blog/astro-image-optimization",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
       "source": "/blog/command-palette-explanation",
       "target": "/blog/command-palette-explanation/#はじめに",
       "type": "normal"
@@ -999,6 +1004,16 @@
     },
     {
       "source": "/blog/compress-astro",
+      "target": "https://github.com/playform/compress",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/compress-astro",
       "target": "/blog/inline-css-astro",
       "type": "normal"
     },
@@ -1106,6 +1121,21 @@
       "source": "/blog/divergences",
       "target": "/tags/Divergences",
       "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "type": "external"
     },
     {
       "source": "/blog/download-box",
@@ -1258,6 +1288,16 @@
       "type": "tag"
     },
     {
+      "source": "/blog/generate-graph",
+      "target": "https://d3js.org/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/generate-graph",
+      "target": "https://visjs.github.io/vis-network/docs/network/",
+      "type": "external"
+    },
+    {
       "source": "/blog/google-fonts-optimizer",
       "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
@@ -1334,6 +1374,16 @@
     },
     {
       "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
       "target": "/blog/compress-astro",
       "type": "normal"
     },
@@ -1396,6 +1446,16 @@
       "source": "/blog/image-embedding-guide",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/image-embedding-guide",
+      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
+      "type": "external"
     },
     {
       "source": "/blog/image-embedding-guide",
@@ -1486,6 +1546,26 @@
       "source": "/blog/inline-css-astro",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/playform/inline",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "https://docs.astro.build/ja/",
+      "type": "external"
     },
     {
       "source": "/blog/inline-css-astro",
@@ -1653,6 +1733,31 @@
       "type": "tag"
     },
     {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://textlint.github.io/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://t.co/qlr8s5kJzU",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "type": "external"
+    },
+    {
+      "source": "/blog/obsidian-textlint",
+      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
+      "type": "external"
+    },
+    {
       "source": "/blog/prefetch-enabled",
       "target": "/blog/prefetch-enabled/#プリフェッチとは",
       "type": "normal"
@@ -1716,6 +1821,11 @@
       "source": "/blog/prefetch-enabled",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://docs.astro.build/ja/guides/prefetch/",
+      "type": "external"
     },
     {
       "source": "/blog/prefetch-enabled",
@@ -1793,6 +1903,66 @@
       "type": "tag"
     },
     {
+      "source": "/blog/vault-organizer",
+      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/ツリー構造",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/リゾーム",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/why-not-tree",
+      "target": "/tags/Zettelkasten",
+      "type": "tag"
+    },
+    {
       "source": "/blog/youtube-embed",
       "target": "/blog/youtube-embed/#通常の使い方",
       "type": "normal"
@@ -1853,109 +2023,24 @@
       "type": "tag"
     },
     {
-      "source": "/tags/Astro",
-      "target": "/blog/generate-graph",
-      "type": "normal"
+      "source": "/blog/youtube-embed",
+      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
+      "type": "external"
     },
     {
-      "source": "/tags/Astro",
-      "target": "/blog/astro-image-optimization",
-      "type": "normal"
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/ja/guides/assets/",
+      "type": "external"
     },
     {
-      "source": "/tags/Astro",
-      "target": "/blog/compress-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/google-fonts-optimizer",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/inline-css-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/prefetch-enabled",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Astro",
-      "target": "/blog/youtube-embed",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/CSS",
-      "target": "/blog/divergences",
-      "type": "normal"
+      "source": "/blog/youtube-embed",
+      "target": "https://docs.astro.build/en/guides/images/#remote-images",
+      "type": "external"
     },
     {
       "source": "/tags/CSS最適化",
       "target": "/blog/inline-css-astro",
       "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#はじめにツリーという便利な道具とその限界",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#1-現実にはたった1つの根はない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#2-現実は上から下への階層ではない",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#3-現実は違うもの同士がつながって生まれる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#4-現実は止まっておらず常に変化する",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#結論静的な地図から思考が育つ庭へ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/blog/why-not-tree/#思考のコンパスでリゾームを育てる",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/ツリー構造",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/リゾーム",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Obsidian",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/why-not-tree",
-      "target": "/tags/Zettelkasten",
-      "type": "tag"
     },
     {
       "source": "/tags/Divergences",
@@ -2008,6 +2093,51 @@
       "type": "normal"
     },
     {
+      "source": "/tags/Astro",
+      "target": "/blog/generate-graph",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/astro-image-optimization",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/compress-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/google-fonts-optimizer",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/image-embedding-guide",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/prefetch-enabled",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Astro",
+      "target": "/blog/youtube-embed",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/CSS",
+      "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
       "source": "/tags/React",
       "target": "/blog/command-palette-explanation",
       "type": "normal"
@@ -2015,36 +2145,6 @@
     {
       "source": "/tags/Tailwind CSS",
       "target": "/blog/download-box",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/YouTube",
-      "target": "/blog/youtube-embed",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/Zettelkasten",
-      "target": "/blog/why-not-tree",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/components",
-      "target": "/blog/download-box",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/json",
-      "target": "/blog/generate-graph",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/macOS",
-      "target": "/blog/mac-smartmontools",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/textlint",
-      "target": "/blog/obsidian-textlint",
       "type": "normal"
     },
     {
@@ -2078,6 +2178,31 @@
       "type": "normal"
     },
     {
+      "source": "/tags/YouTube",
+      "target": "/blog/youtube-embed",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Zettelkasten",
+      "target": "/blog/why-not-tree",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/components",
+      "target": "/blog/download-box",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/json",
+      "target": "/blog/generate-graph",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/macOS",
+      "target": "/blog/mac-smartmontools",
+      "type": "normal"
+    },
+    {
       "source": "/tags/smartmontools",
       "target": "/blog/mac-smartmontools",
       "type": "normal"
@@ -2098,11 +2223,6 @@
       "type": "normal"
     },
     {
-      "source": "/tags/ディスク情報",
-      "target": "/blog/mac-smartmontools",
-      "type": "normal"
-    },
-    {
       "source": "/tags/ファイル圧縮",
       "target": "/blog/compress-astro",
       "type": "normal"
@@ -2113,13 +2233,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/プラグイン",
+      "source": "/tags/textlint",
       "target": "/blog/obsidian-textlint",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/プラグイン",
-      "target": "/blog/vault-organizer",
       "type": "normal"
     },
     {
@@ -2128,8 +2243,8 @@
       "type": "normal"
     },
     {
-      "source": "/tags/全文検索",
-      "target": "/blog/command-palette-explanation",
+      "source": "/tags/リゾーム",
+      "target": "/blog/why-not-tree",
       "type": "normal"
     },
     {
@@ -2138,23 +2253,28 @@
       "type": "normal"
     },
     {
+      "source": "/tags/全文検索",
+      "target": "/blog/command-palette-explanation",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/ディスク情報",
+      "target": "/blog/mac-smartmontools",
+      "type": "normal"
+    },
+    {
       "source": "/tags/日本語校正",
       "target": "/blog/obsidian-textlint",
       "type": "normal"
     },
     {
-      "source": "/tags/画像最適化",
-      "target": "/blog/astro-image-optimization",
-      "type": "normal"
-    },
-    {
-      "source": "/tags/画像最適化",
-      "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
       "source": "/tags/自作テーマ",
       "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/温度情報",
+      "target": "/blog/mac-smartmontools",
       "type": "normal"
     },
     {
@@ -2238,13 +2358,23 @@
       "type": "external"
     },
     {
-      "source": "/tags/温度情報",
-      "target": "/blog/mac-smartmontools",
+      "source": "/tags/プラグイン",
+      "target": "/blog/obsidian-textlint",
       "type": "normal"
     },
     {
-      "source": "/tags/リゾーム",
-      "target": "/blog/why-not-tree",
+      "source": "/tags/プラグイン",
+      "target": "/blog/vault-organizer",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/blog/astro-image-optimization",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/画像最適化",
+      "target": "/blog/image-embedding-guide",
       "type": "normal"
     }
   ]
