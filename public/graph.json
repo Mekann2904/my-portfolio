@@ -251,13 +251,13 @@
       "ext": false
     },
     {
-      "id": "/tags/CSS",
-      "label": "tags/CSS",
+      "id": "/tags/CSS最適化",
+      "label": "tags/CSS最適化",
       "ext": false
     },
     {
-      "id": "/tags/CSS最適化",
-      "label": "tags/CSS最適化",
+      "id": "/tags/CSS",
+      "label": "tags/CSS",
       "ext": false
     },
     {
@@ -411,6 +411,11 @@
       "ext": false
     },
     {
+      "id": "/test/harmony",
+      "label": "test/harmony",
+      "ext": false
+    },
+    {
       "id": "/tailwind/core-concepts",
       "label": "tailwind/core-concepts",
       "ext": false
@@ -494,11 +499,6 @@
       "id": "https://tailwindcss.com/docs/responsive-design",
       "label": "https://tailwindcss.com/docs/responsive-design",
       "ext": true
-    },
-    {
-      "id": "/test/harmony",
-      "label": "test/harmony",
-      "ext": false
     },
     {
       "id": "/test/three",
@@ -1948,13 +1948,13 @@
       "type": "normal"
     },
     {
-      "source": "/tags/CSS",
-      "target": "/blog/divergences",
+      "source": "/tags/CSS最適化",
+      "target": "/blog/inline-css-astro",
       "type": "normal"
     },
     {
-      "source": "/tags/CSS最適化",
-      "target": "/blog/inline-css-astro",
+      "source": "/tags/CSS",
+      "target": "/blog/divergences",
       "type": "normal"
     },
     {
