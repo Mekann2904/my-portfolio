@@ -234,7 +234,7 @@ if (rawProps.optimizedImg) {
               </a>
               <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">On this page</h2>
               <div class="min-h-[12rem]">
-                <DynamicToc headings={headings} pathname={Astro.url.pathname} client:load />
+                <DynamicToc headings={headings} pathname={Astro.url.pathname} client:visible />
               </div>
             </div>
           </aside>
