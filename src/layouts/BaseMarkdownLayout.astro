@@ -43,13 +43,6 @@ const {
   links?: { title: string; url: string }[];
 };
 
-// linksがなければtagsから自動生成
-const autoLinks = tags?.map(tag => [
-  { title: `Zenn #${tag}`, url: `https://zenn.dev/topics/${tag}` },
-  { title: `Qiita #${tag}`, url: `https://qiita.com/tags/${tag}` }
-]).flat() ?? [];
-const linksToShow = links && links.length > 0 ? links : autoLinks;
-
 // --- Backlinks生成ロジック ---
 const blogContentsPath = path.join(process.cwd(), 'public', 'blog-contents.json');
 const blogContents: BlogPost[] = JSON.parse(fs.readFileSync(blogContentsPath, 'utf-8'));
@@ -123,7 +116,10 @@ const optimizedBg = await getImage({
   src: outputGray, 
   format: 'avif', 
   quality: 10,
-  widths: [400, 800, 1200]
+  widths: [400, 800, 1200],
+  fetchpriority: "high",
+  loading: "eager",
+  sizes: "(max-width: 700px) 100vw, 620px"
 });
 
 // optimizedImg（画像パス）がpropsで渡された場合はWebP最適化
@@ -133,7 +129,10 @@ if (rawProps.optimizedImg) {
     src: imgMod.default ?? imgMod, 
     format: 'avif', 
     quality: 60,
-    widths: [400, 800, 1200, 1600]
+    widths: [620, 1024, 1920],
+    fetchpriority: "high",
+    loading: "eager",
+    sizes: "(max-width: 700px) 100vw, 620px"
   });
   rawProps.optimizedImg = optimized.src;
 }

@@ -3,7 +3,12 @@ import { getImage } from 'astro:assets';
 import outputGray from '../assets/output_gray.png';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 const { title, description } = Astro.props;
-const optimizedBg = await getImage({ src: outputGray, format: 'avif', quality: 10 });
+const optimizedBg = await getImage({
+  src: outputGray,
+  widths: [640, 1024, 1920],
+  formats: ["avif"],
+  quality: 60,
+});
 ---
 
 <html lang="ja" class="bg-black">
