@@ -272,7 +272,7 @@ if (rawProps.optimizedImg) {
               <div class="mb-8">
                 <h2 class="text-sm font-bold tracking-wider uppercase text-gray-500 mb-4">Knowledge Graph</h2>
                 <div class="bg-gray-800 border border-gray-600 rounded-lg p-3 h-80 overflow-hidden">
-                  <BlogGraph client:load />
+                  <BlogGraph client:visible />
                 </div>
               </div>
 
@@ -288,7 +288,7 @@ if (rawProps.optimizedImg) {
                 ))}
               </div>
               <div class="min-h-[8rem]">
-                <ExtractLinks client:load />
+                <ExtractLinks client:visible />
               </div>
               <Backlinks backlinks={backlinks} />
             </div>

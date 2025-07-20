@@ -11,16 +11,6 @@
       "ext": true
     },
     {
-      "id": "/blog/download-box",
-      "label": "download-box",
-      "ext": false
-    },
-    {
-      "id": "/blog/command-palette-explanation",
-      "label": "command-palette-explanation",
-      "ext": false
-    },
-    {
       "id": "/blog/divergences",
       "label": "divergences",
       "ext": false
@@ -41,6 +31,11 @@
       "ext": true
     },
     {
+      "id": "/blog/command-palette-explanation",
+      "label": "command-palette-explanation",
+      "ext": false
+    },
+    {
       "id": "/blog/compress-astro",
       "label": "compress-astro",
       "ext": false
@@ -56,6 +51,11 @@
       "ext": true
     },
     {
+      "id": "/blog/download-box",
+      "label": "download-box",
+      "ext": false
+    },
+    {
       "id": "/blog/generate-graph",
       "label": "generate-graph",
       "ext": false
@@ -68,21 +68,6 @@
     {
       "id": "https://visjs.github.io/vis-network/docs/network/",
       "label": "https://visjs.github.io/vis-network/docs/network/",
-      "ext": true
-    },
-    {
-      "id": "/blog/google-fonts-optimizer",
-      "label": "google-fonts-optimizer",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "ext": true
-    },
-    {
-      "id": "https://fonts.google.com/",
-      "label": "https://fonts.google.com/",
       "ext": true
     },
     {
@@ -121,6 +106,21 @@
       "ext": false
     },
     {
+      "id": "/blog/google-fonts-optimizer",
+      "label": "google-fonts-optimizer",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "label": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "ext": true
+    },
+    {
+      "id": "https://fonts.google.com/",
+      "label": "https://fonts.google.com/",
+      "ext": true
+    },
+    {
       "id": "/blog/obsidian-textlint",
       "label": "obsidian-textlint",
       "ext": false
@@ -146,16 +146,6 @@
       "ext": true
     },
     {
-      "id": "/blog/prefetch-enabled",
-      "label": "prefetch-enabled",
-      "ext": false
-    },
-    {
-      "id": "https://docs.astro.build/ja/guides/prefetch/",
-      "label": "https://docs.astro.build/ja/guides/prefetch/",
-      "ext": true
-    },
-    {
       "id": "/blog/vault-organizer",
       "label": "vault-organizer",
       "ext": false
@@ -163,6 +153,16 @@
     {
       "id": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
       "label": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
+      "ext": true
+    },
+    {
+      "id": "/blog/prefetch-enabled",
+      "label": "prefetch-enabled",
+      "ext": false
+    },
+    {
+      "id": "https://docs.astro.build/ja/guides/prefetch/",
+      "label": "https://docs.astro.build/ja/guides/prefetch/",
       "ext": true
     },
     {
@@ -290,206 +290,6 @@
     {
       "source": "/blog/astro-image-optimization",
       "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#実装概要",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#使い方",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#説明文を追加する場合",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/blog/download-box/#付録コンポーネントのソースコード",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/components",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/MDX",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/download-box",
-      "target": "/tags/Tailwind CSS",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#はじめに",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#実装の詳細",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/React",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/全文検索",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/Hooks",
       "type": "tag"
     },
     {
@@ -638,6 +438,116 @@
       "type": "tag"
     },
     {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#はじめに",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#実装の詳細",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/React",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/全文検索",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/Hooks",
+      "type": "tag"
+    },
+    {
       "source": "/blog/compress-astro",
       "target": "/",
       "type": "normal"
@@ -751,6 +661,96 @@
       "source": "/blog/compress-astro",
       "target": "/blog/inline-css-astro",
       "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#ダウンロードボックスコンポーネントの実装概要と使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#実装概要",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#使い方",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#最小構成ファイル名とurlのみ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#説明文を追加する場合",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/blog/download-box/#付録コンポーネントのソースコード",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/components",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/MDX",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/download-box",
+      "target": "/tags/Tailwind CSS",
+      "type": "tag"
     },
     {
       "source": "/blog/generate-graph",
@@ -891,126 +891,6 @@
       "source": "/blog/generate-graph",
       "target": "/tags/json",
       "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#注意点",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/google-fonts-optimizer/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Google Fonts",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/tags/フォント最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/compress-astro",
-      "type": "normal"
     },
     {
       "source": "/blog/image-embedding-guide",
@@ -1328,6 +1208,126 @@
       "type": "tag"
     },
     {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#なぜgoogle-fontsの最適化が必要か",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#astro-google-fonts-optimizerの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#1-パッケージのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#2-コンポーネントの利用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#ビルド時に何が起こるか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#主な効果とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/google-fonts-optimizer/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "https://fonts.google.com/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Google Fonts",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/tags/フォント最適化",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/google-fonts-optimizer",
+      "target": "/blog/compress-astro",
+      "type": "normal"
+    },
+    {
       "source": "/blog/obsidian-textlint",
       "target": "/",
       "type": "normal"
@@ -1488,116 +1488,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/prefetch-enabled",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/test/three",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/test/three-1",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/test/three-2",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/test/three-3",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/test/three-4",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチとは",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチの設定方法",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#サイト全体での設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#プリフェッチ戦略prefetch-strategies",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#個別リンクでの設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#期待できる効果",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#注意点とベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/prefetch-enabled/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/blog/inline-css-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "https://docs.astro.build/ja/guides/prefetch/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/プリフェッチ",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/image-embedding-guide",
-      "type": "normal"
-    },
-    {
       "source": "/blog/vault-organizer",
       "target": "/",
       "type": "normal"
@@ -1706,6 +1596,116 @@
       "source": "/blog/vault-organizer",
       "target": "/tags/vault-organizer",
       "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-1",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-2",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-3",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/test/three-4",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチとは",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチの設定方法",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#サイト全体での設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#プリフェッチ戦略prefetch-strategies",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#個別リンクでの設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#期待できる効果",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#注意点とベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/prefetch-enabled/#参考リンク",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/blog/inline-css-astro",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "https://docs.astro.build/ja/guides/prefetch/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Astro",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/プリフェッチ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/tags/Webパフォーマンス",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/prefetch-enabled",
+      "target": "/blog/image-embedding-guide",
+      "type": "normal"
     },
     {
       "source": "/blog/why-not-tree",
