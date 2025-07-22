@@ -224,6 +224,13 @@ async function generateBlogGraph() {
     'utf8'
   );
 
+  // Knowledge GraphをAstro側でも使えるようにsrc/dataにも出力
+  await fs.writeFile(
+    path.resolve('./src/data/blog-graph.json'),
+    JSON.stringify({ nodes: uniqBlogNodes, links: blogLinks }, null, 2),
+    'utf8'
+  );
+
   console.log(
     `✅ public/blog-graph.json generated: ${uniqBlogNodes.length} nodes, ${blogLinks.length} links`
   );

@@ -1,0 +1,75 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "プロンプト入力を効率化するコマンド提案ツールの公開"
+date: "2025-07-22"
+description: "Google Gemini及びChatGPTのウェブサイトにおいて、定型的なプロンプト入力を効率化するUserScript「Command Suggester」を公開した。本稿ではその概要と利用法について報告する。"
+author: "AI Language Model (Gemini 2.5 Pro)"
+tags: ["UserScript", "Google Gemini", "ChatGPT", "Violentmonkey"]
+---
+
+## 1. はじめに
+
+近年、Google GeminiやChatGPTに代表される生成AIの利用が拡大する一方、反復的なプロンプト入力が作業効率を低下させるという課題が指摘されている。例えば、文章要約やコードレビューといった定型業務では、毎回類似した指示を入力する必要がある。
+
+この課題を解決するため、「Google Gemini Command Suggester」および「ChatGPT Command Suggester」と称するUserScriptが開発された。本稿では、これらのツールが提供する機能、動作原理、そして導入方法について詳述する。本ツールは、頻用するプロンプトをコマンドとして登録・呼び出し可能にすることで、AIとの対話における生産性向上を目的とする。
+
+
+
+## 2. 主な機能
+
+本ツールの中心的な機能は、プロンプト入力の補助である。
+
+利用者がAIのテキスト入力欄に特定のトリガー文字（例：「:」）を入力すると、事前登録されたコマンドの候補リストがポップアップ形式で表示される。利用者はキーボード操作のみでコマンドを選択でき、Enterキーで確定すると、対応するプロンプトが入力欄に自動で挿入される仕組みだ。
+
+これにより、タイピング量が削減されるだけでなく、プロンプトの品質維持や入力ミスの防止といった効果も期待できる。コマンドは利用者がJavaScriptファイルを直接編集することで、自由に追加・変更が可能であり、各々の用途に最適化されたコマンドセットを構築できる。
+
+具体的な利用例：
+
+* 文章要約: 「`:summary`」というコマンドに対し、「以下の文章を300字程度で要約せよ。」というプロンプトを割り当てる。
+* コードレビュー: 「`:review`」に対し、「以下のコードについて、リファクタリング案や潜在的な不具合を指摘せよ。」という定型文を割り当てる。
+
+
+
+## 3. 動作原理
+
+本ツールは、ウェブページの動作をカスタマイズする「UserScript」として実装されている。動作には、ViolentmonkeyやTampermonkeyといったUserScript管理用のブラウザ拡張機能（UserScriptマネージャー）が必須となる。
+
+技術的根幹はJavaScriptであり、UserScriptマネージャーを介して対象のウェブページ（Google GeminiまたはChatGPT）で以下の処理を実行する。
+
+1.  イベント監視 (Event Listener): ページの入力欄（テキストエリア）におけるキーボード入力イベントを常時監視する。
+2.  トリガー検知: トリガー文字の入力を検知すると、定義済みのコマンドリストに基づき、UI（ポップアップリスト）を動的に生成・表示する。
+3.  DOM操作: 利用者がリストからコマンドを選択すると、JavaScriptがウェブページのDOM (Document Object Model) を操作し、選択されたテキストを入力欄に反映させる。
+
+この一連の処理により、既存のウェブサイトの機能を変更することなく、新たな機能を付加的に実現している。
+
+
+
+## 4. 導入手順
+
+本ツールの導入は、以下の手順で行う。
+
+1.  UserScriptマネージャーの導入:
+    利用中のウェブブラウザ（Chrome, Firefox等）に、ViolentmonkeyまたはTampermonkeyの拡張機能を事前にインストールしておく。
+
+2.  スクリプトのインストール:
+    後述の「6. 情報源」に記載のGitHubリポジトリにアクセスする。リポジトリ内に存在する `.user.js` 拡張子のファイル（例: `GeminiCommandSuggester.user.js`）をクリックする。
+
+3.  インストールの承認:
+    上記操作により、UserScriptマネージャーのインストール確認画面が自動的に起動する。スクリプトの名称や実行対象サイトなどの情報を確認の上、「インストール」を実行する。
+
+以上の手順でセットアップは完了し、即座にコマンド提案機能が利用可能となる。
+
+
+
+## 5. まとめ
+
+「Google Gemini Command Suggester」および「ChatGPT Command Suggester」は、生成AIの利用における定型作業を自動化し、利用者の生産性を向上させる実用的なツールである。本ツールは単なる入力補助に留まらず、思考を中断することなく対話を継続するための支援を提供し、より高度な問題解決や創造的タスクへの集中を可能にする。
+
+オープンソースであるため透明性が高く、利用者が自身のニーズに応じて機能を拡張できる点も利点である。将来的には、チーム内での優れたプロンプトの共有基盤としての活用も期待される。
+
+
+
+## 6. 情報源
+
+* Google Gemini Command Suggester: [https://github.com/Mekann2904/Google-Gemini-Command-Suggester](https://github.com/Mekann2904/Google-Gemini-Command-Suggester)
+* ChatGPT Command Suggester: [https://github.com/Mekann2904/ChatGPT-Command-Suggester](https://github.com/Mekann2904/ChatGPT-Command-Suggester)
