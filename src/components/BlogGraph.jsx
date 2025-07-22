@@ -98,6 +98,7 @@ function applyInteractivity(svg, inner, nodeGroup, simulation) {
 /** 現在のページのノードIDを特定 */
 function findTargetNodeId(nodes, currentPath) {
     let targetNode = nodes.find((d) => d.id === currentPath);
+    
     if (!targetNode) {
       const pathWithoutSlash = currentPath.replace(/\/$/, '');
       targetNode = nodes.find((d) => d.id === pathWithoutSlash);
@@ -109,6 +110,7 @@ function findTargetNodeId(nodes, currentPath) {
     if (!targetNode) {
       targetNode = nodes.find((d) => d.id.includes(currentPath.replace(/^\//, '')));
     }
+    
     return targetNode ? targetNode.id : null;
 }
 
@@ -117,9 +119,12 @@ function filterGraphByHops(fullData, startNodeId, hops) {
   if (!startNodeId || !fullData.nodes.length) {
     return { nodes: [], links: [] };
   }
+  
   const nodesInHops = new Set([startNodeId]);
   const queue = [{ id: startNodeId, distance: 0 }];
   const adj = new Map();
+  
+  // 隣接リストを構築
   fullData.links.forEach(link => {
     const sourceId = typeof link.source === 'string' ? link.source : link.source.id;
     const targetId = typeof link.target === 'string' ? link.target : link.target.id;
@@ -129,11 +134,15 @@ function filterGraphByHops(fullData, startNodeId, hops) {
     adj.get(sourceId).push(targetId);
     adj.get(targetId).push(sourceId);
   });
+  
+  // BFSでホップ数内のノードを探索
   let head = 0;
   while(head < queue.length) {
     const current = queue[head++];
     if (current.distance >= hops) continue;
+    
     const neighbors = adj.get(current.id) || [];
+    
     for (const neighborId of neighbors) {
       if (!nodesInHops.has(neighborId)) {
         nodesInHops.add(neighborId);
@@ -141,12 +150,14 @@ function filterGraphByHops(fullData, startNodeId, hops) {
       }
     }
   }
+  
   const filteredNodes = fullData.nodes.filter(n => nodesInHops.has(n.id));
   const filteredLinks = fullData.links.filter(l => {
     const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
     const targetId = typeof l.target === 'string' ? l.target : l.target.id;
     return nodesInHops.has(sourceId) && nodesInHops.has(targetId);
   });
+  
   return { nodes: filteredNodes, links: filteredLinks };
 }
 
@@ -223,8 +234,11 @@ export default function BlogGraph({ data }) {
   // 2. 全データかホップ数が変更されたら、フィルタリングして表示用データを更新
   useEffect(() => {
     if (fullData.nodes.length > 0) {
-      const targetNodeId = findTargetNodeId(fullData.nodes, window.location.pathname);
+      const currentPath = window.location.pathname;
+      const targetNodeId = findTargetNodeId(fullData.nodes, currentPath);
+      
       const filteredData = filterGraphByHops(fullData, targetNodeId, hopCount);
+      
       setDisplayData(filteredData);
     }
   }, [fullData, hopCount]);

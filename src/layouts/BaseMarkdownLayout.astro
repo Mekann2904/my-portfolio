@@ -9,8 +9,6 @@ import DynamicToc from '../components/DynamicToc.jsx';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import Backlinks from '../components/Backlinks.jsx';
 import BlogGraph from '../components/BlogGraph.jsx';
-import fs from 'fs';
-import path from 'path';
 import graphData from '../data/blog-graph.json';
 import contentsData from '../data/blog-contents.json';
 
@@ -46,8 +44,7 @@ const {
 };
 
 // --- Backlinks生成ロジック ---
-const blogContentsPath = path.join(process.cwd(), 'public', 'blog-contents.json');
-const blogContents: BlogPost[] = JSON.parse(fs.readFileSync(blogContentsPath, 'utf-8'));
+const blogContents: BlogPost[] = contentsData;
 const currentSlug = Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
 const candidates = [
   `../blog/${currentSlug}`,
@@ -70,10 +67,13 @@ const backlinks = blogContents
 
 // --- External Links生成ロジック ---
 const currentPost = blogContents.find(p => p.slug === currentSlug);
-const externalLinks = currentPost
-  ? Array.from(currentPost.content.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g))
+const allLinks = currentPost
+  ? Array.from(currentPost.content.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g))
     .map(match => ({ title: match[1], url: match[2] }))
   : [];
+
+const externalLinks = allLinks.filter(link => /^https?:\/\//.test(link.url));
+const internalLinks = allLinks.filter(link => !/^https?:\/\//.test(link.url));
 
 // --- OGP/URL関連 (変更なし) ---
 const canonicalURL = Astro.url;

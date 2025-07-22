@@ -82,8 +82,8 @@ async function main() {
       if (href.startsWith('/')) {
         tgt = href.replace(/\/$/, '') || '/';
       } else if (href.startsWith('./') || href.startsWith('../')) {
-        // 相対パスを絶対パスに解決
-        const abs = path.posix.normalize(path.posix.join(pagePath, href));
+        // 相対パスを絶対パスに解決（親ディレクトリも正しく解決）
+        const abs = path.posix.normalize(path.posix.join(path.posix.dirname(pagePath), href));
         tgt = abs.replace(/\/$/, '') || '/';
       }
       if (tgt) {
@@ -133,6 +133,9 @@ async function generateBlogGraph() {
   // blog専用の除外対象
   const blogNavPaths = new Set(['/blog']);
   const blogAssetPrefixes = ['/_astro/', '/public/', '/model/', '/images/'];
+  const navPaths = new Set(['/', '/blog', '/tags', '/portfolio', '/anime', '/my-journey']);
+  const navPrefixes = ['/test/', '/tailwind/'];
+  const assetPrefixes = ['/_astro/', '/public/', '/model/', '/images/'];
 
   for (const file of blogHtmlFiles) {
     const rel = path.relative(dist, file);
@@ -187,8 +190,8 @@ async function generateBlogGraph() {
       if (href.startsWith('/')) {
         tgt = href.replace(/\/$/, '') || '/';
       } else if (href.startsWith('./') || href.startsWith('../')) {
-        // 相対パスを絶対パスに解決
-        const abs = path.posix.normalize(path.posix.join(pagePath, href));
+        // 相対パスを絶対パスに解決（親ディレクトリも正しく解決）
+        const abs = path.posix.normalize(path.posix.join(path.posix.dirname(pagePath), href));
         tgt = abs.replace(/\/$/, '') || '/';
       }
       if (tgt) {
@@ -201,8 +204,8 @@ async function generateBlogGraph() {
         // リンク種別の記録
         let type = 'normal';
         if (tgt.startsWith('/tags/')) type = 'tag';
-        else if (blogNavPaths.has(tgt)) type = 'nav';
-        else if (blogAssetPrefixes.some(prefix => tgt.startsWith(prefix))) type = 'asset';
+        else if (navPaths.has(tgt) || navPrefixes.some(prefix => tgt.startsWith(prefix))) type = 'nav';
+        else if (assetPrefixes.some(prefix => tgt.startsWith(prefix))) type = 'asset';
         // blogノードへのリンクも除外
         if (tgt === '/blog') continue;
         blogLinks.push({ source: pagePath, target: tgt, type });
@@ -210,7 +213,7 @@ async function generateBlogGraph() {
     }
   }
 
-  /* ---------- blogノードの重複排除 ---------- */
+  /* ---------- ノードの重複排除 ---------- */
   const uniqBlogNodes = Array.from(new Map(blogNodes.map(n => [n.id, n])).values());
 
   /* ---------- blog-graph.json 書き出し ---------- */
