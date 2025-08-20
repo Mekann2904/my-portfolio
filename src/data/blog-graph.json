@@ -26,6 +26,31 @@
       "ext": true
     },
     {
+      "id": "/blog/command-palette-explanation",
+      "label": "command-palette-explanation",
+      "ext": false
+    },
+    {
+      "id": "/blog/divergences",
+      "label": "divergences",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "label": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "ext": true
+    },
+    {
+      "id": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "label": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "ext": true
+    },
+    {
       "id": "/blog/download-box",
       "label": "download-box",
       "ext": false
@@ -61,11 +86,6 @@
       "ext": true
     },
     {
-      "id": "/blog/command-palette-explanation",
-      "label": "command-palette-explanation",
-      "ext": false
-    },
-    {
       "id": "/blog/image-embedding-guide",
       "label": "image-embedding-guide",
       "ext": false
@@ -76,23 +96,23 @@
       "ext": true
     },
     {
-      "id": "/blog/divergences",
-      "label": "divergences",
+      "id": "/blog/inline-css-astro",
+      "label": "inline-css-astro",
       "ext": false
     },
     {
-      "id": "https://github.com/AnubisNekhet/AnuPpuccin",
-      "label": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "id": "https://github.com/GoogleChromeLabs/critters",
+      "label": "https://github.com/GoogleChromeLabs/critters",
       "ext": true
     },
     {
-      "id": "https://github.com/Mekann2904/obsidian-divergences-theme",
-      "label": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "id": "https://github.com/playform/inline",
+      "label": "https://github.com/playform/inline",
       "ext": true
     },
     {
-      "id": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
-      "label": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "id": "https://docs.astro.build/ja/",
+      "label": "https://docs.astro.build/ja/",
       "ext": true
     },
     {
@@ -174,26 +194,6 @@
       "id": "/blog/why-not-tree",
       "label": "why-not-tree",
       "ext": false
-    },
-    {
-      "id": "/blog/inline-css-astro",
-      "label": "inline-css-astro",
-      "ext": false
-    },
-    {
-      "id": "https://github.com/GoogleChromeLabs/critters",
-      "label": "https://github.com/GoogleChromeLabs/critters",
-      "ext": true
-    },
-    {
-      "id": "https://github.com/playform/inline",
-      "label": "https://github.com/playform/inline",
-      "ext": true
-    },
-    {
-      "id": "https://docs.astro.build/ja/",
-      "label": "https://docs.astro.build/ja/",
-      "ext": true
     },
     {
       "id": "/blog/x-bookmarks-exporter",
@@ -328,11 +328,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/astro-image-optimization",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
       "source": "/blog/compress-astro",
       "target": "/",
       "type": "nav"
@@ -443,19 +438,259 @@
       "type": "tag"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "https://github.com/playform/compress",
-      "type": "external"
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "nav"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/",
-      "type": "external"
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "nav"
     },
     {
-      "source": "/blog/compress-astro",
-      "target": "/blog/inline-css-astro",
+      "source": "/blog/command-palette-explanation",
+      "target": "/",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-1",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-2",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-3",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/test/three-4",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#はじめに",
       "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#実装の詳細",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/React",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/全文検索",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/command-palette-explanation",
+      "target": "/tags/Hooks",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-1",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-2",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-3",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/test/three-4",
+      "type": "nav"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#1-緒言",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#2-既存テーマの改変と課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#21-カスタマイズの動機と初期段階",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#22-技術的課題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#23-自作テーマ開発への移行",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#3-新規テーマdivergencesの開発",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#31-開発理念と目標",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#32-開発手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#4-divergencesの導入手順",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#41-step-1-テーマのインストール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#42-step-2-関連プラグインの導入",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#43-step-3-カスタム背景の設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#5-考察",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/blog/divergences/#6-結論",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "type": "external"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Obsidian",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/自作テーマ",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/CSS",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/divergences",
+      "target": "/tags/Divergences",
+      "type": "tag"
     },
     {
       "source": "/blog/download-box",
@@ -663,21 +898,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://github.com/sebholstein/astro-google-fonts-optimizer",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "https://fonts.google.com/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/google-fonts-optimizer",
-      "target": "/blog/compress-astro",
-      "type": "normal"
-    },
-    {
       "source": "/blog/generate-graph",
       "target": "/",
       "type": "nav"
@@ -818,126 +1038,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/generate-graph",
-      "target": "https://d3js.org/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/generate-graph",
-      "target": "https://visjs.github.io/vis-network/docs/network/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-1",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-2",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-3",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/test/three-4",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#はじめに",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#アーキテクチャと設計思想",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コンポーネントの全体像",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#なぜ記事データをjsonで取得するのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#実装の詳細",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#ラッパーコンポーネントblogcommandpalettewrapperjsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#コマンドパレット本体commandpalettejsx",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#1-状態管理とデータ取得",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#2-クエリ解析と全文検索",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#3-サジェストとキーボード操作",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/blog/command-palette-explanation/#まとめと今後の展望",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/React",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/全文検索",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/command-palette-explanation",
-      "target": "/tags/Hooks",
-      "type": "tag"
-    },
-    {
       "source": "/blog/image-embedding-guide",
       "target": "/",
       "type": "nav"
@@ -1038,179 +1138,129 @@
       "type": "tag"
     },
     {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "https://docs.astro.build/ja/guides/integrations-guide/mdx/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/image-embedding-guide",
-      "target": "/blog/astro-image-optimization",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/test/three",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/test/three-1",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/test/three-2",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/test/three-3",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
+      "source": "/blog/inline-css-astro",
       "target": "/test/three-4",
       "type": "nav"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#1-緒言",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#なぜcssをインライン化するのか",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#2-既存テーマの改変と課題",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#playforminlineの導入手順",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#21-カスタマイズの動機と初期段階",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#crittersとは",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#22-技術的課題",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#注意点トラブル事例",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#23-自作テーマ開発への移行",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#ベストプラクティス",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#3-新規テーマdivergencesの開発",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#参考リンク",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#31-開発理念と目標",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#外部css運用への回帰と安定性について",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#32-開発手順",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#解決策ベストプラクティス",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#4-divergencesの導入手順",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/inline-css-astro/#判断基準",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#41-step-1-テーマのインストール",
+      "source": "/blog/inline-css-astro",
+      "target": "/blog/compress-astro",
       "type": "normal"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#42-step-2-関連プラグインの導入",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#43-step-3-カスタム背景の設定",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#5-考察",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/blog/divergences/#6-結論",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
       "type": "external"
     },
     {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/playform/inline",
       "type": "external"
     },
     {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
+      "source": "/blog/inline-css-astro",
+      "target": "https://github.com/GoogleChromeLabs/critters",
       "type": "external"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/tags/Obsidian",
+      "source": "/blog/inline-css-astro",
+      "target": "https://docs.astro.build/ja/",
+      "type": "external"
+    },
+    {
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Astro",
       "type": "tag"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/tags/自作テーマ",
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/CSS最適化",
       "type": "tag"
     },
     {
-      "source": "/blog/divergences",
-      "target": "/tags/CSS",
+      "source": "/blog/inline-css-astro",
+      "target": "/tags/Webパフォーマンス",
       "type": "tag"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "/tags/Divergences",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/AnubisNekhet/AnuPpuccin",
-      "type": "external"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-divergences-theme",
-      "type": "external"
-    },
-    {
-      "source": "/blog/divergences",
-      "target": "https://github.com/Mekann2904/obsidian-local-vault-server-plugin.git",
-      "type": "external"
     },
     {
       "source": "/blog/llm-suggester",
@@ -1311,21 +1361,6 @@
       "source": "/blog/llm-suggester",
       "target": "/tags/Violentmonkey",
       "type": "tag"
-    },
-    {
-      "source": "/blog/llm-suggester",
-      "target": "https://github.com/Mekann2904/Google-Gemini-Command-Suggester",
-      "type": "external"
-    },
-    {
-      "source": "/blog/llm-suggester",
-      "target": "https://github.com/Mekann2904/ChatGPT-Command-Suggester",
-      "type": "external"
-    },
-    {
-      "source": "/blog/llm-suggester",
-      "target": "/blog/violentmonkey",
-      "type": "normal"
     },
     {
       "source": "/blog/mac-smartmontools",
@@ -1568,31 +1603,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://textlint.github.io/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://t.co/qlr8s5kJzU",
-      "type": "external"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://twitter.com/Mekann2904/status/1942542541712416909?ref_src=twsrc%5Etfw",
-      "type": "external"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
-      "type": "external"
-    },
-    {
-      "source": "/blog/obsidian-textlint",
-      "target": "https://github.com/Mekann2904/obsidian-textlint-highlighter-plugin/releases",
-      "type": "external"
-    },
-    {
       "source": "/blog/prefetch-enabled",
       "target": "/",
       "type": "nav"
@@ -1696,16 +1706,6 @@
       "source": "/blog/prefetch-enabled",
       "target": "/tags/Webパフォーマンス",
       "type": "tag"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "https://docs.astro.build/ja/guides/prefetch/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/prefetch-enabled",
-      "target": "/blog/image-embedding-guide",
-      "type": "normal"
     },
     {
       "source": "/blog/vault-organizer",
@@ -1818,11 +1818,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/vault-organizer",
-      "target": "https://github.com/Mekann2904/obsidian-vault-organizer-plugin",
-      "type": "external"
-    },
-    {
       "source": "/blog/violentmonkey",
       "target": "/",
       "type": "nav"
@@ -1928,11 +1923,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/violentmonkey",
-      "target": "https://greasyfork.org/",
-      "type": "external"
-    },
-    {
       "source": "/blog/why-not-tree",
       "target": "/",
       "type": "nav"
@@ -2026,156 +2016,6 @@
       "source": "/blog/why-not-tree",
       "target": "/tags/Zettelkasten",
       "type": "tag"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/test/three",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/test/three-1",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/test/three-2",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/test/three-3",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/test/three-4",
-      "type": "nav"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#なぜcssをインライン化するのか",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#playforminlineの導入手順",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#crittersとは",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#注意点トラブル事例",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#ベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#参考リンク",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#外部css運用への回帰と安定性について",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#解決策ベストプラクティス",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/inline-css-astro/#判断基準",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/compress-astro",
-      "type": "normal"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/GoogleChromeLabs/critters",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/playform/inline",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/GoogleChromeLabs/critters",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://docs.astro.build/ja/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/tags/Astro",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/tags/CSS最適化",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/tags/Webパフォーマンス",
-      "type": "tag"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/GoogleChromeLabs/critters",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/playform/inline",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://github.com/GoogleChromeLabs/critters",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "https://docs.astro.build/ja/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/inline-css-astro",
-      "target": "/blog/prefetch-enabled",
-      "type": "normal"
     },
     {
       "source": "/blog/x-bookmarks-exporter",
@@ -2278,16 +2118,6 @@
       "type": "tag"
     },
     {
-      "source": "/blog/x-bookmarks-exporter",
-      "target": "https://github.com/Mekann2904/X-Bookmarks-Exporter",
-      "type": "external"
-    },
-    {
-      "source": "/blog/x-bookmarks-exporter",
-      "target": "/blog/violentmonkey",
-      "type": "normal"
-    },
-    {
       "source": "/blog/youtube-embed",
       "target": "/",
       "type": "nav"
@@ -2386,21 +2216,6 @@
       "source": "/blog/youtube-embed",
       "target": "/tags/埋め込み",
       "type": "tag"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://www.npmjs.com/package/@astro-community/astro-embed-youtube",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://docs.astro.build/ja/guides/assets/",
-      "type": "external"
-    },
-    {
-      "source": "/blog/youtube-embed",
-      "target": "https://docs.astro.build/en/guides/images/#remote-images",
-      "type": "external"
     }
   ]
 }

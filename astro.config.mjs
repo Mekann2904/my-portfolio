@@ -10,8 +10,8 @@ import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import remarkExtractUrls from './remark-extract-urls.js';
 
-import playformCompress from '@playform/compress';
 import critters from 'astro-critters';
+import compressor from 'astro-compressor';
 
 export default defineConfig({
   site: 'https://my-portfolio-f4k.pages.dev',
@@ -40,11 +40,7 @@ export default defineConfig({
       ],
     }),
     critters(),
-    playformCompress({
-      Exclude: [
-        (file) => file.includes('/model/')
-      ]
-    })
+    compressor()
   ],
   markdown: {
     shikiConfig: { theme: 'github-dark' },
