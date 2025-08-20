@@ -46,6 +46,6 @@ const posts = files.map(filename => {
   };
 });
 
-const outPath = path.join(__dirname, '../src/data/blog-contents.json');
+const outPath = path.join(__dirname, '../public/blog-contents.json');
 fs.writeFileSync(outPath, JSON.stringify(posts, null, 2));
 console.log('Extracted blog contents to', outPath); 
