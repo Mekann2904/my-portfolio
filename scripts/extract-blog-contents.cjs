@@ -46,6 +46,12 @@ const posts = files.map(filename => {
   };
 });
 
-const outPath = path.join(__dirname, '../public/blog-contents.json');
-fs.writeFileSync(outPath, JSON.stringify(posts, null, 2));
-console.log('Extracted blog contents to', outPath); 
+const publicPath = path.join(__dirname, '../public/blog-contents.json');
+const dataPath = path.join(__dirname, '../src/data/blog-contents.json');
+const jsonOutput = JSON.stringify(posts, null, 2);
+
+fs.writeFileSync(publicPath, jsonOutput);
+console.log('Extracted blog contents to', publicPath);
+
+fs.writeFileSync(dataPath, jsonOutput);
+console.log('Extracted blog contents to', dataPath);
