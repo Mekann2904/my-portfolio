@@ -8,7 +8,7 @@ const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md') || f.endsWit
 // テキストからMarkdown、JSX、その他の構文を削除してプレーンテキストにする
 function cleanContent(text) {
   if (!text) return '';
-  return text
+  let cleaned = text
     // 1. MDX/JSXのimport文を削除
     .replace(/^import\s+.*?\s+from\s+['"].*['"];?/gm, '')
     // 2. JSXタグを削除 (例: <YouTube ... />, <Image ... />)
@@ -29,7 +29,8 @@ function cleanContent(text) {
     .replace(/`[^`]+`/g, '')
     // 10. 余分な改行を1つにまとめる
     .replace(/\n{2,}/g, '\n')
-    .trim();
+
+  return cleaned.trim();
 }
 
 const posts = files.map(filename => {
