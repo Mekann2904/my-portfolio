@@ -1,0 +1,295 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Git & GitHub 入門セットアップガイド（macOS）"
+date: "2025-09-08"
+description: "Git と GitHub の基本的なセットアップ手順を macOS 環境で解説"
+author: "Mekann"
+tags: ["Git", "GitHub"]
+---
+
+
+> 対象: macOS（Apple Silicon/Intel）で Git と GitHub CLI を使い始め、zsh + Znap + oh‑my‑zsh で快適に操作したい初学者〜中級者。
+
+子::[Git及びGitHubの練習問題](../blog/re-gh)
+
+情報::[https://github.com/Mekann2904/learning-gh](https://github.com/Mekann2904/learning-gh)
+
+---
+
+## 事前準備（Homebrew の確認）
+
+Homebrew が入っていない場合は先に導入します。
+
+```bash
+brew --version
+```
+
+未インストールの場合は[https://brew.sh](https://brew.sh)を参照。
+
+---
+
+## Git のインストールと初期設定
+
+### 1) インストール & 動作確認
+
+```bash
+brew install git
+
+# 動作確認
+git --version
+```
+
+### 2) ユーザー情報の設定（コミット署名者名・メール）
+
+```bash
+git config --global user.name  "あなたの名前"
+git config --global user.email "your-mail@example.com"
+
+# 確認
+git config --global user.name
+git config --global user.email
+```
+
+### 3) 推奨の基本設定
+
+```bash
+# 既定ブランチ名を main に
+git config --global init.defaultBranch main
+
+# 改行コード（macOS/Linux）
+git config --global core.autocrlf input
+
+# pull のデフォルト（マージ方式。rebase 好みなら true）
+git config --global pull.rebase false
+
+# macOS のキーチェーンに資格情報を保存（HTTPS の場合）
+git config --global credential.helper osxkeychain
+```
+
+> Tips: お好みのエディタを設定（VS Code 例）
+
+```bash
+git config --global core.editor "code --wait"
+# Neovim なら: git config --global core.editor "nvim"
+```
+
+---
+
+## GitHub CLI（gh）の導入と認証
+
+### 1) インストール & 確認
+
+```bash
+brew install gh
+
+# 動作確認
+gh --version
+```
+
+### 2) GitHub へのログイン（SSH 推奨）
+
+```bash
+gh auth login
+# 対話:
+# ✓ GitHub.com
+# ✓ SSH
+# ✓ 新しい SSH キーを生成 → アップロードを許可
+# （既存キーがある場合はそれを利用してもOK）
+```
+
+### 3) 接続テスト（SSH）
+
+```bash
+ssh -T git@github.com
+# 成功例: Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+---
+
+## SSH/HTTPS 
+
+* SSH: パスワード不要・公開鍵認証で便利。複数リポジトリでも扱いやすい。
+* HTTPS: 個別に Personal Access Token が必要になる場面がある。
+
+> 注意: リモート URL で SSH と HTTPS を混在させないこと。統一しましょう。
+
+```bash
+# 現在のリモート URL を確認
+git remote -v
+```
+
+---
+
+## zsh + Znap + oh‑my‑zsh の設定
+
+> 目的: 起動高速な Znap を使って oh‑my‑zsh とプラグインを効率的に読み込む。
+
+### 1) Znap 本体の導入
+
+```bash
+# 本体取得
+git clone --depth=1 https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+```
+
+### 2) `~/.zshrc` に追記
+
+> ※ ここでは ディレクトリを \~/Repos/znap に統一します（混在を防ぐ）。
+
+```zsh
+# === Plugin Manager: Znap ===
+[[ -r ~/Repos/znap/znap.zsh ]] && source ~/Repos/znap/znap.zsh
+
+# --- clone（初回だけ。更新は znap pull <repo> または znap pull で一括） ---
+znap clone ohmyzsh/ohmyzsh
+znap clone zsh-users/zsh-autosuggestions
+znap clone zdharma-continuum/fast-syntax-highlighting
+
+# --- 読み込み順：oh‑my‑zsh → 個別プラグイン ---
+plugins=(git)   # oh‑my‑zsh の git プラグインを有効化
+znap source ohmyzsh/ohmyzsh
+znap source zsh-users/zsh-autosuggestions
+znap source zdharma-continuum/fast-syntax-highlighting
+
+# --- 便利エイリアス（oh‑my‑zsh の alias と競合しない範囲） ---
+alias gurl='git config --get remote.origin.url'
+alias gname='git config user.name'
+alias gemail='git config user.email'
+```
+
+### 3) 反映
+
+```bash
+exec zsh   # もしくは新しいターミナルを開く
+```
+
+> 更新: `znap pull` でクローン済みリポジトリを一括更新。
+
+[Oh-My-Zsh Git Cheat Sheet - Kapeli](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com)
+
+---
+
+## 最短クイックスタート（新規リポジトリ作成→GitHub へ push）
+
+```bash
+# 1) 作業用ディレクトリを作成
+mkdir hello-git && cd hello-git
+
+echo "# hello-git" > README.md
+
+git init               # main が既定ブランチ（設定済み）
+git add .
+git commit -m "chore: initial commit"
+
+# 2) GitHub 上に作成（SSH 認証で）
+#   --source . : 現在のディレクトリをリポジトリとして使用
+#   --remote origin : origin を登録
+#   --push : 初回 push まで自動
+
+gh repo create hello-git --public --source . --remote=origin --push
+
+# 3) 確認
+git remote -v
+```
+
+---
+
+## チートシート
+
+* Oh‑My‑Zsh Git Cheat Sheet（英語）: [Oh-My-Zsh Git Cheat Sheet - Kapeli](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com)
+
+---
+
+## 1) SSH 鍵運用の実務（GitHub での推奨）
+
+### 1.1 生成（ed25519 推奨）
+
+```bash
+ssh-keygen -t ed25519 -C "github-<yourname>-$(date +%Y)"
+# 例: ~/.ssh/id_ed25519 を生成（パスフレーズ推奨）
+```
+
+### 1.2 エージェント & macOS キーチェーン連携
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+# 恒久化: ~/.ssh/config に設定（次節）
+```
+
+### 1.3 \~/.ssh/config（単一/複数アカウント両対応）
+
+```sshconfig
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  AddKeysToAgent yes
+  UseKeychain yes
+
+# 仕事用など複数アカウント時：
+Host github-work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_work
+  AddKeysToAgent yes
+  UseKeychain yes
+```
+
+* 使い分け: リモート URL を `git@github.com:<user>/<repo>.git`（個人）/ `git@github-work:<org>/<repo>.git`（仕事） のように分ける。
+
+### 1.4 GitHub への鍵登録
+
+```bash
+# gh 経由（タイトルを付けて登録）
+gh ssh-key add ~/.ssh/id_ed25519.pub --title "macbook-air-$(date +%Y-%m)"
+
+# 疎通確認
+ssh -T git@github.com
+```
+
+> 落とし穴: `Permission denied (publickey)` は、鍵未登録・鍵ファイル権限・別アカウント参照が原因の 3 大パターン。
+
+---
+
+## 2) HTTPS を選ぶ場合（PAT）
+
+* ブラウザ/CI 互換が高い一方、Personal Access Token（PAT） が必要。
+* macOS は `osxkeychain` で安全に保存。
+
+```bash
+git config --global credential.helper osxkeychain
+# 初回 push 時にユーザー名 + Token（※パスワードではない）
+```
+
+* 途中から SSH に移行するには：
+
+```bash
+git remote set-url origin git@github.com:<USER>/<REPO>.git
+```
+
+---
+
+## 3) GitHub CLI（gh）の実戦
+
+```bash
+# ログイン（SSH 前提）
+gh auth login
+
+# 既存リポを clone
+gh repo clone <owner>/<repo>
+
+# 新規作成→push（現在ディレクトリをソース）
+gh repo create my-app --public --source . --remote=origin --push
+
+# PR 作成・表示・レビュー
+gh pr create --fill --base main --head feature/x
+gh pr view --web
+gh pr checkout <PR番号>
+
+# Issue / Labels / Releases
+gh issue create --title "Bug: ..." --body "..."
+gh label list
+gh release create v1.0.0 --notes "初回リリース"
+```
+
+> Tips: `gh alias set prco 'pr create --fill'` のように短縮化可能。

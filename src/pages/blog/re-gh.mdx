@@ -1,0 +1,191 @@
+---
+layout: "../../layouts/BaseMarkdownLayout.astro"
+title: "Git及びGitHubの練習問題"
+date: "2025-09-08"
+description: "Git及びGitHubの練習問題"
+author: "Mekann"
+tags: ["Git", "GitHub"]
+---
+
+子::[Git hooksの実践ガイド](../blog/git-hooks)
+
+## この記事について
+
+この記事は、GitおよびGitHubの基本的な操作に慣れるための練習問題と、その手順をまとめたガイドである。
+`gh` コマンド（GitHub CLI）を中心に、実際の開発フローをコマンドラインで体験することを目的とする。
+リポジトリの作成、ブランチの操作、変更のコミットとプッシュ、そしてプルリクエストの管理といった内容を学習する。
+コマンドの実行例に続いて、最後に理解度を確認するための練習問題がある。
+
+## レポジトリを作成する
+
+`gh repo create`コマンドは、GitHub上に新しいリポジトリを作成する。
+`gh repo create re-gh --public --add-readme -c`というコマンドは、`re-gh`という名前で公開（`--public`）リポジトリを作成し、`--add-readme`フラグによって`README.md`ファイルを自動生成する。さらに`-c`（`--clone`）フラグで、作成したリポジトリをローカルにクローンする。
+
+```shell
+(base) mekann@MekannMacBook mekann/github $ gh repo create re-gh --public --add-readme -c 
+✓ Created repository Mekann2904/re-gh on github.com
+  https://github.com/Mekann2904/re-gh
+Cloning into 're-gh'...
+(base) mekann@MekannMacBook mekann/github $ ls
+cable-generator             my-llm-prompts
+ChatGPT-Command-Suggester   my-portfolio
+conflict                    pandoc-ruby-filter
+demo_git_web                PoC
+enpit                       PoC-real-estate
+learning                    PoC-XR
+mac                         re-gh
+mcp                         terraform-github-management
+my-github-terraform         vive-terraform-repo
+
+(base) mekann@MekannMacBook github/re-gh $ gh repo view --web
+```
+
+`gh repo view --web`コマンドは、現在いるローカルリポジトリに対応するGitHubリポジトリをブラウザで開く。
+
+---
+
+また、既存のローカルディレクトリをGitHubリポジトリとして公開することもできる。
+まず`mkdir`と`cd`でディレクトリを作成して移動し、`git init`でGitリポジトリとして初期化する。最後に`gh repo create re-gh --public --source .`コマンドを実行すると、現在のディレクトリをソースとしてGitHubリポジトリが作成され、リモートURLも自動で設定される。
+
+```shell
+(base) mekann@MekannMacBook mekann/github $ mkdir re-gh            
+(base) mekann@MekannMacBook mekann/github $ cd re-gh 
+(base) mekann@MekannMacBook github/re-gh $ git init   
+Initialized empty Git repository in /Users/mekann/github/re-gh/.git/
+(base) mekann@MekannMacBook github/re-gh $ gh repo create re-gh --public --source  .
+✓ Created repository Mekann2904/re-gh on github.com
+  https://github.com/Mekann2904/re-gh
+✓ Added remote git@github.com:Mekann2904/re-gh.git
+
+
+A new release of gh is available: 2.76.1 → 2.78.0
+To upgrade, run: brew upgrade gh
+https://github.com/cli/cli/releases/tag/v2.78.0
+
+(base) mekann@MekannMacBook github/re-gh $ gh repo view --web
+```
+
+## ブランチを作成し、作業ブランチに切り替える
+
+`gswc dev/mekann`は `git switch -c` のエイリアス（別名）の可能性があり、これは `dev/mekann` という名前の新しいブランチを作成し、そのブランチにすぐに切り替えるコマンドである。
+`gb`は `git branch` のエイリアスの可能性があり、ローカルに存在するブランチの一覧を表示するコマンドである。
+
+```shell
+(base) mekann@MekannMacBook github/re-gh $ gswc dev/mekann 
+Switched to a new branch 'dev/mekann'
+(base) mekann@MekannMacBook github/re-gh $ gb   
+```
+
+## ブランチに変更を加え、プッシュする
+
+`echo`コマンドで`hoge.txt`というファイルを作成して`hoge`という文字列を書き込み、`gaa`（`git add -A`のエイリアスと思われる）ですべての変更をステージングする。次に`gcmsg`（`git commit -m`のエイリアスと思われる）でコミットメッセージを付けて変更を記録する。`gp`（`git push`のエイリアスと思われる）でプッシュを試みるが、初回はアップストリームブランチがないため失敗する。そのため、`git push --set-upstream origin dev/mekann`を実行し、リモートにブランチをプッシュすると同時にアップストリームを設定する。これにより、次回以降は`gp`だけでプッシュが可能になる。
+
+```shell          
+(base) mekann@MekannMacBook github/re-gh $ echo "hoge" >> hoge.txt    
+(base) mekann@MekannMacBook github/re-gh $ gaa           
+(base) mekann@MekannMacBook github/re-gh $ gcmsg "add hoge.txt"
+[dev/mekann b988dc6] add hoge.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hoge.txt
+(base) mekann@MekannMacBook github/re-gh $ gp                  
+fatal: The current branch dev/mekann has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev/mekann
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+(base) mekann@MekannMacBook github/re-gh $ git push --set-upstream origin dev/mekann
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'dev/mekann' on GitHub by visiting:
+remote:      https://github.com/Mekann2904/re-gh/pull/new/dev/mekann
+remote: 
+To github.com:Mekann2904/re-gh.git
+ * [new branch]      dev/mekann -> dev/mekann
+branch 'dev/mekann' set up to track 'origin/dev/mekann'.
+```
+
+## プルリクエストを作成する
+
+`gh pr create`コマンドは、現在のブランチからプルリクエストを作成するための対話的なプロンプトを開始する。タイトルや本文などを質問され、最後に`Submit`するとGitHub上にプルリクエストが作成される。
+
+```shell
+(base) mekann@MekannMacBook github/re-gh $ gh pr create
+
+Creating pull request for dev/mekann into main in Mekann2904/re-gh
+
+? Title (required) hoge
+? Body <Received>
+? What's next? Submit
+https://github.com/Mekann2904/re-gh/pull/1
+```
+
+## プルリクエストを確認する
+
+`gh pr list`コマンドでオープンなプルリクエストの一覧を表示し、`gh pr view [PR番号]`で指定したプルリクエストの詳細を確認できる。
+
+```shell
+(base) mekann@MekannMacBook github/re-gh $ gh pr list
+Showing 1 of 1 open pull request in Mekann2904/re-gh
+
+ID  TITLE  BRANCH      CREATED AT         
+#1  hoge   dev/mekann  about 2 minutes ago
+(END)
+
+(base) mekann@MekannMacBook github/re-gh $ gh pr view 1  
+hoge Mekann2904/re-gh#1
+Open • Mekann2904 wants to merge 1 commit into main from dev/mekann • about 2 minutes ago
++1 -0 • No checks
+
+
+  hoge.txtを追加しました。                                                     
+
+
+View this pull request on GitHub: https://github.com/Mekann2904/re-gh/pull/1
+
+(END)
+```
+
+## プルリクエストをレビューする
+
+`gh pr comment [PR番号]`コマンドで指定したプルリクエストにコメントを追加する。実行するとデフォルトのエディタが起動し、コメントを記述できる。
+
+```shell
+(base) mekann@MekannMacBook github/re-gh $ gh pr comment 1
+- Press Enter to draft your comment in vim... 
+? Submit? Yes
+https://github.com/Mekann2904/re-gh/pull/1#issuecomment-3266264236
+
+
+```
+
+## プルリクエストをマージする
+
+`gh pr merge [PR番号]`コマンドで指定したプルリクエストをマージする。この際、マージ方法（Merge, Squash, Rebase）を選択するプロンプトが表示されることもある。
+
+```shell
+(base) mekann@MekannMacBook github/re-gh $ gh pr merge 1
+```
+
+
+
+## 練習問題
+
+1. 新規に公開レポジトリ `practice-repo` を作成し、`README.md` を自動生成してブラウザで開いてください。
+2. 既存ディレクトリからレポジトリを初期化し、同名の GitHub レポジトリを作成・関連付けてください。
+3. 作業用ブランチ `feature/add-readme` を作成して切り替えてください。
+4. `README.md` に1行追記し、コミットメッセージ「docs: update readme」でコミットしてください。
+5. アップストリームを設定してブランチをリモートへプッシュしてください。
+6. CLI を使ってプルリクエストを作成し、タイトルを「Update README」、本文を任意で作成してください。
+7. 現在オープン中のプルリクエスト一覧を表示し、該当 PR の詳細を確認してください。
+8. PR にコメントを 1 件追加してください。
+9. PR をマージし、ブランチをリモートから削除してください。
+10. マージ後、ローカルの `main` を最新に更新し、不要になったローカルブランチを削除してください。
+

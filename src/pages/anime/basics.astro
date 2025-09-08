@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Anime.js Basics - CSS Selector">
+  <main class="mx-auto max-w-3xl px-4 py-8 prose prose-invert">
+    <h1>CSSセレクタでターゲット</h1>
+    <p>
+      下の要素群に対して <code>targets: '.css-selector-demo .el'</code> で
+      横方向へ移動させます。
+    </p>
+
+    <div class="css-selector-demo space-y-2">
+      <div class="el h-6 w-16 bg-sky-600 rounded" />
+      <div class="el h-6 w-24 bg-emerald-600 rounded" />
+      <div class="el h-6 w-12 bg-pink-600 rounded" />
+      <div class="el h-6 w-6 bg-violet-600 rounded-full" />
+    </div>
+
+    <pre class="row large centered">
+        <input type="range" value="0" min="0" max="1000" />
+        <input type="text" value="0" size="5"/>
+    </pre>
+
+    <div class="mt-4">
+      <button id="run-demo" class="px-3 py-1 rounded bg-indigo-600">Run</button>
+    </div>
+
+	<div class="large centered row">
+	  <div class="half col">
+	    <pre class="large log row">
+	      <span class="label">current time</span>
+	      <span class="value lcd">0</span>
+	    </pre>
+	  </div>
+	  <div class="half col">
+	    <pre class="large log row">
+	      <span class="label">callback fired</span>
+	      <span class="value lcd">0</span>
+	    </pre>
+	  </div>
+	</div>
+
+
+	<div class="medium row">
+	  <div class="square"></div>
+	</div>
+
+	<div class="large grid centered square-grid">
+	  <h2 class="text-xl">HELLO WORLD</h2>
+	</div>
+
+	<div class="large row">
+	  <div class="medium pyramid">
+	    <div class="triangle"></div>
+	    <div class="square2"></div>
+	    <div class="circle"></div>
+	  </div>
+	</div>
+
+<script type="module" src="/src/scripts/anime-css-selector.ts"></script>
+	<style>
+	#animation .text-xl {
+	  font-size: 1.5rem;
+	  color: currentColor;
+	  letter-spacing: 0.06em;
+	}
+	</style>
+<style>
+  .medium { padding: 2rem; }
+  .square {
+    width: 64px;
+    height: 64px;
+    background: #7c3aed; /* 見える色 */
+    border-radius: 8px;
+  }
+    .square2 {
+    width: 64px;
+    height: 64px;
+    background: #7c3aed; /* 見える色 */
+    border-radius: 8px;
+  }
+
+.triangle {
+  width: 0;
+  height: 0;
+  /* 左右は透明、下側を色で塗ることで三角形を作る */
+  border-left: 32px solid transparent;
+  border-right: 32px solid transparent;
+  border-bottom: 64px solid #7c3aed;
+  /* 必要なら位置調整 */
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* 円 */
+.circle {
+  width: 64px;
+  height: 64px;
+  background: #7c3aed;   /* 背景色は background / background-color を使う */
+  border-radius: 50%;    /* 100% でも可、**クオートは不要** */
+  display: inline-block;
+}
+</style>
+
+</BaseLayout>
+

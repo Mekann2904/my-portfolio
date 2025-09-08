@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThreeBox5 from '../../components/ThreeBox-5.tsx';
+---
+
+<style>
+    html, body {
+      overflow: hidden !important;
+    }
+  </style>
+  <BaseLayout title="Three.js screen">
+    <ThreeBox5 client:visible />
+  </BaseLayout>
