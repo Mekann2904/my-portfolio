@@ -56,6 +56,11 @@
       "ext": false
     },
     {
+      "id": "/anime/basics",
+      "label": "anime/basics",
+      "ext": false
+    },
+    {
       "id": "/blog/astro-image-optimization",
       "label": "blog/astro-image-optimization",
       "ext": false
@@ -123,6 +128,31 @@
     {
       "id": "https://visjs.github.io/vis-network/docs/network/",
       "label": "https://visjs.github.io/vis-network/docs/network/",
+      "ext": true
+    },
+    {
+      "id": "/blog/git-hooks",
+      "label": "blog/git-hooks",
+      "ext": false
+    },
+    {
+      "id": "/blog/github",
+      "label": "blog/github",
+      "ext": false
+    },
+    {
+      "id": "https://github.com/Mekann2904/learning-gh",
+      "label": "https://github.com/Mekann2904/learning-gh",
+      "ext": true
+    },
+    {
+      "id": "https://brew.sh",
+      "label": "https://brew.sh",
+      "ext": true
+    },
+    {
+      "id": "https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com",
+      "label": "https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com",
       "ext": true
     },
     {
@@ -226,6 +256,11 @@
       "ext": true
     },
     {
+      "id": "/blog/re-gh",
+      "label": "blog/re-gh",
+      "ext": false
+    },
+    {
       "id": "/blog/vault-organizer",
       "label": "blog/vault-organizer",
       "ext": false
@@ -303,6 +338,21 @@
     {
       "id": "/tags/Divergences",
       "label": "tags/Divergences",
+      "ext": false
+    },
+    {
+      "id": "/tags/Git",
+      "label": "tags/Git",
+      "ext": false
+    },
+    {
+      "id": "/tags/Git hooks",
+      "label": "tags/Git hooks",
+      "ext": false
+    },
+    {
+      "id": "/tags/GitHub",
+      "label": "tags/GitHub",
       "ext": false
     },
     {
@@ -596,6 +646,11 @@
       "ext": false
     },
     {
+      "id": "/test/three-5",
+      "label": "test/three-5",
+      "ext": false
+    },
+    {
       "id": "/test/threebase",
       "label": "test/threebase",
       "ext": false
@@ -621,6 +676,26 @@
       "source": "/",
       "target": "https://x.com/Mekann2904",
       "type": "external"
+    },
+    {
+      "source": "/anime",
+      "target": "/anime/basics",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/git-hooks",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/github",
+      "type": "normal"
+    },
+    {
+      "source": "/blog",
+      "target": "/blog/re-gh",
+      "type": "normal"
     },
     {
       "source": "/blog",
@@ -740,6 +815,21 @@
     {
       "source": "/tags",
       "target": "/tags/Divergences",
+      "type": "tag"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Git",
+      "type": "tag"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/Git hooks",
+      "type": "tag"
+    },
+    {
+      "source": "/tags",
+      "target": "/tags/GitHub",
       "type": "tag"
     },
     {
@@ -1373,6 +1463,261 @@
       "type": "tag"
     },
     {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#0-tldr最短セットアップ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#1-git-hooks-と-husky-の関係",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#2-よく使うフックの実務パターン",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#3-lint-staged-連携の鉄板レシピ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#packagejson例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#huskypre-commit例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#4-mermaid-構文検証の組み込みレシピ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#5-ci-と-husky-の棲み分け",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#github-actions最小例-markdown-lint",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#6-モノレポnpmpnpmyarn-workspacesでの運用",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#7-クロスプラットフォーム注意点",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#8-運用ポリシーとベストプラクティス",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#9-トラブルシュート",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#10-セキュリティメンテ注意",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#付録a-サンプル-packagejson",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#付録b-huskypre-commit-完全例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#付録c-ci-で-mermaid-も検証する例",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/blog/git-hooks/#まとめ",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/tags/Git",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/tags/GitHub",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/git-hooks",
+      "target": "/tags/Git hooks",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#事前準備homebrew-の確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#git-のインストールと初期設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#1-インストール--動作確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#2-ユーザー情報の設定コミット署名者名メール",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#3-推奨の基本設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#github-clighの導入と認証",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#1-インストール--確認",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#2-github-へのログインssh-推奨",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#3-接続テストssh",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#sshhttps",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#zsh--znap--ohmyzsh-の設定",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#1-znap-本体の導入",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#2-zshrc-に追記",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#3-反映",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#最短クイックスタート新規リポジトリ作成github-へ-push",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#チートシート",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#1-ssh-鍵運用の実務github-での推奨",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#11-生成ed25519-推奨",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#12-エージェント--macos-キーチェーン連携",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#13-sshconfig単一複数アカウント両対応",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#14-github-への鍵登録",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#2-https-を選ぶ場合pat",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/github/#3-github-clighの実戦",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/blog/re-gh",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/github",
+      "target": "https://github.com/Mekann2904/learning-gh",
+      "type": "external"
+    },
+    {
+      "source": "/blog/github",
+      "target": "https://brew.sh",
+      "type": "external"
+    },
+    {
+      "source": "/blog/github",
+      "target": "https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/github",
+      "target": "https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index?utm_source=chatgpt.com",
+      "type": "external"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/tags/Git",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/github",
+      "target": "/tags/GitHub",
+      "type": "tag"
+    },
+    {
       "source": "/blog/google-fonts-optimizer",
       "target": "/blog/google-fonts-optimizer/#astroでgoogle-fontsを最適化するastro-google-fonts-optimizerの解説",
       "type": "normal"
@@ -1878,6 +2223,66 @@
       "type": "tag"
     },
     {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#この記事について",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#レポジトリを作成する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#ブランチを作成し作業ブランチに切り替える",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#ブランチに変更を加えプッシュする",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#プルリクエストを作成する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#プルリクエストを確認する",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#プルリクエストをレビューする",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#プルリクエストをマージする",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/re-gh/#練習問題",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/blog/git-hooks",
+      "type": "normal"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/tags/Git",
+      "type": "tag"
+    },
+    {
+      "source": "/blog/re-gh",
+      "target": "/tags/GitHub",
+      "type": "tag"
+    },
+    {
       "source": "/blog/vault-organizer",
       "target": "/blog/vault-organizer/#obsidianプラグインvault-organizerリリースしました",
       "type": "normal"
@@ -2245,6 +2650,41 @@
     {
       "source": "/tags/Divergences",
       "target": "/blog/divergences",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Git",
+      "target": "/blog/git-hooks",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Git",
+      "target": "/blog/github",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Git",
+      "target": "/blog/re-gh",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/Git hooks",
+      "target": "/blog/git-hooks",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/GitHub",
+      "target": "/blog/git-hooks",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/GitHub",
+      "target": "/blog/github",
+      "type": "normal"
+    },
+    {
+      "source": "/tags/GitHub",
+      "target": "/blog/re-gh",
       "type": "normal"
     },
     {
